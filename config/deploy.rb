@@ -13,6 +13,7 @@ set :repository,  "git@github.com:edraut/project-d.git"
 
 set :user, "nobody"
 set :runner, "nobody"
+set :use_sudo, false
 
 ssh_options[:paranoid] = false
 
