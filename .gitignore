@@ -1,6 +1,6 @@
 log/*.log
 config/database.yml
-config/gmail_smtp.yml
+config/smtp_gmail.yml
 tmp/**/*
 test
 *.DS_Store
