@@ -1,0 +1,16 @@
+<h1>manufacturers</h1>
+<div id="manufacturer_list" class="span-6 last">
+		<div class="span-3">
+		Name
+	</div>
+	
+	<div class="span-3 last">
+		&nbsp;
+	</div>
+	<% for manufacturer in @manufacturers %>
+		<%= render :partial => "manage/manufacturers/element_container", :object => manufacturer %>
+	<% end %>
+</div>
+<div id="manufacturer_new">
+	<%= render :partial => "manage/manufacturers/new", :object => Manufacturer.new %>
+</div>

@@ -1,0 +1,9 @@
+<h1>products</h1>
+<div class="span-10">
+	<% for product in @products %>
+		<%= link_to product.name, manage_product_url(product) %>
+	<% end %>
+</div>
+<div class="span-10 last">
+	<%= render :partial => 'new', :locals => {:product => Product.new} %>
+</div>

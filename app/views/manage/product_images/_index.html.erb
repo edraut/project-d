@@ -1,0 +1,9 @@
+<% product_images = product.product_images %>
+<div id="product_image_new">
+	<%= render :partial => "manage/product_images/new", :object => ProductImage.new(:product_id => @product.id) %>
+</div>
+<div id="product_image_list" class="span-14 last">
+	<% for product_image in product_images %>
+		<%= render :partial => "manage/product_images/element_container", :object => product_image %>
+	<% end %>
+</div>

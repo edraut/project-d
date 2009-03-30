@@ -1,0 +1,19 @@
+name:
+<%= @product.name %><br/>
+description:
+<%= @product.description %><br/>
+sku:
+<%= @product.sku %><br/>
+price:
+<%= @product.price %><br/>
+inventory_quantity:
+<%= @product.inventory_quantity %><br/>
+category:
+<%= @product.category.parent.name %><br/>
+sub category:
+<%= @product.category.name %><br/>
+new:
+<%= @product.new %><br/>
+
+<%= link_to 'edit', edit_manage_product_url(@product) %> | 
+<%= link_to 'delete', manage_product_url(@product), :method => :delete, :confirm => 'Are you sure you want to delete this product?' %>

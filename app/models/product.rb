@@ -1,4 +1,12 @@
 class Product < ActiveRecord::Base
-  has_many :product_images
-  has_many :product_options
+  include FormatsErrors
+  belongs_to :category
+  belongs_to :manufacturer
+  has_many :product_images, :dependent => :destroy, :order => 'position'
+  has_many :product_colors, :dependent => :destroy
+  has_many :product_sizes, :dependent => :destroy
+  has_many :product_vehicle_makes, :dependent => :destroy
+  has_many :product_vehicle_models, :dependent => :destroy
+  has_many :vehicle_makes, :through => :product_vehicle_makes
+  has_many :vehicle_models, :through => :product_vehicle_models
 end

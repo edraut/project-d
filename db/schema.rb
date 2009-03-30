@@ -14,19 +14,26 @@ ActiveRecord::Schema.define(:version => 20090324133514) do
   create_table "products", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.string   "manufacturer"
+    t.integer  "manufacturer_id", :limit => 11
     t.string   "sku"
     t.integer  "price"
     t.integer  "inventory_quantity"
     t.integer  "category_id", :limit => 11
-    t.boolean  "new", :default => false
+    t.boolean  "new", :default => true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  create_table "manufacturers", :force => true do |t|
+    t.string   "name"
+  end
+  
+  add_index "manufacturers", ["name"], :name => 'index_manufacturers_on_name'
+
   create_table "product_sizes", :force => true do |t|
     t.integer  "product_id", :limit => 11
     t.string   "name"
+    t.integer  "position"
   end
   
   add_index "product_sizes", ["product_id"], :name => "index_product_sizes_on_product_id"
@@ -34,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20090324133514) do
   create_table "product_colors", :force => true do |t|
     t.integer  "product_id", :limit => 11
     t.string   "name"
+    t.integer  "position"
   end
   
   add_index "product_colors", ["product_id"], :name => "index_product_colors_on_product_id"
@@ -45,6 +53,7 @@ ActiveRecord::Schema.define(:version => 20090324133514) do
     t.string   "image_content_type"
     t.integer  "image_fize_size"
     t.datetime "image_updated_at"
+    t.integer  "position"
   end
   
   add_index "product_images", ["product_id"], :name => "index_product_images_on_product_id"
@@ -52,12 +61,14 @@ ActiveRecord::Schema.define(:version => 20090324133514) do
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.integer  "parent_id"
+    t.integer  "position"
   end
   
   add_index "categories", ["name"], :name => 'index_categories_on_name'
   
   create_table "vehicle_makes", :force => true do |t|
     t.string   "name"
+    t.integer  "position"
   end
   
   add_index "vehicle_makes", ["name"], :name => 'index_vehicle_makes_on_name'
@@ -65,6 +76,7 @@ ActiveRecord::Schema.define(:version => 20090324133514) do
   create_table "vehicle_models", :force => true do |t|
     t.string   "name"
     t.integer  "vehicle_make_id", :limit => 11
+    t.integer  "position"
   end
   
   add_index "vehicle_models", ["name"], :name => 'index_vehicle_models_on_name'
@@ -81,6 +93,8 @@ ActiveRecord::Schema.define(:version => 20090324133514) do
   create_table "product_vehicle_models", :force => true do |t|
     t.integer  "product_id", :limit => 11
     t.integer  "vehicle_model_id"
+    t.integer  "model_start_year", :default => nil
+    t.integer  "model_end_year", :default => nil
   end
 
   add_index "product_vehicle_models", ["product_id"], :name => 'index_product_vehicle_models_on_product_id'

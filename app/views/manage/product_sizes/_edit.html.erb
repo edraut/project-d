@@ -1,0 +1,26 @@
+<% product_size = edit %>
+<% form_for :product_size, product_size,
+	:url => manage_product_size_url(product_size),
+	:html => {
+		:ajax_binding => 'ajax_form',
+		:ajax_success_element => "product_size_#{product_size.id}",
+		:ajax_method => 'PUT',
+		:ajax_success_callback => "$('#product_size_#{product_size.id}').removeClass('editing');",
+		:id => "edit_product_size_form_#{product_size.id}"
+	} do |f| %>
+	<div class="span-6 last">
+				<div class="span-3">
+			<%= product_size.first_error_on :name %>
+			<%= f.text_field :name, :size => '12' %>
+		</div>
+		
+		<div class="span-3 last">
+<%= f.submit :save %>
+<%= link_to 'cancel', manage_product_size_url(product_size),
+	:ajax_binding => 'ajax_link',
+	:ajax_method => 'GET',
+	:ajax_success_element => "product_size_#{product_size.id}",
+	:ajax_success_callback => "$('#product_size_#{product_size.id}').removeClass('editing');" %>
+		</div>
+	</div>
+<% end %>

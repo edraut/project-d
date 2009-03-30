@@ -1,0 +1,95 @@
+<div class="span-24 last">
+	<div class="span-10">
+		<div class="span-10 last">
+			<h2><%= @product.name %></h2>
+		</div>
+		<% form_for :product, @product, :url => manage_product_url(:id => @product.id, :_method => :put) do |f| %>
+			<div class="span-3 text-right">
+				description
+			</div>
+			<div class="span-7 last">
+				<%= @product.first_error_on :description %>
+				<%= f.text_area :description, :class => 'textarea-7' %><br/>
+			</div>
+			<div class="span-3 text-right">
+				sku
+			</div>
+			<div class="span-7 last">
+				<%= @product.first_error_on :sku %>
+				<%= f.text_field :sku, :class => 'textfield-7' %><br/>
+			</div>
+			<div class="span-3 text-right">
+				price
+			</div>
+			<div class="span-7 last">
+				<%= @product.first_error_on :price %>
+				<%= f.text_field :price, :class => 'textfield-7' %><br/>
+			</div>
+			<div class="span-3 text-right">
+				inventory_quantity
+			</div>
+			<div class="span-7 last">
+				<%= @product.first_error_on :inventory_quantity %>
+				<%= f.text_field :inventory_quantity, :class => 'textfield-7' %><br/>
+			</div>
+			<div class="span-10">&nbsp;</div>
+			<div class="span-3 text-right">
+				category
+			</div>
+			<div class="span-7 last">
+				<%= select_tag 'top_level_category', options_for_select([['Select Top Level Category',nil]] + Category.top_level.map{|c| [c.name,c.id]}, @product.category ? @product.category.parent.id : nil), :class => 'select_large' %><br/>
+				<%= link_to '(add a new category)', new_manage_category_url(:product_id => @product.id), 
+					:ajax_binding => 'ajax_link',
+					:ajax_method => 'GET',
+					:ajax_success_element => 'new_category',
+					:ajax_success_callback => "$('#new_category_link').hide();",
+					:id => 'new_category_link'
+				%>
+				<div id="new_category"></div>
+			</div>
+			<div class="span-10">&nbsp;</div>
+			<div class="span-3 text-right">
+				sub category
+			</div>
+			<div id="sub_category" class="span-7 last">
+			</div>
+			<div class="span-10">&nbsp;</div>
+			<div class="span-3 text-right">
+				new
+			</div>
+			<div class="span-7 last">
+				<%= @product.first_error_on :new %>
+				<%= f.check_box :new %><br/>
+			</div>
+			<div class="span-3">
+				&nbsp;
+			</div>
+			<div class="span-7 last">
+				<%= f.submit :save %> or <%= link_to 'cancel', manage_product_url(@product) %>
+			</div>
+			<% end %>
+		</div>
+		<div class="span-10">
+			<%= render :partial => 'manage/product_images/index', :locals => {:product => @product} %>
+		</div>
+		<div class="span-4 last">
+		</div>
+	</div>
+<% javascript_tag do %>
+$(document).ready(function(){
+	$('#top_level_category').change(function(e){
+		loadSubCategorySelect($(e.target).val());
+	});
+	function loadSubCategorySelect(parent_val){
+		$.ajax({
+			type: 'GET',
+			url: '<%= manage_categories_url %>' + '?parent_id=' + parent_val + '&product_id=<%= @product.id %>',
+			success: function(data,textStatus){
+				$('#sub_category').html(data);
+				bindAjaxEvents();
+			}
+		});
+	};
+	loadSubCategorySelect('<%= @product.category ? @product.category.parent.id : nil %>');
+});
+<% end %>

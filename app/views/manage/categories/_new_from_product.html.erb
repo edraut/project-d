@@ -1,0 +1,26 @@
+<% category = new_from_product %>
+Add a new category</br>
+<% form_for :category, category, :url => manage_categories_url,
+	:html => {
+		:ajax_binding => 'ajax_form',
+		:ajax_success_element => category.parent.nil? ? 'top_level_category' : 'product_category_id',
+		:ajax_success_placement => 'append',
+		:ajax_success_callback => category.parent.nil? ? "$('#new_category_link').show();$('#new_category').empty();" : "$('#new_subcategory_link').show();$('#new_subcategory').empty();",
+		:ajax_error_element => category.parent.nil? ? 'new_category' : 'new_subcategory',
+		:ajax_method => 'POST'
+	} do |f| %>
+	<div class="span-7 last">
+		<div class="span-5">
+			<%= category.first_error_on :name %>
+			<%= f.text_field :name, :size => 20 %>
+			<% unless category.parent.nil? %>
+			<%= f.hidden_field :parent_id %>
+			<% end %>
+			<%= hidden_field_tag 'product_id', @product.id %>
+		</div>
+		
+		<div class="span-2 last">
+<%= f.submit :add %>
+		</div>
+	</div>
+<% end %>
