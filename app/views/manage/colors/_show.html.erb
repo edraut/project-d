@@ -1,0 +1,19 @@
+<% color = show %>
+<div class="span-6 last">
+<div class="span-3">
+<%= color.name %>
+</div>
+
+<div class="span-3 last">
+<%= link_to 'edit', edit_manage_color_url(color),
+	:ajax_binding => 'ajax_link',
+	:ajax_method => 'GET',
+	:ajax_success_element => "color_#{color.id}",
+	:ajax_success_callback => "$('#color_#{color.id}').addClass('editing');" %> | 
+<%= link_to 'delete', manage_color_url(color),
+	:ajax_binding => 'ajax_link',
+	:ajax_method => 'DELETE',
+	:ajax_success_callback => "$('#color_#{color.id}').remove();",
+	:ajax_confirm => 'Are you sure you want to delete this color?' %>
+</div>
+</div>

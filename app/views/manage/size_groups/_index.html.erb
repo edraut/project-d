@@ -1,0 +1,29 @@
+<%= select_tag 'size_group', options_for_select([['Select a size group',nil]] + SizeGroup.all.map{|sg| [sg.name,sg.id]}, @product.sizes.any? ? @product.sizes.first.size_group_id : nil), :id => 'size_group_list' %>
+<%= link_to '(add a new size group)', new_manage_size_group_url(:product_id => @product.id),
+	:ajax_binding => 'ajax_link',
+	:ajax_method => 'GET',
+	:ajax_success_element => "size_group_new",
+	:ajax_success_callback => "$('#size_group_new_link').hide();",
+	:id => 'size_group_new_link'
+%>
+<div id="size_group_new" class="span-7 last"></div>
+<div id="size_select_container" class="span-7 last">
+</div>
+<% javascript_tag do %>
+$(document).ready(function(){
+	$('#size_group_list').change(function(e){
+		loadSizeSelect($(e.target).val());
+	});
+	function loadSizeSelect(parent_val){
+		$.ajax({
+			type: 'GET',
+			url: '<%= manage_sizes_url %>' + '?size_group_id=' + parent_val + '&product_id=<%= @product.id %>',
+			success: function(data,textStatus){
+				$('#size_select_container').html(data);
+				bindAjaxEvents();
+			}
+		});
+	};
+	loadSizeSelect('<%= @product.sizes.any? ? @product.sizes.first.size_group_id : nil %>');
+});
+<% end %>

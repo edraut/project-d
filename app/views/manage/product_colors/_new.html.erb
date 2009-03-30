@@ -1,5 +1,5 @@
 <% product_color = new %>
-Add a new product color</br>
+Add a new product_color</br>
 <% form_for :product_color, product_color, :url => manage_product_colors_url,
 	:html => {
 		:ajax_binding => 'ajax_form',
@@ -11,8 +11,8 @@ Add a new product color</br>
 	} do |f| %>
 	<div class="span-6 last">
 				<div class="span-3">
-			<%= product_color.first_error_on :name %>
-			<%= f.text_field :name, :size => "12" %>
+			<%= product_color.first_error_on :color_id %>
+			<%= f.text_field :color_id %>
 		</div>
 		
 		<div class="span-3 last">

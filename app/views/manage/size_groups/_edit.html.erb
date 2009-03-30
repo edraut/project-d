@@ -1,0 +1,26 @@
+<% size_group = edit %>
+<% form_for :size_group, size_group,
+	:url => manage_size_group_url(size_group),
+	:html => {
+		:ajax_binding => 'ajax_form',
+		:ajax_success_element => "size_group_#{size_group.id}",
+		:ajax_method => 'PUT',
+		:ajax_success_callback => "$('#size_group_#{size_group.id}').removeClass('editing');",
+		:id => "edit_size_group_form_#{size_group.id}"
+	} do |f| %>
+	<div class="span-6 last">
+				<div class="span-3">
+			<%= size_group.first_error_on :name %>
+			<%= f.text_field :name %>
+		</div>
+		
+		<div class="span-3 last">
+<%= f.submit :save %>
+<%= link_to 'cancel', manage_size_group_url(size_group),
+	:ajax_binding => 'ajax_link',
+	:ajax_method => 'GET',
+	:ajax_success_element => "size_group_#{size_group.id}",
+	:ajax_success_callback => "$('#size_group_#{size_group.id}').removeClass('editing');" %>
+		</div>
+	</div>
+<% end %>

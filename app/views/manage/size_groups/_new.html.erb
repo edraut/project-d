@@ -1,0 +1,23 @@
+<% size_group = new %>
+Add a new size_group</br>
+<% form_for :size_group, size_group, :url => manage_size_groups_url,
+	:html => {
+		:ajax_binding => 'ajax_form',
+		:ajax_success_element => 'size_group_list',
+		:ajax_success_placement => 'append',
+		:ajax_success_callback => "$('#size_group_new').empty();$('#size_group_new_link').show();",
+		:ajax_error_element => 'size_group_new',
+		:ajax_method => 'POST'
+	} do |f| %>
+	<div class="span-7 last">
+				<div class="span-4">
+			<%= size_group.first_error_on :name %>
+			<%= f.text_field :name, :size => '20' %>
+			<%= hidden_field_tag 'product_id', @product.id if @product %>
+		</div>
+		
+		<div class="span-3 last text-right">
+<%= f.submit :add %> | <a onclick="$('#size_group_new').empty();$('#size_group_new_link').show();">cancel</a>
+		</div>
+	</div>
+<% end %>

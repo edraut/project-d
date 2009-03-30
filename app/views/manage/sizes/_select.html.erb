@@ -1,0 +1,12 @@
+<% these_options = @sizes.any? ? ([['Select sizes',nil]] + @sizes.map{|size| [size.name,size.id]}) : [['-',nil]] %>
+<%= select_tag 'product[size_ids][]', options_for_select(these_options, @product ? @product.product_sizes.map{|ps| ps.size_id} : nil), :id => 'size_list', :multiple => true %>
+<% if @size_group %>
+	<%= link_to '(add a new size)', new_manage_size_url(:size => {:size_group_id => @size_group.id}, :product_id => @product.id),
+		:ajax_binding => 'ajax_link',
+		:ajax_method => 'GET',
+		:ajax_success_element => "size_new",
+		:ajax_success_callback => "$('#size_new_link').hide();",
+		:id => 'size_new_link'
+	%>
+	<div id="size_new" class="span-7 last"></div>
+<% end %>

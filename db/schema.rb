@@ -32,20 +32,46 @@ ActiveRecord::Schema.define(:version => 20090324133514) do
 
   create_table "product_sizes", :force => true do |t|
     t.integer  "product_id", :limit => 11
-    t.string   "name"
+    t.integer  "size_id", :limit => 11
     t.integer  "position"
   end
   
   add_index "product_sizes", ["product_id"], :name => "index_product_sizes_on_product_id"
 
+  create_table "sizes", :force => true do |t|
+    t.integer  "size_group_id", :limit => 11
+    t.string   "name"
+  end
+  
+  add_index "sizes", ["size_group_id"], :name => "index_sizes_on_size_group_id"
+  
+  create_table "size_groups", :force => true do |t|
+    t.string   "name"
+  end
+  
+  add_index "size_groups", ["name"], :name => "index_size_groups_on_name", :unique => true
+  
   create_table "product_colors", :force => true do |t|
     t.integer  "product_id", :limit => 11
-    t.string   "name"
+    t.integer  "color_id", :limit => 11
     t.integer  "position"
   end
   
   add_index "product_colors", ["product_id"], :name => "index_product_colors_on_product_id"
 
+  create_table "colors", :force => true do |t|
+    t.integer  "color_group_id", :limit => 11
+    t.string   "name"
+  end
+  
+  add_index "colors", ["color_group_id"], :name => "index_colors_on_color_group_id"
+  
+  create_table "color_groups", :force => true do |t|
+    t.string   "name"
+  end
+  
+  add_index "color_groups", ["name"], :name => "index_color_groups_on_name", :unique => true
+  
   create_table "product_images", :force => true do |t|
     t.integer  "product_id", :limit => 11
     t.string   "caption"

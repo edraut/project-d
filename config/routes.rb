@@ -1,4 +1,16 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :colors
+
+  map.resources :sizes
+
+  map.resources :product_colors
+
+  map.resources :colors
+
+  map.resources :size_groups
+
+  map.resources :color_groups
+
   map.resources :manufacturers
 
   map.resources :products
@@ -13,13 +25,15 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :product_sizes
 
-  map.resources :product_colors
-
   map.resources :users
 
   map.resource :session
 
   map.namespace :manage do |manage|
+    manage.resources :colors
+    manage.resources :sizes
+    manage.resources :color_groups
+    manage.resources :size_groups
     manage.resources :product_colors
     manage.resources :product_sizes
     manage.resources :manufacturers

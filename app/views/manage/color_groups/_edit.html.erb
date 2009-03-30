@@ -1,0 +1,26 @@
+<% color_group = edit %>
+<% form_for :color_group, color_group,
+	:url => manage_color_group_url(color_group),
+	:html => {
+		:ajax_binding => 'ajax_form',
+		:ajax_success_element => "color_group_#{color_group.id}",
+		:ajax_method => 'PUT',
+		:ajax_success_callback => "$('#color_group_#{color_group.id}').removeClass('editing');",
+		:id => "edit_color_group_form_#{color_group.id}"
+	} do |f| %>
+	<div class="span-6 last">
+				<div class="span-3">
+			<%= color_group.first_error_on :name %>
+			<%= f.text_field :name %>
+		</div>
+		
+		<div class="span-3 last">
+<%= f.submit :save %>
+<%= link_to 'cancel', manage_color_group_url(color_group),
+	:ajax_binding => 'ajax_link',
+	:ajax_method => 'GET',
+	:ajax_success_element => "color_group_#{color_group.id}",
+	:ajax_success_callback => "$('#color_group_#{color_group.id}').removeClass('editing');" %>
+		</div>
+	</div>
+<% end %>
