@@ -25,7 +25,7 @@ class Manage::ProductsController < Manage::ApplicationController
   # POST /manage_products
   # POST /manage_products.xml
   def create
-    @product = Product.new(params[:product])
+    @product = Product.new(@editable_params)
 
     if @product.save
       flash[:notice] = 'Product was successfully created.'
@@ -39,7 +39,7 @@ class Manage::ProductsController < Manage::ApplicationController
   # PUT /manage_products/1.xml
   def update
 
-    if @product.update_attributes(params[:product])
+    if @product.update_attributes(@editable_params)
       flash[:notice] = 'Product was successfully updated.'
       render :template => 'manage/products/show' and return
     else
@@ -60,6 +60,7 @@ class Manage::ProductsController < Manage::ApplicationController
     @product = Product.find(params[:id])
   end
   def prepare_params
+    @editable_params = params[:product].dup
     @money_attributes = [:price]
   end
 end
