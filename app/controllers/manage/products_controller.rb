@@ -1,6 +1,7 @@
 class Manage::ProductsController < Manage::ApplicationController
   before_filter :get_product, :only => [:show,:edit,:update,:destroy]
-
+  before_filter :prepare_params, :only => [:create,:update]
+  
   def index
     @products = Product.find(:all)
 
@@ -57,5 +58,8 @@ class Manage::ProductsController < Manage::ApplicationController
   private
   def get_product
     @product = Product.find(params[:id])
+  end
+  def prepare_params
+    @money_attributes = [:price]
   end
 end

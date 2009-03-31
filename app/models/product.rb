@@ -11,4 +11,6 @@ class Product < ActiveRecord::Base
   has_many :product_vehicle_models, :dependent => :destroy
   has_many :vehicle_makes, :through => :product_vehicle_makes
   has_many :vehicle_models, :through => :product_vehicle_models
+  composed_of :price, :class_name => 'Money', :mapping => [%w(price cents)]
+  
 end

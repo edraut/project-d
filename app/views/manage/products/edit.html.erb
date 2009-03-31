@@ -23,7 +23,7 @@
 			</div>
 			<div class="column span-1_5">
 				<%= @product.first_error_on :price %>
-				<%= f.text_field :price, :class => 'textfield-1_5' %><br/>
+				<%= f.text_field :price, :value => @product.price.to_s, :class => 'textfield-1_5' %><br/>
 			</div>
 			<div class="span-2 text-right">
 				inventory
