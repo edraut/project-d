@@ -11,10 +11,10 @@ set :mail_password, 'm4drac1ngmx'
 set :branch, "master"
 
 set :rails_env, "production"
-before "deploy:migrations", "deploy"
+before "deploy:wipe_and_load", "deploy"
 namespace :deploy do
   desc "Erase, rebuild, and populate database from schema.rb and fixture files."
-  task :migrations, :roles => :db do
+  task :wipe_and_load, :roles => :db do
     run("cd #{deploy_to}/current; rake db:wipe_and_load RAILS_ENV=production")
     run("cd #{deploy_to}/shared; tar xzf ../current/public/system.tgz")
   end
