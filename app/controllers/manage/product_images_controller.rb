@@ -29,7 +29,7 @@ class Manage::ProductImagesController < Manage::ApplicationController
   # POST /manage_product_images
   # POST /manage_product_images.xml
   def create
-    position = @product.product_images.maximum(:position) + 1
+    position = @product.product_images.any? ? @product.product_images.maximum(:position) + 1 : 1
     @product_image = ProductImage.new(params[:product_image].merge(:position => position))
     
     success = true
