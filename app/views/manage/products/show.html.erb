@@ -1,7 +1,8 @@
+<br/>
 name:
 <%= @product.name %><br/>
 description:
-<%= @product.description %><br/>
+<%= RedCloth.new(@product.description).to_html unless @product.description.blank? %><br/>
 sku:
 <%= @product.sku %><br/>
 price:
