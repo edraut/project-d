@@ -34,7 +34,7 @@ class Manage::ProductImagesController < Manage::ApplicationController
     
     success = true
     if @product_image.save
-      @rendered_image = render_to_string :partial => 'show', :object => @product_image
+      @rendered_image = render_to_string :partial => 'element_container', :object => @product_image
       @rendered_image.gsub!(/(\\|<\/|\r\n|[\n\r"'])/) { ActionView::Helpers::JavaScriptHelper::JS_ESCAPE_MAP[$1] }
     else
       success = false
