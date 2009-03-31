@@ -30,6 +30,11 @@ h1 {
 	padding-bottom: 6px;
 	margin-bottom: 10px;
 }
+.border-top {
+	border-top: 1px solid grey;
+	padding-top: 6px;
+	margin-top: 10px;
+}
 .image-medium-wrapper {
 	height: 150px;
 }

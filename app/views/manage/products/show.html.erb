@@ -1,4 +1,4 @@
-<div class="span-24 last">
+<div class="span-24 last border-top">
 	<div class="span-10">
 		<div class="span-10 last">
 			<h2><%= @product.name %></h2>
@@ -53,6 +53,9 @@
 				<%= image_tag product_image.image(:small) %>
 			<% end %>
 		</div>
-<br/>&nbsp;<br/>
-<%= link_to 'edit', edit_manage_product_url(@product) %> | 
-<%= link_to 'delete', manage_product_url(@product), :method => :delete, :confirm => 'Are you sure you want to delete this product?' %>
+	</div>
+	<div class="span-14 last">
+		<%= link_to 'edit', edit_manage_product_url(@product) %> | 
+		<%= link_to 'delete', manage_product_url(@product), :method => :delete, :confirm => 'Are you sure you want to delete this product?' %> | <%= link_to 'back to product list', manage_products_url %>
+	</div>
+</div>

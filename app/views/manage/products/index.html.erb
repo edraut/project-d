@@ -1,7 +1,7 @@
 <h1>products</h1>
 <div class="span-10">
 	<% for product in @products %>
-		<%= link_to product.name, manage_product_url(product) %>
+		<%= link_to product.name, manage_product_url(product) %><br/>
 	<% end %>
 </div>
 <div class="span-10 last">
