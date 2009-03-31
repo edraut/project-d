@@ -4,28 +4,28 @@
 			<h2><%= @product.name %></h2>
 		</div>
 		<% form_for :product, @product, :url => manage_product_url(:id => @product.id, :_method => :put) do |f| %>
-			<div class="span-3 text-right">
+			<div class="span-3 text-right field-label">
 				description
 			</div>
 			<div class="span-7 last">
 				<%= @product.first_error_on :description %>
 				<%= f.text_area :description, :class => 'textarea-7' %><br/>
 			</div>
-			<div class="span-3 text-right">
+			<div class="span-3 text-right field-label">
 				sku
 			</div>
 			<div class="column span-1_5">
 				<%= @product.first_error_on :sku %>
 				<%= f.text_field :sku, :class => 'textfield-1_5' %><br/>
 			</div>
-			<div class="span-1 text-right">
+			<div class="span-1 text-right field-label">
 				price
 			</div>
 			<div class="column span-1_5">
 				<%= @product.first_error_on :price %>
 				<%= f.text_field :price, :value => @product.price.to_s, :class => 'textfield-1_5' %><br/>
 			</div>
-			<div class="span-2 text-right">
+			<div class="span-2 text-right field-label">
 				inventory
 			</div>
 			<div class="span-1 last">
@@ -33,7 +33,7 @@
 				<%= f.text_field :inventory_quantity, :class => 'textfield-1' %><br/>
 			</div>
 			<div class="span-10">&nbsp;</div>
-			<div class="span-3 text-right">
+			<div class="span-3 text-right field-label">
 				category
 			</div>
 			<div class="span-7 last">
@@ -49,20 +49,20 @@
 				<div id="new_category"></div>
 			</div>
 			<div class="span-10">&nbsp;</div>
-			<div class="span-3 text-right">
+			<div class="span-3 text-right field-label">
 				sub category
 			</div>
 			<div id="sub_category" class="span-7 last">
 			</div>
 			<div class="span-10">&nbsp;</div>
-			<div class="span-3 text-right">
+			<div class="span-3 text-right field-label">
 				new
 			</div>
 			<div class="span-7 last">
 				<%= @product.first_error_on :new %>
 				<%= f.check_box :new %><br/>
 			</div>
-			<div class="span-3 text-right">
+			<div class="span-3 text-right field-label">
 				sizes
 			</div>
 			<div class="span-7 last">
