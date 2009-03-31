@@ -41,3 +41,6 @@ h1 {
 .editing {
 	background-color: #CCCCCC;
 }
+.error_text {
+	color: red;
+}

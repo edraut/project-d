@@ -37,6 +37,7 @@
 				category
 			</div>
 			<div class="span-7 last">
+				<%= @product.first_error_on :category_id %>
 				<%= select_tag 'top_level_category', options_for_select([['Select Top Level Category',nil]] + Category.top_level.map{|c| [c.name,c.id]}, @product.category ? @product.category.parent.id : nil), :class => 'select_large' %><br/>
 				<%= link_to '(add a new category)', new_manage_category_url(:product_id => @product.id), 
 					:ajax_binding => 'ajax_link',

@@ -13,4 +13,7 @@ class Product < ActiveRecord::Base
   has_many :vehicle_models, :through => :product_vehicle_models
   composed_of :price, :class_name => 'Money', :mapping => [%w(price cents)]
   
+  def validate
+    errors.add('category_id','You must select a category and subcategory for your product') unless category_id
+  end
 end

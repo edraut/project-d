@@ -5,15 +5,18 @@ description:
 sku:
 <%= @product.sku %><br/>
 price:
-<%= @product.price %><br/>
+$<%= @product.price.to_s %><br/>
 inventory_quantity:
 <%= @product.inventory_quantity %><br/>
 category:
 <%= @product.category.parent.name %><br/>
 sub category:
 <%= @product.category.name %><br/>
-new:
-<%= @product.new %><br/>
-
+<%= @product.new ? 'new product' : 'used product' %><br/>
+images:
+<% for product_image in  @product.product_images %>
+<%= image_tag product_image.image(:small) %>
+<% end %>
+<br/>&nbsp;<br/>
 <%= link_to 'edit', edit_manage_product_url(@product) %> | 
 <%= link_to 'delete', manage_product_url(@product), :method => :delete, :confirm => 'Are you sure you want to delete this product?' %>
