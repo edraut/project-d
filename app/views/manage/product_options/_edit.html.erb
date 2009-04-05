@@ -15,7 +15,7 @@
 		</div>
 				<div class="column span-1_5">
 			<%= product_option.first_error_on :price %>
-			<%= f.text_field :price, :class => 'textfield-1_5' %>
+			<%= f.text_field :price, :value => product_option.price.to_s, :class => 'textfield-1_5' %>
 		</div>
 				<div class="column span-1_5">
 			<%= product_option.first_error_on :sku %>
