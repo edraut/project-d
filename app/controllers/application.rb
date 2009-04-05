@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   # from your application log (in this case, all fields with names like "password"). 
   # filter_parameter_logging :password
   def string_to_money(string)
-    Money.new((string.to_f * 100).to_i)
+    Money.new(string.to_f * 100)
   end
   
   def manage_money
