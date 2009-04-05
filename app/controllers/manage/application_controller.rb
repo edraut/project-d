@@ -8,4 +8,7 @@ class Manage::ApplicationController < ApplicationController
   # Uncomment this to filter the contents of submitted sensitive data parameters
   # from your application log (in this case, all fields with names like "password"). 
   # filter_parameter_logging :password
+  def set_nav_area
+    @nav_area = 'manage'
+  end
 end

@@ -8,7 +8,7 @@ h3 {
 	font-size: 12px;
 }
 .banner {
-	font-size: 30px;
+	font-size: 36px;
 	font-weight: bold;
 	color: #0E0E0E;
 }
@@ -43,6 +43,12 @@ h3 {
 .text-right {
 	text-align: right;
 }
+.text-center {
+	text-align: center;
+}
+.highlight {
+	background-color: #ff8;
+}
 .border-bottom {
 	border-bottom: 1px solid #8F8F8F;
 	padding-bottom: 6px;
@@ -52,6 +58,11 @@ h3 {
 	border-top: 1px solid #8F8F8F;
 	padding-top: 6px;
 	margin-top: 10px;
+}
+.border-all {
+	padding:4px;
+	margin:5px;
+	border: 1px solid #BBBBBB;
 }
 .border {
 	border-right: 1px solid #8F8F8F;
@@ -79,4 +90,18 @@ h3 {
 }
 a.tiny {
 	font-size: 10px;
+}
+ul.main_nav_tabs {
+	list-style: none;
+	font-size: 18px;
+	font-weight: bold;
+}
+.main_nav_tabs li{
+	float: left;
+	clear: none;
+	margin-left: 40px;
+}
+
+.main_nav_tabs li a{
+	text-decoration: none;
 }

@@ -3,7 +3,7 @@
 
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
-
+  before_filter :set_nav_area
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
   # protect_from_forgery # :secret => '43c771a06b224b59eadad4cc84ca056e'
@@ -22,6 +22,10 @@ class ApplicationController < ActionController::Base
         @editable_params[money_attribute] = string_to_money(@editable_params[money_attribute])
       end
     end
+  end
+  
+  def set_nav_area
+    @nav_area = 'public'
   end
 
 end
