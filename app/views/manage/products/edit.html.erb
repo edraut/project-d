@@ -1,6 +1,6 @@
 <div class="span-24 last small-links">
-	<div class="span-24 last">
-		<h2><%= @product.name %></h2>
+	<div id="product_name_container" class="span-24 last list_item">
+		<%= render :partial => 'show_name' %>
 	</div>
 	<div class="span-8 border">
 		<h3>Images</h3>
@@ -16,30 +16,8 @@
 				<%= @product.first_error_on :description %>
 				<%= f.text_area :description, :class => 'textarea-8' %><br/>
 			</div>
-			<div class="span-3 field-label">
-				sku
-			</div>
-			<div class="span-3 field-label">
-				price
-			</div>
-			<div class="span-2 last field-label">
-				inventory
-			</div>
-			<div class="column span-3">
-				<%= @product.first_error_on :sku %>
-				<%= f.text_field :sku, :class => 'textfield-1_5' %><br/>
-			</div>
-			<div class="column span-3">
-				<%= @product.first_error_on :price %>
-				$<%= f.text_field :price, :value => @product.price.to_s, :class => 'textfield-1_5' %><br/>
-			</div>
-			<div class="span-2 last">
-				<%= @product.first_error_on :inventory_quantity %>
-				<%= f.text_field :inventory_quantity, :class => 'textfield-1' %><br/>
-			</div>
-			<div class="span-8 last">&nbsp;</div>
-			<div class="span-8 last field-label">
-				<div class="span-4">
+			<div class="span-8 last">
+				<div class="span-4 field-label">
 					category
 				</div>
 				<div class="span-4 last">
@@ -58,31 +36,23 @@
 				<%= select_tag 'top_level_category', options_for_select([['Select Top Level Category',nil]] + Category.top_level.map{|c| [c.name,c.id]}, @product.category ? @product.category.parent.id : nil), :class => 'select_large' %><br/>
 				<div id="new_category"></div>
 			</div>
-			<div class="span-8 last field-label border-bottom">
-				<div class="span-4">sub category</div>
+			<div class="span-8 last border-bottom">
+				<div class="span-4 field-label">sub category</div>
 				<div id="sub_category">
 				</div>
 			</div>
-			<div class="span-8 last border-bottom field-label">
-				<div class="span-4">
-				vehicle make
+			<div class="span-8 last border-bottom">
+				<div class="span-4 field-label">
+					vehicle make
 				</div>
 				<%= render :partial => 'manage/vehicle_makes/index' %>
 			</div>
-		</div>
-		<div class="span-8 last">
-			<h3>Options</h3>
-			<div class="span-8 last border-bottom field-label">
-				<div class="span-4">
-					color group
-				</div>
-				<%= render :partial => 'manage/product_colors/index' %>
-			</div>
 			<div class="span-8 last border-bottom">
-				<div class="span-4 field-label">
-					size group
+				<div class="span-8 last field-label">
+					vehicle model
 				</div>
-				<%= render :partial => 'manage/product_sizes/index' %>
+				<div id="vehicle_model_select_container" class="span-8 last">
+				</div>
 			</div>
 			<div class="span-8 last border-bottom">
 				<div class="span-1 field-label">
@@ -102,11 +72,20 @@
 			</div>
 			<div class="span-8 last">
 				<div class="span-4 prepend-4 last text-right">
-					<%= f.submit 'save product' %> or <%= link_to 'cancel', manage_product_url(@product) %>
+					<%= f.submit 'save info' %> or <%= link_to 'cancel', manage_product_url(@product) %>
 				</div>
 			</div>
 		</div>
 	<% end %>
+	<div class="span-8 last">
+		<h3>Options</h3>
+		<div class="span-8 last border-bottom">
+			<div class="span-8 last field-label">
+				product options
+			</div>
+			<%= render :partial => 'manage/product_options/index' %>
+		</div>
+	</div>
 </div>
 <% javascript_tag do %>
 $(document).ready(function(){

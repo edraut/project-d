@@ -1,0 +1,25 @@
+<h1>product_options</h1>
+<div id="product_option_list" class="span-8 last">
+		<div class="span-2">
+		Name
+	</div>
+		<div class="span-1">
+		Price
+	</div>
+		<div class="span-2">
+		Sku
+	</div>
+	<div class="span-1" style="overflow:visible;">
+		Quant.
+	</div>
+	
+	<div class="span-2 last">
+		&nbsp;
+	</div>
+	<% for product_option in @product_options %>
+		<%= render :partial => "manage/product_options/element_container", :object => product_option %>
+	<% end %>
+</div>
+<div id="product_option_new">
+	<%= render :partial => "manage/product_options/new", :object => ProductOption.new %>
+</div>

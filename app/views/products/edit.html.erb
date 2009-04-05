@@ -1,0 +1,11 @@
+<% form_for :product, @product, :url => product_url(:id => @product.id, :_method => :put) do |f| %>
+		name
+	<%= @product.first_error_on :name %>
+	<%= f.text_field :name %><br/>
+		decription
+	<%= @product.first_error_on :decription %>
+	<%= f.text_area :decription %><br/>
+	
+<%= f.submit :save %>
+<%= link_to 'cancel', product_url(@product) %>
+<% end %>

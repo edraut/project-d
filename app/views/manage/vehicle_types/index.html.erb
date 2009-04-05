@@ -1,0 +1,18 @@
+<h1>vehicle_types</h1>
+<div id="vehicle_type_list" class="span-6 last">
+	<div id="vehicle_type_list_header" class="span-6 last">
+		<div class="span-3">
+		Name
+	</div>
+	
+	<div class="span-3 last">
+		&nbsp;
+	</div>
+	</div>
+	<% for vehicle_type in @vehicle_types %>
+		<%= render :partial => "manage/vehicle_types/element_container", :object => vehicle_type %>
+	<% end %>
+</div>
+<div id="vehicle_type_new" class="span-6 last">
+	<%= render :partial => "manage/vehicle_types/new", :object => VehicleType.new %>
+</div>

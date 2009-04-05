@@ -3,6 +3,7 @@ class Product < ActiveRecord::Base
   belongs_to :category
   belongs_to :manufacturer
   has_many :product_images, :dependent => :destroy, :order => 'position'
+  has_many :product_options, :dependent => :destroy, :order => 'position'
   has_many :product_colors, :dependent => :destroy
   has_many :colors, :through => :product_colors
   has_many :product_sizes, :dependent => :destroy
@@ -11,8 +12,7 @@ class Product < ActiveRecord::Base
   has_many :product_vehicle_models, :dependent => :destroy
   has_many :vehicle_makes, :through => :product_vehicle_makes
   has_many :vehicle_models, :through => :product_vehicle_models
-  composed_of :price, :class_name => 'Money', :mapping => [%w(price cents)]
-  before_update 'self.add_info if self.state == "incomplete"'
+
   state_machine :initial => :incomplete do
     event :add_info do
       transition :incomplete => :complete, :complete => same

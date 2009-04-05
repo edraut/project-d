@@ -1,7 +1,7 @@
 class Manage::ProductsController < Manage::ApplicationController
   before_filter :get_product, :only => [:show,:edit,:update,:destroy]
   before_filter :prepare_params, :only => [:create,:update]
-  before_filter :manage_money, :only => [:create,:update]
+  # before_filter :manage_money, :only => [:create,:update]
   def index
     @products = Product.find(:all)
     @product = nil
@@ -10,6 +10,12 @@ class Manage::ProductsController < Manage::ApplicationController
   # GET /manage_products/1
   # GET /manage_products/1.xml
   def show
+    if params.has_key? :attribute
+      case params[:attribute]
+      when 'name'
+        render :partial => 'show_name' and return
+      end
+    end
   end
 
   # GET /manage_products/new
@@ -20,6 +26,12 @@ class Manage::ProductsController < Manage::ApplicationController
 
   # GET /manage_products/1/edit
   def edit
+    if params.has_key? :attribute
+      case params[:attribute]
+      when 'name'
+        render :partial => 'edit_name' and return
+      end
+    end
   end
 
   # POST /manage_products
@@ -39,10 +51,10 @@ class Manage::ProductsController < Manage::ApplicationController
   # PUT /manage_products/1
   # PUT /manage_products/1.xml
   def update
+    @product.add_info if @product.state == "incomplete" and !@editable_params.has_key? 'name'
     if @product.update_attributes(@editable_params)
-      for product_size in @product.product_sizes
-        product_size.price = @editable_size_params[product_size.size_id.to_s][:price]
-        product_size.save
+      if @editable_params.has_key? 'name'
+        render :partial => 'show_name' and return
       end
       flash[:notice] = 'Product was successfully updated.'
       render :template => 'manage/products/show' and return
@@ -65,12 +77,12 @@ class Manage::ProductsController < Manage::ApplicationController
   end
   def prepare_params
     @editable_params = params[:product].dup
-    @money_attributes = [:price]
-    if params.has_key? :product_sizes
-      @editable_size_params = params[:product_sizes].dup
-      for size_id in params[:product][:size_ids]
-        @editable_size_params[size_id.to_s][:price] = string_to_money(@editable_size_params[size_id.to_s][:price])
-      end
-    end
+  #   @money_attributes = [:price]
+  #   if params.has_key? :product_sizes
+  #     @editable_size_params = params[:product_sizes].dup
+  #     for size_id in params[:product][:size_ids]
+  #       @editable_size_params[size_id.to_s][:price] = string_to_money(@editable_size_params[size_id.to_s][:price])
+  #     end
+  #   end
   end
 end

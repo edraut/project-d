@@ -1,0 +1,28 @@
+<% vehicle_type = new %>
+Add a new vehicle_type</br>
+<% form_for :vehicle_type, vehicle_type, :url => manage_vehicle_types_url,
+	:html => {
+		:ajax_binding => 'ajax_form',
+		:ajax_success_element => 'vehicle_type_list',
+		:ajax_success_placement => 'append',
+		:ajax_success_callback => "$('#vehicle_type_new_link').click();",
+		:ajax_error_element => 'vehicle_type_new',
+		:ajax_method => 'POST'
+	} do |f| %>
+	<div class="span-6 last">
+				<div class="span-3">
+			<%= vehicle_type.first_error_on :name %>
+			<%= f.text_field :name, :class => 'textfield-3' %>
+		</div>
+		
+		<div class="span-3 last">
+<%= f.submit :add %>
+		</div>
+	</div>
+<% end %>
+<%= link_to '', new_manage_vehicle_type_url,
+ 	:ajax_method => 'GET',
+	:ajax_binding => 'ajax_link',
+	:ajax_success_element => 'vehicle_type_new',
+	:id => 'vehicle_type_new_link'
+	%>

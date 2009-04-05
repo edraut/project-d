@@ -1,7 +1,11 @@
 class FixtureManifest
   def self.template
     @@fixtures ||= {
-      :users => 1
+      :users => 1,
+      :vehicle_types => 1,
+      :vehicle_makes => 1,
+      :vehicle_models => 1,
+      :categories => 1
     }
   end
   

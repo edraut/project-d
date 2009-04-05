@@ -1,5 +1,5 @@
 <div class="span-4 last">
-	<%= link_to '(add a new vehicle make)', new_manage_vehicle_make_url(:product_id => @product.id),
+	<%# link_to '(add a new vehicle make)', new_manage_vehicle_make_url(:product_id => @product.id),
 		:ajax_binding => 'ajax_link',
 		:ajax_method => 'GET',
 		:ajax_success_element => "vehicle_make_new",
@@ -7,27 +7,28 @@
 		:id => 'vehicle_make_new_link',
 		:class => 'quiet tiny'
 	%>
+	&nbsp;
 </div>
 <div id="vehicle_make_new" class="span-8 last"></div>
 <div class="span-8 last">
-	<%= select_tag 'product[vehicle_make_ids][]', options_for_select(VehicleMake.all.map{|sg| [sg.name,sg.id]}, @product.product_vehicle_makes.any? ? @product.product_vehicle_makes.first.vehicle_make_id : nil), :id => 'vehicle_make_list', :multiple => true %>
+	<%= select_tag 'product[vehicle_make_ids][]', options_for_select(VehicleMake.all.map{|sg| [sg.name,sg.id]}, @product.product_vehicle_makes.map{|pvm| pvm.vehicle_make_id}), :id => 'vehicle_make_list', :multiple => true %>
 </div>
 <% javascript_tag do %>
 $(document).ready(function(){
 	$('#vehicle_make_list').change(function(e){
-		loadVehicleMakeSelect($(e.target).val());
+		loadVehicleMakeSelect();
 	});
-	function loadVehicleMakeSelect(parent_val){
+	function loadVehicleMakeSelect(){
 		$.ajax({
 			type: 'GET',
 			url: '<%= manage_vehicle_models_url %>',
 			data: $('#vehicle_make_list').serialize() + '&product_id=<%= @product.id %>',
 			success: function(data,textStatus){
-				$('#vehicle_make_select_container').html(data);
+				$('#vehicle_model_select_container').html(data);
 				bindAjaxEvents();
 			}
 		});
 	};
-	loadVehicleMakeSelect('<%= @product.product_vehicle_makes.any? ? @product.product_vehicle_makes.first.vehicle_make_id : nil %>');
+	loadVehicleMakeSelect();
 });
 <% end %>

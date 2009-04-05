@@ -1,0 +1,13 @@
+Add a new product<br/>
+<p>
+<% form_for :product, @product, :url => products_url(:_method => :post) do |f| %>
+name
+<%= @product.first_error_on :name %>
+<%= f.text_field :name %><br/>
+decription
+<%= @product.first_error_on :decription %>
+<%= f.text_area :decription %><br/>
+
+<%= f.submit :add %>
+<% end %>
+</p>

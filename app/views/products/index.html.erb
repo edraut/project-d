@@ -1,0 +1,5 @@
+<h1>products</h1>
+<% for product in @products %>
+	<%= link_to product.name, product_url(product) %>
+<% end %>
+<%= link_to 'new product', new_product_url %>

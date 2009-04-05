@@ -1,0 +1,8 @@
+vehicle_types_001: 
+  name: Motorcycle
+  id: 1
+  position: 
+vehicle_types_002: 
+  name: ATV
+  id: 2
+  position: 

@@ -1,0 +1,222 @@
+vehicle_models_037: 
+  name: TRX 700XX
+  id: 27
+  vehicle_type_id: 2
+  vehicle_make_id: 1
+  position: 
+vehicle_models_026: 
+  name: YZ 250
+  id: 6
+  vehicle_type_id: 1
+  vehicle_make_id: 
+  position: 
+vehicle_models_015: 
+  name: YZ 426 F
+  id: 33
+  vehicle_type_id: 1
+  vehicle_make_id: 2
+  position: 
+vehicle_models_004: 
+  name: Raptor 700R SE
+  id: 38
+  vehicle_type_id: 2
+  vehicle_make_id: 2
+  position: 
+vehicle_models_027: 
+  name: TRX
+  id: 20
+  vehicle_type_id: 2
+  vehicle_make_id: 1
+  position: 
+vehicle_models_016: 
+  name: YZ 85 LW
+  id: 4
+  vehicle_type_id: 1
+  vehicle_make_id: 
+  position: 
+vehicle_models_005: 
+  name: YZ 250 F
+  id: 7
+  vehicle_type_id: 1
+  vehicle_make_id: 
+  position: 
+vehicle_models_028: 
+  name: TRX 90X
+  id: 13
+  vehicle_type_id: 2
+  vehicle_make_id: 
+  position: 
+vehicle_models_017: 
+  name: CRF250
+  id: 19
+  vehicle_type_id: 1
+  vehicle_make_id: 1
+  position: 
+vehicle_models_006: 
+  name: YZ 250 F
+  id: 32
+  vehicle_type_id: 1
+  vehicle_make_id: 2
+  position: 
+vehicle_models_029: 
+  name: YZ 125
+  id: 5
+  vehicle_type_id: 1
+  vehicle_make_id: 
+  position: 
+vehicle_models_018: 
+  name: TRX
+  id: 12
+  vehicle_type_id: 2
+  vehicle_make_id: 
+  position: 
+vehicle_models_007: 
+  name: TRX 250X
+  id: 14
+  vehicle_type_id: 2
+  vehicle_make_id: 
+  position: 
+vehicle_models_030: 
+  name: TRX 450R
+  id: 17
+  vehicle_type_id: 2
+  vehicle_make_id: 
+  position: 
+vehicle_models_019: 
+  name: TRX 300X
+  id: 15
+  vehicle_type_id: 2
+  vehicle_make_id: 
+  position: 
+vehicle_models_008: 
+  name: TRX 700XX
+  id: 18
+  vehicle_type_id: 2
+  vehicle_make_id: 
+  position: 
+vehicle_models_031: 
+  name: YZ 250
+  id: 31
+  vehicle_type_id: 1
+  vehicle_make_id: 2
+  position: 
+vehicle_models_020: 
+  name: YZ 125
+  id: 30
+  vehicle_type_id: 1
+  vehicle_make_id: 2
+  position: 
+vehicle_models_009: 
+  name: CRF450
+  id: 11
+  vehicle_type_id: 1
+  vehicle_make_id: 
+  position: 
+vehicle_models_032: 
+  name: TRX 300X
+  id: 24
+  vehicle_type_id: 2
+  vehicle_make_id: 1
+  position: 
+vehicle_models_021: 
+  name: TRX 250X
+  id: 23
+  vehicle_type_id: 2
+  vehicle_make_id: 1
+  position: 
+vehicle_models_010: 
+  name: TRX 400X
+  id: 25
+  vehicle_type_id: 2
+  vehicle_make_id: 1
+  position: 
+vehicle_models_033: 
+  name: TRX 400X
+  id: 16
+  vehicle_type_id: 2
+  vehicle_make_id: 
+  position: 
+vehicle_models_022: 
+  name: TRX 450R
+  id: 26
+  vehicle_type_id: 2
+  vehicle_make_id: 1
+  position: 
+vehicle_models_011: 
+  name: YZ 85 LW
+  id: 29
+  vehicle_type_id: 1
+  vehicle_make_id: 2
+  position: 
+vehicle_models_034: 
+  name: CRF450
+  id: 28
+  vehicle_type_id: 1
+  vehicle_make_id: 1
+  position: 
+vehicle_models_023: 
+  name: CRF150
+  id: 9
+  vehicle_type_id: 1
+  vehicle_make_id: 1
+  position: 
+vehicle_models_012: 
+  name: TRX 250X
+  id: 22
+  vehicle_type_id: 2
+  vehicle_make_id: 1
+  position: 
+vehicle_models_001: 
+  name: YFZ450
+  id: 39
+  vehicle_type_id: 2
+  vehicle_make_id: 2
+  position: 
+vehicle_models_035: 
+  name: CRF250
+  id: 10
+  vehicle_type_id: 1
+  vehicle_make_id: 
+  position: 
+vehicle_models_024: 
+  name: Raptor 90
+  id: 34
+  vehicle_type_id: 2
+  vehicle_make_id: 2
+  position: 
+vehicle_models_013: 
+  name: Raptor 350
+  id: 36
+  vehicle_type_id: 2
+  vehicle_make_id: 2
+  position: 
+vehicle_models_002: 
+  name: TRX 90
+  id: 21
+  vehicle_type_id: 2
+  vehicle_make_id: 1
+  position: 
+vehicle_models_036: 
+  name: Raptor 250
+  id: 35
+  vehicle_type_id: 2
+  vehicle_make_id: 2
+  position: 
+vehicle_models_025: 
+  name: Raptor 700R
+  id: 37
+  vehicle_type_id: 2
+  vehicle_make_id: 2
+  position: 
+vehicle_models_014: 
+  name: YZ 426 F
+  id: 8
+  vehicle_type_id: 1
+  vehicle_make_id: 
+  position: 
+vehicle_models_003: 
+  name: YZ 85
+  id: 3
+  vehicle_type_id: 1
+  vehicle_make_id: 2
+  position: 

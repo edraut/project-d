@@ -9,14 +9,14 @@ Add a new vehicle_make</br>
 		:ajax_error_element => 'vehicle_make_new',
 		:ajax_method => 'POST'
 	} do |f| %>
-	<div class="span-8 last">
+	<div class="span-12 last">
 		<div class="span-5">
 			<%= vehicle_make.first_error_on :name %>
 			<%= f.text_field :name, :class => 'textfield-5' %>
 			<%= hidden_field_tag 'product_id', @product.id if @product %>
 		</div>
 		
-		<div class="span-3 last">
+		<div class="span-7 last">
 			<%= f.submit :add %> | <a onclick="$('#vehicle_make_new').empty();$('#vehicle_make_new_link').show();">cancel</a>
 		</div>
 	</div>

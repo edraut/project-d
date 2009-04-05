@@ -15,9 +15,6 @@ ActiveRecord::Schema.define(:version => 20090324133514) do
     t.string   "name"
     t.text     "description"
     t.integer  "manufacturer_id", :limit => 11
-    t.string   "sku"
-    t.integer  "price"
-    t.integer  "inventory_quantity"
     t.integer  "category_id", :limit => 11
     t.boolean  "new", :default => true
     t.string   "state"
@@ -25,6 +22,17 @@ ActiveRecord::Schema.define(:version => 20090324133514) do
     t.datetime "updated_at"
   end
 
+  create_table "product_options", :force => true do |t|
+    t.string   "name"
+    t.integer  "product_id", :limit => 11
+    t.integer  "price"
+    t.string   "sku"
+    t.integer  "inventory_quantity"
+    t.integer  "position"
+  end
+  
+  add_index "product_options", ["product_id"], :name => 'index_product_options_on_product_id'
+  
   create_table "manufacturers", :force => true do |t|
     t.string   "name"
   end
@@ -104,12 +112,19 @@ ActiveRecord::Schema.define(:version => 20090324133514) do
   create_table "vehicle_models", :force => true do |t|
     t.string   "name"
     t.integer  "vehicle_make_id", :limit => 11
+    t.integer  "vehicle_type_id", :limit => 11
     t.integer  "position"
   end
   
   add_index "vehicle_models", ["name"], :name => 'index_vehicle_models_on_name'
   add_index "vehicle_models", ["vehicle_make_id"], :name => 'index_vehicle_models_on_vehicle_make_id'
+  add_index "vehicle_models", ["vehicle_type_id"], :name => 'index_vehicle_models_on_vehicle_type_id'
 
+  create_table "vehicle_types", :force => true do |t|
+    t.string "name"
+    t.integer "position"
+  end
+  
   create_table "product_vehicle_makes", :force => true do |t|
     t.integer  "product_id", :limit => 11
     t.integer  "vehicle_make_id"
@@ -143,5 +158,13 @@ ActiveRecord::Schema.define(:version => 20090324133514) do
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
+  create_table :sessions do |t|
+    t.string :session_id, :null => false
+    t.text :data
+    t.timestamps
+  end
+
+  add_index :sessions, :session_id
+  add_index :sessions, :updated_at
 
 end

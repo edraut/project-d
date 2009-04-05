@@ -1,0 +1,32 @@
+<% 	product_options = @product.product_options
+%>
+<div id="product_option_list" class="span-8 last">
+	<div id="product_option_list_header" >
+		<div class="span-2 field-label">
+			name
+		</div>
+			<div class="column span-1_5 field-label">
+			price
+		</div>
+			<div class="column span-1_5 field-label">
+			sku
+		</div>
+			<div class="span-1 field-label" style="overflow:visible;">
+			quant.
+		</div>
+		<div class="span-2 last field-label">
+			&nbsp;
+		</div>
+	</div>
+	<div id="product_option_list_items" class="span-8 last" ui_binding="sortable" ui_url="<%= manage_product_option_url(:id => :multiple) %>">
+	<% for product_option in product_options %>
+		<%= render :partial => "manage/product_options/element_container", :object => product_option %>
+	<% end %>
+	</div>
+</div>
+<div id="product_option_new" class="span-8 last">
+	<%= render :partial => "manage/product_options/new", :object => ProductOption.new(:product_id => @product.id) %>
+</div>
+<% javascript_tag do %>
+	bindSortables();
+<% end %>

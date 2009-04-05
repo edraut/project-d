@@ -38,7 +38,8 @@ function bindSortables(){
 					url: $(this).attr('ui_url'),
 					data: $(this).sortable('serialize')
 				})
-			}
+			},
+			handle: ($(this).find("[ui_binding='sortable_drag_handle']").length == 0) ? false : "[ui_binding='sortable_drag_handle']"
 		});
 	});
 }

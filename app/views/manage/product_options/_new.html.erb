@@ -1,0 +1,42 @@
+<% product_option = new %>
+
+<% form_for :product_option, product_option, :url => manage_product_options_url,
+	:html => {
+		:ajax_binding => 'ajax_form',
+		:ajax_success_element => 'product_option_list',
+		:ajax_success_placement => 'append',
+		:ajax_success_callback => "clearProductOptionNewForm();$('#product_option_list_header').show();",
+		:ajax_error_element => 'product_option_new',
+		:ajax_method => 'POST',
+		:id => 'product_option_new_form'
+	} do |f| %>
+	<div class="span-8 last">
+				<div class="span-2">
+			<%= product_option.first_error_on :name %>
+			<%= f.text_field :name, :class => 'textfield-2' %>
+		</div>
+				<div class="column span-1_5">
+			<%= product_option.first_error_on :price %>
+			<%= f.text_field :price, :class => 'textfield-1_5' %>
+		</div>
+				<div class="column span-1_5">
+			<%= product_option.first_error_on :sku %>
+			<%= f.text_field :sku, :class => 'textfield-1_5' %>
+		</div>
+				<div class="span-1">
+			<%= product_option.first_error_on :inventory_quantity %>
+			<%= f.text_field :inventory_quantity, :class => 'textfield-1' %>
+		</div>
+		
+		<div class="span-2 last">
+			<%= f.hidden_field :product_id %>
+<%= f.submit :add %>
+		</div>
+	</div>
+<% end %>
+<% javascript_tag do %>
+	function clearProductOptionNewForm(){
+		$('#product_option_new_form input:text:not("#product_option_price")').val(null);
+
+	};
+<% end %>

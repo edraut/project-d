@@ -8,13 +8,16 @@
 		:ajax_success_callback => "$('#vehicle_model_#{vehicle_model.id}').removeClass('editing');",
 		:id => "edit_vehicle_model_form_#{vehicle_model.id}"
 	} do |f| %>
-	<div class="span-6 last">
-				<div class="span-3">
+	<div class="span-12 last">
+		<div class="span-4 prepend-1">
 			<%= vehicle_model.first_error_on :name %>
-			<%= f.text_field :name %>
+			<%= f.text_field :name, :class => 'textfield-4', :id => "vehicle_model_name_#{vehicle_model.id}" %>
 		</div>
-		
-		<div class="span-3 last">
+		<div class="span-3">
+			<%= vehicle_model.first_error_on :name %>
+			<%= f.select :vehicle_type_id, VehicleType.all.map{|vt| [vt.name,vt.id]} %>
+		</div>
+		<div class="span-4 last">
 <%= f.submit :save %>
 <%= link_to 'cancel', manage_vehicle_model_url(vehicle_model),
 	:ajax_binding => 'ajax_link',

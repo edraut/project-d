@@ -1,0 +1,27 @@
+<div class="span-24 last">
+	<% form_for :product, @product,
+		:url => manage_product_url(@product),
+		:html => {
+			:ajax_binding => 'ajax_form',
+			:ajax_success_element => "product_name_container",
+			:ajax_error_element => 'product_name_container',
+			:ajax_method => 'PUT',
+			:ajax_success_callback => "$('#product_name_container').removeClass('editing');",
+			:id => "edit_product_name_form"
+		} do |f| %>
+		<div class="span-2 field-label">
+			name
+		</div>
+		<div class="span-4">
+			<%= f.text_field :name, :class => 'textfield-4' %>
+		</div>
+		<div class="span-4">
+			<%= f.submit 'save name' %> or 
+			<%= link_to 'cancel', manage_product_url(:id => @product.id, :attribute => 'name'),
+				:ajax_binding => 'ajax_link',
+				:ajax_method => 'GET',
+				:ajax_success_element => 'product_name_container',
+				:ajax_success_callback => "$('#product_name_container').removeClass('editing');"
+			%>
+	<% end %>
+</div>

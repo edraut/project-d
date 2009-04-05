@@ -9,7 +9,7 @@ class Manage::VehicleMakesController < Manage::ApplicationController
   # GET /manage_vehicle_makes/1
   # GET /manage_vehicle_makes/1.xml
   def show
-    render :partial => 'element_container', :object => @vehicle_make
+    render :partial => 'show', :object => @vehicle_make
   end
 
   # GET /manage_vehicle_makes/new

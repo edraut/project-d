@@ -1,4 +1,18 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :products
+
+  map.logout '/logout', :controller => 'sessions', :action => 'destroy'
+  map.login '/login', :controller => 'sessions', :action => 'new'
+  map.register '/register', :controller => 'users', :action => 'create'
+  map.signup '/signup', :controller => 'users', :action => 'new'
+  map.resources :users
+
+  map.resource :session
+
+  map.resources :vehicle_types
+
+  map.resources :product_options
+
   map.resources :colors
 
   map.resources :sizes
@@ -25,10 +39,6 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :product_sizes
 
-  map.resources :users
-
-  map.resource :session
-
   map.namespace :manage do |manage|
     manage.resources :colors
     manage.resources :sizes
@@ -38,16 +48,14 @@ ActionController::Routing::Routes.draw do |map|
     manage.resources :product_sizes
     manage.resources :manufacturers
     manage.resources :products
+    manage.resources :product_options
     manage.resources :categories
     manage.resources :product_images
     manage.resources :vehicle_models
     manage.resources :vehicle_makes
+    manage.resources :vehicle_types
   end
   
-  map.logout '/logout', :controller => 'sessions', :action => 'destroy'
-  map.login '/login', :controller => 'sessions', :action => 'new'
-  map.register '/register', :controller => 'users', :action => 'create'
-  map.signup '/signup', :controller => 'users', :action => 'new'
   map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate', :activation_code => nil 
 
   # The priority is based upon order of creation: first created -> highest priority.

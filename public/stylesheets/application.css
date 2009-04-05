@@ -25,6 +25,12 @@ h3 {
 .textfield-1_5 {
 	width: 44px;
 }
+.textfield-2 {
+	width: 64px;
+}
+.textfield-3 {
+	width: 104px;
+}
 .textfield-4 {
 	width: 144px;
 }
@@ -60,6 +66,9 @@ h3 {
 }
 .editing {
 	background-color: #DDDDDD;
+}
+.list_item {
+	padding: 5px 0;
 }
 .error_text {
 	color: red;

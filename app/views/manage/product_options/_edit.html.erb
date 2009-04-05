@@ -1,0 +1,38 @@
+<% product_option = edit %>
+<% form_for :product_option, product_option,
+	:url => manage_product_option_url(product_option),
+	:html => {
+		:ajax_binding => 'ajax_form',
+		:ajax_success_element => "product_option_#{product_option.id}",
+		:ajax_method => 'PUT',
+		:ajax_success_callback => "$('#product_option_#{product_option.id}').removeClass('editing');",
+		:id => "edit_product_option_form_#{product_option.id}"
+	} do |f| %>
+	<div class="span-8 last">
+				<div class="span-2">
+			<%= product_option.first_error_on :name %>
+			<%= f.text_field :name, :class => 'textfield-2' %>
+		</div>
+				<div class="column span-1_5">
+			<%= product_option.first_error_on :price %>
+			<%= f.text_field :price, :class => 'textfield-1_5' %>
+		</div>
+				<div class="column span-1_5">
+			<%= product_option.first_error_on :sku %>
+			<%= f.text_field :sku, :class => 'textfield-1_5' %>
+		</div>
+				<div class="span-1">
+			<%= product_option.first_error_on :inventory_quantity %>
+			<%= f.text_field :inventory_quantity, :class => 'textfield-1' %>
+		</div>
+		
+		<div class="span-2 last">
+<input type="image" src="/images/accept-16x16.png"/> |
+<%= link_to 'cancel', manage_product_option_url(product_option),
+	:ajax_binding => 'ajax_link',
+	:ajax_method => 'GET',
+	:ajax_success_element => "product_option_#{product_option.id}",
+	:ajax_success_callback => "$('#product_option_#{product_option.id}').removeClass('editing');" %>
+		</div>
+	</div>
+<% end %>

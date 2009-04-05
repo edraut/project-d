@@ -1,0 +1,27 @@
+
+<div id="vehicle_model_list" class="span-12 last">
+	<div id="vehicle_make_model_header_<%= @vehicle_make.id %>" class="span-12 last">
+		<div class="span-7 prepend-1 field-label">
+			<%= @vehicle_make.name %> models
+		</div>
+		<div class="span-4 last">
+			<a onclick="$('#vehicle_make_models_<%= @vehicle_make.id %>').empty();$('#vehicle_make_models_link_<%= @vehicle_make.id %>').show();">close</a>
+		</div>
+	</div>
+	<div class="span-4 prepend-1 field-label">
+		name
+	</div>
+	<div class="span-3 field-label">
+		type
+	</div>
+	
+	<div class="span-4 last">
+		&nbsp;
+	</div>
+	<% for vehicle_model in @vehicle_models %>
+		<%= render :partial => "manage/vehicle_models/element_container", :object => vehicle_model %>
+	<% end %>
+</div>
+<div id="vehicle_model_new">
+	<%= render :partial => "manage/vehicle_models/new", :object => VehicleModel.new(:vehicle_make_id => @vehicle_make.id) %>
+</div>

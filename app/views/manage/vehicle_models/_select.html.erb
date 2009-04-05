@@ -1,0 +1,4 @@
+<% these_options = @vehicle_models.any? ? (@vehicle_models.map{|vehicle_model| [vehicle_model.name,vehicle_model.id]}) : [['-',nil]] %>
+<div class="span-8 last">
+	<%= select_tag 'product[vehicle_model_ids][]', options_for_select(these_options, @product ? @product.product_vehicle_models.map{|pvm| pvm.vehicle_model_id} : nil), :id => 'vehicle_model_list', :multiple => true %>
+</div>

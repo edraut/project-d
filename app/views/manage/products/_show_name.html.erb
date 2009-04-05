@@ -1,0 +1,11 @@
+<div class="span-22">
+<h2><%= @product.name %></h2>
+</div>
+<div class="span-2 last">
+	<%= link_to 'edit name', edit_manage_product_url(:id => @product.id, :attribute => 'name'),
+	 	:ajax_binding => 'ajax_link',
+		:ajax_method => 'GET',
+		:ajax_success_element => 'product_name_container',
+		:ajax_success_callback => "$('#product_name_container').addClass('editing');"
+	%>
+</div>
