@@ -9,7 +9,8 @@ class Manage::ProductImagesController < Manage::ApplicationController
   # GET /manage_product_images/1
   # GET /manage_product_images/1.xml
   def show
-    render :partial => 'element_container', :object => @product_image
+    @product = @product_image.product
+    render :partial => 'show', :object => @product_image
   end
 
   # GET /manage_product_images/new
@@ -31,10 +32,10 @@ class Manage::ProductImagesController < Manage::ApplicationController
   def create
     position = @product.product_images.any? ? @product.product_images.maximum(:position) + 1 : 1
     @product_image = ProductImage.new(params[:product_image].merge(:position => position))
-    
+    @product = @product_image.product
     success = true
     if @product_image.save
-      @rendered_image = render_to_string :partial => 'element_container', :object => @product_image
+      @rendered_image = render_to_string :partial => 'element_container', :object => @product_image, :locals => {:row_end => ((@product.product_images.index(@product_image) % 2) == 1) }
       @rendered_image.gsub!(/(\\|<\/|\r\n|[\n\r"'])/) { ActionView::Helpers::JavaScriptHelper::JS_ESCAPE_MAP[$1] }
     else
       success = false
@@ -66,9 +67,10 @@ class Manage::ProductImagesController < Manage::ApplicationController
   # DELETE /manage_product_images/1
   # DELETE /manage_product_images/1.xml
   def destroy
+    @product = @product_image.product
     @product_image.destroy
-
-    render :nothing => true
+    @product.reload
+    render :partial => "plain_index", :object => @product and return
   end
 
   private

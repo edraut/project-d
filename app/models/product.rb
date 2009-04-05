@@ -12,8 +12,23 @@ class Product < ActiveRecord::Base
   has_many :vehicle_makes, :through => :product_vehicle_makes
   has_many :vehicle_models, :through => :product_vehicle_models
   composed_of :price, :class_name => 'Money', :mapping => [%w(price cents)]
-  
-  def validate
-    errors.add('category_id','You must select a category and subcategory for your product') unless category_id
+  before_update 'self.add_info if self.state == "incomplete"'
+  state_machine :initial => :incomplete do
+    event :add_info do
+      transition :incomplete => :complete, :complete => same
+    end
+    
+    state :incomplete do
+      validates_presence_of :name
+      def validate
+      end
+    end
+    
+    state :complete do
+      def validate
+        errors.add('category_id','You must select a category and subcategory for your product') unless category_id
+      end
+    end
   end
+  
 end

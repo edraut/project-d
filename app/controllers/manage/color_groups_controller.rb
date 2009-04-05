@@ -16,6 +16,7 @@ class Manage::ColorGroupsController < Manage::ApplicationController
   # GET /manage_color_groups/new.xml
   def new
     @color_group = ColorGroup.new
+    @product = Product.find(params[:product_id].to_i) if params.has_key? :product_id
 
     render :partial => 'new', :object => @color_group
   end
@@ -33,7 +34,11 @@ class Manage::ColorGroupsController < Manage::ApplicationController
 
     if @color_group.save
       flash[:notice] = 'ColorGroup was successfully created.'
-      render :partial => 'element_container', :object => @color_group
+      if params[:product_id]
+        render :partial => 'select_option', :object => @color_group
+      else
+        render :partial => 'element_container', :object => @color_group
+      end
     else
       render :partial => 'new', :object => @color_group, :status => 409
     end

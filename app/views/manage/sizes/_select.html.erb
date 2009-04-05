@@ -1,12 +1,36 @@
 <% these_options = @sizes.any? ? ([['Select sizes',nil]] + @sizes.map{|size| [size.name,size.id]}) : [['-',nil]] %>
-<%= select_tag 'product[size_ids][]', options_for_select(these_options, @product ? @product.product_sizes.map{|ps| ps.size_id} : nil), :id => 'size_list', :multiple => true %>
+<div class="span-4 field-label">
+	product sizes
+</div>
+<div class="span-4 last">
 <% if @size_group %>
 	<%= link_to '(add a new size)', new_manage_size_url(:size => {:size_group_id => @size_group.id}, :product_id => @product.id),
 		:ajax_binding => 'ajax_link',
 		:ajax_method => 'GET',
 		:ajax_success_element => "size_new",
 		:ajax_success_callback => "$('#size_new_link').hide();",
-		:id => 'size_new_link'
+		:id => 'size_new_link',
+		:class => 'quiet tiny'
 	%>
-	<div id="size_new" class="span-7 last"></div>
+<% else %>
+	&nbsp;
+<% end %>
+</div>
+<div id="size_new" class="span-8 last"></div>
+<div id="size_list" class="span-8 last">
+	<% for size in @sizes %>
+	<div class="span-5">
+		<%= check_box_tag 'product[size_ids][]', size.id, (@product.size_ids.include? size.id), :custom_binding => 'price_toggler', :id => "product_size_checkbox_#{size.id}", :custom_id => size.id %> <%= size.name %>
+	</div>
+	<div class="span-3 last" custom_binding="price_display" custom_id="<%= size.id %>"><% if @product.size_ids.include? size.id %> <span class="field-label">price</span> $<input type="text" name="product_sizes[<%= size.id %>][price]" class="textfield-1_5" value="<%= @product.product_sizes.find(:first, :conditions => {:size_id => size.id}).price.to_s %>"/><% end %></div>
+	<% end %>
+</div>
+<% javascript_tag do %>
+	$("[custom_binding='price_toggler']").change(function(e){
+		if($(e.target).is(':checked')){
+			$("[custom_binding='price_display'][custom_id=" + $(e.target).attr('custom_id') + "]").html('<span class="field-label">price</span> $<input type="text" name="product_sizes[' + $(e.target).attr('custom_id') + '][price]" class="textfield-1"/>');
+		} else {
+			$("[custom_binding='price_display'][custom_id=" + $(e.target).attr('custom_id') + "]").empty();
+		}
+	});
 <% end %>

@@ -1,4 +1,5 @@
 <% product_image = edit %>
+<div class="span-4 last image-medium-wrapper"><%= image_tag product_image.image.url(:medium) if product_image.image.exists? -%></div>
 <% form_for :product_image, product_image,
 	:url => manage_product_image_url(product_image),
 	:html => {
@@ -8,23 +9,21 @@
 		:ajax_success_callback => "$('#product_image_#{product_image.id}').removeClass('editing');",
 		:id => "edit_product_image_form_#{product_image.id}"
 	} do |f| %>
-	<div class="span-9 last">
-				<div class="span-3">
-			<%= product_image.first_error_on :caption %>
-			<%= f.text_field :caption %>
-		</div>
-				<div class="span-3">
-			<%= product_image.first_error_on :image %>
-			<%= f.text_field :image %>
-		</div>
-		
-		<div class="span-3 last">
-<%= f.submit :save %>
-<%= link_to 'cancel', manage_product_image_url(product_image),
-	:ajax_binding => 'ajax_link',
-	:ajax_method => 'GET',
-	:ajax_success_element => "product_image_#{product_image.id}",
-	:ajax_success_callback => "$('#product_image_#{product_image.id}').removeClass('editing');" %>
-		</div>
+	<div class="span-4 last field-label">
+		caption
 	</div>
+	<div class="span-4 last">
+			<%= product_image.first_error_on :caption %>
+			<%= f.text_field :caption, :class => 'textfield-4' %>
+	</div>
+		
+	<div class="span-4 last">
+		<%= f.submit :save %> or
+		<%= link_to 'cancel', manage_product_image_url(product_image),
+			:ajax_binding => 'ajax_link',
+			:ajax_method => 'GET',
+			:ajax_success_element => "product_image_#{product_image.id}",
+			:ajax_success_callback => "$('#product_image_#{product_image.id}').removeClass('editing');" %>
+	</div>
+
 <% end %>

@@ -1,18 +1,25 @@
 <% these_options = @categories.any? ? ([['Select a category',nil]] + @categories.map{|category| [category.name,category.id]}) : [['-',nil]] %>
-<%= select_tag 'product[category_id]', options_for_select(these_options,(@product and @product.category) ? @product.category.id : nil) %>
 <% if @parent %>
 <%	url_params = {:parent_id => @parent.id}
  		if @product
 			url_params[:product_id] = @product.id
 		end
-%><br/>
-<%= link_to '(add a new subcategory)', new_manage_category_url(url_params), 
+%>
+<div class="span-4 last"><%= link_to '(add a new subcategory)', new_manage_category_url(url_params), 
 	:ajax_binding => 'ajax_link',
 	:ajax_method => 'GET',
 	:ajax_success_element => 'new_subcategory',
 	:ajax_success_callback => "$('#new_subcategory_link').hide();",
-	:id => 'new_subcategory_link'
-%>
-<div id="new_subcategory"></div>
-
+	:id => 'new_subcategory_link',
+	:class => 'quiet tiny'
+%></div>
+<% else %>
+<div class="span-4 last">&nbsp;</div>
 <% end %>
+<div class="span-8 last">
+<%= select_tag 'product[category_id]', options_for_select(these_options,(@product and @product.category) ? @product.category.id : nil) %>
+<% if @parent %>
+<br/>
+<div id="new_subcategory"></div>
+<% end %>
+</div>

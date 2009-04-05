@@ -1,0 +1,32 @@
+<div class="span-4 last">
+<%= link_to '(add a new color group)', new_manage_color_group_url(:product_id => @product.id),
+	:ajax_binding => 'ajax_link',
+	:ajax_method => 'GET',
+	:ajax_success_element => "color_group_new",
+	:ajax_success_callback => "$('#color_group_new_link').hide();",
+	:id => 'color_group_new_link',
+	:class => 'quiet tiny'
+%>
+</div>
+<div class="span-8 last">
+	<%= select_tag 'color_group', options_for_select([['Select a color group',nil]] + ColorGroup.all.map{|sg| [sg.name,sg.id]}, @product.colors.any? ? @product.colors.first.color_group_id : nil), :id => 'color_group_list' %>
+</div>
+<div id="color_group_new" class="span-8 last"></div>
+<% javascript_tag do %>
+$(document).ready(function(){
+	$('#color_group_list').change(function(e){
+		loadColorSelect($(e.target).val());
+	});
+	function loadColorSelect(parent_val){
+		$.ajax({
+			type: 'GET',
+			url: '<%= manage_colors_url %>' + '?color_group_id=' + parent_val + '&product_id=<%= @product.id %>',
+			success: function(data,textStatus){
+				$('#color_select_container').html(data);
+				bindAjaxEvents();
+			}
+		});
+	};
+	loadColorSelect('<%= @product.colors.any? ? @product.colors.first.color_group_id : nil %>');
+});
+<% end %>

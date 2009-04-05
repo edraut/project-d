@@ -1,18 +1,19 @@
 function bindAjaxEvents(target_document){
-	if(!target_document){
-		target_document = document;
-	}
-	$("[ajax_binding='ajax_form']",target_document).unbind('submit', {element_type:'form'}, ajaxEvent);	
-	$("[ajax_binding='ajax_form']",target_document).bind('submit', {element_type:'form'}, ajaxEvent);
-	$("[ajax_binding='ajax_link']",target_document).unbind('click', {element_type:'link'}, ajaxEvent);	
-	$("[ajax_binding='ajax_link']",target_document).bind('click', {element_type:'link'}, ajaxEvent);
+	$("[ajax_binding='ajax_form']",target_document).unbind('submit', ajaxEvent);	
+	$("[ajax_binding='ajax_form']").bind('submit', ajaxEvent);
+	$("[ajax_binding='ajax_link']",target_document).unbind('click', ajaxEvent);	
+	$("[ajax_binding='ajax_link']").bind('click', ajaxEvent);
 };
 function ajaxEvent(e){
 	our_element = $(e.target);
-	element_type = e.data.element_type;
-	if( element_type == 'link' && (our_element.attr('nodeName').toUpperCase() != 'A') ){
+	if(our_element.is('form')){
+		element_type = 'form';
+	} else if(our_element.is('a')) {
+		element_type = 'link';
+	} else if(our_element.parents('a').length > 0){
+		element_type = 'link';
 		our_element = our_element.parents('a');
-	};
+	}
 	if(our_element.attr('ajax_return_type')){
 		return_type = our_element.attr('ajax_return_type');
 	} else {

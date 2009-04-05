@@ -1,0 +1,20 @@
+<% these_options = @colors.any? ? ([['Select colors',nil]] + @colors.map{|color| [color.name,color.id]}) : [['-',nil]] %>
+<div class="span-4 field-label">product colors</div>
+<div class="span-4 last">
+<% if @color_group %>
+	<%= link_to '(add a new color)', new_manage_color_url(:color => {:color_group_id => @color_group.id}, :product_id => @product.id),
+		:ajax_binding => 'ajax_link',
+		:ajax_method => 'GET',
+		:ajax_success_element => "color_new",
+		:ajax_success_callback => "$('#color_new_link').hide();",
+		:id => 'color_new_link',
+		:class => 'quiet tiny'
+	%>
+<% else %>
+	&nbsp;
+<% end %>
+</div>
+<div id="color_new" class="span-7 last"></div>
+<div class="span-8 last">
+	<%= select_tag 'product[color_ids][]', options_for_select(these_options, @product ? @product.product_colors.map{|ps| ps.color_id} : nil), :id => 'color_list', :multiple => true %>
+</div>

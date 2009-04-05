@@ -4,7 +4,7 @@ class Manage::ProductsController < Manage::ApplicationController
   before_filter :manage_money, :only => [:create,:update]
   def index
     @products = Product.find(:all)
-
+    @product = nil
   end
 
   # GET /manage_products/1
@@ -31,15 +31,19 @@ class Manage::ProductsController < Manage::ApplicationController
       flash[:notice] = 'Product was successfully created.'
       render :template => 'manage/products/edit' and return
     else
-      render :template => 'manage/products/new' and return
+      @products = Product.find(:all)
+      render :template => 'manage/products/index' and return
     end
   end
 
   # PUT /manage_products/1
   # PUT /manage_products/1.xml
   def update
-
     if @product.update_attributes(@editable_params)
+      for product_size in @product.product_sizes
+        product_size.price = @editable_size_params[product_size.size_id.to_s][:price]
+        product_size.save
+      end
       flash[:notice] = 'Product was successfully updated.'
       render :template => 'manage/products/show' and return
     else
@@ -62,5 +66,11 @@ class Manage::ProductsController < Manage::ApplicationController
   def prepare_params
     @editable_params = params[:product].dup
     @money_attributes = [:price]
+    if params.has_key? :product_sizes
+      @editable_size_params = params[:product_sizes].dup
+      for size_id in params[:product][:size_ids]
+        @editable_size_params[size_id.to_s][:price] = string_to_money(@editable_size_params[size_id.to_s][:price])
+      end
+    end
   end
 end

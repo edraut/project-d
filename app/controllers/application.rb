@@ -18,9 +18,7 @@ class ApplicationController < ActionController::Base
   
   def manage_money
     for money_attribute in @money_attributes
-      logger.info("MONEY: #{}")
       @editable_params[money_attribute] = string_to_money(@editable_params[money_attribute])
-      logger.info("MONEY: #{@editable_params[:price]}")
     end
   end
 

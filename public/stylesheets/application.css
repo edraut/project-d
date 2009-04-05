@@ -1,23 +1,35 @@
 h1 {
 	font-size: 30px;
 }
+h3 {
+	color: #555555;
+}
+.small-links a{
+	font-size: 12px;
+}
 .banner {
 	font-size: 30px;
 	font-weight: bold;
 	color: #0E0E0E;
 }
-.textarea-7 {
-	width: 258px;
-	height: 103px;
+.textarea-8 {
+	width: 298px;
+	height: 114px;
 }
-.textfield-7 {
-	width: 264px;
+.textfield-8 {
+	width: 304px;
 }
 .textfield-1 {
 	width: 24px;
 }
 .textfield-1_5 {
 	width: 44px;
+}
+.textfield-4 {
+	width: 144px;
+}
+.textfield-5 {
+	width: 184px;
 }
 .span-1_5 {
 	width: 50px;
@@ -26,14 +38,17 @@ h1 {
 	text-align: right;
 }
 .border-bottom {
-	border-bottom: 1px solid grey;
+	border-bottom: 1px solid #8F8F8F;
 	padding-bottom: 6px;
 	margin-bottom: 10px;
 }
 .border-top {
-	border-top: 1px solid grey;
+	border-top: 1px solid #8F8F8F;
 	padding-top: 6px;
 	margin-top: 10px;
+}
+.border {
+	border-right: 1px solid #8F8F8F;
 }
 .image-medium-wrapper {
 	height: 150px;
@@ -44,11 +59,15 @@ h1 {
 	border-bottom: 1px solid #8F8F8F;
 }
 .editing {
-	background-color: #CCCCCC;
+	background-color: #DDDDDD;
 }
 .error_text {
 	color: red;
 }
 .field-label {
-	color: grey;
+	font-size: 12px;
+	color: #555555;
+}
+a.tiny {
+	font-size: 10px;
 }

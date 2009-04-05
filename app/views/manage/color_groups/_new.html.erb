@@ -5,24 +5,19 @@ Add a new color_group</br>
 		:ajax_binding => 'ajax_form',
 		:ajax_success_element => 'color_group_list',
 		:ajax_success_placement => 'append',
-		:ajax_success_callback => "$('#color_group_new_link').click();",
+		:ajax_success_callback => "$('#color_group_new').empty();$('#color_group_new_link').show();",
 		:ajax_error_element => 'color_group_new',
 		:ajax_method => 'POST'
 	} do |f| %>
-	<div class="span-6 last">
-				<div class="span-3">
+	<div class="span-7 last">
+				<div class="span-4">
 			<%= color_group.first_error_on :name %>
-			<%= f.text_field :name %>
+			<%= f.text_field :name, :size => '20' %>
+			<%= hidden_field_tag 'product_id', @product.id if @product %>
 		</div>
 		
-		<div class="span-3 last">
-<%= f.submit :add %>
+		<div class="span-3 last text-right">
+<%= f.submit :add %> | <a onclick="$('#color_group_new').empty();$('#color_group_new_link').show();">cancel</a>
 		</div>
 	</div>
 <% end %>
-<%= link_to '', new_manage_color_group_url,
- 	:ajax_method => 'GET',
-	:ajax_binding => 'ajax_link',
-	:ajax_success_element => 'color_group_new',
-	:id => 'color_group_new_link'
-	%>

@@ -2,8 +2,20 @@ class Manage::ColorsController < Manage::ApplicationController
   before_filter :get_color, :only => [:show,:edit,:update,:destroy]
 
   def index
-    @colors = Color.find(:all)
-
+    @product = Product.find(params[:product_id].to_i) if params[:product_id]
+    if params[:color_group_id]
+      if params[:color_group_id].to_i > 0
+        @color_group = ColorGroup.find(params[:color_group_id].to_i)
+        @colors = @color_group.colors
+      else
+        @color_group = nil
+        @colors = []
+      end
+      
+      render :partial => 'select' and return
+    else
+      @colors = Color.find(:all)
+    end
   end
 
   # GET /manage_colors/1
@@ -15,8 +27,8 @@ class Manage::ColorsController < Manage::ApplicationController
   # GET /manage_colors/new
   # GET /manage_colors/new.xml
   def new
-    @color = Color.new
-
+    @color = Color.new(params[:color])
+    @product = Product.find(params[:product_id].to_i) if params.has_key? :product_id
     render :partial => 'new', :object => @color
   end
 
@@ -32,8 +44,12 @@ class Manage::ColorsController < Manage::ApplicationController
     @color = Color.new(params[:color])
 
     if @color.save
-      flash[:notice] = 'Color was successfully created.'
-      render :partial => 'element_container', :object => @color
+      if params[:product_id]
+        render :partial => 'select_option', :object => @color
+      else
+        flash[:notice] = 'Color was successfully created.'
+        render :partial => 'element_container', :object => @color
+      end
     else
       render :partial => 'new', :object => @color, :status => 409
     end

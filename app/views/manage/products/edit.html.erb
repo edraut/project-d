@@ -1,90 +1,113 @@
-<div class="span-24 last">
-	<div class="span-10">
-		<div class="span-10 last">
-			<h2><%= @product.name %></h2>
-		</div>
-		<% form_for :product, @product, :url => manage_product_url(:id => @product.id, :_method => :put) do |f| %>
-			<div class="span-3 text-right field-label">
+<div class="span-24 last small-links">
+	<div class="span-24 last">
+		<h2><%= @product.name %></h2>
+	</div>
+	<div class="span-8 border">
+		<h3>Images</h3>
+		<%= render :partial => 'manage/product_images/index', :locals => {:product => @product} %>
+	</div>
+	<% form_for :product, @product, :url => manage_product_url(:id => @product.id, :_method => :put) do |f| %>
+		<div class="span-8 border">
+			<h3>Info</h3>
+			<div class="span-8 last field-label">
 				description
 			</div>
-			<div class="span-7 last">
+			<div class="span-8 last">
 				<%= @product.first_error_on :description %>
-				<%= f.text_area :description, :class => 'textarea-7' %><br/>
+				<%= f.text_area :description, :class => 'textarea-8' %><br/>
 			</div>
-			<div class="span-3 text-right field-label">
+			<div class="span-3 field-label">
 				sku
 			</div>
-			<div class="column span-1_5">
+			<div class="span-3 field-label">
+				price
+			</div>
+			<div class="span-2 last field-label">
+				inventory
+			</div>
+			<div class="column span-3">
 				<%= @product.first_error_on :sku %>
 				<%= f.text_field :sku, :class => 'textfield-1_5' %><br/>
 			</div>
-			<div class="span-1 text-right field-label">
-				price
-			</div>
-			<div class="column span-1_5">
+			<div class="column span-3">
 				<%= @product.first_error_on :price %>
-				<%= f.text_field :price, :value => @product.price.to_s, :class => 'textfield-1_5' %><br/>
+				$<%= f.text_field :price, :value => @product.price.to_s, :class => 'textfield-1_5' %><br/>
 			</div>
-			<div class="span-2 text-right field-label">
-				inventory
-			</div>
-			<div class="span-1 last">
+			<div class="span-2 last">
 				<%= @product.first_error_on :inventory_quantity %>
 				<%= f.text_field :inventory_quantity, :class => 'textfield-1' %><br/>
 			</div>
-			<div class="span-10">&nbsp;</div>
-			<div class="span-3 text-right field-label">
-				category
-			</div>
-			<div class="span-7 last">
-				<%= @product.first_error_on :category_id %>
-				<%= select_tag 'top_level_category', options_for_select([['Select Top Level Category',nil]] + Category.top_level.map{|c| [c.name,c.id]}, @product.category ? @product.category.parent.id : nil), :class => 'select_large' %><br/>
+			<div class="span-8 last">&nbsp;</div>
+			<div class="span-8 last field-label">
+				<div class="span-4">
+					category
+				</div>
+				<div class="span-4 last">
 				<%= link_to '(add a new category)', new_manage_category_url(:product_id => @product.id), 
 					:ajax_binding => 'ajax_link',
 					:ajax_method => 'GET',
 					:ajax_success_element => 'new_category',
 					:ajax_success_callback => "$('#new_category_link').hide();",
-					:id => 'new_category_link'
+					:id => 'new_category_link',
+					:class => 'quiet tiny'
 				%>
+				</div>
+			</div>
+			<div class="span-8 last border-bottom">
+				<%= @product.first_error_on :category_id %>
+				<%= select_tag 'top_level_category', options_for_select([['Select Top Level Category',nil]] + Category.top_level.map{|c| [c.name,c.id]}, @product.category ? @product.category.parent.id : nil), :class => 'select_large' %><br/>
 				<div id="new_category"></div>
 			</div>
-			<div class="span-10">&nbsp;</div>
-			<div class="span-3 text-right field-label">
-				sub category
+			<div class="span-8 last field-label border-bottom">
+				<div class="span-4">sub category</div>
+				<div id="sub_category">
+				</div>
 			</div>
-			<div id="sub_category" class="span-7 last">
+			<div class="span-8 last border-bottom field-label">
+				<div class="span-4">
+				vehicle make
+				</div>
+				<%= render :partial => 'manage/vehicle_makes/index' %>
 			</div>
-			<div class="span-10">&nbsp;</div>
-			<div class="span-3 text-right field-label">
-				new
+		</div>
+		<div class="span-8 last">
+			<h3>Options</h3>
+			<div class="span-8 last border-bottom field-label">
+				<div class="span-4">
+					color group
+				</div>
+				<%= render :partial => 'manage/product_colors/index' %>
 			</div>
-			<div class="span-7 last">
-				<%= @product.first_error_on :new %>
-				<%= f.check_box :new %><br/>
-			</div>
-			<div class="span-3 text-right field-label">
-				sizes
-			</div>
-			<div class="span-7 last">
+			<div class="span-8 last border-bottom">
+				<div class="span-4 field-label">
+					size group
+				</div>
 				<%= render :partial => 'manage/product_sizes/index' %>
 			</div>
-			<div class="span-3">
-				&nbsp;
+			<div class="span-8 last border-bottom">
+				<div class="span-1 field-label">
+					new
+				</div>
+				<div class="span-1">
+					<%= @product.first_error_on :new %>
+					<%= f.radio_button :new, true %>
+				</div>
+				<div class="span-1 field-label">
+					used
+				</div>
+				<div class="span-1">
+					<%= @product.first_error_on :new %>
+					<%= f.radio_button :new, false %>
+				</div>
 			</div>
-			<div class="span-7 last">
-				<%= f.submit :save %> or <%= link_to 'cancel', manage_product_url(@product) %>
-			</div>
-			<% end %>
-		</div>
-		<div class="span-14 last">
-			<%= render :partial => 'manage/product_images/index', :locals => {:product => @product} %>
-			<div class="span-14 last">
-				<div class="span-7 last">
-					<%= render :partial => 'manage/product_colors/index' %>
+			<div class="span-8 last">
+				<div class="span-4 prepend-4 last text-right">
+					<%= f.submit 'save product' %> or <%= link_to 'cancel', manage_product_url(@product) %>
 				</div>
 			</div>
 		</div>
-	</div>
+	<% end %>
+</div>
 <% javascript_tag do %>
 $(document).ready(function(){
 	$('#top_level_category').change(function(e){

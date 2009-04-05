@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20090324133514) do
     t.integer  "inventory_quantity"
     t.integer  "category_id", :limit => 11
     t.boolean  "new", :default => true
+    t.string   "state"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -33,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20090324133514) do
   create_table "product_sizes", :force => true do |t|
     t.integer  "product_id", :limit => 11
     t.integer  "size_id", :limit => 11
+    t.integer  "price"
     t.integer  "position"
   end
   

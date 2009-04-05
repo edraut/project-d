@@ -16,6 +16,7 @@ class Manage::VehicleMakesController < Manage::ApplicationController
   # GET /manage_vehicle_makes/new.xml
   def new
     @vehicle_make = VehicleMake.new
+    @product = Product.find(params[:product_id].to_i) if params.has_key? :product_id
 
     render :partial => 'new', :object => @vehicle_make
   end
@@ -33,7 +34,11 @@ class Manage::VehicleMakesController < Manage::ApplicationController
 
     if @vehicle_make.save
       flash[:notice] = 'VehicleMake was successfully created.'
-      render :partial => 'element_container', :object => @vehicle_make
+      if params[:product_id]
+        render :partial => 'select_option', :object => @vehicle_make
+      else
+        render :partial => 'element_container', :object => @vehicle_make
+      end
     else
       render :partial => 'new', :object => @vehicle_make, :status => 409
     end

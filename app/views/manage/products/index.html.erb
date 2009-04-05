@@ -5,5 +5,5 @@
 	<% end %>
 </div>
 <div class="span-10 last">
-	<%= render :partial => 'new', :locals => {:product => Product.new} %>
+	<%= render :partial => 'new', :locals => {:product => @product ? @product : Product.new} %>
 </div>
