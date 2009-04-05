@@ -5,7 +5,11 @@ class FixtureManifest
       :vehicle_types => 1,
       :vehicle_makes => 1,
       :vehicle_models => 1,
-      :categories => 1
+      :categories => 1,
+      :products => {
+        :product_options => 1,
+        :product_images => 1
+      }
     }
   end
   

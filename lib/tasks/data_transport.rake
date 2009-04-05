@@ -56,7 +56,7 @@ namespace :db do
     recursively_write_fixtures(nil,nil,export_tables)
     puts "Database Dumped.\n\n"
     FileUtils.chdir(RAILS_ROOT + '/public')
-    %x[tar czf system.tgz system]
+    %x[tar czf system.tgz system/*]
   end
 end
 def recursively_write_fixtures(parent_table,parent_ids,tbl_hash)
