@@ -1,0 +1,9 @@
+body, div.dash-frame-color {
+	background-color: #DDD;
+}
+.dash-foreground-color, div.selected {
+	background-color: #FFF;
+}
+div.selected {
+	padding-bottom: 10px; margin-bottom: -10px;
+}

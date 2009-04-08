@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :product_option_vehicle_models
+
   map.resources :products
 
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
@@ -54,6 +56,7 @@ ActionController::Routing::Routes.draw do |map|
     manage.resources :vehicle_models
     manage.resources :vehicle_makes
     manage.resources :vehicle_types
+    manage.resources :product_option_vehicle_models
   end
   
   map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate', :activation_code => nil 

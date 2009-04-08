@@ -11,6 +11,12 @@ class Manage::ProductOptionsController < Manage::ApplicationController
   # GET /manage_product_options/1
   # GET /manage_product_options/1.xml
   def show
+    if params.has_key? :product_option_section
+      case params[:product_option_section]
+      when 'models'
+        render :partial => 'models', :object => @product_option and return
+      end
+    end
     render :partial => 'show', :object => @product_option
   end
 

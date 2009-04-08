@@ -1,5 +1,5 @@
 <% product_option = show %>
-<div class="span-8 last">
+<div class="span-10 last">
 <div class="span-2"><%= product_option.name.blank? ? '-' : product_option.name %></div>
 <div class="column span-1_5">
 <%= product_option.price %>
@@ -11,7 +11,11 @@
 <%= product_option.inventory_quantity.blank? ? '-' : product_option.inventory_quantity %>
 </div>
 
-<div class="span-2 last">
+<div class="span-4 last">
+<%= link_to 'models', manage_product_option_url(product_option) + '?product_option_section=models',
+	:ajax_binding => 'ajax_link',
+	:ajax_method => 'GET',
+	:ajax_success_element => "product_option_#{product_option.id}" %>
 <%= link_to image_tag('/images/pencil.png'), edit_manage_product_option_url(product_option),
 	:ajax_binding => 'ajax_link',
 	:ajax_method => 'GET',

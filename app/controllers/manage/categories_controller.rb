@@ -10,8 +10,12 @@ class Manage::CategoriesController < Manage::ApplicationController
         @parent = nil
         @categories = []
       end
-      @product = Product.find(params[:product_id]) if params[:product_id]
-      render :partial => 'select' and return
+      if params[:owner_type]
+        @owner_class = params[:owner_type].constantize
+        @owner_class_name = @owner_class.name
+        @owner = @owner_class.find(params[:owner_id]) if params[:owner_id]
+      end
+      render :partial => params[:ui_element] and return
     else
       @categories = Category.find(:all)
     end
@@ -32,9 +36,9 @@ class Manage::CategoriesController < Manage::ApplicationController
     else
       @category = Category.new
     end
-    if params[:product_id]
-      @product = Product.find(params[:product_id])
-      render :partial => 'new_from_product', :object => @category
+    if params[:ui_element]
+      @ui_element = params[:ui_element]
+      render :partial => 'new_ui_element', :object => @category
     else
       render :partial => 'new', :object => @category
     end
@@ -52,8 +56,8 @@ class Manage::CategoriesController < Manage::ApplicationController
     @category = Category.new(params[:category])
     if @category.save
       flash[:notice] = 'Category was successfully created.'
-      if params[:product_id]
-        render :partial => 'select_option_tag', :object => @category
+      if params[:ui_element]
+        render :partial => params[:ui_element] + '_tag', :object => @category
       else
         render :partial => 'element_container', :object => @category
       end

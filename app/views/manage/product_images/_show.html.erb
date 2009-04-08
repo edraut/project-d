@@ -10,7 +10,7 @@
 		:ajax_method => 'GET',
 		:ajax_success_element => "product_image_#{product_image.id}",
 		:ajax_success_callback => "$('#product_image_#{product_image.id}').addClass('editing');" %> | 
-	<%= link_to 'delete', manage_product_image_url(product_image),
+	<%= link_to 'delete image', manage_product_image_url(product_image),
 		:ajax_binding => 'ajax_link',
 		:ajax_method => 'DELETE',
 		:ajax_success_element => 'product_image_list',

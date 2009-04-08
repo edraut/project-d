@@ -8,25 +8,39 @@ class Product < ActiveRecord::Base
   has_many :colors, :through => :product_colors
   has_many :product_sizes, :dependent => :destroy
   has_many :sizes, :through => :product_sizes
-  has_many :product_vehicle_makes, :dependent => :destroy
-  has_many :product_vehicle_models, :dependent => :destroy
-  has_many :vehicle_makes, :through => :product_vehicle_makes
-  has_many :vehicle_models, :through => :product_vehicle_models
-
-  state_machine :initial => :incomplete do
-    event :add_info do
-      transition :incomplete => :complete, :complete => same
+  composed_of :ground_price, :class_name => 'Money', :mapping => [%w(ground_price cents)]
+  composed_of :second_day_price, :class_name => 'Money', :mapping => [%w(second_day_price cents)]
+  composed_of :overnight_price, :class_name => 'Money', :mapping => [%w(overnight_price cents)]
+  composed_of :international_price, :class_name => 'Money', :mapping => [%w(international_price cents)]
+  named_scope :published, :conditions => {:state => 'published'}
+  
+  state_machine :initial => :unpublished do
+    event :publish do
+      transition :unpublished => :published
     end
     
-    state :incomplete do
+    event :unpublish do
+      transition :published => :unpublished
+    end
+    
+    state :unpublished do
       validates_presence_of :name
       def validate
+        errors.add('category_id','You must select a category and subcategory for your product') unless category_id
+      end
+      def next_action
+        'publish'
       end
     end
     
-    state :complete do
+    state :published do
+      validates_presence_of :name
       def validate
         errors.add('category_id','You must select a category and subcategory for your product') unless category_id
+        errors.add_to_base('You must add at least one product option before you can publish') unless product_options.any?
+      end
+      def next_action
+        'unpublish'
       end
     end
   end

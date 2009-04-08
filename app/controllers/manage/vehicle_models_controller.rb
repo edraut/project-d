@@ -2,17 +2,7 @@ class Manage::VehicleModelsController < Manage::ApplicationController
   before_filter :get_vehicle_model, :only => [:show,:edit,:update,:destroy]
 
   def index
-    if params.has_key? :product_id
-      if params.has_key? :product and params[:product].has_key? :vehicle_make_ids
-        @vehicle_makes = VehicleMake.find(params[:product][:vehicle_make_ids])
-        @vehicle_models = VehicleModel.find(:all, :conditions => {:vehicle_make_id => params[:product][:vehicle_make_ids]})
-      else
-        @vehicle_makes = []
-        @vehicle_models = []
-      end
-      @product = Product.find(params[:product_id]) if params[:product_id]
-      render :partial => 'select' and return
-    elsif params.has_key? :vehicle_make_id
+    if params.has_key? :vehicle_make_id
       @vehicle_make = VehicleMake.find(:first, :include => :vehicle_models, :conditions => {:id => params[:vehicle_make_id]})
       @vehicle_models = @vehicle_make.vehicle_models
       render :partial => 'index' and return

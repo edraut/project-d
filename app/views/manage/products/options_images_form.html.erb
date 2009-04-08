@@ -1,0 +1,13 @@
+<%= render :partial => 'section_nav' %>
+<div class="span-24 last dash-foreground-color container-padding">
+	<div class="span-8 prepend-1 border">
+		<h3>Images</h3>
+		<%= render :partial => 'manage/product_images/index', :locals => {:product => @product} %>
+	</div>
+	<div class="span-10 prepend-2 last">
+		<h3>Options</h3>
+		<div class="span-10 last border-bottom">
+			<%= render :partial => 'manage/product_options/index' %>
+		</div>
+	</div>
+</div>

@@ -1,8 +1,8 @@
 <% 	product_options = @product.product_options
 %>
-<div id="product_option_list" class="span-8 last">
+<div id="product_option_list" class="span-10 last">
 	<div id="product_option_list_header" >
-		<div class="span-2 field-label">
+		<div class="span-2 prepend-2 field-label">
 			name
 		</div>
 			<div class="column span-1_5 field-label">
@@ -18,13 +18,13 @@
 			&nbsp;
 		</div>
 	</div>
-	<div id="product_option_list_items" class="span-8 last" ui_binding="sortable" ui_url="<%= manage_product_option_url(:id => :multiple) %>">
+	<div id="product_option_list_items" class="span-10 last" ui_binding="sortable" ui_url="<%= manage_product_option_url(:id => :multiple) %>">
 	<% for product_option in product_options %>
 		<%= render :partial => "manage/product_options/element_container", :object => product_option %>
 	<% end %>
 	</div>
 </div>
-<div id="product_option_new" class="span-8 last">
+<div id="product_option_new" class="span-10 last">
 	<%= render :partial => "manage/product_options/new", :object => ProductOption.new(:product_id => @product.id) %>
 </div>
 <% javascript_tag do %>

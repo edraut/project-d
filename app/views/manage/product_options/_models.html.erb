@@ -1,0 +1,34 @@
+<% product_option = models %>
+<div class="span-10 last">
+<div class="span-2"><%= product_option.name.blank? ? '-' : product_option.name %></div>
+<div class="column span-1_5">
+<%= product_option.price %>
+</div>
+<div class="column span-1_5">
+<%= product_option.sku.blank? ? '-' : product_option.sku %>
+</div>
+<div class="span-1">
+<%= product_option.inventory_quantity.blank? ? '-' : product_option.inventory_quantity %>
+</div>
+
+<div class="span-4 last">
+<%= link_to 'close models', manage_product_option_url(product_option),
+	:ajax_binding => 'ajax_link',
+	:ajax_method => 'GET',
+	:ajax_success_element => "product_option_#{product_option.id}" %>
+</div>
+</div>
+<div class="span-8 prepend-2 last editing padding-top">
+	<div class="span-8 border-bottom">select makes & models for <%= product_option.name.blank? ? 'this product option' : product_option.name %></div>
+	<div class="span-4 field-label">
+		vehicle make
+	</div>
+	<%= render :partial => 'manage/vehicle_makes/index', :locals => {:owner => product_option} %>
+</div>
+<div class="span-8 prepend-2 last editing">
+	<div class="span-8 last field-label">
+		vehicle model
+	</div>
+	<div id="product_option_vehicle_model_container_<%= product_option.id %>" class="span-8 last border-bottom">
+	</div>
+</div>

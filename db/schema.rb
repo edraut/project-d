@@ -18,6 +18,10 @@ ActiveRecord::Schema.define(:version => 20090324133514) do
     t.integer  "category_id", :limit => 11
     t.boolean  "new", :default => true
     t.string   "state"
+    t.integer  "ground_price"
+    t.integer  "second_day_price"
+    t.integer  "overnight_price"
+    t.integer  "international_price"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -125,23 +129,23 @@ ActiveRecord::Schema.define(:version => 20090324133514) do
     t.integer "position"
   end
   
-  create_table "product_vehicle_makes", :force => true do |t|
-    t.integer  "product_id", :limit => 11
+  create_table "product_option_vehicle_makes", :force => true do |t|
+    t.integer  "product_option_id", :limit => 11
     t.integer  "vehicle_make_id"
   end
 
-  add_index "product_vehicle_makes", ["product_id"], :name => 'index_product_vehicle_makes_on_product_id'
-  add_index "product_vehicle_makes", ["vehicle_make_id"], :name => 'index_product_vehicle_makes_on_vehicle_make_id'
+  add_index "product_option_vehicle_makes", ["product_option_id"], :name => 'index_product_option_vehicle_makes_on_product_option_id'
+  add_index "product_option_vehicle_makes", ["vehicle_make_id"], :name => 'index_product_option_vehicle_makes_on_vehicle_make_id'
 
-  create_table "product_vehicle_models", :force => true do |t|
-    t.integer  "product_id", :limit => 11
+  create_table "product_option_vehicle_models", :force => true do |t|
+    t.integer  "product_option_id", :limit => 11
     t.integer  "vehicle_model_id"
-    t.integer  "model_start_year", :default => nil
-    t.integer  "model_end_year", :default => nil
+    t.integer  "year_begin", :default => nil
+    t.integer  "year_end", :default => nil
   end
 
-  add_index "product_vehicle_models", ["product_id"], :name => 'index_product_vehicle_models_on_product_id'
-  add_index "product_vehicle_models", ["vehicle_model_id"], :name => 'index_product_vehicle_models_on_vehicle_model_id'
+  add_index "product_option_vehicle_models", ["product_option_id"], :name => 'index_product_option_vehicle_models_on_product_option_id'
+  add_index "product_option_vehicle_models", ["vehicle_model_id"], :name => 'index_product_option_vehicle_models_on_vehicle_model_id'
 
   create_table "users", :force => true do |t|
     t.string   "login",                     :limit => 40

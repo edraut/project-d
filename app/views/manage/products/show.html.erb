@@ -1,14 +1,16 @@
-<div class="span-24 last border-top">
+<%= render :partial => 'section_nav' %>
+<div class="span-24 last dash-foreground-color container-padding">
 	<div class="span-24 last">
-		<div class="span-10">
+		<div class="span-16">
 		<h2><%= @product.name %></h2>
 		</div>
-		<div class="span-6">
-			<%= link_to 'edit', edit_manage_product_url(@product) %> | 
-			<%= link_to 'delete', manage_product_url(@product), :method => :delete, :confirm => 'Are you sure you want to delete this product?' %>
-		</div>
-		<div class="span-8 last large loud highlight text-center">
-			Product Preview
+		<div class="span-8 last text-right margin-top">
+			<% if @product.errors.any? %>
+				<div class="span-8 last text-right error"><%= @product.errors.on_base %></div>
+			<% else %>
+				This product is <%= @product.state %>. Click here to
+				<%= link_to @product.next_action, manage_product_url(:id => @product.id, :event => @product.next_action), :method => :put %> it.
+			<% end %>
 		</div>
 	</div>
 	<div class="span-4 append-1">

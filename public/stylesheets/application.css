@@ -52,12 +52,21 @@ h3 {
 .highlight {
 	background-color: #ff8;
 }
-.border-bottom {
+div.padding-top {
+	padding-top: 10px;
+}
+div.margin-top {
+	margin-top: 10px;
+}
+div.margin-bottom {
+	margin-bottom: 10px;
+}
+div.border-bottom {
 	border-bottom: 1px solid #8F8F8F;
 	padding-bottom: 6px;
 	margin-bottom: 10px;
 }
-.border-top {
+div.border-top {
 	border-top: 1px solid #8F8F8F;
 	padding-top: 6px;
 	margin-top: 10px;
@@ -94,17 +103,15 @@ h3 {
 a.tiny {
 	font-size: 10px;
 }
-ul.main_nav_tabs {
-	list-style: none;
+.main-nav-tabs {
 	font-size: 18px;
 	font-weight: bold;
-}
-.main_nav_tabs li{
-	float: left;
-	clear: none;
-	margin-left: 40px;
+	color: #CCC;
 }
 
-.main_nav_tabs li a{
+.main-nav-tabs div a{
 	text-decoration: none;
+}
+.container-padding {
+	padding: 10px;
 }

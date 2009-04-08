@@ -1,0 +1,118 @@
+<% product = form %>
+<% form_for :product, product, :url => (product.new_record? ? manage_products_url(:_method => :post) : manage_product_url(:id => product.id, :_method => :put)) do |f| %>
+<div class="span-8 border">
+	<div class="span-8 field-label">
+		name
+	</div>
+	<div class="span-8 last">
+		<%= product.first_error_on :name %>
+		<%= f.text_field :name, :class => 'textfield-6' %>
+	</div>
+	<div class="span-8 last field-label">
+		description
+	</div>
+	<div class="span-8 last">
+		<%= product.first_error_on :description %>
+		<%= f.text_area :description, :class => 'textarea-8' %><br/>
+	</div>
+	<div class="span-8 last">
+		<div class="span-4 field-label">
+			category
+		</div>
+		<div class="span-4 last">
+		<%= link_to '(add a new category)', new_manage_category_url(:ui_element => 'select_option'), 
+			:ajax_binding => 'ajax_link',
+			:ajax_method => 'GET',
+			:ajax_success_element => 'new_category',
+			:ajax_success_callback => "$('#new_category_link').hide();",
+			:id => 'new_category_link',
+			:class => 'quiet tiny'
+		%>
+		</div>
+	</div>
+	<div class="span-8 last border-bottom">
+		<%= product.first_error_on :category_id %>
+		<%= select_tag 'top_level_category', options_for_select([['Select Top Level Category',nil]] + Category.top_level.map{|c| [c.name,c.id]}, product.category ? product.category.parent_id : nil), :class => 'select_large' %><br/>
+		<div id="new_category"></div>
+	</div>
+	<div class="span-8 last border-bottom">
+		<div class="span-4 field-label">sub category</div>
+		<div id="sub_category">
+		</div>
+	</div>
+	<div class="span-8 last border-bottom">
+		<div class="span-8 last field-label">shipping prices</div>
+		<div class="span-8 last">
+			<div class="span-2 field-label">
+				ground
+			</div>
+			<div class="span-2 field-label">
+				2nd day
+			</div>
+			<div class="span-2 field-label">
+				overnight
+			</div>
+			<div class="span-2 last field-label">
+				international
+			</div>
+		</div>
+		<div class="span-8 last">
+			<div class="span-2">
+				<%= product.first_error_on :ground_price %>
+				$<%= f.text_field :ground_price, :value => product.new_record? ? nil : product.ground_price.to_s, :class => 'textfield-1_5' %>
+			</div>
+			<div class="span-2">
+				<%= product.first_error_on :second_day_price %>
+				$<%= f.text_field :second_day_price, :value => product.new_record? ? nil : product.second_day_price.to_s, :class => 'textfield-1_5' %>
+			</div>
+			<div class="span-2">
+				<%= product.first_error_on :overnight_price %>
+				$<%= f.text_field :overnight_price, :value => product.new_record? ? nil : product.overnight_price.to_s, :class => 'textfield-1_5' %>
+			</div>
+			<div class="span-2 last">
+				<%= product.first_error_on :international_price %>
+				$<%= f.text_field :international_price, :value => product.new_record? ? nil : product.international_price.to_s, :class => 'textfield-1_5' %>
+			</div>
+		</div>
+	</div>
+	<div class="span-8 last border-bottom">
+		<div class="span-1 field-label">
+			new
+		</div>
+		<div class="span-1">
+			<%= product.first_error_on :new %>
+			<%= f.radio_button :new, true %>
+		</div>
+		<div class="span-1 field-label">
+			used
+		</div>
+		<div class="span-1">
+			<%= product.first_error_on :new %>
+			<%= f.radio_button :new, false %>
+		</div>
+	</div>
+	<div class="span-8 last">
+		<div class="span-4 prepend-4 last text-right">
+			<%= f.submit 'save info' %> or <%= link_to 'cancel', manage_products_url %>
+		</div>
+	</div>
+<% end %>
+<% javascript_tag do %>
+$(document).ready(function(){
+	$('#top_level_category').change(function(e){
+		loadSubCategorySelect($(e.target).val());
+	});
+	function loadSubCategorySelect(parent_val){
+		$.ajax({
+			type: 'GET',
+			url: '<%= manage_categories_url %>',
+			data: { 'parent_id' : parent_val,<%= product.new_record? ? '' : "'owner_id' : #{product.id}, " %> 'owner_type' : 'Product', 'ui_element' : 'select'},
+			success: function(data,textStatus){
+				$('#sub_category').html(data);
+				bindAjaxEvents();
+			}
+		});
+	};
+	loadSubCategorySelect('<%= product.category ? product.category.parent.id : nil %>');
+});
+<% end %>
