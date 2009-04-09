@@ -8,7 +8,7 @@
 		:ajax_success_callback => "$('#category_#{category.id}').removeClass('editing');",
 		:id => "edit_category_form_#{category.id}"
 	} do |f| %>
-	<div class="span-9 last">
+	<div class="span-10 last">
 				<div class="span-5">
 			<%= category.first_error_on :name %>
 			<%= f.text_field :name, :class => 'textfield-5' %>

@@ -1,7 +1,7 @@
 <div class="span-24 last dash-foreground-color container-padding">
 
 <h1>categories</h1>
-<div id="category_list_" class="span-10 last" ui_binding="sortable" ui_url="<%= manage_category_url(:id => :multiple)  %>">
+<div id="category_list_" class="span-11 last" ui_binding="sortable" ui_url="<%= manage_category_url(:id => :multiple)  %>">
 	<% for category in Category.top_level %>
 		<%= render :partial => "manage/categories/element_container", :object => category %>
 	<% end %>

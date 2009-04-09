@@ -1,4 +1,4 @@
-<div class="span-10 last border-bottom">
+<div class="span-11 last border-bottom">
 <div class="span-5">
 <%= @category.name %>
 </div>
@@ -10,8 +10,8 @@
 		:ajax_success_element => "category_#{@category.id}" %>
 </div>
 </div>
-<div class="span-9 prepend-1 last border-bottom">
-<div id="category_list_<%= @category.id %>" class="span-9 last" ui_binding="sortable" ui_url="<%= manage_category_url(:id => :multiple)  %>">
+<div class="span-10 prepend-1 last border-bottom">
+<div id="category_list_<%= @category.id %>" class="span-10 last" ui_binding="sortable" ui_url="<%= manage_category_url(:id => :multiple)  %>">
 	<% for category in @category.children %>
 		<%= render :partial => "manage/categories/element_container", :object => category %>
 	<% end %>
