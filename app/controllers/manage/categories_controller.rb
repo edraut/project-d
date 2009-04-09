@@ -16,15 +16,19 @@ class Manage::CategoriesController < Manage::ApplicationController
         @owner = @owner_class.find(params[:owner_id]) if params[:owner_id]
       end
       render :partial => params[:ui_element] and return
-    else
-      @categories = Category.find(:all)
     end
   end
 
   # GET /manage_categories/1
   # GET /manage_categories/1.xml
   def show
-    render :partial => 'element_container', :object => @category
+    if params.has_key? :section
+      case params[:section]
+      when 'subcategories'
+        render :partial => 'subcategories' and return
+      end
+    end
+    render :partial => 'show', :object => @category
   end
 
   # GET /manage_categories/new
@@ -69,6 +73,17 @@ class Manage::CategoriesController < Manage::ApplicationController
   # PUT /manage_categories/1
   # PUT /manage_categories/1.xml
   def update
+    if params[:id] == 'multiple'
+      logger.info("MULTIPLE")
+      @categories.each do |category|
+        logger.info("CAT: #{category.name}")
+        category.position = params[:category].index(category.id.to_s)
+        logger.info("CATPOS: #{category.position}")
+        category.save
+        logger.info("CATERR: #{category.errors.full_messages}")
+      end
+      render :nothing => true and return
+    end
 
     if @category.update_attributes(params[:category])
       flash[:notice] = 'Category was successfully updated.'
@@ -88,6 +103,10 @@ class Manage::CategoriesController < Manage::ApplicationController
 
   private
   def get_category
-    @category = Category.find(params[:id])
+    if params[:id] == 'multiple'
+      @categories = Category.find(params[:category])
+    else
+      @category = Category.find(params[:id])
+    end
   end
 end

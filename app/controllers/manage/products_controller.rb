@@ -67,7 +67,7 @@ class Manage::ProductsController < Manage::ApplicationController
     @products = Product.all
     render :template => 'manage/products/index' and return
   end
-
+  
   private
   def get_product
     @product = Product.find(params[:id])

@@ -1,0 +1,23 @@
+<div class="span-10 last border-bottom">
+<div class="span-5">
+<%= @category.name %>
+</div>
+
+<div class="span-4 last">
+	<%= link_to 'close subcategories', manage_category_url(@category),
+		:ajax_binding => 'ajax_link',
+		:ajax_method => 'GET',
+		:ajax_success_element => "category_#{@category.id}" %>
+</div>
+</div>
+<div class="span-9 prepend-1 last border-bottom">
+<div id="category_list_<%= @category.id %>" class="span-9 last" ui_binding="sortable" ui_url="<%= manage_category_url(:id => :multiple)  %>">
+	<% for category in @category.children %>
+		<%= render :partial => "manage/categories/element_container", :object => category %>
+	<% end %>
+</div>
+<div id="category_new_<%= @category.id %>" class="span-6 last">
+	<%= render :partial => "manage/categories/new", :object => Category.new(:parent_id => @category.id) %>
+</div>
+</div>
+<%= javascript_tag 'bindSortables();' %>

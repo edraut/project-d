@@ -63,7 +63,12 @@ class Manage::VehicleMakesController < Manage::ApplicationController
 
     render :nothing => true
   end
-
+  
+  protected
+  def set_nav_tab
+    @nav_tab = 'models'
+  end
+  
   private
   def get_vehicle_make
     @vehicle_make = VehicleMake.find(params[:id])

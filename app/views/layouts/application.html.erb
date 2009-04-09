@@ -22,14 +22,15 @@
 	<div class="container">
 		
 		<div class="header span-24 last dash-frame-color container-padding">
-			<div class="span-10">
+			<div class="span-8">
 				<span class="banner">Mad Racing MX</span>
 			</div>
-			<div class="span-14 last main-nav-tabs">
+			<div class="span-16 last main-nav-tabs">
 				<% if @nav_area == 'manage' %>
-					<div class="span-4 text-center"><%= link_to 'products', manage_products_url %></div>
-					<div class="span-4 text-center"><%= link_to 'makes & models', manage_vehicle_makes_url %></div>
-					<div class="span-4 text-center"><%= link_to 'public site', '#' %></div>
+					<div class="span-4 text-center <% if @nav_tab == 'products' %>selected<% end %>"><%= link_to 'products', manage_products_url %></div>
+					<div class="span-4 text-center <% if @nav_tab == 'categories' %>selected<% end %>"><%= link_to 'categories', manage_categories_url %></div>
+					<div class="span-4 text-center <% if @nav_tab == 'models' %>selected<% end %>"><%= link_to 'makes & models', manage_vehicle_makes_url %></div>
+					<div class="span-4 last text-center"><%= link_to 'public site', '#' %></div>
 				<% else %>
 					<div class="span-4 text-center"><%= link_to 'products', '#' %></div>
 					<div class="span-4 text-center"><%= link_to 'about', '#' %></div>
@@ -39,9 +40,6 @@
 		</div>
 		<%= flash[:notice] %>
 		<% if @nav_area == 'manage' %>
-		<div class="header span-24 last dash-frame-color container-padding">
-			<hr/>
-		</div>
 		<% end %>
 		<%= yield %>
 	</div>
