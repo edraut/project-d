@@ -1,0 +1,7 @@
+Add a new news<br/>
+<p>
+<% form_for :news, @news, :url => news_url(:_method => :post) do |f| %>
+
+<%= f.submit :add %>
+<% end %>
+</p>

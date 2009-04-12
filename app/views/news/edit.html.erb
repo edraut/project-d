@@ -1,0 +1,5 @@
+<% form_for :news, @news, :url => news_url(:id => @news.id, :_method => :put) do |f| %>
+	
+<%= f.submit :save %>
+<%= link_to 'cancel', news_url(@news) %>
+<% end %>

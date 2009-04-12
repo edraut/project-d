@@ -1,0 +1,7 @@
+Add a new cart<br/>
+<p>
+<% form_for :cart, @cart, :url => carts_url(:_method => :post) do |f| %>
+
+<%= f.submit :add %>
+<% end %>
+</p>
