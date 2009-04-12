@@ -15,7 +15,7 @@ before "deploy:wipe_and_load", "deploy"
 namespace :deploy do
   desc "Erase, rebuild, and populate database from schema.rb and fixture files."
   task :wipe_and_load, :roles => :db do
-    run("cd #{deploy_to}/current; rake db:wipe_and_load RAILS_ENV=production")
+    run("cd #{deploy_to}/current; rake db:wipe_and_load")
     run("cd #{deploy_to}/shared; tar xzf ../current/public/system.tgz")
   end
 end
