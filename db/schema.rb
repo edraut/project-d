@@ -102,6 +102,7 @@ ActiveRecord::Schema.define(:version => 20090324133514) do
     t.string   "name"
     t.integer  "parent_id"
     t.integer  "position"
+    t.boolean  "vehicle_filter", :default => false
   end
   
   add_index "categories", ["name"], :name => 'index_categories_on_name'
@@ -163,4 +164,13 @@ ActiveRecord::Schema.define(:version => 20090324133514) do
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
 
+  create_table :sessions do |t|
+    t.string :session_id, :null => false
+    t.text :data
+    t.timestamps
+  end
+
+  add_index :sessions, :session_id
+  add_index :sessions, :updated_at
+  
 end

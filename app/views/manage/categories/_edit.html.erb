@@ -8,13 +8,19 @@
 		:ajax_success_callback => "$('#category_#{category.id}').removeClass('editing');",
 		:id => "edit_category_form_#{category.id}"
 	} do |f| %>
-	<div class="span-10 last">
+	<div class="span-11 last">
 				<div class="span-5">
 			<%= category.first_error_on :name %>
 			<%= f.text_field :name, :class => 'textfield-5' %>
 		</div>
+		<% if category.parent.nil? %>
+		<div class="span-3_5">
+			vehicle filter?
+			<%= f.check_box :vehicle_filter %>
+		</div>
+		<% end %>
 		
-		<div class="span-4 last">
+		<div class="span-2_5 last">
 <%= f.submit :save %>
 <%= link_to 'cancel', manage_category_url(category),
 	:ajax_binding => 'ajax_link',

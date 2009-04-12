@@ -29,6 +29,8 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem 'money'
   config.gem "RedCloth"
+  config.gem 'mislav-will_paginate', :version => '~> 2.3.8', :lib => 'will_paginate', 
+      :source => 'http://gems.github.com'
   
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.
@@ -75,5 +77,13 @@ Rails::Initializer.run do |config|
   # Activate observers that should always be running
   # Please note that observers generated using script/generate observer need to have an _observer suffix
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
+  config.action_mailer.delivery_method = :smtp
   config.active_record.observers = :user_observer
 end
+ActionMailer::Base.smtp_settings = {
+  :address  => "smtp.gmail.com",
+  :port => 587,
+  :user_name => 'do-not-reply@madracingmx.com',
+  :password => 'm4drac1ng',
+  :authentication => :plain
+}

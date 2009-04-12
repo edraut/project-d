@@ -7,7 +7,10 @@ class FixtureManifest
       :vehicle_models => 1,
       :categories => 1,
       :products => {
-        :product_options => 1,
+        :product_options => {
+          :product_option_vehicle_makes => 1,
+          :product_option_vehicle_models => 1
+        },
         :product_images => 1
       }
     }

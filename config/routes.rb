@@ -1,8 +1,18 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :carts
+
+  map.resources :news
+
+  map.resources :pages
+
+  map.root :controller => 'products', :action => 'index'
   map.resources :product_option_vehicle_models
 
   map.resources :products
 
+  map.cart '/cart', :controller => 'carts', :action => 'show'
+  map.news '/news', :controller => 'news', :action => 'index'
+  map.about '/about', :controller => 'pages', :action => 'show', :name => 'about'
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.register '/register', :controller => 'users', :action => 'create'
@@ -42,6 +52,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :product_sizes
 
   map.namespace :manage do |manage|
+    manage.root :controller => 'products', :action => 'index'
     manage.resources :colors
     manage.resources :sizes
     manage.resources :color_groups

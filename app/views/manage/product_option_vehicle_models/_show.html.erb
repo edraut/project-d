@@ -1,25 +1,22 @@
 <% product_option_vehicle_model = show %>
 <div class="span-15 last">
 <div class="span-3">
-<%= product_option_vehicle_model.vehicle_model_id %>
+<%= product_option_vehicle_model.vehicle_model.name %>
 </div>
-<div class="span-3">
-<%= product_option_vehicle_model.product_option_id %>
-</div>
-<div class="span-3">
+<div class="span-1_5">
 <%= product_option_vehicle_model.year_begin %>
 </div>
-<div class="span-3">
+<div class="span-1_5">
 <%= product_option_vehicle_model.year_end %>
 </div>
 
-<div class="span-3 last">
-<%= link_to 'edit', edit_manage_product_option_vehicle_model_url(product_option_vehicle_model),
+<div class="span-2 last">
+<%= link_to image_tag('/images/pencil.png'), edit_manage_product_option_vehicle_model_url(product_option_vehicle_model),
 	:ajax_binding => 'ajax_link',
 	:ajax_method => 'GET',
 	:ajax_success_element => "product_option_vehicle_model_#{product_option_vehicle_model.id}",
-	:ajax_success_callback => "$('#product_option_vehicle_model_#{product_option_vehicle_model.id}').addClass('editing');" %> | 
-<%= link_to 'delete', manage_product_option_vehicle_model_url(product_option_vehicle_model),
+	:ajax_success_callback => "$('#product_option_vehicle_model_#{product_option_vehicle_model.id}').addClass('editing');" %> 
+<%= link_to image_tag('/images/delete-16x16.png'), manage_product_option_vehicle_model_url(product_option_vehicle_model),
 	:ajax_binding => 'ajax_link',
 	:ajax_method => 'DELETE',
 	:ajax_success_callback => "$('#product_option_vehicle_model_#{product_option_vehicle_model.id}').remove();",

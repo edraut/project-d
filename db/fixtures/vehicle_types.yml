@@ -2,11 +2,11 @@ vehicle_types_001:
   name: Dirt Bike
   id: 1
   position: 1
-vehicle_types_003:
-  name: Street Bike
-  id: 3
-  position: 2
 vehicle_types_002: 
   name: ATV
   id: 2
   position: 3
+vehicle_types_003: 
+  name: Street Bike
+  id: 3
+  position: 2

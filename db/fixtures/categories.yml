@@ -1,200 +1,240 @@
 categories_031: 
-  name: Gas Caps
-  id: 18
-  parent_id: 3
-  position: 
-categories_020: 
-  name: Support
-  id: 25
-  parent_id: 8
-  position: 
-categories_009: 
-  name: Socks
-  id: 33
-  parent_id: 9
-  position: 
-categories_032: 
-  name: Neck
-  id: 28
-  parent_id: 8
-  position: 
-categories_021: 
-  name: Tires
-  id: 36
-  parent_id: 11
-  position: 
-categories_010: 
-  name: ATV Parts & Accessories
-  id: 1
-  parent_id: 
-  position: 
-categories_033: 
-  name: Oxygen
-  id: 39
-  parent_id: 12
-  position: 
-categories_022: 
-  name: Drive
-  id: 4
-  parent_id: 
-  position: 
-categories_011: 
-  name: Health and Fitness
-  id: 12
-  parent_id: 
-  position: 
-categories_034: 
-  name: Helmet and Goggles
-  id: 7
-  parent_id: 
-  position: 
-categories_023: 
-  name: clutches
-  id: 15
-  parent_id: 1
-  position: 
-categories_012: 
-  name: General
-  id: 23
-  parent_id: 6
-  position: 
-categories_001: 
-  name: Rider Apparel
-  id: 9
-  parent_id: 
-  position: 
-categories_035: 
-  name: Clutches
-  id: 19
-  parent_id: 3
-  position: 
-categories_024: 
-  name: Chest Protection
-  id: 26
-  parent_id: 8
-  position: 
-categories_013: 
-  name: Exhaust
-  id: 34
-  parent_id: 10
-  position: 
-categories_002: 
-  name: General
-  id: 17
-  parent_id: 2
-  position: 
-categories_036: 
-  name: Chest RXR Air
-  id: 29
-  parent_id: 8
-  position: 
-categories_025: 
-  name: Wheels
-  id: 37
-  parent_id: 11
-  position: 
-categories_014: 
-  name: Body
-  id: 2
-  parent_id: 
-  position: 
-categories_003: 
-  name: Jerseys
-  id: 31
-  parent_id: 9
-  position: 
-categories_037: 
-  name: Kawasaki KX85
-  id: 40
-  parent_id: 13
-  position: 
-categories_026: 
-  name: Engine
-  id: 5
-  parent_id: 
-  position: 
-categories_015: 
-  name: MX Bikes
-  id: 13
-  parent_id: 
-  position: 
-categories_004: 
-  name: Street Bike Parts / Accessories
-  id: 10
-  parent_id: 
-  position: 
-categories_038: 
-  name: Protection
-  id: 8
-  parent_id: 
-  position: 
-categories_027: 
-  name: A-arms
-  id: 16
-  parent_id: 1
-  position: 
-categories_016: 
-  name: General
-  id: 24
-  parent_id: 7
-  position: 
-categories_005: 
-  name: skid plate
-  id: 21
-  parent_id: 5
-  position: 
-categories_039: 
-  name: sprockets
-  id: 20
-  parent_id: 4
-  position: 
-categories_028: 
-  name: Knee Guards
-  id: 27
-  parent_id: 8
-  position: 
-categories_017: 
-  name: Fuel Intake
-  id: 35
-  parent_id: 10
-  position: 
-categories_006: 
-  name: Pants
-  id: 32
-  parent_id: 9
-  position: 
-categories_040: 
-  name: Gloves
-  id: 30
-  parent_id: 9
-  position: 
-categories_029: 
   name: Rims
+  vehicle_filter: false
   id: 38
   parent_id: 11
   position: 
-categories_018: 
-  name: Dirt Bike Parts
-  id: 3
+categories_020: 
+  name: Chest RXR Air
+  vehicle_filter: false
+  id: 29
+  parent_id: 8
+  position: 
+categories_009: 
+  name: Rider Apparel
+  vehicle_filter: false
+  id: 9
   parent_id: 
   position: 
-categories_007: 
-  name: Tires and Wheels
-  id: 11
+categories_032: 
+  name: Gloves
+  vehicle_filter: false
+  id: 30
+  parent_id: 9
+  position: 
+categories_021: 
+  name: MX Bikes
+  vehicle_filter: false
+  id: 13
   parent_id: 
   position: 
-categories_030: 
-  name: Graphics/Seat
-  id: 6
-  parent_id: 
+categories_010: 
+  name: General
+  vehicle_filter: false
+  id: 23
+  parent_id: 6
   position: 
-categories_019: 
+categories_033: 
+  name: cylinders
+  vehicle_filter: false
+  id: 22
+  parent_id: 5
+  position: 
+categories_022: 
+  name: Kawasaki KX85
+  vehicle_filter: false
+  id: 40
+  parent_id: 13
+  position: 
+categories_011: 
+  name: clutches
+  vehicle_filter: false
+  id: 15
+  parent_id: 1
+  position: 
+categories_034: 
   name: Winches
+  vehicle_filter: false
   id: 14
   parent_id: 1
   position: 
-categories_008: 
-  name: cylinders
-  id: 22
+categories_023: 
+  name: skid plate
+  vehicle_filter: false
+  id: 21
   parent_id: 5
+  position: 
+categories_012: 
+  name: Helmet and Goggles
+  vehicle_filter: false
+  id: 7
+  parent_id: 
+  position: 
+categories_001: 
+  name: Socks
+  vehicle_filter: false
+  id: 33
+  parent_id: 9
+  position: 
+categories_035: 
+  name: Graphics/Seat
+  vehicle_filter: false
+  id: 6
+  parent_id: 
+  position: 
+categories_024: 
+  name: General
+  vehicle_filter: false
+  id: 24
+  parent_id: 7
+  position: 
+categories_013: 
+  name: General
+  vehicle_filter: false
+  id: 17
+  parent_id: 2
+  position: 
+categories_002: 
+  name: Support
+  vehicle_filter: false
+  id: 25
+  parent_id: 8
+  position: 
+categories_036: 
+  name: ATV Parts & Accessories
+  vehicle_filter: true
+  id: 1
+  parent_id: 
+  position: 
+categories_025: 
+  name: A-arms
+  vehicle_filter: false
+  id: 16
+  parent_id: 1
+  position: 
+categories_014: 
+  name: Exhaust
+  vehicle_filter: false
+  id: 34
+  parent_id: 10
+  position: 
+categories_003: 
+  name: Gas Caps
+  vehicle_filter: false
+  id: 18
+  parent_id: 3
+  position: 
+categories_037: 
+  name: Street Bike Parts / Accessories
+  vehicle_filter: true
+  id: 10
+  parent_id: 
+  position: 
+categories_026: 
+  name: Protection
+  vehicle_filter: false
+  id: 8
+  parent_id: 
+  position: 
+categories_015: 
+  name: Chest Protection
+  vehicle_filter: false
+  id: 26
+  parent_id: 8
+  position: 
+categories_004: 
+  name: Tires
+  vehicle_filter: false
+  id: 36
+  parent_id: 11
+  position: 
+categories_038: 
+  name: Engine
+  vehicle_filter: true
+  id: 5
+  parent_id: 
+  position: 
+categories_027: 
+  name: Pants
+  vehicle_filter: false
+  id: 32
+  parent_id: 9
+  position: 
+categories_016: 
+  name: Clutches
+  vehicle_filter: false
+  id: 19
+  parent_id: 3
+  position: 
+categories_005: 
+  name: Neck
+  vehicle_filter: false
+  id: 28
+  parent_id: 8
+  position: 
+categories_039: 
+  name: Tires and Wheels
+  vehicle_filter: true
+  id: 11
+  parent_id: 
+  position: 
+categories_028: 
+  name: Fuel Intake
+  vehicle_filter: false
+  id: 35
+  parent_id: 10
+  position: 
+categories_017: 
+  name: Jerseys
+  vehicle_filter: false
+  id: 31
+  parent_id: 9
+  position: 
+categories_006: 
+  name: Health and Fitness
+  vehicle_filter: false
+  id: 12
+  parent_id: 
+  position: 
+categories_040: 
+  name: Dirt Bike Parts
+  vehicle_filter: true
+  id: 3
+  parent_id: 
+  position: 
+categories_029: 
+  name: Knee Guards
+  vehicle_filter: false
+  id: 27
+  parent_id: 8
+  position: 
+categories_018: 
+  name: Body
+  vehicle_filter: false
+  id: 2
+  parent_id: 
+  position: 
+categories_007: 
+  name: Drive
+  vehicle_filter: false
+  id: 4
+  parent_id: 
+  position: 
+categories_030: 
+  name: sprockets
+  vehicle_filter: false
+  id: 20
+  parent_id: 4
+  position: 
+categories_019: 
+  name: Wheels
+  vehicle_filter: false
+  id: 37
+  parent_id: 11
+  position: 
+categories_008: 
+  name: Oxygen
+  vehicle_filter: false
+  id: 39
+  parent_id: 12
   position: 

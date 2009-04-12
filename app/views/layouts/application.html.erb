@@ -20,29 +20,70 @@
 </head>
 <body>
 	<div class="container">
-		
-		<div class="header span-24 last dash-frame-color container-padding">
-			<div class="span-8">
-				<span class="banner">Mad Racing MX</span>
-			</div>
-			<div class="span-16 last main-nav-tabs">
-				<% if @nav_area == 'manage' %>
-					<div class="span-4 text-center <% if @nav_tab == 'products' %>selected<% end %>"><%= link_to 'products', manage_products_url %></div>
-					<div class="span-4 text-center <% if @nav_tab == 'categories' %>selected<% end %>"><%= link_to 'categories', manage_categories_url %></div>
-					<div class="span-4 text-center <% if @nav_tab == 'models' %>selected<% end %>"><%= link_to 'makes & models', manage_vehicle_makes_url %></div>
-					<div class="span-4 last text-center"><%= link_to 'public site', '#' %></div>
-				<% else %>
-					<div class="span-4 text-center"><%= link_to 'products', '#' %></div>
-					<div class="span-4 text-center"><%= link_to 'about', '#' %></div>
-					<div class="span-4 text-center"><%= link_to 'news', '#' %></div>
-				<% end %>
-			</div>
-		</div>
-		<%= flash[:notice] %>
 		<% if @nav_area == 'manage' %>
+			<div class="span-24 last dash-frame-color container-padding">
+				<div class="span-8">
+					<span class="banner">Mad Racing MX</span>
+				</div>
+				<div class="span-16 last main-nav-tabs">
+						<div class="span-4 text-center <% if @nav_tab == 'products' %>selected<% end %>"><%= link_to 'products', manage_products_url %></div>
+						<div class="span-4 text-center <% if @nav_tab == 'categories' %>selected<% end %>"><%= link_to 'categories', manage_categories_url %></div>
+						<div class="span-4 text-center <% if @nav_tab == 'models' %>selected<% end %>"><%= link_to 'makes & models', manage_vehicle_makes_url %></div>
+						<div class="span-4 last text-center"><%= link_to 'public site', '/' %></div>
+				</div>
+			</div>
+		<% else %>
+			<div class="left-frame">
+				<img src="/images/left_frame.jpg">
+			</div>
+			<div class="middle-frame">
+				<div class="header">
+					<div class="span-19 header-content">
+						<div class="span-8 prepend-11 last">Hello world.
+						</div>
+						<div class="span-8 prepend-11 last">
+							<form>Search <input type="text" class="span-5"/> <input type="submit" value="Go"/></form>
+						</div>
+						<div class="span-19 last header-spacer">
+							<div class="span-19 last header-spacer-2">&nbsp;</div><div class="span-13 prepend-6 last"><div class="tagline-spacer-2">GET ALL YOUR MX-ATV-STREET PARTS AND ACCESSORIES HERE</div></div>
+						</div>
+						<div class="span-19 last"><div class="tagline-spacer">WE'RE MAD ABOUT GREAT SERVICE!</div></div>
+					</div>
+				</div>
+				<div class="category-bar">
+					<div class="span-3_75">&nbsp;</div>
+					<% for category in Category.top_level %>
+						<div class="span-3_75">
+							<%= link_to category.name, products_url + "?category_id=#{category.id}" %>
+						</div>
+					<% end %>
+				</div>
+				<div class="nav-bar">
+					<div class="span-2 text-center <% if @nav_tab == 'home' %>nav-selected<% end %>">
+						<a href="/products">HOME</a>
+					</div>
+					<div class="span-2 text-center <% if @nav_tab == 'cart' %>nav-selected<% end %>">
+						<a href="/cart">MY CART</a>
+					</div>
+					<div class="span-2 text-center <% if @nav_tab == 'news' %>nav-selected<% end %>">
+						<a href="/news">NEWS</a>
+					</div>
+					<div class="span-2 text-center <% if @nav_tab == 'about' %>nav-selected<% end %>">
+						<a href="/about">ABOUT US</a>
+					</div>
+				</div>
+				<div class="content-frame"><div class="span-14_75">
 		<% end %>
+		<%= flash[:notice] %>
 		<%= yield %>
+		<% unless @nav_area == 'manage' %>
+			</div>
+			</div>
+			</div>
+			<div class="right-frame">
+				<img src="/images/right_frame.jpg">
+			</div>
+		<% end %>
 	</div>
-</div>	
 </body>
 </html>
