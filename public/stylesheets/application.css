@@ -1,3 +1,8 @@
+body {
+	background: url('../images/site_background.jpg');
+	background-repeat: no-repeat;
+	background-color: #EE1C05;
+}
 h1 {
 	font-size: 30px;
 }
@@ -124,7 +129,7 @@ a.tiny {
 .container-padding {
 	padding: 10px;
 }
-.right-frame, .left-frame, .middle-frame, .header, .category-bar, .content-frame, .tagline-spacer, .nav-bar {
+.right-frame, .left-frame, .middle-frame, .header, .category-bar, .content-frame, .tagline-spacer, .nav-bar, .nav-spacer, .content-frame-height {
 	overflow: hidden;
 	position:relative;
 	float:left;
@@ -146,12 +151,14 @@ a.tiny {
 .category-bar {
 	padding: 10px;
 	width: 140px;
-	height: 667px;
+	height: 762px;
+	background-color: #C5C5C5;
 	background: url('../images/category_bar.jpg');
 	background-position: 0px 0px;
-	background-repeat: none;
+	background-repeat: no-repeat;
 	line-height: 20px;
 	text-align: right;
+	z-index: 10;
 }
 .category-bar div a {
 	color: #2F2F2F;
@@ -159,8 +166,15 @@ a.tiny {
 	text-decoration: none;
 }
 .content-frame {
-	width: 580px;
-	padding: 10px;
+	background-color: #FFFFFF;
+	background-repeat: repeat-y;
+	width: 582px;
+	padding: 10px 10px 10px 9px;
+	border-left: 160px solid #CACACA;
+	margin-left: -160px;
+}
+.content-frame-height {
+	width: 1px;
 }
 .header-content {
 	height: 136px;
@@ -197,4 +211,17 @@ a.tiny {
 }
 .nav-selected {
 	background-color: #016C87;
+}
+div.nav-spacer {
+	width: 2px;
+	padding: 0px;
+}
+.orange {
+	color: #DF440A;
+}
+.blue, .blue a {
+	color: #0297BB;
+}
+.yellow {
+	color: #E4C42D;
 }

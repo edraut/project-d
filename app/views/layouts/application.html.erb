@@ -34,14 +34,14 @@
 			</div>
 		<% else %>
 			<div class="left-frame">
-				<img src="/images/left_frame.jpg">
+				&nbsp;
 			</div>
 			<div class="middle-frame">
 				<div class="header">
 					<div class="span-19 header-content">
-						<div class="span-8 prepend-11 last">Hello world.
+						<div class="span-8 prepend-10 append-1 text-right last"><span class="blue"><a href="mailto:contact@madracingmx.com">EMAIL US</a></span> <span class="orange">||</span> <span class="yellow">ORDER NOW!</span> <span class="orange">800.000.0000</span>
 						</div>
-						<div class="span-8 prepend-11 last">
+						<div class="span-8 prepend-10 append-1 text-right last">
 							<form>Search <input type="text" class="span-5"/> <input type="submit" value="Go"/></form>
 						</div>
 						<div class="span-19 last header-spacer">
@@ -72,7 +72,12 @@
 						<a href="/about">ABOUT US</a>
 					</div>
 				</div>
-				<div class="content-frame"><div class="span-14_75">
+				<div class="nav-spacer"><img src="/images/nav_whiteback.gif"></div>
+				<div class="content-frame">
+					<div class="content-frame-height">
+						<img src="/images/whiteback.gif">
+					</div>
+					<div class="span-14_75 last">
 		<% end %>
 		<%= flash[:notice] %>
 		<%= yield %>
@@ -80,9 +85,9 @@
 			</div>
 			</div>
 			</div>
-			<div class="right-frame">
+			<!-- <div class="right-frame">
 				<img src="/images/right_frame.jpg">
-			</div>
+			</div> -->
 		<% end %>
 	</div>
 </body>
