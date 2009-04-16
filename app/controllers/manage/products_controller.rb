@@ -3,7 +3,7 @@ class Manage::ProductsController < Manage::ApplicationController
   before_filter :prepare_params, :only => [:create,:update]
   before_filter :manage_money, :only => [:create,:update]
   def index
-    @products = Product.find(:all)
+    @products = Product.paginate(:page => params[:page], :per_page => 25)
     @product = nil
   end
 

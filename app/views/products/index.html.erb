@@ -47,7 +47,7 @@
 			these_params.push "vehicle_make_id=#{@vehicle_make.id}" if @vehicle_make
 			these_params.push "vehicle_model_id=#{@vehicle_model.id}" if @vehicle_model
 			this_url = product_url(product) + (these_params.any? ? '?' + these_params.join('&') : '') %>
-	<%= link_to image_tag(product.product_images.first.image.url(:medium)), this_url if product.product_images.any? %>
+	<div class="span-4 image-medium-wrapper"><%= link_to image_tag(product.product_images.first.image.url(:medium)), this_url if product.product_images.any? %></div>
 	<%= link_to product.name, this_url %><br/>
 	<% if product.product_options.length == 1 %>
 		<%= product.product_options.first.price.format %>

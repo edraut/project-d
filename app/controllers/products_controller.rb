@@ -52,7 +52,7 @@ class ProductsController < ApplicationController
     @vehicle_makes = @product.product_options.map{|po| po.vehicle_makes}.flatten.uniq
     @vehicle_models = {}
     for vehicle_make in @vehicle_makes
-      @vehicle_models[vehicle_make.id] = @product.product_options.map{|po| po.product_option_vehicle_models.map{|povm| (povm.vehicle_model.vehicle_make_id == vehicle_make.id) ? povm : nil} }.flatten.compact.uniq
+      @vehicle_models[vehicle_make.id] = @product.product_options.map{|po| po.product_option_vehicle_models.map{|povm| (povm.vehicle_model.vehicle_make_id == vehicle_make.id) ? povm : nil} }.flatten.compact.uniq.sort{|x,y| x.vehicle_model.name <=> y.vehicle_model.name}
     end
   end
 

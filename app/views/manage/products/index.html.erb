@@ -16,6 +16,7 @@
 			<%= link_to image_tag('/images/search-16x16.png'), manage_product_url(product) %> <%= link_to image_tag('/images/pencil.png'), edit_manage_product_url(product) %> <%= link_to image_tag('/images/delete-16x16.png'), manage_product_url(product), :method => :delete, :confirm => 'Are you sure you want to delete this product?' %>
 		</div>
 	<% end %>
+	<%= will_paginate @products %>
 </div>
 <div class="span-10 last">
 	<%= render :partial => 'form', :object => @product ? @product : Product.new %>

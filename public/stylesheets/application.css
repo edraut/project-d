@@ -251,3 +251,6 @@ div.product-thumb{
 	height: 243px;
 	margin-right: 25px;
 }
+.product-section-nav {
+	padding: 0 10px;
+}
