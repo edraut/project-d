@@ -7,7 +7,7 @@ class ProductImage < ActiveRecord::Base
     :path => ":rails_root/public/system/:class/:id/:style/:basename.:extension",
     :styles => {
       :small => "70x70#",
-      :medium => "150x150>",
+      :medium => "110x110>",
       :large => "390x390>"
     }
   attr_accessor :image_url
