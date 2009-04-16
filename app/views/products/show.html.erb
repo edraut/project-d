@@ -14,8 +14,8 @@
 			</div>
 			<% for vehicle_make in @vehicle_makes %>
 				<div id="vehicle_model_container_<%= vehicle_make.id %>" class="span-5 last" style="display: none">
-					<%= select_tag 'product_option_id', options_for_select([['Select Model',nil]] + @vehicle_models[vehicle_make.id].map{|mod| ["#{mod.vehicle_model.name}:#{mod.year_begin}-#{mod.year_end}",mod.product_option_id]},
-					(	@vehicle_model and this_povm = @vehicle_models[vehicle_make.id].detect{|povm| povm.vehicle_model_id == @vehicle_model.id}) ? this_povm.product_option_id : nil) %>
+					<%= select_tag 'product_option_vehicle_model_id', options_for_select([['Select Model',nil]] + @vehicle_models[vehicle_make.id].map{|mod| ["#{mod.vehicle_model.name}:#{mod.year_begin}-#{mod.year_end}",mod.id]},
+					(	@vehicle_model and this_povm = @vehicle_models[vehicle_make.id].detect{|povm| povm.vehicle_model_id == @vehicle_model.id}) ? this_povm.id : nil) %>
 				</div>
 			<% end %>
 		<% else %>

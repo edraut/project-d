@@ -36,9 +36,9 @@ class ProductsController < ApplicationController
         sql_where.push "(povmo.vehicle_model_id = :vehicle_model_id)"
         sql_hash[:vehicle_model_id] = @vehicle_model.id
       end
-      @products = Product.paginate :joins => sql_joins.join(' '), :conditions => [sql_where.join(' and '),sql_hash], :include => :product_images, :page => params[:page], :per_page => 8
+      @products = Product.paginate :joins => sql_joins.join(' '), :conditions => [sql_where.join(' and '),sql_hash], :include => :product_images, :page => params[:page], :per_page => 12
     else
-      @products = Product.published.paginate(:per_page => 8, :page => params[:page])
+      @products = Product.published.paginate(:per_page => 12, :page => params[:page])
       @nav_tab = 'home'
     end
   end
@@ -52,7 +52,7 @@ class ProductsController < ApplicationController
     @vehicle_makes = @product.product_options.map{|po| po.vehicle_makes}.flatten.uniq
     @vehicle_models = {}
     for vehicle_make in @vehicle_makes
-      @vehicle_models[vehicle_make.id] = @product.product_options.map{|po| po.product_option_vehicle_models.map{|povm| (povm.vehicle_model.vehicle_make_id == vehicle_make.id) ? povm : nil} }.flatten.compact.uniq.sort{|x,y| x.vehicle_model.name <=> y.vehicle_model.name}
+      @vehicle_models[vehicle_make.id] = @product.product_options.map{|po| po.product_option_vehicle_models.select{|povm| povm.vehicle_model.vehicle_make_id == vehicle_make.id}}.flatten.uniq.sort{|x,y| x.vehicle_model.name <=> y.vehicle_model.name}
     end
   end
 
