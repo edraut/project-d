@@ -1,21 +1,22 @@
 <% if @category %>
 	<% top_category = @category.parent.nil? ? @category : @category.parent %>
 	<div class="span-14_75 last quiet">
-		<div class="span-3">filter by:</div>
+		<div class="span-1_5">filter by:</div>
 		<% if top_category.vehicle_filter %>
 			<div class="span-3">make</div>
-			<div class="span-4">model</div>
+			<div class="span-5">model</div>
 		<% end %>
 		<div class="span-2">new/used</div>
 	</div>
-	<div class="span-14_75 last">
+	<div class="span-14_75 last margin-bottom border-bottom">
+		<div class="span-1_5">&nbsp;</div>
 		<% form_tag '/products', :method => :get do %>
 			<%= hidden_field_tag 'category_id', @category.id %>
 			<% if top_category.vehicle_filter %>
-				<div class="span-3 prepend-3">
-					<%= select_tag 'vehicle_make_id', options_for_select([['any',nil]] + VehicleMake.all.map{|vm| [vm.name,vm.id]},@vehicle_make ? @vehicle_make.id : nil), :id => 'vehicle_make_select' %>
+				<div class="span-3">
+					<%= select_tag 'vehicle_make_id', options_for_select([['any',nil]] + @vehicle_makes.map{|vm| [vm.name,vm.id]},@vehicle_make ? @vehicle_make.id : nil), :id => 'vehicle_make_select', :class => 'span-3' %>
 				</div>
-				<div id="vehicle_model_select" class="span-4"></div>
+				<div id="vehicle_model_select" class="span-5"></div>
 			<% end %>
 			<div id="used_filter" class="span-2">
 				<%= select_tag 'used', options_for_select([['any',nil],['new','new'],['used','used']],@used ? @used : nil) %>
@@ -27,16 +28,37 @@
 	<div id="vehicle_model_select_" style="display: none;">
 		-
 	</div>
-		<% for vehicle_make in VehicleMake.find(:all, :include => :vehicle_models) %>
+		<% for vehicle_make in @vehicle_makes %>
 			<div id="vehicle_model_select_<%= vehicle_make.id %>" style="display: none;">
-				<%= select_tag 'vehicle_model_id', options_for_select([['any',nil]] + vehicle_make.vehicle_models.map{|vmo| [vmo.name,vmo.id]},@vehicle_model ? @vehicle_model.id : nil) %>
+				<%= select_tag 'vehicle_model_id', options_for_select([['any',nil]] + @vehicle_models[vehicle_make.id].map{|vmo| [vmo.name,vmo.id]},@vehicle_model ? @vehicle_model.id : nil), :class => 'span-5' %>
 			</div>
 		<% end %>
 	<% end %>
 <% end %>
-<% for product in @products %>
-	<%= link_to product.name, product_url(product) %><br/>
+<% unless @products.any? %>
+	<div class="system-message blue">No products match your filters for the category you selected. Try selecting different filters or a different category.</div>
 <% end %>
+<div class="span-14_75 last">
+	<div class="span-1">&nbsp;</div>
+	<div class="span-13_75 last">
+<% for product in @products %>
+<div class="span-4 product-thumb">
+	<% 	these_params = []
+			these_params.push "vehicle_make_id=#{@vehicle_make.id}" if @vehicle_make
+			these_params.push "vehicle_model_id=#{@vehicle_model.id}" if @vehicle_model
+			this_url = product_url(product) + (these_params.any? ? '?' + these_params.join('&') : '') %>
+	<%= link_to image_tag(product.product_images.first.image.url(:medium)), this_url if product.product_images.any? %>
+	<%= link_to product.name, this_url %><br/>
+	<% if product.product_options.length == 1 %>
+		<%= product.product_options.first.price.format %>
+		<%= link_to 'add to cart', '#'%>
+	<% else %>
+		<%= link_to 'see options', this_url %>
+	<% end %>
+</div>
+<% end %>
+</div>
+</div>
 <%= will_paginate @products %>
 <% javascript_tag do %>
 	function swapVehicleModels(vehicle_make_id) {

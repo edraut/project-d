@@ -1,10 +1,10 @@
 <% product_option = show %>
-<div class="span-10 last">
+<div class="span-11 last">
 <div class="span-2"><%= product_option.name.blank? ? '-' : product_option.name %></div>
 <div class="column span-1_5">
 <%= product_option.price %>
 </div>
-<div class="column span-1_5">
+<div class="column span-2">
 <%= product_option.sku.blank? ? '-' : product_option.sku %>
 </div>
 <div class="span-1">

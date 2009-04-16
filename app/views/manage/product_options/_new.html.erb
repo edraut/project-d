@@ -10,7 +10,7 @@
 		:ajax_method => 'POST',
 		:id => 'product_option_new_form'
 	} do |f| %>
-	<div class="span-10 last">
+	<div class="span-11 last">
 				<div class="span-2">
 			<%= product_option.first_error_on :name %>
 			<%= f.text_field :name, :class => 'textfield-2' %>
@@ -19,9 +19,9 @@
 			<%= product_option.first_error_on :price %>
 			<%= f.text_field :price, :class => 'textfield-1_5' %>
 		</div>
-				<div class="column span-1_5">
+				<div class="column span-2">
 			<%= product_option.first_error_on :sku %>
-			<%= f.text_field :sku, :class => 'textfield-1_5' %>
+			<%= f.text_field :sku, :class => 'textfield-2' %>
 		</div>
 				<div class="span-1">
 			<%= product_option.first_error_on :inventory_quantity %>

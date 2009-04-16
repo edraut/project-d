@@ -1,13 +1,48 @@
 <div class="span-14_75 last">
 	<h2><%= @product.name %></h2>
 </div>
-<div class="span-4">
-	<% for product_image in @product.product_images %>
-		<div class="span-4 last">
-			<%= link_to image_tag(product_image.image.url(:medium)), product_image.image.url(:original), :target => '_blank' %>
-		</div>
-	<% end %>
+<div class="span-14_75">
+	<div class="span-9">
+		<%= link_to image_tag(@product.product_images.first.image.url(:large)) %>
+	</div>
+		<% if @vehicle_makes.any? %>
+			<div class="span-5 last">
+				<%= select_tag 'vehicle_make_id', options_for_select([['Select Make',nil]] + @vehicle_makes.map{|vm| [vm.name,vm.id]},(@vehicle_make ? @vehicle_make.id : nil)), :id => 'vehicle_make_select' %>
+			</div>
+			<div id="vehicle_model_container" class="span-5 last">
+				-
+			</div>
+			<% for vehicle_make in @vehicle_makes %>
+				<div id="vehicle_model_container_<%= vehicle_make.id %>" class="span-5 last" style="display: none">
+					<%= select_tag 'product_option_id', options_for_select([['Select Model',nil]] + @vehicle_models[vehicle_make.id].map{|mod| ["#{mod.vehicle_model.name}:#{mod.year_begin}-#{mod.year_end}",mod.product_option_id]},
+					(	@vehicle_model and this_povm = @vehicle_models[vehicle_make.id].detect{|povm| povm.vehicle_model_id == @vehicle_model.id}) ? this_povm.product_option_id : nil) %>
+				</div>
+			<% end %>
+		<% else %>
+			<div class="span-5 last">
+				<% product_option = @product.product_options.first %>
+				part number: <%= product_option.sku %><br/>
+				price: <%= product_option.price.format %>
+			</div>
+		<% end %>
 </div>
-<div class="span-10 last">
-	<%= RedCloth.new(@product.description).to_html unless @product.description.blank? %><br/>
+<div class="span-14_75">
+	<div class="span-4">
+		<% for product_image in @product.product_images[1..-1] %>
+			<div class="span-4 last">
+				<%= link_to image_tag(product_image.image.url(:medium)), product_image.image.url(:original), :target => '_blank' %>
+			</div>
+		<% end if @product.product_images.length > 1%>
+	</div>
+	<div class="span-9 last">
+		<%= RedCloth.new(@product.description).to_html unless @product.description.blank? %>
+	</div>
 </div>
+<% javascript_tag do %>
+	$(document).ready(function(){
+		$('#vehicle_make_select').change(function(e){
+			$('#vehicle_model_container').html($('#vehicle_model_container_' + $(e.target).val()).html());
+		});
+		$('#vehicle_model_container').html($('#vehicle_model_container_' + $('#vehicle_make_select').val()).html());
+	});
+<% end %>

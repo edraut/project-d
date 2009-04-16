@@ -1,0 +1,25 @@
+a, a:link, a:visited { color: #000; text-decoration: underline; }
+a:active, a:focus, a:hover { color: #c00; }
+body { background: #fff; font: 12px/16px Arial, Helvetica, sans-serif; margin: auto; padding: 15px; /*width: 950px;*/ }
+#body { background: #ccc; border: 1px #808080 solid; clear: left; overflow: hidden; margin-bottom: 3px; margin-top: 3px; padding: 15px 0; }
+#footer #banner { background: #c00; border: 1px #000 solid; clear: left; height: 24px; }
+#footer h4 { color: #808080; float: left; font-size: 11px; font-weight: normal; margin: 3px; }
+#footer h4 span { color: #000; font-size: 12px; font-weight: normal; margin: 3px 0; }
+#header a { background: #c00; border: 1px #000 solid; border-bottom-color: #c00; color: #fff; float: right; font-weight: bold; margin-right: 30px; margin-top: -30px; padding: 6px; }
+#header #Corp_Logo { float: left; }
+#header #title { font-size: 18px; float: left; margin-left: 15px; margin-top: 34px; }
+#header #subtitle { color: #c00; font-size: 16px; margin-left: 3px; }
+#header #banner { background: #c00; border: 1px #000 solid; clear: left; height: 24px; }
+.name { font-weight: bold; text-align: center; }
+th.picture { background: transparent; border-bottom-style: solid; border-left: 0; }
+.picture { background: #fff; border-left: 1px #808080 solid; border-bottom-style: dashed; text-align: center; width: 162px; }
+.picture img { vertical-align: bottom; }
+.price { font-weight: bold; text-align: center; width: 75px; }
+.prod { padding-left: 10px; text-align: left; width: 85px; }
+.vehicle { text-align: center; }
+table { border-collapse: collapse; width: 100%; }
+td { border-bottom: 1px #808080 solid; padding: 5px 10px; }
+td.last { border-bottom-style: solid; }
+td + td { border-left: 0 #808080 solid; }
+th { border-bottom: 1px #808080 solid; }
+ul { float: left; list-style: none; margin-bottom: 0; margin-top: 0; }

@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(:version => 20090324133514) do
   create_table "product_images", :force => true do |t|
     t.integer  "product_id", :limit => 11
     t.string   "caption"
+    t.string   "image_remote_url"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_fize_size"

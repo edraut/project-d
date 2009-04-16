@@ -9,6 +9,10 @@ h1 {
 h3 {
 	color: #555555;
 }
+a {
+	color: #0297BB;
+	text-decoration: none;
+}
 .small-links a{
 	font-size: 12px;
 }
@@ -54,10 +58,13 @@ h3 {
 .span-3_75 {
 	width: 140px;
 }
+.span-13_75 {
+	width: 540px;
+}
 .span-14_75 {
 	width: 580px;
 }
-.span-1_5, .span-2_5, .span-3_5, .span-3_75, .span-14_75 {float:left;margin-right:10px;}
+.span-1_5, .span-2_5, .span-3_5, .span-3_75, .span-13_75, .span-14_75, .top-category, .sub-category {float:left;margin-right:10px;}
 .text-right {
 	text-align: right;
 }
@@ -224,4 +231,23 @@ div.nav-spacer {
 }
 .yellow {
 	color: #E4C42D;
+}
+.top-category {
+	width: 135px;
+	padding-right: 5px;
+}
+div.sub-category {
+	width: 145px;
+	margin-right: 5px;
+}
+a.category-selected{
+	color: #111111;
+	font-weight: bold;
+}
+.system-message {
+	font-size: 18px;
+}
+div.product-thumb{
+	height: 243px;
+	margin-right: 25px;
 }
