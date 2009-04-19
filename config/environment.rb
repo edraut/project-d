@@ -80,6 +80,7 @@ Rails::Initializer.run do |config|
   config.action_mailer.delivery_method = :smtp
   config.active_record.observers = :user_observer
 end
+require 'active_merchant'
 ActionMailer::Base.smtp_settings = {
   :address  => "smtp.gmail.com",
   :port => 587,

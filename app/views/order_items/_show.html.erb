@@ -1,0 +1,37 @@
+<% order_item = show %>
+<div class="span-14_75 last">
+<div class="span-4">
+	<%= order_item.product_option.product.name %>
+</div>
+<div class="span-4">
+	<% if order_item.product_option_vehicle_model_id %>
+		<%= order_item.product_option_vehicle_model.vehicle_model.name %> <%= order_item.product_option_vehicle_model.year_begin %>-<%= order_item.product_option_vehicle_model.year_end %>
+	<% elsif !order_item.product_option.name.blank? %>
+		<%= order_item.product_option.name %>
+	<% else %>
+		-
+	<% end %>
+</div>
+<div class="span-1">
+	<%= order_item.quantity %>
+</div>
+<div class="span-1_5">
+	<%= order_item.price.format %>
+</div>
+<div class="span-1_5">
+	<%= order_item.total.format %>
+</div>
+
+<div class="span-2_5 last">
+<%= link_to 'edit', edit_order_item_url(order_item),
+	:ajax_binding => 'ajax_link',
+	:ajax_method => 'GET',
+	:ajax_success_element => "order_item_#{order_item.id}",
+	:ajax_success_callback => "$('#order_item_#{order_item.id}').addClass('editing');" %> | 
+<%= link_to 'remove', order_item_url(order_item),
+	:ajax_binding => 'ajax_link',
+	:ajax_method => 'DELETE',
+	:ajax_success_callback => "$('#order_item_#{order_item.id}').remove();",
+	:ajax_confirm => 'Are you sure you want to delete this order_item?' %>
+</div>
+</div>

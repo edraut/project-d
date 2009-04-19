@@ -1,4 +1,12 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :orders
+
+  map.resources :addresses
+
+  map.resource :cart
+
+  map.resources :order_items
+
   map.resources :carts
 
   map.resources :news
@@ -68,6 +76,7 @@ ActionController::Routing::Routes.draw do |map|
     manage.resources :vehicle_makes
     manage.resources :vehicle_types
     manage.resources :product_option_vehicle_models
+    manage.resources :orders
   end
   
   map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate', :activation_code => nil 

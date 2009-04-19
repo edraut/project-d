@@ -1,6 +1,9 @@
 Add a new cart<br/>
 <p>
 <% form_for :cart, @cart, :url => carts_url(:_method => :post) do |f| %>
+ship_method
+<%= @cart.first_error_on :ship_method %>
+<%= f.text_field :ship_method %><br/>
 
 <%= f.submit :add %>
 <% end %>

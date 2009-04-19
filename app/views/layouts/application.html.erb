@@ -23,13 +23,13 @@
 		<% if @nav_area == 'manage' %>
 			<div class="span-24 last dash-frame-color container-padding">
 				<div class="span-8">
-					<span class="banner">Mad Racing MX</span>
+					<span class="banner"><a href="/">MAD RACING MX</a></span>
 				</div>
 				<div class="span-16 last main-nav-tabs">
 						<div class="span-4 text-center <% if @nav_tab == 'products' %>selected<% end %>"><%= link_to 'products', manage_products_url %></div>
 						<div class="span-4 text-center <% if @nav_tab == 'categories' %>selected<% end %>"><%= link_to 'categories', manage_categories_url %></div>
 						<div class="span-4 text-center <% if @nav_tab == 'models' %>selected<% end %>"><%= link_to 'makes & models', manage_vehicle_makes_url %></div>
-						<div class="span-4 last text-center"><%= link_to 'public site', '/' %></div>
+						<div class="span-4 last text-center <% if @nav_tab == 'orders' %>selected<% end %>"><%= link_to 'orders', manage_orders_url + '?state=pending' %></div>
 				</div>
 			</div>
 		<% else %>
@@ -39,7 +39,7 @@
 			<div class="middle-frame">
 				<div class="header">
 					<div class="span-19 header-content">
-						<div class="span-8 prepend-10 append-1 text-right last"><span class="blue"><a href="mailto:contact@madracingmx.com">EMAIL US</a></span> <span class="orange">||</span> <span class="yellow">ORDER NOW!</span> <span class="orange">800.000.0000</span>
+						<div class="span-8 prepend-10 append-1 text-right last">&nbsp;
 						</div>
 						<div class="span-8 prepend-10 append-1 text-right last">
 							<form>Search <input type="text" class="span-5"/> <input type="submit" value="Go"/></form>
@@ -97,9 +97,7 @@
 			</div>
 			</div>
 			</div>
-			<!-- <div class="right-frame">
-				<img src="/images/right_frame.jpg">
-			</div> -->
+			<div class="span-8 prepend-15 margin-top"><span class="footer"><a href="mailto:contact@madracingmx.com">contact@madracingmx.com</a> || 800.000.0000</span>	
 		<% end %>
 	</div>
 </body>

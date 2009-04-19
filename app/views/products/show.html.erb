@@ -14,23 +14,41 @@
 			</div>
 			<% for vehicle_make in @vehicle_makes %>
 				<div id="vehicle_model_container_<%= vehicle_make.id %>" class="span-5 last" style="display: none">
-					<%= select_tag 'product_option_vehicle_model_id', options_for_select([['Select Model',nil]] + @vehicle_models[vehicle_make.id].map{|mod| ["#{mod.vehicle_model.name}:#{mod.year_begin}-#{mod.year_end}",mod.id]},
-					(	@vehicle_model and this_povm = @vehicle_models[vehicle_make.id].detect{|povm| povm.vehicle_model_id == @vehicle_model.id}) ? this_povm.id : nil) %>
+					<% form_tag cart_url, :method => :put do %>
+						<%= select_tag 'product_option_vehicle_model_id', options_for_select([['Select Model',nil]] + @vehicle_models[vehicle_make.id].map{|mod| ["#{mod.vehicle_model.name}:#{mod.year_begin}-#{mod.year_end}",mod.id]},
+					(	@vehicle_model and this_povm = @vehicle_models[vehicle_make.id].detect{|povm| povm.vehicle_model_id == @vehicle_model.id}) ? this_povm.id : nil), :ui_binding => "option_select" %>
+					<div class="span-5 last" style="display: none" ui_binding="add_to_cart_button">
+						<div class="span-1 text-right">price:</div>
+						<div id="price" class="span-1_5"></div>
+						<div class="span-2_5 last"> <%= submit_tag 'add to cart' %></div>
+					</div>
+					<% end %>
 				</div>
 			<% end %>
+		<% elsif @product_options %>
+			<div class="span-5 last">
+				<% form_tag cart_url, :method => :put do %>
+					<%= select_tag 'order_item[product_option_id]', options_for_select([['Select Option',nil]] + @product_options.map{|opt| [opt.name,opt.id]}), :ui_binding => "option_select", :id => 'product_option_select' %>
+					<div class="span-5 last" style="display: none" ui_binding="add_to_cart_button">
+					<div class="span-1 text-right">price:</div>
+					<div id="price" class="span-1_5"></div>
+					<div class="span-2_5 last"><%= submit_tag 'add to cart' %></div>
+				<% end %>
+			</div>
 		<% else %>
 			<div class="span-5 last">
 				<% product_option = @product.product_options.first %>
 				part number: <%= product_option.sku %><br/>
 				price: <%= product_option.price.format %>
+				<%= link_to 'add to cart', cart_url + "?order_item[product_option_id]=#{product_option.id}", :method => :put %>
 			</div>
 		<% end %>
 </div>
 <div class="span-14_75">
 	<div class="span-4">
 		<% for product_image in @product.product_images[1..-1] %>
-			<div class="span-4 last">
-				<%= link_to image_tag(product_image.image.url(:medium)), product_image.image.url(:original), :target => '_blank' %>
+			<div class="span-4 last margin-top">
+				<%= link_to image_tag(product_image.image.url(:small)), product_image.image.url(:original), :target => '_blank' %>
 			</div>
 		<% end if @product.product_images.length > 1%>
 	</div>
@@ -38,11 +56,38 @@
 		<%= RedCloth.new(@product.description).to_html unless @product.description.blank? %>
 	</div>
 </div>
+<% for vehicle_make in @vehicle_makes %>
+	<% for vehicle_model in @vehicle_makes.map{|make| @vehicle_models[make.id]}.flatten %>
+		<div id="option_price_<%= vehicle_model.id %>" style="display: none;"><%= vehicle_model.product_option.price.format %></div>
+	<% end %>
+<% end if @vehicle_makes %>
+<% for product_option in @product_options %>
+	<div id="option_price_<%= product_option.id %>" style="display: none;"><%= product_option.price.format %></div>
+<% end if @product_options %>
 <% javascript_tag do %>
 	$(document).ready(function(){
-		$('#vehicle_make_select').change(function(e){
-			$('#vehicle_model_container').html($('#vehicle_model_container_' + $(e.target).val()).html());
-		});
-		$('#vehicle_model_container').html($('#vehicle_model_container_' + $('#vehicle_make_select').val()).html());
+		if($('#vehicle_make_select').length > 0){
+			$('#vehicle_make_select').change(function(e){
+				$('#vehicle_model_container').html($('#vehicle_model_container_' + $(e.target).val()).html());
+				$('#vehicle_model_container').find('select').attr('id',"option_select_" +$(e.target).val());
+				$("[ui_binding='option_select']").change(function(model_e){
+					if($(model_e.target).val() != ""){
+						$('#price').html($('#option_price_' + $(model_e.target).val()).html());
+						$("[ui_binding='add_to_cart_button']").show();
+					}
+				});
+				if(	$('#vehicle_model_container').find('select').val() == ""){
+					$("[ui_binding='add_to_cart_button']").hide();
+				}
+			});
+			$('#vehicle_model_container').html($('#vehicle_model_container_' + $('#vehicle_make_select').val()).html());
+		} else if ($('#product_option_select').length > 0) {
+			$("[ui_binding='option_select']").change(function(model_e){
+				if($(model_e.target).val() != ""){
+					$('#price').html($('#option_price_' + $(model_e.target).val()).html());
+					$("[ui_binding='add_to_cart_button']").show();
+				}
+			});
+		}
 	});
 <% end %>

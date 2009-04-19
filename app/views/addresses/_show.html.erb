@@ -1,0 +1,76 @@
+<% address = show %>
+<div class="span-7 last">
+<%= address.first_name %>
+<%= address.middle_initial %>
+<%= address.last_name %>
+</div>
+<div class="span-4">
+<%= address.address_1 %>
+</div>
+<div class="span-3 last">
+<%= address.address_2 %>
+</div>
+<div class="span-7 last">
+<%= address.city %>
+<%= address.state %>
+<%= address.zipcode %>
+<%= address.country.printable_name %>
+</div>
+<div class="span-3">
+<%= address.phone %>&nbsp;
+</div>
+<% if address.editable? %>
+	<% if address.class.name == 'BillingAddress' %>
+		<div id="copy_to_shipping" class="span-4 last text-right" style="display: none;">
+			<%= link_to 'change', edit_address_url(address),
+				:ajax_binding => 'ajax_link',
+				:ajax_method => 'GET',
+				:ajax_success_element => "address_#{address.id}",
+				:ajax_success_callback => "$('#address_#{address.id}').addClass('editing');" %>
+			| <a onclick="prepopulateShipping();">copy to shipping</a>
+		</div>
+		<div id="change_only" class="span-4 last text-right" style="display: none;">
+			<%= link_to 'change', edit_address_url(address),
+				:ajax_binding => 'ajax_link',
+				:ajax_method => 'GET',
+				:ajax_success_element => "address_#{address.id}",
+				:ajax_success_callback => "$('#address_#{address.id}').addClass('editing');" %>
+		</div>
+	<% else %>
+		<div class="span-4 last text-right">
+			<%= link_to 'change', edit_address_url(address),
+				:ajax_binding => 'ajax_link',
+				:ajax_method => 'GET',
+				:ajax_success_element => "address_#{address.id}",
+				:ajax_success_callback => "$('#address_#{address.id}').addClass('editing');" %>
+		</div>
+	<% end %>
+	<% javascript_tag do %>
+		<% if address.class.name == 'BillingAddress' %>
+			function prepopulateShipping(){
+				$('#shipping_address').find("input[name='address[first_name]']").val('<%= address.first_name %>');
+				$('#shipping_address').find("input[name='address[middle_initial]']").val('<%= address.middle_initial %>');
+				$('#shipping_address').find("input[name='address[last_name]']").val('<%= address.last_name %>');
+				$('#shipping_address').find("input[name='address[address_1]']").val('<%= address.address_1 %>');
+				$('#shipping_address').find("input[name='address[address_2]']").val('<%= address.address_2 %>');
+				$('#shipping_address').find("input[name='address[city]']").val('<%= address.city %>');
+				$('#shipping_address').find("select[name='address[state]']").val('<%= address.state %>');
+				$('#shipping_address').find("select[name='address[country_id]']").val('<%= address.country_id %>');
+				$('#shipping_address').find("input[name='address[phone]']").val('<%= address.phone %>');
+				$('#shipping_address').find("input[name='address[zipcode]']").val('<%= address.zipcode %>');
+			};
+			if($('#shipping_address').find('form').length == 0){
+				$('#copy_to_shipping').hide();
+				$('#change_only').show();
+			} else {
+				$('#change_only').hide();
+				$('#copy_to_shipping').show();
+			}
+	
+		<% else %>
+			$('#copy_to_shipping').hide();
+			$('#change_only').show();
+		<% end %>
+		handleCCForm();
+	<% end %>
+<% end %>

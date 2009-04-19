@@ -1,0 +1,133 @@
+<% address = edit %>
+<% form_for :address, address,
+	:url => address_url(address),
+	:html => {
+		:ajax_binding => 'ajax_form',
+		:ajax_success_element => "address_#{address.id}",
+		:ajax_method => 'PUT',
+		:ajax_success_callback => "$('#address_#{address.id}').removeClass('editing');",
+		:ajax_error_element => "address_#{address.id}",
+		:id => "edit_address_form_#{address.id}",
+		:ui_binding => 'address_form'
+	} do |f| %>
+	<div class="span-7 last">
+		<div class="span-3">
+			First Name
+		</div>
+		<div class="span-1">
+			M.
+		</div>
+		<div class="span-3 last text-right">
+			Last Name
+		</div>
+	</div>
+	<div class="span-7 last">
+		<div class="span-3">
+			<%= address.first_error_on :first_name %>
+			<%= f.text_field :first_name, :class => 'span-3' %>
+		</div>
+		<div class="span-1">
+			<%= address.first_error_on :middle_initial %>
+			<%= f.text_field :middle_initial, :class => 'span-1' %>
+		</div>
+		<div class="span-3 last text-right">
+			<%= address.first_error_on :last_name %>
+			<%= f.text_field :last_name, :class => 'span-3' %>
+		</div>
+	</div>
+	<div class="span-7 last">
+		<div class="span-4">
+			Address
+		</div>
+		<div class="span-3 last text-right">
+			Phone
+		</div>
+	</div>
+	<div class="span-7 last">
+		<div class="span-4">
+			<%= address.first_error_on :address_1 %>
+			<%= f.text_field :address_1, :class => 'span-4' %>
+		</div>
+		<div class="span-3 last text-right">
+			<%= address.first_error_on :phone %>
+			<%= f.text_field :phone, :class => 'span-3' %>
+		</div>
+	</div>
+	<div class="span-7 last">
+		<div class="span-3">
+			<%= address.first_error_on :address_2 %>
+			<%= f.text_field :address_2, :class => 'span-4' %>
+		</div>
+	</div>
+	<div class="span-7 last">
+		<div class="span-4">
+			City
+		</div>
+		<div class="span-3 last text-right">
+			Zip Code
+		</div>
+	</div>
+	<div class="span-7 last">
+		<div class="span-4">
+			<%= address.first_error_on :city %>
+			<%= f.text_field :city, :class => 'textfield-3' %>
+		</div>
+		<div class="span-3 last text-right">
+			<%= address.first_error_on :zipcode %>
+			<%= f.text_field :zipcode, :class => 'span-2' %>
+		</div>
+	</div>
+	<div class="span-7 last">
+		<div class="span-4">
+			Country
+		</div>
+		<div class="span-3 last text-right">
+			State / Provence
+		</div>
+	</div>
+	<div class="span-7 last">
+		<div class="span-4">
+			<%= address.first_error_on :country_id %>
+			<%= f.select :country_id, Country.sorted.map{|c| [c.name,c.id]}, {}, :class => 'span-4', :id => "country_select_#{address.id}" %>
+		</div>
+		<div id="state_<%= address.id %>" class="span-3 last text-right">
+
+		</div>
+	</div>
+	<div class="span-3 last">
+		<%= f.hidden_field :order_id %>
+		<% if address.status == 'live' %>
+			<%= f.submit :update %>
+		<% else %>
+			<%= f.submit :add %>
+		<% end %>
+	</div>
+<% end %>
+<div id="non_usa_state_<%= address.id %>" class="span-3 last text-right" style="display: none;">
+	<%= address.first_error_on :state %>
+	<%= text_field_tag 'address[state]', address.state, :class => 'textfield-3' %>
+</div>
+<div id="usa_state_<%= address.id %>" class="span-3 last text-right" style="display: none;">
+	<%= address.first_error_on :state %>
+	<%= select_tag 'address[state]', options_for_select(Address::STATES,address.state), :class => 'span-3' %>
+</div>
+
+<% javascript_tag do %>
+	$('#country_select_<%= address.id %>').change(function(e){
+		if($(e.target).val() == "465"){
+			$('#state_<%= address.id %>').html($('#usa_state_<%= address.id %>').html());
+		} else {
+			$('#state_<%= address.id %>').html($('#non_usa_state_<%= address.id %>').html());
+		}
+	});
+	<% if address.country_id == 465 or address.country_id == nil %>
+		$('#state_<%= address.id %>').html($('#usa_state_<%= address.id %>').html());
+	<% else %>
+		$('#state_<%= address.id %>').html($('#non_usa_state_<%= address.id %>').html());
+	<% end %>
+	<% if address.class.name == 'ShippingAddress' %>
+		$('#copy_to_shipping').show();
+		$('#change_only').hide();
+	<% end %>
+	handleCCForm();
+<% end %>

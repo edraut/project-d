@@ -1,0 +1,31 @@
+<div class="span-14_75 last">
+	<div class="span-10">
+		<h1>Order Complete</h1>
+	</div>
+	<div class="span-4_75 last text-right large bold">
+		<%= link_to 'continue shopping', '/' %>
+	</div>
+</div>
+<div class="span-14_75">
+	<b>Thank you for your order!</b> Your card has been charged and we'll be in contact with you soon regarding your order. In the mean time, here is a summary of your order. Please make a note of your order id for future reference and communications regarding your order.
+</div>
+<div id="order_id" class="span-14_75 last margin-top large bold">
+	Your Order Reference Number: <%= @cart.id %>
+</div>
+<%= render :partial => 'summary', :object => @cart %>
+<div class="span-14_75 last margin-top">
+	<div id="billing_address" class="span-7 extra-margin-right">
+		<h2>Billing Address</h2>
+		<% billing_address = BillingAddress.create_or_find_by_order_id(@cart.id) %>
+		<div id="address_<%= billing_address.id %>" class="span-7 last border-bottom margin-bottom">
+			<%= render :partial => 'addresses/show', :object => @cart.billing_address %>
+		</div>
+	</div>
+	<div id="shipping_address" class="span-7">
+		<h2>Shipping Address</h2>
+		<% shipping_address = ShippingAddress.create_or_find_by_order_id(@cart.id) %>
+		<div id="address_<%= shipping_address.id %>" class="span-7 last border-bottom margin-bottom">
+			<%= render :partial => 'addresses/show', :object => @cart.shipping_address %>
+		</div>
+	</div>
+</div>

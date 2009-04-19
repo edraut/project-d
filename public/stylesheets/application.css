@@ -55,11 +55,17 @@ hr.heavy {
 .span-2_5 {
 	width: 90px;
 }
+.span-2_75 {
+	width: 100px;
+}
 .span-3_5 {
 	width: 130px;
 }
 .span-3_75 {
 	width: 140px;
+}
+.span-4_75 {
+	width: 180px;
 }
 .span-13_75 {
 	width: 540px;
@@ -67,7 +73,7 @@ hr.heavy {
 .span-14_75 {
 	width: 580px;
 }
-.span-1_5, .span-2_5, .span-3_5, .span-3_75, .span-13_75, .span-14_75, .top-category, .sub-category {float:left;margin-right:10px;}
+.span-1_5, .span-2_5, .span-3_5, .span-2_75, .span-3_75, .span-4_75, .span-13_75, .span-14_75, .top-category, .sub-category {float:left;margin-right:10px;}
 .text-right {
 	text-align: right;
 }
@@ -80,11 +86,17 @@ hr.heavy {
 div.padding-top {
 	padding-top: 10px;
 }
+div.padding-bottom {
+	padding-bottom: 10px;
+}
 div.margin-top {
 	margin-top: 10px;
 }
 div.margin-bottom {
 	margin-bottom: 10px;
+}
+div.extra-margin-right {
+	margin-right: 25px;
 }
 div.border-bottom {
 	border-bottom: 1px solid #8F8F8F;
@@ -273,4 +285,24 @@ div.border {
 }
 .product-index-margin {
 	width: 25px;
+}
+.large {
+	font-size: 16px;
+}
+.bold {
+	font-weight: bold;
+}
+select {
+	margin: 0;
+	padding: 2px;
+}
+input[type="submit"] {
+	margin: 0;
+	padding: 2px;
+}
+.footer {
+	color: #222222;
+}
+.footer a {
+	color: #000000;
 }

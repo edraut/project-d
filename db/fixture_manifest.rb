@@ -12,7 +12,8 @@ class FixtureManifest
           :product_option_vehicle_models => 1
         },
         :product_images => 1
-      }
+      },
+      :countries => 1
     }
   end
   

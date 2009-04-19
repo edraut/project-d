@@ -38,7 +38,7 @@ class Manage::ProductsController < Manage::ApplicationController
     @product = Product.new(@editable_params)
 
     if @product.save
-      flash[:notice] = 'Product was successfully created.'
+      @product_section = 'options'
       render :template => 'manage/products/options_images_form' and return
     else
       @products = Product.find(:all)
@@ -51,11 +51,13 @@ class Manage::ProductsController < Manage::ApplicationController
   def update
     @product.send(params[:event]) if params.has_key? :event
     if params.has_key? :product and @product.update_attributes(@editable_params)
-      flash[:notice] = 'Product was successfully updated.'
+      @product_section = 'overview'
       render :template => 'manage/products/show' and return
     elsif !params.has_key? :product
+      @product_section = 'overview'
       render :template => 'manage/products/show' and return
     else
+      @product_section = 'info'
       render :template => 'manage/products/edit' and return
     end
   end
@@ -64,7 +66,7 @@ class Manage::ProductsController < Manage::ApplicationController
   # DELETE /manage_products/1.xml
   def destroy
     @product.destroy
-    @products = Product.all
+    @products = Product.paginate(:page => params[:page], :per_page => 25)
     render :template => 'manage/products/index' and return
   end
   

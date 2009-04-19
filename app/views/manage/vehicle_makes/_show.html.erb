@@ -10,11 +10,13 @@
 	:ajax_method => 'GET',
 	:ajax_success_element => "vehicle_make_#{vehicle_make.id}",
 	:ajax_success_callback => "$('#vehicle_make_#{vehicle_make.id}').addClass('editing');" %> | 
-<%= link_to 'delete', manage_vehicle_make_url(vehicle_make),
-	:ajax_binding => 'ajax_link',
-	:ajax_method => 'DELETE',
-	:ajax_success_callback => "$('#vehicle_make_#{vehicle_make.id}').remove();",
-	:ajax_confirm => 'Are you sure you want to delete this vehicle_make?' %> |
+<% unless vehicle_make.product_option_vehicle_makes.any? %>
+	<%= link_to 'delete', manage_vehicle_make_url(vehicle_make),
+		:ajax_binding => 'ajax_link',
+		:ajax_method => 'DELETE',
+		:ajax_success_callback => "$('#vehicle_make_#{vehicle_make.id}').remove();",
+		:ajax_confirm => 'Are you sure you want to delete this vehicle_make?' %> |
+<% end %>
 <%= link_to 'models', manage_vehicle_models_url(:vehicle_make_id => vehicle_make.id),
 		:ajax_binding => 'ajax_link',
 		:ajax_method => 'GET',

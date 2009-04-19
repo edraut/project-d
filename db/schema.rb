@@ -165,7 +165,69 @@ ActiveRecord::Schema.define(:version => 20090324133514) do
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
 
-  create_table :sessions do |t|
+  create_table "orders", :force => true do |t|
+    t.integer   "user_id", :limit => 11
+    t.string    "email"
+    t.string    "shipping_method"
+    t.string    "state"
+    t.string    "gateway_status_code"
+    t.string    "gateway_status_message"
+    t.integer   "shipping_total"
+    t.integer   "subtotal"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+  
+  add_index "orders", ["user_id"], :name => "index_orders_on_user_id"
+  add_index "orders", ["state"], :name => "index_orders_on_state"
+
+  create_table "order_items", :force => true do |t|
+    t.integer   "order_id", :limit => 11
+    t.integer   "product_option_id", :limit => 11
+    t.integer   "product_option_vehicle_model_id", :limit => 11
+    t.string    "sku"
+    t.integer   "price"
+    t.integer   "quantity"
+  end
+  
+  add_index "order_items", ["order_id"], :name => "index_order_items_on_order_id"
+  add_index "order_items", ["product_option_id"], :name => "index_order_items_on_product_option_id"
+  
+  create_table "addresses", :force => true do |t|
+    t.string    "type"
+    t.string    "status"
+    t.integer   "user_id", :limit => 11
+    t.integer   "order_id", :limit => 11
+    t.string   "first_name",                     :default => "",    :null => false
+    t.string   "last_name",                     :default => "",    :null => false
+    t.string   "middle_initial",  :limit => 5, :default => "",    :null => false
+    t.string   "address_1",                :default => "",    :null => false
+    t.string   "address_2",                :default => "",    :null => false
+    t.string   "city",                     :default => "",    :null => false
+    t.string   "state",                    :default => "",    :null => false
+    t.string   "zipcode",    :limit => 10, :default => "",    :null => false
+    t.string   "phone",    :limit => 20, :default => "",    :null => false
+    t.integer  "country_id", :limit => 11
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+  
+  add_index "addresses", ["user_id"], :name => "index_addresses_on_user_id"
+  add_index "addresses", ["order_id"], :name => "index_addresses_on_order_id"
+  add_index "addresses", ["created_at"], :name => "index_addresses_on_created_at"
+  
+  create_table "countries", :force => true do |t|
+    t.string   "iso"
+    t.string   "name"
+    t.string   "printable_name"
+    t.string   "iso3"
+    t.integer  "numcode"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table :sessions, :force => true do |t|
     t.string :session_id, :null => false
     t.text :data
     t.timestamps

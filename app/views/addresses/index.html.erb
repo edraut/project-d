@@ -1,0 +1,45 @@
+<h1>addresses</h1>
+<div id="address_list" class="span-33 last">
+	<div id="address_list_header" class="span-33 last">
+		<div class="span-3">
+		First name
+	</div>
+		<div class="span-3">
+		Last name
+	</div>
+		<div class="span-3">
+		Middle initial
+	</div>
+		<div class="span-3">
+		Address 1
+	</div>
+		<div class="span-3">
+		Address 2
+	</div>
+		<div class="span-3">
+		City
+	</div>
+		<div class="span-3">
+		State
+	</div>
+		<div class="span-3">
+		Zipcode
+	</div>
+		<div class="span-3">
+		Phone
+	</div>
+		<div class="span-3">
+		Country
+	</div>
+	
+	<div class="span-3 last">
+		&nbsp;
+	</div>
+	</div>
+	<% for address in @addresses %>
+		<%= render :partial => "addresses/element_container", :object => address %>
+	<% end %>
+</div>
+<div id="address_new" class="span-33 last">
+	<%= render :partial => "addresses/new", :object => Address.new %>
+</div>

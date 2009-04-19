@@ -1,0 +1,44 @@
+<% order_item = edit %>
+<% form_for :order_item, order_item,
+	:url => order_item_url(order_item),
+	:html => {
+		:ajax_binding => 'ajax_form',
+		:ajax_success_element => "order_item_#{order_item.id}",
+		:ajax_method => 'PUT',
+		:ajax_success_callback => "$('#order_item_#{order_item.id}').removeClass('editing');reloadTotals();",
+		:id => "edit_order_item_form_#{order_item.id}"
+	} do |f| %>
+	<div class="span-14_75 last">
+		<div class="span-4">
+			<%= order_item.product_option.product.name %>
+		</div>
+		<div class="span-4">
+			<% if order_item.product_option_vehicle_model_id %>
+				<%= order_item.product_option_vehicle_model.vehicle_model.name %> <%= order_item.product_option_vehicle_model.year_begin %>-<%= order_item.product_option_vehicle_model.year_end %>
+			<% elsif !order_item.product_option.name.blank? %>
+				<%= order_item.product_option.name %>
+			<% else %>
+				-
+			<% end %>
+		</div>
+		<div class="span-1">
+			<%= order_item.first_error_on :quantity %>
+			<%= f.text_field :quantity, :class => 'span-1' %>
+		</div>
+		<div class="span-1_5">
+			<%= order_item.price.format %>
+		</div>
+		<div class="span-1_5">
+			<%= order_item.total.format %>
+		</div>
+		
+		<div class="span-2_5 last">
+<%= f.submit :save %>
+<%= link_to 'cancel', order_item_url(order_item),
+	:ajax_binding => 'ajax_link',
+	:ajax_method => 'GET',
+	:ajax_success_element => "order_item_#{order_item.id}",
+	:ajax_success_callback => "$('#order_item_#{order_item.id}').removeClass('editing');" %>
+		</div>
+	</div>
+<% end %>

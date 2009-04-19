@@ -1,0 +1,43 @@
+<% order = summary %>
+<div id="order_summary" class="span-14_75 last">
+	<h2>Order Summary</h2>
+	<div class="span-14_75 last border-bottom margin-bottom">
+		<div class="span-5 field-label">Item</div>
+		<div class="span-5 field-label">Option</div>
+		<div class="span-1 field-label">Qty.</div>
+		<div class="span-1_5 field-label">Price</div>
+		<div class="span-1_5 field-label">Total</div>
+	</div>
+	<% for order_item in order.order_items %>
+	<div id="order_summary" class="span-14_75 last border-bottom margin-bottom">
+		<div class="span-5"><%= order_item.product_option.product.name %></div>
+		<div class="span-5">
+			<% if order_item.product_option_vehicle_model_id %>
+				<%= order_item.product_option_vehicle_model.vehicle_model.name %> <%= order_item.product_option_vehicle_model.year_begin %>-<%= order_item.product_option_vehicle_model.year_end %>
+			<% elsif !order_item.product_option.name.blank? %>
+				<%= order_item.product_option.name %>
+			<% else %>
+				-
+			<% end %>
+		</div>
+		<div class="span-1"><%= order_item.quantity %></div>
+		<div class="span-1_5"><%= order_item.price.format %></div>
+		<div class="span-1_5"><%= order_item.total.format %></div>
+	</div>
+	<% end %>
+</div>
+<div class="span-14_75">
+	<div class="span-8">&nbsp;</div>
+	<div class="span-3 text-right">sub-total:</div>
+	<div id="subtotal" class="span-1"><%= order.subtotal.format %></div>
+</div>
+<div class="span-14_75">
+	<div class="span-8">&nbsp;</div>
+	<div class="span-3 text-right">shipping:</div>
+	<div id="subtotal" class="span-1"><%= order.shipping_total.format %></div>
+</div>
+<div class="span-14_75">
+	<div class="span-8">&nbsp;</div>
+	<div class="span-3 text-right">order total:</div>
+	<div id="subtotal" class="span-1"><%= order.total.format %></div>
+</div>

@@ -1,2 +1,70 @@
-<h1>My Cart</h1>
-Coming Soon!
+<div class="span-14_75">
+	<div class="span-10">
+		<h1>Shopping Cart</h1>
+	</div>
+	<div class="span-4_75 last text-right large bold">
+		<%= link_to 'continue shopping', '/' %>
+	</div>
+</div>
+<div class="span-14_75">
+<%= render :partial => 'order_items/index', :object => @cart %>
+</div>
+<% if @cart.order_items.any? %>
+	<div class="span-14_75">
+		<div class="span-8">&nbsp;</div>
+		<div class="span-2_5 text-right">sub-total:</div>
+		<div id="subtotal" class="span-1"><%= @cart.subtotal.format %></div>
+	</div>
+<% end %>
+<div class="span-14_75 margin-top">
+<% form_for :cart, @cart, :url => cart_url(:id => @cart.id, :_method => :put) do |f| %>
+	<div class="span-2_5 text-right">
+		Shipping Method 
+	</div>
+	<div class="span-2_5">
+		<%= @cart.first_error_on :ship_method %>
+		<%= f.select :shipping_method, Order::SHIPPING_METHODS.map{|sm| [sm,sm]}, :class => 'span-3' %>
+	</div>
+	<div class="span-3">
+		<%= f.submit "calculate shipping" %>
+	</div>
+		<% if @cart.shipping_method.blank? %>
+		<div class="span-4 ">
+			&nbsp;
+		</div>
+		<% else %>
+		<div class="span-2_5 text-right">
+			Shipping Total:
+		</div>
+		<div id="shipping_total" class="span-1"><%= @cart.shipping_total.format %></div>
+		<% end %>
+<% end %>
+</div>
+<div class="span-14_75 last margin-top">
+	<div class="span-8">&nbsp;</div>
+	<div class="span-2_5 text-right">Order Total:</div>
+	<div id="total" class="span-1_5"><%= @cart.total.format %></div>
+	<div class="span-2_75 last text-right">
+		<%= link_to 'empty cart', cart_url, :method => :delete, :confirm => 'Are you sure you want to empty this cart?' %>
+	</div>
+</div>
+<% if @cart.order_items.any? %>
+	<div class="span-14_75 last text-right margin-top">
+			<%= link_to 'proceed to checkout', cart_url + '?stage=billing_info', :class => 'large bold' %>
+	</div>
+<% end %>
+<% javascript_tag do %>
+	function reloadTotals(){
+		$.ajax({
+			url: '/cart',
+			type: 'GET',
+			data: {get_totals: 'true'},
+			dataType: 'json',
+			success: function(data,textStatus) {
+				$('#shipping_total').html(data.shipping_total);
+				$('#subtotal').html(data.subtotal);
+				$('#total').html(data.total);
+			}
+		})
+	}
+<% end %>

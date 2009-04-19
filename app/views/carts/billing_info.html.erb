@@ -1,0 +1,64 @@
+<div class="span-14_75 last">
+	<div class="span-10">
+		<h1>Billing Info</h1>
+	</div>
+	<div class="span-4_75 last text-right large bold">
+		<%= link_to 'continue shopping', '/' %>
+	</div>
+</div>
+<% if flash[:error] %>
+<div class="error span-13_75"><%= flash[:error] %></div>
+<% end %>
+<div class="span-14_75 last">
+	<div id="billing_address" class="span-7 extra-margin-right">
+		<h2>Billing Address</h2>
+		<% billing_address = BillingAddress.create_or_find_by_order_id(@cart.id) %>
+		<div id="address_<%= billing_address.id %>" class="span-7 last border-bottom margin-bottom">
+			<% if @cart.billing_address.status == 'live' %>
+				<%= render :partial => 'addresses/show', :object => @cart.billing_address %>
+			<% else %>
+				<%= render :partial => 'addresses/edit', :object => billing_address %>
+			<% end %>
+		</div>
+	</div>
+	<div id="shipping_address" class="span-7">
+		<h2>Shipping Address</h2>
+		<% shipping_address = ShippingAddress.create_or_find_by_order_id(@cart.id) %>
+		<div id="address_<%= shipping_address.id %>" class="span-7 last border-bottom margin-bottom">
+			<% if @cart.shipping_address.status == 'live' %>
+				<%= render :partial => 'addresses/show', :object => @cart.shipping_address %>
+			<% else %>
+				<%= render :partial => 'addresses/edit', :object => shipping_address %>
+			<% end %>
+		</div>
+	</div>
+</div>
+<%= render :partial => 'summary', :object => @cart %>
+<div id="place_order" class="span-14_75 last margin-top border-top" <% unless @cart.ready_to_charge? %> style="display: none;" <% end %>>
+	<h2>Credit Card</h2>
+	<div class="span-14_75">
+		<div class="span-4 field-label">Credit Card Number</div>
+		<div class="span-2 field-label">Exp. Month</div>
+		<div class="span-2 field-label">Exp. Year</div>
+		<div class="span-2 field-label">CVV Code</div>
+	</div>
+	<div class="span-14_75 margin-top">
+		<% form_tag '/cart?event=process_card', :method => :put do %>
+			<div class="span-4">
+				<%= text_field_tag 'credit_card_number', nil, :class => 'span-4' %>
+			</div>
+			<div class="span-2">
+				<%= select_tag 'credit_card_month', options_for_select(Order::CARD_MONTHS.map{|m| [m,m]}) %>
+			</div>
+			<div class="span-2">
+				<%= select_tag 'credit_card_month', options_for_select(Order::CARD_YEARS.map{|y| [y,y]}) %>
+			</div>
+			<div class="span-2">
+				<%= text_field_tag 'credit_card_cvv', nil, :class => 'span-1' %>
+			</div>
+			<div class="span-3">
+				<%= submit_tag 'Place Order' %><br/>(your card will be charged)
+			</div>
+		<% end %>
+	</div>
+</div>

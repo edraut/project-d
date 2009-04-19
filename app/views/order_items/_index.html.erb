@@ -1,0 +1,26 @@
+<% order = index %>
+<div id="order_item_list" class="span-14 last border-bottom">
+	<div id="order_item_list_header" class="span-14 last border-bottom">
+	<div class="span-4 field-label">
+		Item Name
+	</div>
+	<div class="span-4 field-label">
+		Option
+	</div>
+	<div class="span-1 field-label">
+		Qty.
+	</div>
+	<div class="span-1_5 field-label">
+		Price
+	</div>
+	<div class="span-1_5 field-label">
+		Total
+	</div>
+	<div class="span-2 last">
+		&nbsp;
+	</div>
+	</div>
+	<% for order_item in order.order_items %>
+		<%= render :partial => "order_items/element_container", :object => order_item %>
+	<% end %>
+</div>

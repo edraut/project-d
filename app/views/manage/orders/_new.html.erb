@@ -1,0 +1,40 @@
+<% order = new %>
+Add a new order</br>
+<% form_for :order, order, :url => manage_orders_url,
+	:html => {
+		:ajax_binding => 'ajax_form',
+		:ajax_success_element => 'order_list',
+		:ajax_success_placement => 'append',
+		:ajax_success_callback => "$('#order_new_link').click();",
+		:ajax_error_element => 'order_new',
+		:ajax_method => 'POST'
+	} do |f| %>
+	<div class="span-15 last">
+				<div class="span-3">
+			<%= order.first_error_on :id %>
+			<%= f.text_field :id, :class => 'span-3' %>
+		</div>
+				<div class="span-3">
+			<%= order.first_error_on :name %>
+			<%= f.text_field :name, :class => 'span-3' %>
+		</div>
+				<div class="span-3">
+			<%= order.first_error_on :total %>
+			<%= f.text_field :total, :class => 'span-3' %>
+		</div>
+				<div class="span-3">
+			<%= order.first_error_on :created_at %>
+			<%= f.text_field :created_at, :class => 'span-3' %>
+		</div>
+		
+		<div class="span-3 last">
+<%= f.submit :add %>
+		</div>
+	</div>
+<% end %>
+<%= link_to '', new_manage_order_url,
+ 	:ajax_method => 'GET',
+	:ajax_binding => 'ajax_link',
+	:ajax_success_element => 'order_new',
+	:id => 'order_new_link'
+	%>

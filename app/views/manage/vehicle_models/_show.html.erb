@@ -12,10 +12,12 @@
 	:ajax_method => 'GET',
 	:ajax_success_element => "vehicle_model_#{vehicle_model.id}",
 	:ajax_success_callback => "$('#vehicle_model_#{vehicle_model.id}').addClass('editing');" %> | 
+<% unless vehicle_model.product_option_vehicle_models.any? %>
 <%= link_to 'delete', manage_vehicle_model_url(vehicle_model),
 	:ajax_binding => 'ajax_link',
 	:ajax_method => 'DELETE',
 	:ajax_success_callback => "$('#vehicle_model_#{vehicle_model.id}').remove();",
 	:ajax_confirm => 'Are you sure you want to delete this vehicle_model?' %>
+<% end %>
 </div>
 </div>

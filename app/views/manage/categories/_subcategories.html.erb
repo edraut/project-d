@@ -7,7 +7,8 @@
 	<%= link_to 'close subcategories', manage_category_url(@category),
 		:ajax_binding => 'ajax_link',
 		:ajax_method => 'GET',
-		:ajax_success_element => "category_#{@category.id}" %>
+		:ajax_success_element => "category_#{@category.id}",
+		:ajax_success_callback => "bindSortables();" %>
 </div>
 </div>
 <div class="span-10 prepend-1 last border-bottom">
@@ -20,4 +21,7 @@
 	<%= render :partial => "manage/categories/new", :object => Category.new(:parent_id => @category.id) %>
 </div>
 </div>
-<%= javascript_tag 'bindSortables();' %>
+<% javascript_tag do %>
+bindSortables();
+$('#category_list_').sortable('destroy');
+<% end %>

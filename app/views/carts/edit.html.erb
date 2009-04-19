@@ -1,4 +1,7 @@
 <% form_for :cart, @cart, :url => cart_url(:id => @cart.id, :_method => :put) do |f| %>
+		ship_method
+	<%= @cart.first_error_on :ship_method %>
+	<%= f.text_field :ship_method %><br/>
 	
 <%= f.submit :save %>
 <%= link_to 'cancel', cart_url(@cart) %>

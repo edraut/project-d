@@ -1,0 +1,38 @@
+<% order = edit %>
+<% form_for :order, order,
+	:url => manage_order_url(order),
+	:html => {
+		:ajax_binding => 'ajax_form',
+		:ajax_success_element => "order_#{order.id}",
+		:ajax_method => 'PUT',
+		:ajax_success_callback => "$('#order_#{order.id}').removeClass('editing');",
+		:id => "edit_order_form_#{order.id}"
+	} do |f| %>
+	<div class="span-15 last">
+				<div class="span-3">
+			<%= order.first_error_on :id %>
+			<%= f.text_field :id, :class => 'span-3' %>
+		</div>
+				<div class="span-3">
+			<%= order.first_error_on :name %>
+			<%= f.text_field :name, :class => 'span-3' %>
+		</div>
+				<div class="span-3">
+			<%= order.first_error_on :total %>
+			<%= f.text_field :total, :class => 'span-3' %>
+		</div>
+				<div class="span-3">
+			<%= order.first_error_on :created_at %>
+			<%= f.text_field :created_at, :class => 'span-3' %>
+		</div>
+		
+		<div class="span-3 last">
+<%= f.submit :save %>
+<%= link_to 'cancel', manage_order_url(order),
+	:ajax_binding => 'ajax_link',
+	:ajax_method => 'GET',
+	:ajax_success_element => "order_#{order.id}",
+	:ajax_success_callback => "$('#order_#{order.id}').removeClass('editing');" %>
+		</div>
+	</div>
+<% end %>
