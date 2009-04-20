@@ -50,7 +50,7 @@
 </div>
 <% if @cart.order_items.any? %>
 	<div class="span-14_75 last text-right margin-top">
-			<%= link_to 'proceed to checkout', cart_url + '?stage=billing_info', :class => 'large bold' %>
+			<%= link_to 'proceed to checkout', { :protocol => ENV_PROTOCOL, :host => request.host, :controller => 'carts', :action => 'show', :params => {:stage => 'billing_info'}}, :class => 'large bold' %>
 	</div>
 <% end %>
 <% javascript_tag do %>
