@@ -3,6 +3,7 @@ class Manage::OrdersController < Manage::ApplicationController
 
   def index
     @orders = Order.send(params[:state]).paginate(:per_page => 25, :page => params[:page])
+    @state = params[:state]
   end
 
   # GET /manage_orders/1

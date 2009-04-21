@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20090324133514) do
     t.integer  "category_id", :limit => 11
     t.boolean  "new", :default => true
     t.string   "state"
+    t.boolean  "featured", :default => false
     t.integer  "ground_price"
     t.integer  "second_day_price"
     t.integer  "overnight_price"
@@ -26,6 +27,10 @@ ActiveRecord::Schema.define(:version => 20090324133514) do
     t.datetime "updated_at"
   end
 
+  create_table "product_vectors", :force => true do |t|
+    t.integer  "product_id", :limit => 11
+  end
+  
   create_table "product_options", :force => true do |t|
     t.string   "name"
     t.integer  "product_id", :limit => 11

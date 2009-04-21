@@ -9,7 +9,7 @@
 		<%= f.text_field :name, :class => 'textfield-6' %>
 	</div>
 	<div class="span-8 last field-label">
-		description
+		description <a onclick="$('#textile_dialog').dialog('open')">?</a>
 	</div>
 	<div class="span-8 last">
 		<%= product.first_error_on :description %>
@@ -96,6 +96,7 @@
 			<%= f.submit 'save info' %> or <%= link_to 'cancel', manage_products_url %>
 		</div>
 	</div>
+	<%= render :partial => 'textile_manual' %>
 <% end %>
 <% javascript_tag do %>
 $(document).ready(function(){

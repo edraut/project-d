@@ -57,7 +57,6 @@ class Manage::ProductImagesController < Manage::ApplicationController
   def update
 
     if @product_image.update_attributes(params[:product_image])
-      flash[:notice] = 'ProductImage was successfully updated.'
       render :partial => 'show', :object => @product_image
     else
       render :partial => 'edit', :object => @product_image, :status => 409

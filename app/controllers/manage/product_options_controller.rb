@@ -40,7 +40,6 @@ class Manage::ProductOptionsController < Manage::ApplicationController
     @product_option = ProductOption.new(@editable_params)
 
     if @product_option.save
-      flash[:notice] = 'ProductOption was successfully created.'
       render :partial => 'element_container', :object => @product_option
     else
       render :partial => 'new', :object => @product_option, :status => 409
@@ -58,7 +57,6 @@ class Manage::ProductOptionsController < Manage::ApplicationController
       render :nothing => true and return
     end
     if @product_option.update_attributes(@editable_params)
-      flash[:notice] = 'ProductOption was successfully updated.'
       render :partial => 'show', :object => @product_option
     else
       render :partial => 'edit', :object => @product_option, :status => 409

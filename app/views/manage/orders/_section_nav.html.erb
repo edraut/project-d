@@ -1,0 +1,11 @@
+<div class="span-24 last dash-frame-color padding-bottom product-section-nav">
+	<div class="span-4 text-center <% if @state == 'pending' %>selected<% end %>">
+		<%= link_to 'pending', manage_orders_url + '?state=pending' %>
+	</div>
+	<div class="span-4 text-center <% if @state == 'fulfilled' %>selected<% end %>">
+		<%= link_to 'shipped', manage_orders_url + '?state=fulfilled' %>
+	</div>
+	<div class="span-4 text-center <% if @state == 'card_rejected' %>selected<% end %>">
+		<%= link_to 'rejected', manage_orders_url + '?state=card_rejected' %>
+	</div>
+</div>

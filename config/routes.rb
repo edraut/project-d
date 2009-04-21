@@ -13,11 +13,12 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :pages
 
-  map.root :controller => 'products', :action => 'index'
+  map.root :controller => 'pages', :action => 'home'
   map.resources :product_option_vehicle_models
 
   map.resources :products
 
+  map.home '/home', :controller => 'pages', :action => 'home'
   map.cart '/cart', :controller => 'carts', :action => 'show'
   map.news '/news', :controller => 'news', :action => 'index'
   map.about '/about', :controller => 'pages', :action => 'show', :name => 'about'

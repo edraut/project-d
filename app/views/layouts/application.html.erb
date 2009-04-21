@@ -10,7 +10,8 @@
 	<link rel="stylesheet" href="/stylesheets/blueprint/screen.css" type="text/css" media="screen, projection" />
   <link rel="stylesheet" href="/stylesheets/blueprint/print.css" type="text/css" media="print" /> 
 	<link rel="stylesheet" href="/stylesheets/application.css" type="text/css" media="screen" />
- 	<% if @nav_area == 'manage' %> <link rel="stylesheet" href="/stylesheets/manage.css" type="text/css" media="screen" /> <% end %> 
+ 	<% if @nav_area == 'manage' %> <link rel="stylesheet" href="/stylesheets/manage.css" type="text/css" media="screen" /> <link rel="stylesheet" href="/stylesheets/jquery-ui-1.7.1.custom.css" type="text/css" media="screen" />
+	<% end %> 
 	<!--[if IE]><link rel="stylesheet" href="/stylesheets/blueprint/ie.css" type="text/css" media="screen, projection" /><![endif]-->
 	<%= javascript_include_tag 'jquery-1.3.2.min' %>
 	<%= javascript_include_tag 'jquery-ui-1.7.1.custom.min' %>
@@ -42,7 +43,7 @@
 						<div class="span-8 prepend-10 append-1 text-right last">&nbsp;
 						</div>
 						<div class="span-8 prepend-10 append-1 text-right last">
-							<form>Search <input type="text" class="span-5"/> <input type="submit" value="Go"/></form>
+							<form action="/products">Search <input type="text" name="search_terms" class="span-5"/> <input type="submit" value="Go"/></form>
 						</div>
 						<div class="span-19 last header-spacer">
 							<div class="span-19 last header-spacer-2">&nbsp;</div><div class="span-13 prepend-6 last"><div class="tagline-spacer-2">GET ALL YOUR MX-ATV-STREET PARTS AND ACCESSORIES HERE</div></div>
@@ -70,9 +71,9 @@
 						</div>
 					<% end %>
 				</div>
-				<div class="nav-bar">
+				<div class="nav-bar blue-background">
 					<div class="span-2 text-center <% if @nav_tab == 'home' %>nav-selected<% end %>">
-						<a href="/products">HOME</a>
+						<a href="/home">HOME</a>
 					</div>
 					<div class="span-2 text-center <% if @nav_tab == 'cart' %>nav-selected<% end %>">
 						<a href="/cart">MY CART</a>

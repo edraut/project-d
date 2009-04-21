@@ -1,0 +1,23 @@
+
+<div class="span-14_75 last">
+	<div class="product-index-margin">&nbsp;</div>
+	<div class="span-14 last">
+		<div class="span-14 last large bold text-center">
+			WELCOME TO MAD RACING MX!
+		</div>
+<div class="feature-bar padding-left margin-bottom">Featured Products</div>
+<% for product in @products %>
+<div class="span-3 <% if (@products.index(product) % 4) != 3 %> product-thumb border <% else %> product-thumb-end last <% end %>">
+	<div class="span-3 image-medium-wrapper"><%= link_to image_tag(product.product_images.first.image.url(:medium)), product_url(product) if product.product_images.any? %></div>
+	<%= link_to product.name, product_url(product) %><br/>
+	<% if product.product_options.length == 1 %>
+		<%= product.product_options.first.price.format %>
+		<%= link_to 'add to cart', cart_url + "?order_item[product_option_id]=#{product.product_options.first.id}"%>
+	<% else %>
+		<%= link_to 'see options', product_url(product) %>
+	<% end %>
+</div>
+<% if ((@products.index(product) % 4) == 3) %><div class="span-13_75 last product-row-spacer border-top product-thumb-border margin-top">&nbsp;</div><% end %>
+<% end %>
+</div>
+</div>

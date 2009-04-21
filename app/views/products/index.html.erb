@@ -1,5 +1,6 @@
 <% if @category %>
 	<% top_category = @category.parent.nil? ? @category : @category.parent %>
+	<% if top_category.vehicle_filter %>
 	<div class="span-14_75 last quiet">
 		<div class="span-1_5">filter by:</div>
 		<% if top_category.vehicle_filter %>
@@ -24,7 +25,6 @@
 			<% end %>
 		<% end %>
 	</div>
-	<% if top_category.vehicle_filter %>
 	<div id="vehicle_model_select_" style="display: none;">
 		-
 	</div>
@@ -51,7 +51,7 @@
 	<%= link_to product.name, this_url %><br/>
 	<% if product.product_options.length == 1 %>
 		<%= product.product_options.first.price.format %>
-		<%= link_to 'add to cart', '#'%>
+		<%= link_to 'add to cart', cart_url + "?order_item[product_option_id]=#{product.product_options.first.id}"%>
 	<% else %>
 		<%= link_to 'see options', this_url %>
 	<% end %>

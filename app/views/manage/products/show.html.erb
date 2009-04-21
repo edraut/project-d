@@ -2,46 +2,63 @@
 <div class="span-24 last dash-foreground-color container-padding">
 	<div class="span-24 last">
 		<div class="span-16">
-		<h2><%= @product.name %></h2>
+			<h2><%= @product.name %></h2>
 		</div>
-		<div class="span-8 last text-right margin-top">
+		<div class="span-8 last text-right margin-top margin-bottom">
 			<% if @product.errors.any? %>
 				<div class="span-8 last text-right error"><%= @product.errors.on_base %></div>
 			<% else %>
-				This product is <%= @product.state %>. Click here to
-				<%= link_to @product.next_action, manage_product_url(:id => @product.id, :event => @product.next_action), :method => :put %> it.
+				<div class="span-8 last margin-bottom">
+					<div class="span-8 last text-center large bold">
+						<%= @product.state %>
+					</div>
+					Click here to
+				<%= link_to @product.next_action, manage_product_url(:id => @product.id, :event => @product.next_action), :method => :put %> it.</div>
+			<% end %>
+			<div class="span-8 last">
+					<% if @product.featured? %>
+						<div class="span-8 last text-center large bold">
+							featured
+						</div>
+					 Click here to <%= link_to 'remove it', manage_product_url(@product) + '?product[featured]=false', :method => :put %> from the homepage features.
+				<% else %>
+					<div class="span-8 last text-center large bold">
+						not featured
+					</div>
+					Click here to <%= link_to 'feature it', manage_product_url(@product) + '?product[featured]=true', :method => :put %> on the homepage.
+				<% end %>
+			</div>
+		</div>
+		<div class="span-4 append-1">
+			<% for product_image in @product.product_images %>
+				<div class="span-4 last margin-top">
+					<%= link_to image_tag(product_image.image.url(:medium)), product_image.image.url(:original), :target => '_blank' %>
+				</div>
 			<% end %>
 		</div>
-	</div>
-	<div class="span-4 append-1">
-		<% for product_image in @product.product_images %>
-			<div class="span-4 last margin-top">
-				<%= link_to image_tag(product_image.image.url(:medium)), product_image.image.url(:original), :target => '_blank' %>
+		<div class="span-10">
+			<%= RedCloth.new(@product.description).to_html unless @product.description.blank? %><br/>
+		</div>
+		<div class="span-2">&nbsp;</div>
+		<div class="span-6  border-all last">
+			<div class="span-3 text-right field-label">
+				category:
 			</div>
-		<% end %>
-	</div>
-	<div class="span-10">
-		<%= RedCloth.new(@product.description).to_html unless @product.description.blank? %><br/>
-	</div>
-	<div class="span-2">&nbsp;</div>
-	<div class="span-6  border-all last">
-		<div class="span-3 text-right field-label">
-			category:
-		</div>
-		<div class="span-3 last">
-			<%= @product.category.parent.name %><br/>
-		</div>
-		<div class="span-3 text-right field-label">
-			sub category:
-		</div>
-		<div class="span-3 last">
-			<%= @product.category.name %><br/>
-		</div>
-		<div class="span-3 text-right">
-			&nbsp;
-		</div>
-		<div class="span-3 last">
-			<%= @product.new ? '' : 'used product' %><br/>
+			<div class="span-3 last">
+				<%= @product.category.parent.name %><br/>
+			</div>
+			<div class="span-3 text-right field-label">
+				sub category:
+			</div>
+			<div class="span-3 last">
+				<%= @product.category.name %><br/>
+			</div>
+			<div class="span-3 text-right">
+				&nbsp;
+			</div>
+			<div class="span-3 last">
+				<%= @product.new ? '' : 'used product' %><br/>
+			</div>
 		</div>
 	</div>
 </div>

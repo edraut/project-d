@@ -14,7 +14,7 @@ class Order < ActiveRecord::Base
   named_scope :orders, :conditions => ["state != 'cart'",nil]
   named_scope :pending, :conditions => {:state => 'pending'}
   named_scope :fulfilled, :conditions => {:state => 'fulfilled'}
-  named_scope :rejected, :conditions => {:state => 'card_rejected'}
+  named_scope :card_rejected, :conditions => {:state => 'card_rejected'}
   
   state_machine :initial => :cart do
     event :accept_card do

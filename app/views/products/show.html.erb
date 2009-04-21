@@ -38,9 +38,16 @@
 		<% else %>
 			<div class="span-5 last">
 				<% product_option = @product.product_options.first %>
+				
 				part number: <%= product_option.sku %><br/>
-				price: <%= product_option.price.format %>
+				price: <%= product_option.price.format %><br/>
+				<% unless @product.new? %>
+				this product is used<br/>
+				<% end %>
 				<%= link_to 'add to cart', cart_url + "?order_item[product_option_id]=#{product_option.id}", :method => :put %>
+				<% unless @product.new? %>
+				or <%= link_to 'make an offer', 'mailto:contact@madracingmx.com' %>
+				<% end %>
 			</div>
 		<% end %>
 </div>

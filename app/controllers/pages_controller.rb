@@ -12,7 +12,12 @@ class PagesController < ApplicationController
     render :template => 'pages/' + params[:name] and return
   end
 
-
+  def home
+    @nav_tab = 'home'
+    @products = Product.featured.find(:all, :limit => 16)
+    
+  end
+  
   protected
   def set_nav_tab
     @nav_tab = params[:name]

@@ -3,7 +3,12 @@ class Manage::ProductsController < Manage::ApplicationController
   before_filter :prepare_params, :only => [:create,:update]
   before_filter :manage_money, :only => [:create,:update]
   def index
-    @products = Product.paginate(:page => params[:page], :per_page => 25)
+    if params.has_key? :featured
+      @featured = true
+      @products = Product.paginate(:all, :conditions => {:featured => true}, :per_page => 25, :page => params[:page])
+    else
+      prepare_products(25)
+    end
     @product = nil
   end
 
