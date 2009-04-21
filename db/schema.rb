@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20090324133514) do
     t.boolean  "new", :default => true
     t.string   "state"
     t.boolean  "featured", :default => false
+    t.integer  "hit_count", :default => 0
     t.integer  "ground_price"
     t.integer  "second_day_price"
     t.integer  "overnight_price"

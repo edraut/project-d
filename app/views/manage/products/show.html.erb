@@ -9,24 +9,39 @@
 				<div class="span-8 last text-right error"><%= @product.errors.on_base %></div>
 			<% else %>
 				<div class="span-8 last margin-bottom">
-					<div class="span-8 last text-center large bold">
+					<div class="span-8 last text-center large bold" style="margin-bottom: 0;">
 						<%= @product.state %>
 					</div>
-					Click here to
-				<%= link_to @product.next_action, manage_product_url(:id => @product.id, :event => @product.next_action), :method => :put %> it.</div>
+					<div class="span-8 last text-center">
+						Click here to
+						<%= link_to @product.next_action, manage_product_url(:id => @product.id, :event => @product.next_action), :method => :put %> it.
+					</div>
+				</div>
 			<% end %>
-			<div class="span-8 last">
+			<div class="span-8 last margin-bottom">
 					<% if @product.featured? %>
-						<div class="span-8 last text-center large bold">
+						<div class="span-8 last text-center large bold" style="margin-bottom: 0;">
 							featured
 						</div>
-					 Click here to <%= link_to 'remove it', manage_product_url(@product) + '?product[featured]=false', :method => :put %> from the homepage features.
+						<div class="span-8 last text-center">
+						 Click here to <%= link_to 'remove it', manage_product_url(@product) + '?product[featured]=false', :method => :put %> from the homepage features.
+						</div>
 				<% else %>
-					<div class="span-8 last text-center large bold">
+					<div class="span-8 last text-center large bold" style="margin-bottom: 0;">
 						not featured
 					</div>
-					Click here to <%= link_to 'feature it', manage_product_url(@product) + '?product[featured]=true', :method => :put %> on the homepage.
+					<div class="span-8 last text-center">
+						Click here to <%= link_to 'feature it', manage_product_url(@product) + '?product[featured]=true', :method => :put %> on the homepage.
+					</div>
 				<% end %>
+			</div>
+			<div class="span-8 last margin-bottom">
+				<div class="span-8 last text-center large bold" style="margin-bottom: 0;">
+					page hits
+				</div>
+				<div class="span-8 last text-center">
+					<%= @product.hit_count %>
+				</div>
 			</div>
 		</div>
 		<div class="span-4 append-1">

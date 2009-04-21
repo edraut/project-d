@@ -49,6 +49,11 @@ class Product < ActiveRecord::Base
     end
   end
   
+  def hit
+    self.hit_count += 1
+    self.save(false)
+  end
+  
   def update_vector_row
     self.product_vector ||= ProductVector.new(:product_id => self.id)
     ProductVector.update_vectors

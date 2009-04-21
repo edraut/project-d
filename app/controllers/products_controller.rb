@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.xml
   def show
+    @product.hit
     @category = @product.category
     @vehicle_make = VehicleMake.find(params[:vehicle_make_id].to_i) if params[:vehicle_make_id]
     @vehicle_model = VehicleModel.find(params[:vehicle_model_id].to_i) if params[:vehicle_model_id]
