@@ -1,15 +1,16 @@
-<div id="textile_dialog">
+<div class="span-24 last dash-foreground-color container-padding">
+<div class="span-12">
 <div class="span-12 last">
 	<h3>text formatting</h3>
 </div>
 <div class="span-12 last">
 <div class="span-2"><b>bold</b></div> <div class="span-2">*bold*</div>
 </div>
-<div class="span-12 last">
+<div class="span-12 last margin-bottom">
 <div class="span-2"><i>italic</i></div> <div class="span-2">_italic_</div>
 </div>
 
-<div class="span-12 last">
+<div class="span-12 last margin-top">
 <h3>web and email links</h3>
 </div>
 <div class="span-12 last">
@@ -25,4 +26,5 @@
 <div class="span-3"><a href="http://www.youtube.com/watch?v=ttz5oPpF1Js">wingsuit video!</a> </div> <div class="span-9 last"> "wingsuit video!":http://www.youtube.com/watch?v=ttz5oPpF1Js</div>
 </div>
 </div>
-<%= javascript_tag "$('#textile_dialog').dialog({autoOpen: false, width: 534, height: 330, position : 'center', title: 'Formatting Help', buttons: { 'Ok': function() { $(this).dialog('close'); } }});" %>
+</div>
+<%# javascript_tag "$('#textile_dialog').dialog({autoOpen: false, width: 534, height: 330, position : 'center', title: 'Formatting Help', buttons: { 'Ok': function() { $(this).dialog('close'); } }});" %>

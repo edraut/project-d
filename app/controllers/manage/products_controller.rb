@@ -15,7 +15,11 @@ class Manage::ProductsController < Manage::ApplicationController
   # GET /manage_products/1
   # GET /manage_products/1.xml
   def show
-    @product_section = 'overview'
+    if params[:id].to_i == 0
+      render :template => 'manage/products/' + params[:id] and return
+    else
+      @product_section = 'overview'
+    end
   end
 
   # GET /manage_products/new
@@ -77,7 +81,7 @@ class Manage::ProductsController < Manage::ApplicationController
   
   private
   def get_product
-    @product = Product.find(params[:id])
+    @product = Product.find(params[:id]) unless params[:id].to_i == 0
   end
   def prepare_params
     if params.has_key? :product
