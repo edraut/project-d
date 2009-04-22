@@ -2,7 +2,11 @@ class Manage::OrdersController < Manage::ApplicationController
   before_filter :get_order, :only => [:show,:edit,:update,:destroy]
 
   def index
-    @orders = Order.send(params[:state]).paginate(:per_page => 25, :page => params[:page])
+    if params[:search_terms]
+      @orders = Order.paginate_by_sql(["select distinct(orders.*) from orders inner join addresses on addresses.order_id = orders.id where orders.id = :search_term or lower(addresses.last_name) like lower(:search_term_fuzzy)",{:search_term => params[:search_terms].to_i, :search_term_fuzzy => "%#{params[:search_terms]}%"}], :per_page => 25, :page => params[:page])
+    else
+      @orders = Order.send(params[:state]).paginate(:per_page => 25, :page => params[:page])
+    end
     @state = params[:state]
   end
 
@@ -53,7 +57,6 @@ class Manage::OrdersController < Manage::ApplicationController
       redirect_to manage_orders_url + '?state=pending' and return
     end
     if @order.update_attributes(params[:order])
-      flash[:notice] = 'Order was successfully updated.'
       render :partial => 'show', :object => @order
     else
       render :partial => 'edit', :object => @order, :status => 409

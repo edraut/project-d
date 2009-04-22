@@ -180,8 +180,10 @@ ActiveRecord::Schema.define(:version => 20090324133514) do
     t.string    "gateway_status_message"
     t.integer   "shipping_total"
     t.integer   "subtotal"
+    t.integer   "sales_tax"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "shipped_at"
   end
   
   add_index "orders", ["user_id"], :name => "index_orders_on_user_id"

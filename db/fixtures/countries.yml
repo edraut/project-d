@@ -1,254 +1,4 @@
-countries_300: 
-  name: Everywhere Else
-  updated_at: 2009-02-12 16:04:42.636448 Z
-  iso3: NONE
-  id: 1000
-  iso: NONE
-  printable_name: Everywhere Else
-  numcode: 1000
-  position: 3
-  created_at: 2009-02-12 16:04:42.636448 Z
 countries_025: 
-  name: BOLIVIA
-  updated_at: 2009-02-12 16:04:41.737452 Z
-  iso3: BOL
-  id: 276
-  iso: BO
-  printable_name: Bolivia
-  numcode: 68
-  position: 29
-  created_at: 2009-02-12 16:04:41.737452 Z
-countries_051: 
-  name: CYPRUS
-  updated_at: 2009-02-12 16:04:41.973587 Z
-  iso3: CYP
-  id: 302
-  iso: CY
-  printable_name: Cyprus
-  numcode: 196
-  position: 55
-  created_at: 2009-02-12 16:04:41.973587 Z
-countries_106: 
-  name: KOREA, REPUBLIC OF
-  updated_at: 2009-02-12 16:04:42.239210 Z
-  iso3: KOR
-  id: 357
-  iso: KR
-  printable_name: Korea, Republic of
-  numcode: 410
-  position: 110
-  created_at: 2009-02-12 16:04:42.239210 Z
-countries_132: 
-  name: MOLDOVA, REPUBLIC OF
-  updated_at: 2009-02-12 16:04:42.337357 Z
-  iso3: MDA
-  id: 383
-  iso: MD
-  printable_name: Moldova, Republic of
-  numcode: 498
-  position: 136
-  created_at: 2009-02-12 16:04:42.337357 Z
-countries_213: 
-  name: UNITED KINGDOM
-  updated_at: 2009-02-12 16:04:42.632514 Z
-  iso3: GBR
-  id: 464
-  iso: GB
-  printable_name: United Kingdom
-  numcode: 826
-  position: 217
-  created_at: 2009-02-12 16:04:42.632514 Z
-countries_026: 
-  name: BOSNIA AND HERZEGOVINA
-  updated_at: 2009-02-12 16:04:41.739511 Z
-  iso3: BIH
-  id: 277
-  iso: BA
-  printable_name: Bosnia and Herzegovina
-  numcode: 70
-  position: 30
-  created_at: 2009-02-12 16:04:41.739511 Z
-countries_052: 
-  name: CZECH REPUBLIC
-  updated_at: 2009-02-12 16:04:41.977336 Z
-  iso3: CZE
-  id: 303
-  iso: CZ
-  printable_name: Czech Republic
-  numcode: 203
-  position: 56
-  created_at: 2009-02-12 16:04:41.977336 Z
-countries_107: 
-  name: KUWAIT
-  updated_at: 2009-02-12 16:04:42.243045 Z
-  iso3: KWT
-  id: 358
-  iso: KW
-  printable_name: Kuwait
-  numcode: 414
-  position: 111
-  created_at: 2009-02-12 16:04:42.243045 Z
-countries_133: 
-  name: MONACO
-  updated_at: 2009-02-12 16:04:42.341450 Z
-  iso3: MCO
-  id: 384
-  iso: MC
-  printable_name: Monaco
-  numcode: 492
-  position: 137
-  created_at: 2009-02-12 16:04:42.341450 Z
-countries_214: 
-  name: UNITED STATES
-  updated_at: 2009-02-12 16:04:42.636448 Z
-  iso3: USA
-  id: 465
-  iso: US
-  printable_name: United States
-  numcode: 840
-  position: 1
-  created_at: 2009-02-12 16:04:42.636448 Z
-countries_027: 
-  name: BOTSWANA
-  updated_at: 2009-02-12 16:04:41.741574 Z
-  iso3: BWA
-  id: 278
-  iso: BW
-  printable_name: Botswana
-  numcode: 72
-  position: 31
-  created_at: 2009-02-12 16:04:41.741574 Z
-countries_053: 
-  name: DENMARK
-  updated_at: 2009-02-12 16:04:41.981158 Z
-  iso3: DNK
-  id: 304
-  iso: DK
-  printable_name: Denmark
-  numcode: 208
-  position: 57
-  created_at: 2009-02-12 16:04:41.981158 Z
-countries_080: 
-  name: GUADELOUPE
-  updated_at: 2009-02-12 16:04:42.078414 Z
-  iso3: GLP
-  id: 331
-  iso: GP
-  printable_name: Guadeloupe
-  numcode: 312
-  position: 84
-  created_at: 2009-02-12 16:04:42.078414 Z
-countries_108: 
-  name: KYRGYZSTAN
-  updated_at: 2009-02-12 16:04:42.246581 Z
-  iso3: KGZ
-  id: 359
-  iso: KG
-  printable_name: Kyrgyzstan
-  numcode: 417
-  position: 112
-  created_at: 2009-02-12 16:04:42.246581 Z
-countries_134: 
-  name: MONGOLIA
-  updated_at: 2009-02-12 16:04:42.345140 Z
-  iso3: MNG
-  id: 385
-  iso: MN
-  printable_name: Mongolia
-  numcode: 496
-  position: 138
-  created_at: 2009-02-12 16:04:42.345140 Z
-countries_160: 
-  name: PHILIPPINES
-  updated_at: 2009-02-12 16:04:42.440146 Z
-  iso3: PHL
-  id: 411
-  iso: PH
-  printable_name: Philippines
-  numcode: 608
-  position: 164
-  created_at: 2009-02-12 16:04:42.440146 Z
-countries_215: 
-  name: URUGUAY
-  updated_at: 2009-02-12 16:04:42.640420 Z
-  iso3: URY
-  id: 466
-  iso: UY
-  printable_name: Uruguay
-  numcode: 858
-  position: 219
-  created_at: 2009-02-12 16:04:42.640420 Z
-countries_028: 
-  name: BRAZIL
-  updated_at: 2009-02-12 16:04:41.743624 Z
-  iso3: BRA
-  id: 279
-  iso: BR
-  printable_name: Brazil
-  numcode: 76
-  position: 32
-  created_at: 2009-02-12 16:04:41.743624 Z
-countries_054: 
-  name: DJIBOUTI
-  updated_at: 2009-02-12 16:04:41.985008 Z
-  iso3: DJI
-  id: 305
-  iso: DJ
-  printable_name: Djibouti
-  numcode: 262
-  position: 58
-  created_at: 2009-02-12 16:04:41.985008 Z
-countries_081: 
-  name: GUAM
-  updated_at: 2009-02-12 16:04:42.082511 Z
-  iso3: GUM
-  id: 332
-  iso: GU
-  printable_name: Guam
-  numcode: 316
-  position: 85
-  created_at: 2009-02-12 16:04:42.082511 Z
-countries_109: 
-  name: LAO PEOPLE'S DEMOCRATIC REPUBLIC
-  updated_at: 2009-02-12 16:04:42.250035 Z
-  iso3: LAO
-  id: 360
-  iso: LA
-  printable_name: Lao People's Democratic Republic
-  numcode: 418
-  position: 113
-  created_at: 2009-02-12 16:04:42.250035 Z
-countries_135: 
-  name: MONTSERRAT
-  updated_at: 2009-02-12 16:04:42.349656 Z
-  iso3: MSR
-  id: 386
-  iso: MS
-  printable_name: Montserrat
-  numcode: 500
-  position: 139
-  created_at: 2009-02-12 16:04:42.349656 Z
-countries_161: 
-  name: PITCAIRN
-  updated_at: 2009-02-12 16:04:42.442389 Z
-  iso3: PCN
-  id: 412
-  iso: PN
-  printable_name: Pitcairn
-  numcode: 612
-  position: 165
-  created_at: 2009-02-12 16:04:42.442389 Z
-countries_216: 
-  name: UZBEKISTAN
-  updated_at: 2009-02-12 16:04:42.644201 Z
-  iso3: UZB
-  id: 467
-  iso: UZ
-  printable_name: Uzbekistan
-  numcode: 860
-  position: 220
-  created_at: 2009-02-12 16:04:42.644201 Z
-countries_029: 
   name: BRUNEI DARUSSALAM
   updated_at: 2009-02-12 16:04:41.745862 Z
   iso3: BRN
@@ -258,257 +8,7 @@ countries_029:
   numcode: 96
   position: 33
   created_at: 2009-02-12 16:04:41.745862 Z
-countries_055: 
-  name: DOMINICA
-  updated_at: 2009-02-12 16:04:41.989205 Z
-  iso3: DMA
-  id: 306
-  iso: DM
-  printable_name: Dominica
-  numcode: 212
-  position: 59
-  created_at: 2009-02-12 16:04:41.989205 Z
-countries_082: 
-  name: GUATEMALA
-  updated_at: 2009-02-12 16:04:42.085382 Z
-  iso3: GTM
-  id: 333
-  iso: GT
-  printable_name: Guatemala
-  numcode: 320
-  position: 86
-  created_at: 2009-02-12 16:04:42.085382 Z
-countries_136: 
-  name: MOROCCO
-  updated_at: 2009-02-12 16:04:42.352719 Z
-  iso3: MAR
-  id: 387
-  iso: MA
-  printable_name: Morocco
-  numcode: 504
-  position: 140
-  created_at: 2009-02-12 16:04:42.352719 Z
-countries_162: 
-  name: POLAND
-  updated_at: 2009-02-12 16:04:42.445496 Z
-  iso3: POL
-  id: 413
-  iso: PL
-  printable_name: Poland
-  numcode: 616
-  position: 166
-  created_at: 2009-02-12 16:04:42.445496 Z
-countries_217: 
-  name: VANUATU
-  updated_at: 2009-02-12 16:04:42.680230 Z
-  iso3: VUT
-  id: 468
-  iso: VU
-  printable_name: Vanuatu
-  numcode: 548
-  position: 221
-  created_at: 2009-02-12 16:04:42.680230 Z
-countries_056: 
-  name: DOMINICAN REPUBLIC
-  updated_at: 2009-02-12 16:04:41.992752 Z
-  iso3: DOM
-  id: 307
-  iso: DO
-  printable_name: Dominican Republic
-  numcode: 214
-  position: 60
-  created_at: 2009-02-12 16:04:41.992752 Z
-countries_137: 
-  name: MOZAMBIQUE
-  updated_at: 2009-02-12 16:04:42.356334 Z
-  iso3: MOZ
-  id: 388
-  iso: MZ
-  printable_name: Mozambique
-  numcode: 508
-  position: 141
-  created_at: 2009-02-12 16:04:42.356334 Z
-countries_163: 
-  name: PORTUGAL
-  updated_at: 2009-02-12 16:04:42.448607 Z
-  iso3: PRT
-  id: 414
-  iso: PT
-  printable_name: Portugal
-  numcode: 620
-  position: 167
-  created_at: 2009-02-12 16:04:42.448607 Z
-countries_190: 
-  name: SUDAN
-  updated_at: 2009-02-12 16:04:42.545583 Z
-  iso3: SDN
-  id: 441
-  iso: SD
-  printable_name: Sudan
-  numcode: 736
-  position: 194
-  created_at: 2009-02-12 16:04:42.545583 Z
-countries_218: 
-  name: VENEZUELA
-  updated_at: 2009-02-12 16:04:42.682858 Z
-  iso3: VEN
-  id: 469
-  iso: VE
-  printable_name: Venezuela
-  numcode: 862
-  position: 222
-  created_at: 2009-02-12 16:04:42.682858 Z
-countries_057: 
-  name: ECUADOR
-  updated_at: 2009-02-12 16:04:41.996691 Z
-  iso3: ECU
-  id: 308
-  iso: EC
-  printable_name: Ecuador
-  numcode: 218
-  position: 61
-  created_at: 2009-02-12 16:04:41.996691 Z
-countries_083: 
-  name: GUINEA
-  updated_at: 2009-02-12 16:04:42.088709 Z
-  iso3: GIN
-  id: 334
-  iso: GN
-  printable_name: Guinea
-  numcode: 324
-  position: 87
-  created_at: 2009-02-12 16:04:42.088709 Z
-countries_138: 
-  name: MYANMAR
-  updated_at: 2009-02-12 16:04:42.360005 Z
-  iso3: MMR
-  id: 389
-  iso: MM
-  printable_name: Myanmar
-  numcode: 104
-  position: 142
-  created_at: 2009-02-12 16:04:42.360005 Z
-countries_164: 
-  name: PUERTO RICO
-  updated_at: 2009-02-12 16:04:42.451834 Z
-  iso3: PRI
-  id: 415
-  iso: PR
-  printable_name: Puerto Rico
-  numcode: 630
-  position: 168
-  created_at: 2009-02-12 16:04:42.451834 Z
-countries_191: 
-  name: SURINAME
-  updated_at: 2009-02-12 16:04:42.549484 Z
-  iso3: SUR
-  id: 442
-  iso: SR
-  printable_name: Suriname
-  numcode: 740
-  position: 195
-  created_at: 2009-02-12 16:04:42.549484 Z
-countries_219: 
-  name: VIET NAM
-  updated_at: 2009-02-12 16:04:42.684818 Z
-  iso3: VNM
-  id: 470
-  iso: VN
-  printable_name: Viet Nam
-  numcode: 704
-  position: 223
-  created_at: 2009-02-12 16:04:42.684818 Z
-countries_058: 
-  name: EGYPT
-  updated_at: 2009-02-12 16:04:42.000462 Z
-  iso3: EGY
-  id: 309
-  iso: EG
-  printable_name: Egypt
-  numcode: 818
-  position: 62
-  created_at: 2009-02-12 16:04:42.000462 Z
-countries_084: 
-  name: GUINEA-BISSAU
-  updated_at: 2009-02-12 16:04:42.092421 Z
-  iso3: GNB
-  id: 335
-  iso: GW
-  printable_name: Guinea-Bissau
-  numcode: 624
-  position: 88
-  created_at: 2009-02-12 16:04:42.092421 Z
-countries_139: 
-  name: NAMIBIA
-  updated_at: 2009-02-12 16:04:42.363009 Z
-  iso3: NAM
-  id: 390
-  iso: NA
-  printable_name: Namibia
-  numcode: 516
-  position: 143
-  created_at: 2009-02-12 16:04:42.363009 Z
-countries_165: 
-  name: QATAR
-  updated_at: 2009-02-12 16:04:42.455056 Z
-  iso3: QAT
-  id: 416
-  iso: QA
-  printable_name: Qatar
-  numcode: 634
-  position: 169
-  created_at: 2009-02-12 16:04:42.455056 Z
-countries_192: 
-  name: SVALBARD AND JAN MAYEN
-  updated_at: 2009-02-12 16:04:42.553443 Z
-  iso3: SJM
-  id: 443
-  iso: SJ
-  printable_name: Svalbard and Jan Mayen
-  numcode: 744
-  position: 196
-  created_at: 2009-02-12 16:04:42.553443 Z
-countries_085: 
-  name: GUYANA
-  updated_at: 2009-02-12 16:04:42.096050 Z
-  iso3: GUY
-  id: 336
-  iso: GY
-  printable_name: Guyana
-  numcode: 328
-  position: 89
-  created_at: 2009-02-12 16:04:42.096050 Z
-countries_166: 
-  name: REUNION
-  updated_at: 2009-02-12 16:04:42.458435 Z
-  iso3: REU
-  id: 417
-  iso: RE
-  printable_name: Reunion
-  numcode: 638
-  position: 170
-  created_at: 2009-02-12 16:04:42.458435 Z
-countries_059: 
-  name: EL SALVADOR
-  updated_at: 2009-02-12 16:04:42.003395 Z
-  iso3: SLV
-  id: 310
-  iso: SV
-  printable_name: El Salvador
-  numcode: 222
-  position: 63
-  created_at: 2009-02-12 16:04:42.003395 Z
-countries_086: 
-  name: HAITI
-  updated_at: 2009-02-12 16:04:42.100175 Z
-  iso3: HTI
-  id: 337
-  iso: HT
-  printable_name: Haiti
-  numcode: 332
-  position: 90
-  created_at: 2009-02-12 16:04:42.100175 Z
-countries_167: 
+countries_051: 
   name: ROMANIA
   updated_at: 2009-02-12 16:04:42.462210 Z
   iso3: ROM
@@ -518,547 +18,7 @@ countries_167:
   numcode: 642
   position: 171
   created_at: 2009-02-12 16:04:42.462210 Z
-countries_193: 
-  name: SWAZILAND
-  updated_at: 2009-02-12 16:04:42.557790 Z
-  iso3: SWZ
-  id: 444
-  iso: SZ
-  printable_name: Swaziland
-  numcode: 748
-  position: 197
-  created_at: 2009-02-12 16:04:42.557790 Z
-countries_168: 
-  name: RUSSIAN FEDERATION
-  updated_at: 2009-02-12 16:04:42.466044 Z
-  iso3: RUS
-  id: 419
-  iso: RU
-  printable_name: Russian Federation
-  numcode: 643
-  position: 172
-  created_at: 2009-02-12 16:04:42.466044 Z
-countries_194: 
-  name: SWEDEN
-  updated_at: 2009-02-12 16:04:42.561552 Z
-  iso3: SWE
-  id: 445
-  iso: SE
-  printable_name: Sweden
-  numcode: 752
-  position: 198
-  created_at: 2009-02-12 16:04:42.561552 Z
-countries_087: 
-  name: HOLY SEE (VATICAN CITY STATE)
-  updated_at: 2009-02-12 16:04:42.104683 Z
-  iso3: VAT
-  id: 338
-  iso: VA
-  printable_name: Holy See (Vatican City State)
-  numcode: 336
-  position: 91
-  created_at: 2009-02-12 16:04:42.104683 Z
-countries_169: 
-  name: RWANDA
-  updated_at: 2009-02-12 16:04:42.469382 Z
-  iso3: RWA
-  id: 420
-  iso: RW
-  printable_name: Rwanda
-  numcode: 646
-  position: 173
-  created_at: 2009-02-12 16:04:42.469382 Z
-countries_195: 
-  name: SWITZERLAND
-  updated_at: 2009-02-12 16:04:42.565703 Z
-  iso3: CHE
-  id: 446
-  iso: CH
-  printable_name: Switzerland
-  numcode: 756
-  position: 199
-  created_at: 2009-02-12 16:04:42.565703 Z
-countries_088: 
-  name: HONDURAS
-  updated_at: 2009-02-12 16:04:42.108896 Z
-  iso3: HND
-  id: 339
-  iso: HN
-  printable_name: Honduras
-  numcode: 340
-  position: 92
-  created_at: 2009-02-12 16:04:42.108896 Z
-countries_196: 
-  name: SYRIAN ARAB REPUBLIC
-  updated_at: 2009-02-12 16:04:42.570254 Z
-  iso3: SYR
-  id: 447
-  iso: SY
-  printable_name: Syrian Arab Republic
-  numcode: 760
-  position: 200
-  created_at: 2009-02-12 16:04:42.570254 Z
-countries_089: 
-  name: HONG KONG
-  updated_at: 2009-02-12 16:04:42.112550 Z
-  iso3: HKG
-  id: 340
-  iso: HK
-  printable_name: Hong Kong
-  numcode: 344
-  position: 93
-  created_at: 2009-02-12 16:04:42.112550 Z
-countries_197: 
-  name: TAIWAN, PROVINCE OF CHINA
-  updated_at: 2009-02-12 16:04:42.573379 Z
-  iso3: TWN
-  id: 448
-  iso: TW
-  printable_name: Taiwan, Province of China
-  numcode: 158
-  position: 201
-  created_at: 2009-02-12 16:04:42.573379 Z
-countries_198: 
-  name: TAJIKISTAN
-  updated_at: 2009-02-12 16:04:42.575714 Z
-  iso3: TJK
-  id: 449
-  iso: TJ
-  printable_name: Tajikistan
-  numcode: 762
-  position: 202
-  created_at: 2009-02-12 16:04:42.575714 Z
-countries_199: 
-  name: TANZANIA, UNITED REPUBLIC OF
-  updated_at: 2009-02-12 16:04:42.579173 Z
-  iso3: TZA
-  id: 450
-  iso: TZ
-  printable_name: Tanzania, United Republic of
-  numcode: 834
-  position: 203
-  created_at: 2009-02-12 16:04:42.579173 Z
-countries_010: 
-  name: ARMENIA
-  updated_at: 2009-02-12 16:04:41.699136 Z
-  iso3: ARM
-  id: 261
-  iso: AM
-  printable_name: Armenia
-  numcode: 51
-  position: 14
-  created_at: 2009-02-12 16:04:41.699136 Z
-countries_011: 
-  name: ARUBA
-  updated_at: 2009-02-12 16:04:41.702611 Z
-  iso3: ABW
-  id: 262
-  iso: AW
-  printable_name: Aruba
-  numcode: 533
-  position: 15
-  created_at: 2009-02-12 16:04:41.702611 Z
-countries_012: 
-  name: AUSTRALIA
-  updated_at: 2009-02-12 16:04:41.705759 Z
-  iso3: AUS
-  id: 263
-  iso: AU
-  printable_name: Australia
-  numcode: 36
-  position: 16
-  created_at: 2009-02-12 16:04:41.705759 Z
-countries_200: 
-  name: THAILAND
-  updated_at: 2009-02-12 16:04:42.582979 Z
-  iso3: THA
-  id: 451
-  iso: TH
-  printable_name: Thailand
-  numcode: 764
-  position: 204
-  created_at: 2009-02-12 16:04:42.582979 Z
-countries_013: 
-  name: AUSTRIA
-  updated_at: 2009-02-12 16:04:41.708767 Z
-  iso3: AUT
-  id: 264
-  iso: AT
-  printable_name: Austria
-  numcode: 40
-  position: 17
-  created_at: 2009-02-12 16:04:41.708767 Z
-countries_120: 
-  name: MADAGASCAR
-  updated_at: 2009-02-12 16:04:42.292678 Z
-  iso3: MDG
-  id: 371
-  iso: MG
-  printable_name: Madagascar
-  numcode: 450
-  position: 124
-  created_at: 2009-02-12 16:04:42.292678 Z
-countries_201: 
-  name: TOGO
-  updated_at: 2009-02-12 16:04:42.586850 Z
-  iso3: TGO
-  id: 452
-  iso: TG
-  printable_name: Togo
-  numcode: 768
-  position: 205
-  created_at: 2009-02-12 16:04:42.586850 Z
-countries_014: 
-  name: AZERBAIJAN
-  updated_at: 2009-02-12 16:04:41.711997 Z
-  iso3: AZE
-  id: 265
-  iso: AZ
-  printable_name: Azerbaijan
-  numcode: 31
-  position: 18
-  created_at: 2009-02-12 16:04:41.711997 Z
-countries_040: 
-  name: CHILE
-  updated_at: 2009-02-12 16:04:41.787967 Z
-  iso3: CHL
-  id: 291
-  iso: CL
-  printable_name: Chile
-  numcode: 152
-  position: 44
-  created_at: 2009-02-12 16:04:41.787967 Z
-countries_121: 
-  name: MALAWI
-  updated_at: 2009-02-12 16:04:42.296307 Z
-  iso3: MWI
-  id: 372
-  iso: MW
-  printable_name: Malawi
-  numcode: 454
-  position: 125
-  created_at: 2009-02-12 16:04:42.296307 Z
-countries_202: 
-  name: TOKELAU
-  updated_at: 2009-02-12 16:04:42.590743 Z
-  iso3: TKL
-  id: 453
-  iso: TK
-  printable_name: Tokelau
-  numcode: 772
-  position: 206
-  created_at: 2009-02-12 16:04:42.590743 Z
-countries_015: 
-  name: BAHAMAS
-  updated_at: 2009-02-12 16:04:41.715234 Z
-  iso3: BHS
-  id: 266
-  iso: BS
-  printable_name: Bahamas
-  numcode: 44
-  position: 19
-  created_at: 2009-02-12 16:04:41.715234 Z
-countries_041: 
-  name: CHINA
-  updated_at: 2009-02-12 16:04:41.791921 Z
-  iso3: CHN
-  id: 292
-  iso: CN
-  printable_name: China
-  numcode: 156
-  position: 45
-  created_at: 2009-02-12 16:04:41.791921 Z
-countries_122: 
-  name: MALAYSIA
-  updated_at: 2009-02-12 16:04:42.299339 Z
-  iso3: MYS
-  id: 373
-  iso: MY
-  printable_name: Malaysia
-  numcode: 458
-  position: 126
-  created_at: 2009-02-12 16:04:42.299339 Z
-countries_203: 
-  name: TONGA
-  updated_at: 2009-02-12 16:04:42.593595 Z
-  iso3: TON
-  id: 454
-  iso: TO
-  printable_name: Tonga
-  numcode: 776
-  position: 207
-  created_at: 2009-02-12 16:04:42.593595 Z
-countries_016: 
-  name: BAHRAIN
-  updated_at: 2009-02-12 16:04:41.718207 Z
-  iso3: BHR
-  id: 267
-  iso: BH
-  printable_name: Bahrain
-  numcode: 48
-  position: 20
-  created_at: 2009-02-12 16:04:41.718207 Z
-countries_042: 
-  name: COLOMBIA
-  updated_at: 2009-02-12 16:04:41.798186 Z
-  iso3: COL
-  id: 293
-  iso: CO
-  printable_name: Colombia
-  numcode: 170
-  position: 46
-  created_at: 2009-02-12 16:04:41.798186 Z
-countries_123: 
-  name: MALDIVES
-  updated_at: 2009-02-12 16:04:42.302979 Z
-  iso3: MDV
-  id: 374
-  iso: MV
-  printable_name: Maldives
-  numcode: 462
-  position: 127
-  created_at: 2009-02-12 16:04:42.302979 Z
-countries_204: 
-  name: TRINIDAD AND TOBAGO
-  updated_at: 2009-02-12 16:04:42.597061 Z
-  iso3: TTO
-  id: 455
-  iso: TT
-  printable_name: Trinidad and Tobago
-  numcode: 780
-  position: 208
-  created_at: 2009-02-12 16:04:42.597061 Z
-countries_017: 
-  name: BANGLADESH
-  updated_at: 2009-02-12 16:04:41.720383 Z
-  iso3: BGD
-  id: 268
-  iso: BD
-  printable_name: Bangladesh
-  numcode: 50
-  position: 21
-  created_at: 2009-02-12 16:04:41.720383 Z
-countries_043: 
-  name: COMOROS
-  updated_at: 2009-02-12 16:04:41.801369 Z
-  iso3: COM
-  id: 294
-  iso: KM
-  printable_name: Comoros
-  numcode: 174
-  position: 47
-  created_at: 2009-02-12 16:04:41.801369 Z
-countries_070: 
-  name: FRENCH POLYNESIA
-  updated_at: 2009-02-12 16:04:42.044398 Z
-  iso3: PYF
-  id: 321
-  iso: PF
-  printable_name: French Polynesia
-  numcode: 258
-  position: 74
-  created_at: 2009-02-12 16:04:42.044398 Z
-countries_124: 
-  name: MALI
-  updated_at: 2009-02-12 16:04:42.306334 Z
-  iso3: MLI
-  id: 375
-  iso: ML
-  printable_name: Mali
-  numcode: 466
-  position: 128
-  created_at: 2009-02-12 16:04:42.306334 Z
-countries_150: 
-  name: NORFOLK ISLAND
-  updated_at: 2009-02-12 16:04:42.403668 Z
-  iso3: NFK
-  id: 401
-  iso: NF
-  printable_name: Norfolk Island
-  numcode: 574
-  position: 154
-  created_at: 2009-02-12 16:04:42.403668 Z
-countries_205: 
-  name: TUNISIA
-  updated_at: 2009-02-12 16:04:42.601619 Z
-  iso3: TUN
-  id: 456
-  iso: TN
-  printable_name: Tunisia
-  numcode: 788
-  position: 209
-  created_at: 2009-02-12 16:04:42.601619 Z
-countries_018: 
-  name: BARBADOS
-  updated_at: 2009-02-12 16:04:41.722927 Z
-  iso3: BRB
-  id: 269
-  iso: BB
-  printable_name: Barbados
-  numcode: 52
-  position: 22
-  created_at: 2009-02-12 16:04:41.722927 Z
-countries_044: 
-  name: CONGO
-  updated_at: 2009-02-12 16:04:41.804181 Z
-  iso3: COG
-  id: 295
-  iso: CG
-  printable_name: Congo
-  numcode: 178
-  position: 48
-  created_at: 2009-02-12 16:04:41.804181 Z
-countries_071: 
-  name: GABON
-  updated_at: 2009-02-12 16:04:42.048177 Z
-  iso3: GAB
-  id: 322
-  iso: GA
-  printable_name: Gabon
-  numcode: 266
-  position: 75
-  created_at: 2009-02-12 16:04:42.048177 Z
-countries_125: 
-  name: MALTA
-  updated_at: 2009-02-12 16:04:42.310292 Z
-  iso3: MLT
-  id: 376
-  iso: MT
-  printable_name: Malta
-  numcode: 470
-  position: 129
-  created_at: 2009-02-12 16:04:42.310292 Z
-countries_151: 
-  name: NORTHERN MARIANA ISLANDS
-  updated_at: 2009-02-12 16:04:42.407616 Z
-  iso3: MNP
-  id: 402
-  iso: MP
-  printable_name: Northern Mariana Islands
-  numcode: 580
-  position: 155
-  created_at: 2009-02-12 16:04:42.407616 Z
-countries_206: 
-  name: TURKEY
-  updated_at: 2009-02-12 16:04:42.605637 Z
-  iso3: TUR
-  id: 457
-  iso: TR
-  printable_name: Turkey
-  numcode: 792
-  position: 210
-  created_at: 2009-02-12 16:04:42.605637 Z
-countries_019: 
-  name: BELARUS
-  updated_at: 2009-02-12 16:04:41.724962 Z
-  iso3: BLR
-  id: 270
-  iso: BY
-  printable_name: Belarus
-  numcode: 112
-  position: 23
-  created_at: 2009-02-12 16:04:41.724962 Z
-countries_045: 
-  name: CONGO, THE DEMOCRATIC REPUBLIC OF THE
-  updated_at: 2009-02-12 16:04:41.806824 Z
-  iso3: COD
-  id: 296
-  iso: CD
-  printable_name: Congo
-  numcode: 180
-  position: 49
-  created_at: 2009-02-12 16:04:41.806824 Z
-countries_126: 
-  name: MARSHALL ISLANDS
-  updated_at: 2009-02-12 16:04:42.314270 Z
-  iso3: MHL
-  id: 377
-  iso: MH
-  printable_name: Marshall Islands
-  numcode: 584
-  position: 130
-  created_at: 2009-02-12 16:04:42.314270 Z
-countries_152: 
-  name: NORWAY
-  updated_at: 2009-02-12 16:04:42.411420 Z
-  iso3: NOR
-  id: 403
-  iso: "NO"
-  printable_name: Norway
-  numcode: 578
-  position: 156
-  created_at: 2009-02-12 16:04:42.411420 Z
-countries_207: 
-  name: TURKMENISTAN
-  updated_at: 2009-02-12 16:04:42.609843 Z
-  iso3: TKM
-  id: 458
-  iso: TM
-  printable_name: Turkmenistan
-  numcode: 795
-  position: 211
-  created_at: 2009-02-12 16:04:42.609843 Z
-countries_046: 
-  name: COOK ISLANDS
-  updated_at: 2009-02-12 16:04:41.809478 Z
-  iso3: COK
-  id: 297
-  iso: CK
-  printable_name: Cook Islands
-  numcode: 184
-  position: 50
-  created_at: 2009-02-12 16:04:41.809478 Z
-countries_072: 
-  name: GAMBIA
-  updated_at: 2009-02-12 16:04:42.051778 Z
-  iso3: GMB
-  id: 323
-  iso: GM
-  printable_name: Gambia
-  numcode: 270
-  position: 76
-  created_at: 2009-02-12 16:04:42.051778 Z
-countries_127: 
-  name: MARTINIQUE
-  updated_at: 2009-02-12 16:04:42.318264 Z
-  iso3: MTQ
-  id: 378
-  iso: MQ
-  printable_name: Martinique
-  numcode: 474
-  position: 131
-  created_at: 2009-02-12 16:04:42.318264 Z
-countries_153: 
-  name: OMAN
-  updated_at: 2009-02-12 16:04:42.414432 Z
-  iso3: OMN
-  id: 404
-  iso: OM
-  printable_name: Oman
-  numcode: 512
-  position: 157
-  created_at: 2009-02-12 16:04:42.414432 Z
-countries_180: 
-  name: SEYCHELLES
-  updated_at: 2009-02-12 16:04:42.509935 Z
-  iso3: SYC
-  id: 431
-  iso: SC
-  printable_name: Seychelles
-  numcode: 690
-  position: 184
-  created_at: 2009-02-12 16:04:42.509935 Z
-countries_208: 
-  name: TURKS AND CAICOS ISLANDS
-  updated_at: 2009-02-12 16:04:42.613564 Z
-  iso3: TCA
-  id: 459
-  iso: TC
-  printable_name: Turks and Caicos Islands
-  numcode: 796
-  position: 212
-  created_at: 2009-02-12 16:04:42.613564 Z
-countries_047: 
+countries_106: 
   name: COSTA RICA
   updated_at: 2009-02-12 16:04:41.812404 Z
   iso3: CRI
@@ -1068,257 +28,7 @@ countries_047:
   numcode: 188
   position: 51
   created_at: 2009-02-12 16:04:41.812404 Z
-countries_073: 
-  name: GEORGIA
-  updated_at: 2009-02-12 16:04:42.054505 Z
-  iso3: GEO
-  id: 324
-  iso: GE
-  printable_name: Georgia
-  numcode: 268
-  position: 77
-  created_at: 2009-02-12 16:04:42.054505 Z
-countries_128: 
-  name: MAURITANIA
-  updated_at: 2009-02-12 16:04:42.321979 Z
-  iso3: MRT
-  id: 379
-  iso: MR
-  printable_name: Mauritania
-  numcode: 478
-  position: 132
-  created_at: 2009-02-12 16:04:42.321979 Z
-countries_154: 
-  name: PAKISTAN
-  updated_at: 2009-02-12 16:04:42.417689 Z
-  iso3: PAK
-  id: 405
-  iso: PK
-  printable_name: Pakistan
-  numcode: 586
-  position: 158
-  created_at: 2009-02-12 16:04:42.417689 Z
-countries_181: 
-  name: SIERRA LEONE
-  updated_at: 2009-02-12 16:04:42.512248 Z
-  iso3: SLE
-  id: 432
-  iso: SL
-  printable_name: Sierra Leone
-  numcode: 694
-  position: 185
-  created_at: 2009-02-12 16:04:42.512248 Z
-countries_209: 
-  name: TUVALU
-  updated_at: 2009-02-12 16:04:42.617180 Z
-  iso3: TUV
-  id: 460
-  iso: TV
-  printable_name: Tuvalu
-  numcode: 798
-  position: 213
-  created_at: 2009-02-12 16:04:42.617180 Z
-countries_048: 
-  name: COTE D'IVOIRE
-  updated_at: 2009-02-12 16:04:41.815593 Z
-  iso3: CIV
-  id: 299
-  iso: CI
-  printable_name: Cote D'Ivoire
-  numcode: 384
-  position: 52
-  created_at: 2009-02-12 16:04:41.815593 Z
-countries_074: 
-  name: GERMANY
-  updated_at: 2009-02-12 16:04:42.057775 Z
-  iso3: DEU
-  id: 325
-  iso: DE
-  printable_name: Germany
-  numcode: 276
-  position: 78
-  created_at: 2009-02-12 16:04:42.057775 Z
-countries_129: 
-  name: MAURITIUS
-  updated_at: 2009-02-12 16:04:42.325533 Z
-  iso3: MUS
-  id: 380
-  iso: MU
-  printable_name: Mauritius
-  numcode: 480
-  position: 133
-  created_at: 2009-02-12 16:04:42.325533 Z
-countries_155: 
-  name: PALAU
-  updated_at: 2009-02-12 16:04:42.421462 Z
-  iso3: PLW
-  id: 406
-  iso: PW
-  printable_name: Palau
-  numcode: 585
-  position: 159
-  created_at: 2009-02-12 16:04:42.421462 Z
-countries_049: 
-  name: CROATIA
-  updated_at: 2009-02-12 16:04:41.819696 Z
-  iso3: HRV
-  id: 300
-  iso: HR
-  printable_name: Croatia
-  numcode: 191
-  position: 53
-  created_at: 2009-02-12 16:04:41.819696 Z
-countries_075: 
-  name: GHANA
-  updated_at: 2009-02-12 16:04:42.061680 Z
-  iso3: GHA
-  id: 326
-  iso: GH
-  printable_name: Ghana
-  numcode: 288
-  position: 79
-  created_at: 2009-02-12 16:04:42.061680 Z
-countries_156: 
-  name: PANAMA
-  updated_at: 2009-02-12 16:04:42.425182 Z
-  iso3: PAN
-  id: 407
-  iso: PA
-  printable_name: Panama
-  numcode: 591
-  position: 160
-  created_at: 2009-02-12 16:04:42.425182 Z
-countries_182: 
-  name: SINGAPORE
-  updated_at: 2009-02-12 16:04:42.515426 Z
-  iso3: SGP
-  id: 433
-  iso: SG
-  printable_name: Singapore
-  numcode: 702
-  position: 186
-  created_at: 2009-02-12 16:04:42.515426 Z
-countries_076: 
-  name: GIBRALTAR
-  updated_at: 2009-02-12 16:04:42.064559 Z
-  iso3: GIB
-  id: 327
-  iso: GI
-  printable_name: Gibraltar
-  numcode: 292
-  position: 80
-  created_at: 2009-02-12 16:04:42.064559 Z
-countries_157: 
-  name: PAPUA NEW GUINEA
-  updated_at: 2009-02-12 16:04:42.428890 Z
-  iso3: PNG
-  id: 408
-  iso: PG
-  printable_name: Papua New Guinea
-  numcode: 598
-  position: 161
-  created_at: 2009-02-12 16:04:42.428890 Z
-countries_183: 
-  name: SLOVAKIA
-  updated_at: 2009-02-12 16:04:42.519436 Z
-  iso3: SVK
-  id: 434
-  iso: SK
-  printable_name: Slovakia
-  numcode: 703
-  position: 187
-  created_at: 2009-02-12 16:04:42.519436 Z
-countries_077: 
-  name: GREECE
-  updated_at: 2009-02-12 16:04:42.067854 Z
-  iso3: GRC
-  id: 328
-  iso: GR
-  printable_name: Greece
-  numcode: 300
-  position: 81
-  created_at: 2009-02-12 16:04:42.067854 Z
-countries_158: 
-  name: PARAGUAY
-  updated_at: 2009-02-12 16:04:42.433114 Z
-  iso3: PRY
-  id: 409
-  iso: PY
-  printable_name: Paraguay
-  numcode: 600
-  position: 162
-  created_at: 2009-02-12 16:04:42.433114 Z
-countries_184: 
-  name: SLOVENIA
-  updated_at: 2009-02-12 16:04:42.524247 Z
-  iso3: SVN
-  id: 435
-  iso: SI
-  printable_name: Slovenia
-  numcode: 705
-  position: 188
-  created_at: 2009-02-12 16:04:42.524247 Z
-countries_078: 
-  name: GREENLAND
-  updated_at: 2009-02-12 16:04:42.071057 Z
-  iso3: GRL
-  id: 329
-  iso: GL
-  printable_name: Greenland
-  numcode: 304
-  position: 82
-  created_at: 2009-02-12 16:04:42.071057 Z
-countries_159: 
-  name: PERU
-  updated_at: 2009-02-12 16:04:42.437130 Z
-  iso3: PER
-  id: 410
-  iso: PE
-  printable_name: Peru
-  numcode: 604
-  position: 163
-  created_at: 2009-02-12 16:04:42.437130 Z
-countries_185: 
-  name: SOLOMON ISLANDS
-  updated_at: 2009-02-12 16:04:42.527991 Z
-  iso3: SLB
-  id: 436
-  iso: SB
-  printable_name: Solomon Islands
-  numcode: 90
-  position: 189
-  created_at: 2009-02-12 16:04:42.527991 Z
-countries_079: 
-  name: GRENADA
-  updated_at: 2009-02-12 16:04:42.074462 Z
-  iso3: GRD
-  id: 330
-  iso: GD
-  printable_name: Grenada
-  numcode: 308
-  position: 83
-  created_at: 2009-02-12 16:04:42.074462 Z
-countries_186: 
-  name: SOMALIA
-  updated_at: 2009-02-12 16:04:42.531665 Z
-  iso3: SOM
-  id: 437
-  iso: SO
-  printable_name: Somalia
-  numcode: 706
-  position: 190
-  created_at: 2009-02-12 16:04:42.531665 Z
-countries_187: 
-  name: SOUTH AFRICA
-  updated_at: 2009-02-12 16:04:42.534304 Z
-  iso3: ZAF
-  id: 438
-  iso: ZA
-  printable_name: South Africa
-  numcode: 710
-  position: 191
-  created_at: 2009-02-12 16:04:42.534304 Z
-countries_188: 
+countries_132: 
   name: SPAIN
   updated_at: 2009-02-12 16:04:42.537658 Z
   iso3: ESP
@@ -1328,797 +38,7 @@ countries_188:
   numcode: 724
   position: 192
   created_at: 2009-02-12 16:04:42.537658 Z
-countries_189: 
-  name: SRI LANKA
-  updated_at: 2009-02-12 16:04:42.541773 Z
-  iso3: LKA
-  id: 440
-  iso: LK
-  printable_name: Sri Lanka
-  numcode: 144
-  position: 193
-  created_at: 2009-02-12 16:04:42.541773 Z
-countries_001: 
-  name: AFGHANISTAN
-  updated_at: 2009-02-12 16:04:41.660564 Z
-  iso3: AFG
-  id: 252
-  iso: AF
-  printable_name: Afghanistan
-  numcode: 4
-  position: 5
-  created_at: 2009-02-12 16:04:41.660564 Z
-countries_002: 
-  name: ALBANIA
-  updated_at: 2009-02-12 16:04:41.670584 Z
-  iso3: ALB
-  id: 253
-  iso: AL
-  printable_name: Albania
-  numcode: 8
-  position: 6
-  created_at: 2009-02-12 16:04:41.670584 Z
-countries_110: 
-  name: LATVIA
-  updated_at: 2009-02-12 16:04:42.253988 Z
-  iso3: LVA
-  id: 361
-  iso: LV
-  printable_name: Latvia
-  numcode: 428
-  position: 114
-  created_at: 2009-02-12 16:04:42.253988 Z
-countries_003: 
-  name: ALGERIA
-  updated_at: 2009-02-12 16:04:41.674319 Z
-  iso3: DZA
-  id: 254
-  iso: DZ
-  printable_name: Algeria
-  numcode: 12
-  position: 7
-  created_at: 2009-02-12 16:04:41.674319 Z
-countries_111: 
-  name: LEBANON
-  updated_at: 2009-02-12 16:04:42.258094 Z
-  iso3: LBN
-  id: 362
-  iso: LB
-  printable_name: Lebanon
-  numcode: 422
-  position: 115
-  created_at: 2009-02-12 16:04:42.258094 Z
-countries_004: 
-  name: AMERICAN SAMOA
-  updated_at: 2009-02-12 16:04:41.677801 Z
-  iso3: ASM
-  id: 255
-  iso: AS
-  printable_name: American Samoa
-  numcode: 16
-  position: 8
-  created_at: 2009-02-12 16:04:41.677801 Z
-countries_030: 
-  name: BULGARIA
-  updated_at: 2009-02-12 16:04:41.749084 Z
-  iso3: BGR
-  id: 281
-  iso: BG
-  printable_name: Bulgaria
-  numcode: 100
-  position: 34
-  created_at: 2009-02-12 16:04:41.749084 Z
-countries_112: 
-  name: LESOTHO
-  updated_at: 2009-02-12 16:04:42.262008 Z
-  iso3: LSO
-  id: 363
-  iso: LS
-  printable_name: Lesotho
-  numcode: 426
-  position: 116
-  created_at: 2009-02-12 16:04:42.262008 Z
-countries_005: 
-  name: ANDORRA
-  updated_at: 2009-02-12 16:04:41.681378 Z
-  iso3: AND
-  id: 256
-  iso: AD
-  printable_name: Andorra
-  numcode: 20
-  position: 9
-  created_at: 2009-02-12 16:04:41.681378 Z
-countries_031: 
-  name: BURKINA FASO
-  updated_at: 2009-02-12 16:04:41.753015 Z
-  iso3: BFA
-  id: 282
-  iso: BF
-  printable_name: Burkina Faso
-  numcode: 854
-  position: 35
-  created_at: 2009-02-12 16:04:41.753015 Z
-countries_113: 
-  name: LIBERIA
-  updated_at: 2009-02-12 16:04:42.265423 Z
-  iso3: LBR
-  id: 364
-  iso: LR
-  printable_name: Liberia
-  numcode: 430
-  position: 117
-  created_at: 2009-02-12 16:04:42.265423 Z
-countries_220: 
-  name: VIRGIN ISLANDS, BRITISH
-  updated_at: 2009-02-12 16:04:42.687482 Z
-  iso3: VGB
-  id: 471
-  iso: VG
-  printable_name: Virgin Islands, British
-  numcode: 92
-  position: 224
-  created_at: 2009-02-12 16:04:42.687482 Z
-countries_006: 
-  name: ANGOLA
-  updated_at: 2009-02-12 16:04:41.685553 Z
-  iso3: AGO
-  id: 257
-  iso: AO
-  printable_name: Angola
-  numcode: 24
-  position: 10
-  created_at: 2009-02-12 16:04:41.685553 Z
-countries_032: 
-  name: BURUNDI
-  updated_at: 2009-02-12 16:04:41.756130 Z
-  iso3: BDI
-  id: 283
-  iso: BI
-  printable_name: Burundi
-  numcode: 108
-  position: 36
-  created_at: 2009-02-12 16:04:41.756130 Z
-countries_140: 
-  name: NAURU
-  updated_at: 2009-02-12 16:04:42.366270 Z
-  iso3: NRU
-  id: 391
-  iso: NR
-  printable_name: Nauru
-  numcode: 520
-  position: 144
-  created_at: 2009-02-12 16:04:42.366270 Z
-countries_221: 
-  name: VIRGIN ISLANDS, U.S.
-  updated_at: 2009-02-12 16:04:42.689924 Z
-  iso3: VIR
-  id: 472
-  iso: VI
-  printable_name: Virgin Islands, U.s.
-  numcode: 850
-  position: 225
-  created_at: 2009-02-12 16:04:42.689924 Z
-countries_007: 
-  name: ANGUILLA
-  updated_at: 2009-02-12 16:04:41.689662 Z
-  iso3: AIA
-  id: 258
-  iso: AI
-  printable_name: Anguilla
-  numcode: 660
-  position: 11
-  created_at: 2009-02-12 16:04:41.689662 Z
-countries_033: 
-  name: CAMBODIA
-  updated_at: 2009-02-12 16:04:41.759239 Z
-  iso3: KHM
-  id: 284
-  iso: KH
-  printable_name: Cambodia
-  numcode: 116
-  position: 37
-  created_at: 2009-02-12 16:04:41.759239 Z
-countries_060: 
-  name: EQUATORIAL GUINEA
-  updated_at: 2009-02-12 16:04:42.006440 Z
-  iso3: GNQ
-  id: 311
-  iso: GQ
-  printable_name: Equatorial Guinea
-  numcode: 226
-  position: 64
-  created_at: 2009-02-12 16:04:42.006440 Z
-countries_114: 
-  name: LIBYAN ARAB JAMAHIRIYA
-  updated_at: 2009-02-12 16:04:42.268823 Z
-  iso3: LBY
-  id: 365
-  iso: LY
-  printable_name: Libyan Arab Jamahiriya
-  numcode: 434
-  position: 118
-  created_at: 2009-02-12 16:04:42.268823 Z
-countries_141: 
-  name: NEPAL
-  updated_at: 2009-02-12 16:04:42.370275 Z
-  iso3: NPL
-  id: 392
-  iso: NP
-  printable_name: Nepal
-  numcode: 524
-  position: 145
-  created_at: 2009-02-12 16:04:42.370275 Z
-countries_222: 
-  name: WALLIS AND FUTUNA
-  updated_at: 2009-02-12 16:04:42.693227 Z
-  iso3: WLF
-  id: 473
-  iso: WF
-  printable_name: Wallis and Futuna
-  numcode: 876
-  position: 226
-  created_at: 2009-02-12 16:04:42.693227 Z
-countries_008: 
-  name: ANTIGUA AND BARBUDA
-  updated_at: 2009-02-12 16:04:41.692711 Z
-  iso3: ATG
-  id: 259
-  iso: AG
-  printable_name: Antigua and Barbuda
-  numcode: 28
-  position: 12
-  created_at: 2009-02-12 16:04:41.692711 Z
-countries_034: 
-  name: CAMEROON
-  updated_at: 2009-02-12 16:04:41.762236 Z
-  iso3: CMR
-  id: 285
-  iso: CM
-  printable_name: Cameroon
-  numcode: 120
-  position: 38
-  created_at: 2009-02-12 16:04:41.762236 Z
-countries_115: 
-  name: LIECHTENSTEIN
-  updated_at: 2009-02-12 16:04:42.272516 Z
-  iso3: LIE
-  id: 366
-  iso: LI
-  printable_name: Liechtenstein
-  numcode: 438
-  position: 119
-  created_at: 2009-02-12 16:04:42.272516 Z
-countries_223: 
-  name: WESTERN SAHARA
-  updated_at: 2009-02-12 16:04:42.695891 Z
-  iso3: ESH
-  id: 474
-  iso: EH
-  printable_name: Western Sahara
-  numcode: 732
-  position: 227
-  created_at: 2009-02-12 16:04:42.695891 Z
-countries_009: 
-  name: ARGENTINA
-  updated_at: 2009-02-12 16:04:41.695872 Z
-  iso3: ARG
-  id: 260
-  iso: AR
-  printable_name: Argentina
-  numcode: 32
-  position: 13
-  created_at: 2009-02-12 16:04:41.695872 Z
-countries_035: 
-  name: CANADA
-  updated_at: 2009-02-12 16:04:41.765341 Z
-  iso3: CAN
-  id: 286
-  iso: CA
-  printable_name: Canada
-  numcode: 124
-  position: 2
-  created_at: 2009-02-12 16:04:41.765341 Z
-countries_061: 
-  name: ERITREA
-  updated_at: 2009-02-12 16:04:42.010226 Z
-  iso3: ERI
-  id: 312
-  iso: ER
-  printable_name: Eritrea
-  numcode: 232
-  position: 65
-  created_at: 2009-02-12 16:04:42.010226 Z
-countries_116: 
-  name: LITHUANIA
-  updated_at: 2009-02-12 16:04:42.276261 Z
-  iso3: LTU
-  id: 367
-  iso: LT
-  printable_name: Lithuania
-  numcode: 440
-  position: 120
-  created_at: 2009-02-12 16:04:42.276261 Z
-countries_142: 
-  name: NETHERLANDS
-  updated_at: 2009-02-12 16:04:42.373868 Z
-  iso3: NLD
-  id: 393
-  iso: NL
-  printable_name: Netherlands
-  numcode: 528
-  position: 146
-  created_at: 2009-02-12 16:04:42.373868 Z
-countries_224: 
-  name: YEMEN
-  updated_at: 2009-02-12 16:04:42.699134 Z
-  iso3: YEM
-  id: 475
-  iso: YE
-  printable_name: Yemen
-  numcode: 887
-  position: 228
-  created_at: 2009-02-12 16:04:42.699134 Z
-countries_170: 
-  name: SAINT HELENA
-  updated_at: 2009-02-12 16:04:42.473075 Z
-  iso3: SHN
-  id: 421
-  iso: SH
-  printable_name: Saint Helena
-  numcode: 654
-  position: 174
-  created_at: 2009-02-12 16:04:42.473075 Z
-countries_036: 
-  name: CAPE VERDE
-  updated_at: 2009-02-12 16:04:41.769157 Z
-  iso3: CPV
-  id: 287
-  iso: CV
-  printable_name: Cape Verde
-  numcode: 132
-  position: 40
-  created_at: 2009-02-12 16:04:41.769157 Z
-countries_062: 
-  name: ESTONIA
-  updated_at: 2009-02-12 16:04:42.013004 Z
-  iso3: EST
-  id: 313
-  iso: EE
-  printable_name: Estonia
-  numcode: 233
-  position: 66
-  created_at: 2009-02-12 16:04:42.013004 Z
-countries_117: 
-  name: LUXEMBOURG
-  updated_at: 2009-02-12 16:04:42.281196 Z
-  iso3: LUX
-  id: 368
-  iso: LU
-  printable_name: Luxembourg
-  numcode: 442
-  position: 121
-  created_at: 2009-02-12 16:04:42.281196 Z
-countries_143: 
-  name: NETHERLANDS ANTILLES
-  updated_at: 2009-02-12 16:04:42.377577 Z
-  iso3: ANT
-  id: 394
-  iso: AN
-  printable_name: Netherlands Antilles
-  numcode: 530
-  position: 147
-  created_at: 2009-02-12 16:04:42.377577 Z
-countries_225: 
-  name: ZAMBIA
-  updated_at: 2009-02-12 16:04:42.701427 Z
-  iso3: ZMB
-  id: 476
-  iso: ZM
-  printable_name: Zambia
-  numcode: 894
-  position: 229
-  created_at: 2009-02-12 16:04:42.701427 Z
-countries_037: 
-  name: CAYMAN ISLANDS
-  updated_at: 2009-02-12 16:04:41.774148 Z
-  iso3: CYM
-  id: 288
-  iso: KY
-  printable_name: Cayman Islands
-  numcode: 136
-  position: 41
-  created_at: 2009-02-12 16:04:41.774148 Z
-countries_063: 
-  name: ETHIOPIA
-  updated_at: 2009-02-12 16:04:42.016414 Z
-  iso3: ETH
-  id: 314
-  iso: ET
-  printable_name: Ethiopia
-  numcode: 231
-  position: 67
-  created_at: 2009-02-12 16:04:42.016414 Z
-countries_090: 
-  name: HUNGARY
-  updated_at: 2009-02-12 16:04:42.116291 Z
-  iso3: HUN
-  id: 341
-  iso: HU
-  printable_name: Hungary
-  numcode: 348
-  position: 94
-  created_at: 2009-02-12 16:04:42.116291 Z
-countries_118: 
-  name: MACAO
-  updated_at: 2009-02-12 16:04:42.285113 Z
-  iso3: MAC
-  id: 369
-  iso: MO
-  printable_name: Macao
-  numcode: 446
-  position: 122
-  created_at: 2009-02-12 16:04:42.285113 Z
-countries_144: 
-  name: NEW CALEDONIA
-  updated_at: 2009-02-12 16:04:42.381491 Z
-  iso3: NCL
-  id: 395
-  iso: NC
-  printable_name: New Caledonia
-  numcode: 540
-  position: 148
-  created_at: 2009-02-12 16:04:42.381491 Z
-countries_226: 
-  name: ZIMBABWE
-  updated_at: 2009-02-12 16:04:42.703603 Z
-  iso3: ZWE
-  id: 477
-  iso: ZW
-  printable_name: Zimbabwe
-  numcode: 716
-  position: 230
-  created_at: 2009-02-12 16:04:42.703603 Z
-countries_038: 
-  name: CENTRAL AFRICAN REPUBLIC
-  updated_at: 2009-02-12 16:04:41.777987 Z
-  iso3: CAF
-  id: 289
-  iso: CF
-  printable_name: Central African Republic
-  numcode: 140
-  position: 42
-  created_at: 2009-02-12 16:04:41.777987 Z
-countries_064: 
-  name: FALKLAND ISLANDS (MALVINAS)
-  updated_at: 2009-02-12 16:04:42.020079 Z
-  iso3: FLK
-  id: 315
-  iso: FK
-  printable_name: Falkland Islands (Malvinas)
-  numcode: 238
-  position: 68
-  created_at: 2009-02-12 16:04:42.020079 Z
-countries_091: 
-  name: ICELAND
-  updated_at: 2009-02-12 16:04:42.120475 Z
-  iso3: ISL
-  id: 342
-  iso: IS
-  printable_name: Iceland
-  numcode: 352
-  position: 95
-  created_at: 2009-02-12 16:04:42.120475 Z
-countries_119: 
-  name: MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF
-  updated_at: 2009-02-12 16:04:42.289326 Z
-  iso3: MKD
-  id: 370
-  iso: MK
-  printable_name: Macedonia
-  numcode: 807
-  position: 123
-  created_at: 2009-02-12 16:04:42.289326 Z
-countries_145: 
-  name: NEW ZEALAND
-  updated_at: 2009-02-12 16:04:42.385371 Z
-  iso3: NZL
-  id: 396
-  iso: NZ
-  printable_name: New Zealand
-  numcode: 554
-  position: 149
-  created_at: 2009-02-12 16:04:42.385371 Z
-countries_171: 
-  name: SAINT KITTS AND NEVIS
-  updated_at: 2009-02-12 16:04:42.477440 Z
-  iso3: KNA
-  id: 422
-  iso: KN
-  printable_name: Saint Kitts and Nevis
-  numcode: 659
-  position: 175
-  created_at: 2009-02-12 16:04:42.477440 Z
-countries_039: 
-  name: CHAD
-  updated_at: 2009-02-12 16:04:41.783705 Z
-  iso3: TCD
-  id: 290
-  iso: TD
-  printable_name: Chad
-  numcode: 148
-  position: 43
-  created_at: 2009-02-12 16:04:41.783705 Z
-countries_065: 
-  name: FAROE ISLANDS
-  updated_at: 2009-02-12 16:04:42.024080 Z
-  iso3: FRO
-  id: 316
-  iso: FO
-  printable_name: Faroe Islands
-  numcode: 234
-  position: 69
-  created_at: 2009-02-12 16:04:42.024080 Z
-countries_092: 
-  name: INDIA
-  updated_at: 2009-02-12 16:04:42.124099 Z
-  iso3: IND
-  id: 343
-  iso: IN
-  printable_name: India
-  numcode: 356
-  position: 96
-  created_at: 2009-02-12 16:04:42.124099 Z
-countries_146: 
-  name: NICARAGUA
-  updated_at: 2009-02-12 16:04:42.389240 Z
-  iso3: NIC
-  id: 397
-  iso: NI
-  printable_name: Nicaragua
-  numcode: 558
-  position: 150
-  created_at: 2009-02-12 16:04:42.389240 Z
-countries_172: 
-  name: SAINT LUCIA
-  updated_at: 2009-02-12 16:04:42.481531 Z
-  iso3: LCA
-  id: 423
-  iso: LC
-  printable_name: Saint Lucia
-  numcode: 662
-  position: 176
-  created_at: 2009-02-12 16:04:42.481531 Z
-countries_066: 
-  name: FIJI
-  updated_at: 2009-02-12 16:04:42.027938 Z
-  iso3: FJI
-  id: 317
-  iso: FJ
-  printable_name: Fiji
-  numcode: 242
-  position: 70
-  created_at: 2009-02-12 16:04:42.027938 Z
-countries_093: 
-  name: INDONESIA
-  updated_at: 2009-02-12 16:04:42.127762 Z
-  iso3: IDN
-  id: 344
-  iso: ID
-  printable_name: Indonesia
-  numcode: 360
-  position: 97
-  created_at: 2009-02-12 16:04:42.127762 Z
-countries_147: 
-  name: NIGER
-  updated_at: 2009-02-12 16:04:42.392976 Z
-  iso3: NER
-  id: 398
-  iso: NE
-  printable_name: Niger
-  numcode: 562
-  position: 151
-  created_at: 2009-02-12 16:04:42.392976 Z
-countries_173: 
-  name: SAINT PIERRE AND MIQUELON
-  updated_at: 2009-02-12 16:04:42.485295 Z
-  iso3: SPM
-  id: 424
-  iso: PM
-  printable_name: Saint Pierre and Miquelon
-  numcode: 666
-  position: 177
-  created_at: 2009-02-12 16:04:42.485295 Z
-countries_067: 
-  name: FINLAND
-  updated_at: 2009-02-12 16:04:42.031965 Z
-  iso3: FIN
-  id: 318
-  iso: FI
-  printable_name: Finland
-  numcode: 246
-  position: 71
-  created_at: 2009-02-12 16:04:42.031965 Z
-countries_148: 
-  name: NIGERIA
-  updated_at: 2009-02-12 16:04:42.396441 Z
-  iso3: NGA
-  id: 399
-  iso: NG
-  printable_name: Nigeria
-  numcode: 566
-  position: 152
-  created_at: 2009-02-12 16:04:42.396441 Z
-countries_174: 
-  name: SAINT VINCENT AND THE GRENADINES
-  updated_at: 2009-02-12 16:04:42.490156 Z
-  iso3: VCT
-  id: 425
-  iso: VC
-  printable_name: Saint Vincent and the Grenadines
-  numcode: 670
-  position: 178
-  created_at: 2009-02-12 16:04:42.490156 Z
-countries_068: 
-  name: FRANCE
-  updated_at: 2009-02-12 16:04:42.036323 Z
-  iso3: FRA
-  id: 319
-  iso: FR
-  printable_name: France
-  numcode: 250
-  position: 72
-  created_at: 2009-02-12 16:04:42.036323 Z
-countries_094: 
-  name: IRAN, ISLAMIC REPUBLIC OF
-  updated_at: 2009-02-12 16:04:42.131966 Z
-  iso3: IRN
-  id: 345
-  iso: IR
-  printable_name: Iran, Islamic Republic of
-  numcode: 364
-  position: 98
-  created_at: 2009-02-12 16:04:42.131966 Z
-countries_149: 
-  name: NIUE
-  updated_at: 2009-02-12 16:04:42.400283 Z
-  iso3: NIU
-  id: 400
-  iso: NU
-  printable_name: Niue
-  numcode: 570
-  position: 153
-  created_at: 2009-02-12 16:04:42.400283 Z
-countries_175: 
-  name: SAMOA
-  updated_at: 2009-02-12 16:04:42.494206 Z
-  iso3: WSM
-  id: 426
-  iso: WS
-  printable_name: Samoa
-  numcode: 882
-  position: 179
-  created_at: 2009-02-12 16:04:42.494206 Z
-countries_069: 
-  name: FRENCH GUIANA
-  updated_at: 2009-02-12 16:04:42.040603 Z
-  iso3: GUF
-  id: 320
-  iso: GF
-  printable_name: French Guiana
-  numcode: 254
-  position: 73
-  created_at: 2009-02-12 16:04:42.040603 Z
-countries_095: 
-  name: IRAQ
-  updated_at: 2009-02-12 16:04:42.135408 Z
-  iso3: IRQ
-  id: 346
-  iso: IQ
-  printable_name: Iraq
-  numcode: 368
-  position: 99
-  created_at: 2009-02-12 16:04:42.135408 Z
-countries_176: 
-  name: SAN MARINO
-  updated_at: 2009-02-12 16:04:42.497131 Z
-  iso3: SMR
-  id: 427
-  iso: SM
-  printable_name: San Marino
-  numcode: 674
-  position: 180
-  created_at: 2009-02-12 16:04:42.497131 Z
-countries_096: 
-  name: IRELAND
-  updated_at: 2009-02-12 16:04:42.138979 Z
-  iso3: IRL
-  id: 347
-  iso: IE
-  printable_name: Ireland
-  numcode: 372
-  position: 100
-  created_at: 2009-02-12 16:04:42.138979 Z
-countries_177: 
-  name: SAO TOME AND PRINCIPE
-  updated_at: 2009-02-12 16:04:42.499566 Z
-  iso3: STP
-  id: 428
-  iso: ST
-  printable_name: Sao Tome and Principe
-  numcode: 678
-  position: 181
-  created_at: 2009-02-12 16:04:42.499566 Z
-countries_097: 
-  name: ISRAEL
-  updated_at: 2009-02-12 16:04:42.143578 Z
-  iso3: ISR
-  id: 348
-  iso: IL
-  printable_name: Israel
-  numcode: 376
-  position: 101
-  created_at: 2009-02-12 16:04:42.143578 Z
-countries_178: 
-  name: SAUDI ARABIA
-  updated_at: 2009-02-12 16:04:42.502725 Z
-  iso3: SAU
-  id: 429
-  iso: SA
-  printable_name: Saudi Arabia
-  numcode: 682
-  position: 182
-  created_at: 2009-02-12 16:04:42.502725 Z
-countries_098: 
-  name: ITALY
-  updated_at: 2009-02-12 16:04:42.147851 Z
-  iso3: ITA
-  id: 349
-  iso: IT
-  printable_name: Italy
-  numcode: 380
-  position: 102
-  created_at: 2009-02-12 16:04:42.147851 Z
-countries_179: 
-  name: SENEGAL
-  updated_at: 2009-02-12 16:04:42.506680 Z
-  iso3: SEN
-  id: 430
-  iso: SN
-  printable_name: Senegal
-  numcode: 686
-  position: 183
-  created_at: 2009-02-12 16:04:42.506680 Z
-countries_099: 
-  name: JAMAICA
-  updated_at: 2009-02-12 16:04:42.151644 Z
-  iso3: JAM
-  id: 350
-  iso: JM
-  printable_name: Jamaica
-  numcode: 388
-  position: 103
-  created_at: 2009-02-12 16:04:42.151644 Z
-countries_100: 
-  name: JAPAN
-  updated_at: 2009-02-12 16:04:42.155687 Z
-  iso3: JPN
-  id: 351
-  iso: JP
-  printable_name: Japan
-  numcode: 392
-  position: 104
-  created_at: 2009-02-12 16:04:42.155687 Z
-countries_020: 
-  name: BELGIUM
-  updated_at: 2009-02-12 16:04:41.727077 Z
-  iso3: BEL
-  id: 271
-  iso: BE
-  printable_name: Belgium
-  numcode: 56
-  position: 24
-  created_at: 2009-02-12 16:04:41.727077 Z
-countries_101: 
+countries_213: 
   name: JORDAN
   updated_at: 2009-02-12 16:04:42.159512 Z
   iso3: JOR
@@ -2128,7 +48,47 @@ countries_101:
   numcode: 400
   position: 105
   created_at: 2009-02-12 16:04:42.159512 Z
-countries_021: 
+countries_026: 
+  name: DOMINICA
+  updated_at: 2009-02-12 16:04:41.989205 Z
+  iso3: DMA
+  id: 306
+  iso: DM
+  printable_name: Dominica
+  numcode: 212
+  position: 59
+  created_at: 2009-02-12 16:04:41.989205 Z
+countries_052: 
+  name: SWAZILAND
+  updated_at: 2009-02-12 16:04:42.557790 Z
+  iso3: SWZ
+  id: 444
+  iso: SZ
+  printable_name: Swaziland
+  numcode: 748
+  position: 197
+  created_at: 2009-02-12 16:04:42.557790 Z
+countries_107: 
+  name: GEORGIA
+  updated_at: 2009-02-12 16:04:42.054505 Z
+  iso3: GEO
+  id: 324
+  iso: GE
+  printable_name: Georgia
+  numcode: 268
+  position: 77
+  created_at: 2009-02-12 16:04:42.054505 Z
+countries_133: 
+  name: SRI LANKA
+  updated_at: 2009-02-12 16:04:42.541773 Z
+  iso3: LKA
+  id: 440
+  iso: LK
+  printable_name: Sri Lanka
+  numcode: 144
+  position: 193
+  created_at: 2009-02-12 16:04:42.541773 Z
+countries_214: 
   name: BELIZE
   updated_at: 2009-02-12 16:04:41.729131 Z
   iso3: BLZ
@@ -2138,7 +98,67 @@ countries_021:
   numcode: 84
   position: 25
   created_at: 2009-02-12 16:04:41.729131 Z
-countries_102: 
+countries_027: 
+  name: GUATEMALA
+  updated_at: 2009-02-12 16:04:42.085382 Z
+  iso3: GTM
+  id: 333
+  iso: GT
+  printable_name: Guatemala
+  numcode: 320
+  position: 86
+  created_at: 2009-02-12 16:04:42.085382 Z
+countries_053: 
+  name: RUSSIAN FEDERATION
+  updated_at: 2009-02-12 16:04:42.466044 Z
+  iso3: RUS
+  id: 419
+  iso: RU
+  printable_name: Russian Federation
+  numcode: 643
+  position: 172
+  created_at: 2009-02-12 16:04:42.466044 Z
+countries_080: 
+  name: COLOMBIA
+  updated_at: 2009-02-12 16:04:41.798186 Z
+  iso3: COL
+  id: 293
+  iso: CO
+  printable_name: Colombia
+  numcode: 170
+  position: 46
+  created_at: 2009-02-12 16:04:41.798186 Z
+countries_108: 
+  name: MAURITANIA
+  updated_at: 2009-02-12 16:04:42.321979 Z
+  iso3: MRT
+  id: 379
+  iso: MR
+  printable_name: Mauritania
+  numcode: 478
+  position: 132
+  created_at: 2009-02-12 16:04:42.321979 Z
+countries_134: 
+  name: AFGHANISTAN
+  updated_at: 2009-02-12 16:04:41.660564 Z
+  iso3: AFG
+  id: 252
+  iso: AF
+  printable_name: Afghanistan
+  numcode: 4
+  position: 5
+  created_at: 2009-02-12 16:04:41.660564 Z
+countries_160: 
+  name: WESTERN SAHARA
+  updated_at: 2009-02-12 16:04:42.695891 Z
+  iso3: ESH
+  id: 474
+  iso: EH
+  printable_name: Western Sahara
+  numcode: 732
+  position: 227
+  created_at: 2009-02-12 16:04:42.695891 Z
+countries_215: 
   name: KAZAKHSTAN
   updated_at: 2009-02-12 16:04:42.224663 Z
   iso3: KAZ
@@ -2148,7 +168,67 @@ countries_102:
   numcode: 398
   position: 106
   created_at: 2009-02-12 16:04:42.224663 Z
-countries_022: 
+countries_028: 
+  name: MOROCCO
+  updated_at: 2009-02-12 16:04:42.352719 Z
+  iso3: MAR
+  id: 387
+  iso: MA
+  printable_name: Morocco
+  numcode: 504
+  position: 140
+  created_at: 2009-02-12 16:04:42.352719 Z
+countries_054: 
+  name: SWEDEN
+  updated_at: 2009-02-12 16:04:42.561552 Z
+  iso3: SWE
+  id: 445
+  iso: SE
+  printable_name: Sweden
+  numcode: 752
+  position: 198
+  created_at: 2009-02-12 16:04:42.561552 Z
+countries_081: 
+  name: MALDIVES
+  updated_at: 2009-02-12 16:04:42.302979 Z
+  iso3: MDV
+  id: 374
+  iso: MV
+  printable_name: Maldives
+  numcode: 462
+  position: 127
+  created_at: 2009-02-12 16:04:42.302979 Z
+countries_109: 
+  name: PAKISTAN
+  updated_at: 2009-02-12 16:04:42.417689 Z
+  iso3: PAK
+  id: 405
+  iso: PK
+  printable_name: Pakistan
+  numcode: 586
+  position: 158
+  created_at: 2009-02-12 16:04:42.417689 Z
+countries_135: 
+  name: ALBANIA
+  updated_at: 2009-02-12 16:04:41.670584 Z
+  iso3: ALB
+  id: 253
+  iso: AL
+  printable_name: Albania
+  numcode: 8
+  position: 6
+  created_at: 2009-02-12 16:04:41.670584 Z
+countries_161: 
+  name: ARGENTINA
+  updated_at: 2009-02-12 16:04:41.695872 Z
+  iso3: ARG
+  id: 260
+  iso: AR
+  printable_name: Argentina
+  numcode: 32
+  position: 13
+  created_at: 2009-02-12 16:04:41.695872 Z
+countries_216: 
   name: BENIN
   updated_at: 2009-02-12 16:04:41.731114 Z
   iso3: BEN
@@ -2158,7 +238,57 @@ countries_022:
   numcode: 204
   position: 26
   created_at: 2009-02-12 16:04:41.731114 Z
-countries_103: 
+countries_029: 
+  name: POLAND
+  updated_at: 2009-02-12 16:04:42.445496 Z
+  iso3: POL
+  id: 413
+  iso: PL
+  printable_name: Poland
+  numcode: 616
+  position: 166
+  created_at: 2009-02-12 16:04:42.445496 Z
+countries_055: 
+  name: HOLY SEE (VATICAN CITY STATE)
+  updated_at: 2009-02-12 16:04:42.104683 Z
+  iso3: VAT
+  id: 338
+  iso: VA
+  printable_name: Holy See (Vatican City State)
+  numcode: 336
+  position: 91
+  created_at: 2009-02-12 16:04:42.104683 Z
+countries_082: 
+  name: TRINIDAD AND TOBAGO
+  updated_at: 2009-02-12 16:04:42.597061 Z
+  iso3: TTO
+  id: 455
+  iso: TT
+  printable_name: Trinidad and Tobago
+  numcode: 780
+  position: 208
+  created_at: 2009-02-12 16:04:42.597061 Z
+countries_136: 
+  name: LATVIA
+  updated_at: 2009-02-12 16:04:42.253988 Z
+  iso3: LVA
+  id: 361
+  iso: LV
+  printable_name: Latvia
+  numcode: 428
+  position: 114
+  created_at: 2009-02-12 16:04:42.253988 Z
+countries_162: 
+  name: CANADA
+  updated_at: 2009-02-12 16:04:41.765341 Z
+  iso3: CAN
+  id: 286
+  iso: CA
+  printable_name: Canada
+  numcode: 124
+  position: 2
+  created_at: 2009-02-12 16:04:41.765341 Z
+countries_217: 
   name: KENYA
   updated_at: 2009-02-12 16:04:42.228247 Z
   iso3: KEN
@@ -2168,7 +298,47 @@ countries_103:
   numcode: 404
   position: 107
   created_at: 2009-02-12 16:04:42.228247 Z
-countries_210: 
+countries_056: 
+  name: RWANDA
+  updated_at: 2009-02-12 16:04:42.469382 Z
+  iso3: RWA
+  id: 420
+  iso: RW
+  printable_name: Rwanda
+  numcode: 646
+  position: 173
+  created_at: 2009-02-12 16:04:42.469382 Z
+countries_137: 
+  name: ALGERIA
+  updated_at: 2009-02-12 16:04:41.674319 Z
+  iso3: DZA
+  id: 254
+  iso: DZ
+  printable_name: Algeria
+  numcode: 12
+  position: 7
+  created_at: 2009-02-12 16:04:41.674319 Z
+countries_163: 
+  name: ERITREA
+  updated_at: 2009-02-12 16:04:42.010226 Z
+  iso3: ERI
+  id: 312
+  iso: ER
+  printable_name: Eritrea
+  numcode: 232
+  position: 65
+  created_at: 2009-02-12 16:04:42.010226 Z
+countries_190: 
+  name: FIJI
+  updated_at: 2009-02-12 16:04:42.027938 Z
+  iso3: FJI
+  id: 317
+  iso: FJ
+  printable_name: Fiji
+  numcode: 242
+  position: 70
+  created_at: 2009-02-12 16:04:42.027938 Z
+countries_218: 
   name: UGANDA
   updated_at: 2009-02-12 16:04:42.620871 Z
   iso3: UGA
@@ -2178,7 +348,57 @@ countries_210:
   numcode: 800
   position: 214
   created_at: 2009-02-12 16:04:42.620871 Z
-countries_023: 
+countries_057: 
+  name: SWITZERLAND
+  updated_at: 2009-02-12 16:04:42.565703 Z
+  iso3: CHE
+  id: 446
+  iso: CH
+  printable_name: Switzerland
+  numcode: 756
+  position: 199
+  created_at: 2009-02-12 16:04:42.565703 Z
+countries_083: 
+  name: BANGLADESH
+  updated_at: 2009-02-12 16:04:41.720383 Z
+  iso3: BGD
+  id: 268
+  iso: BD
+  printable_name: Bangladesh
+  numcode: 50
+  position: 21
+  created_at: 2009-02-12 16:04:41.720383 Z
+countries_138: 
+  name: LEBANON
+  updated_at: 2009-02-12 16:04:42.258094 Z
+  iso3: LBN
+  id: 362
+  iso: LB
+  printable_name: Lebanon
+  numcode: 422
+  position: 115
+  created_at: 2009-02-12 16:04:42.258094 Z
+countries_164: 
+  name: LITHUANIA
+  updated_at: 2009-02-12 16:04:42.276261 Z
+  iso3: LTU
+  id: 367
+  iso: LT
+  printable_name: Lithuania
+  numcode: 440
+  position: 120
+  created_at: 2009-02-12 16:04:42.276261 Z
+countries_191: 
+  name: INDONESIA
+  updated_at: 2009-02-12 16:04:42.127761 Z
+  iso3: IDN
+  id: 344
+  iso: ID
+  printable_name: Indonesia
+  numcode: 360
+  position: 97
+  created_at: 2009-02-12 16:04:42.127761 Z
+countries_219: 
   name: BERMUDA
   updated_at: 2009-02-12 16:04:41.733126 Z
   iso3: BMU
@@ -2188,7 +408,1037 @@ countries_023:
   numcode: 60
   position: 27
   created_at: 2009-02-12 16:04:41.733126 Z
-countries_104: 
+countries_058: 
+  name: HONDURAS
+  updated_at: 2009-02-12 16:04:42.108896 Z
+  iso3: HND
+  id: 339
+  iso: HN
+  printable_name: Honduras
+  numcode: 340
+  position: 92
+  created_at: 2009-02-12 16:04:42.108896 Z
+countries_084: 
+  name: COMOROS
+  updated_at: 2009-02-12 16:04:41.801369 Z
+  iso3: COM
+  id: 294
+  iso: KM
+  printable_name: Comoros
+  numcode: 174
+  position: 47
+  created_at: 2009-02-12 16:04:41.801369 Z
+countries_139: 
+  name: AMERICAN SAMOA
+  updated_at: 2009-02-12 16:04:41.677801 Z
+  iso3: ASM
+  id: 255
+  iso: AS
+  printable_name: American Samoa
+  numcode: 16
+  position: 8
+  created_at: 2009-02-12 16:04:41.677801 Z
+countries_165: 
+  name: NETHERLANDS
+  updated_at: 2009-02-12 16:04:42.373868 Z
+  iso3: NLD
+  id: 393
+  iso: NL
+  printable_name: Netherlands
+  numcode: 528
+  position: 146
+  created_at: 2009-02-12 16:04:42.373868 Z
+countries_192: 
+  name: NIGER
+  updated_at: 2009-02-12 16:04:42.392976 Z
+  iso3: NER
+  id: 398
+  iso: NE
+  printable_name: Niger
+  numcode: 562
+  position: 151
+  created_at: 2009-02-12 16:04:42.392976 Z
+countries_085: 
+  name: FRENCH POLYNESIA
+  updated_at: 2009-02-12 16:04:42.044398 Z
+  iso3: PYF
+  id: 321
+  iso: PF
+  printable_name: French Polynesia
+  numcode: 258
+  position: 74
+  created_at: 2009-02-12 16:04:42.044398 Z
+countries_166: 
+  name: SAINT HELENA
+  updated_at: 2009-02-12 16:04:42.473075 Z
+  iso3: SHN
+  id: 421
+  iso: SH
+  printable_name: Saint Helena
+  numcode: 654
+  position: 174
+  created_at: 2009-02-12 16:04:42.473075 Z
+countries_059: 
+  name: SYRIAN ARAB REPUBLIC
+  updated_at: 2009-02-12 16:04:42.570254 Z
+  iso3: SYR
+  id: 447
+  iso: SY
+  printable_name: Syrian Arab Republic
+  numcode: 760
+  position: 200
+  created_at: 2009-02-12 16:04:42.570254 Z
+countries_086: 
+  name: MALI
+  updated_at: 2009-02-12 16:04:42.306334 Z
+  iso3: MLI
+  id: 375
+  iso: ML
+  printable_name: Mali
+  numcode: 466
+  position: 128
+  created_at: 2009-02-12 16:04:42.306334 Z
+countries_167: 
+  name: YEMEN
+  updated_at: 2009-02-12 16:04:42.699134 Z
+  iso3: YEM
+  id: 475
+  iso: YE
+  printable_name: Yemen
+  numcode: 887
+  position: 228
+  created_at: 2009-02-12 16:04:42.699134 Z
+countries_193: 
+  name: SAINT PIERRE AND MIQUELON
+  updated_at: 2009-02-12 16:04:42.485295 Z
+  iso3: SPM
+  id: 424
+  iso: PM
+  printable_name: Saint Pierre and Miquelon
+  numcode: 666
+  position: 177
+  created_at: 2009-02-12 16:04:42.485295 Z
+countries_168: 
+  name: CAPE VERDE
+  updated_at: 2009-02-12 16:04:41.769157 Z
+  iso3: CPV
+  id: 287
+  iso: CV
+  printable_name: Cape Verde
+  numcode: 132
+  position: 40
+  created_at: 2009-02-12 16:04:41.769157 Z
+countries_194: 
+  name: FINLAND
+  updated_at: 2009-02-12 16:04:42.031965 Z
+  iso3: FIN
+  id: 318
+  iso: FI
+  printable_name: Finland
+  numcode: 246
+  position: 71
+  created_at: 2009-02-12 16:04:42.031965 Z
+countries_087: 
+  name: NORFOLK ISLAND
+  updated_at: 2009-02-12 16:04:42.403668 Z
+  iso3: NFK
+  id: 401
+  iso: NF
+  printable_name: Norfolk Island
+  numcode: 574
+  position: 154
+  created_at: 2009-02-12 16:04:42.403668 Z
+countries_169: 
+  name: ESTONIA
+  updated_at: 2009-02-12 16:04:42.013004 Z
+  iso3: EST
+  id: 313
+  iso: EE
+  printable_name: Estonia
+  numcode: 233
+  position: 66
+  created_at: 2009-02-12 16:04:42.013004 Z
+countries_195: 
+  name: NIGERIA
+  updated_at: 2009-02-12 16:04:42.396441 Z
+  iso3: NGA
+  id: 399
+  iso: NG
+  printable_name: Nigeria
+  numcode: 566
+  position: 152
+  created_at: 2009-02-12 16:04:42.396441 Z
+countries_088: 
+  name: TUNISIA
+  updated_at: 2009-02-12 16:04:42.601619 Z
+  iso3: TUN
+  id: 456
+  iso: TN
+  printable_name: Tunisia
+  numcode: 788
+  position: 209
+  created_at: 2009-02-12 16:04:42.601619 Z
+countries_196: 
+  name: SAINT VINCENT AND THE GRENADINES
+  updated_at: 2009-02-12 16:04:42.490156 Z
+  iso3: VCT
+  id: 425
+  iso: VC
+  printable_name: Saint Vincent and the Grenadines
+  numcode: 670
+  position: 178
+  created_at: 2009-02-12 16:04:42.490156 Z
+countries_089: 
+  name: BARBADOS
+  updated_at: 2009-02-12 16:04:41.722927 Z
+  iso3: BRB
+  id: 269
+  iso: BB
+  printable_name: Barbados
+  numcode: 52
+  position: 22
+  created_at: 2009-02-12 16:04:41.722927 Z
+countries_197: 
+  name: FRANCE
+  updated_at: 2009-02-12 16:04:42.036323 Z
+  iso3: FRA
+  id: 319
+  iso: FR
+  printable_name: France
+  numcode: 250
+  position: 72
+  created_at: 2009-02-12 16:04:42.036323 Z
+countries_198: 
+  name: IRAN, ISLAMIC REPUBLIC OF
+  updated_at: 2009-02-12 16:04:42.131966 Z
+  iso3: IRN
+  id: 345
+  iso: IR
+  printable_name: Iran, Islamic Republic of
+  numcode: 364
+  position: 98
+  created_at: 2009-02-12 16:04:42.131966 Z
+countries_199: 
+  name: NIUE
+  updated_at: 2009-02-12 16:04:42.400283 Z
+  iso3: NIU
+  id: 400
+  iso: NU
+  printable_name: Niue
+  numcode: 570
+  position: 153
+  created_at: 2009-02-12 16:04:42.400283 Z
+countries_010: 
+  name: UNITED STATES
+  updated_at: 2009-02-12 16:04:42.636448 Z
+  iso3: USA
+  id: 465
+  iso: US
+  printable_name: United States
+  numcode: 840
+  position: 1
+  created_at: 2009-02-12 16:04:42.636448 Z
+countries_011: 
+  name: BOTSWANA
+  updated_at: 2009-02-12 16:04:41.741574 Z
+  iso3: BWA
+  id: 278
+  iso: BW
+  printable_name: Botswana
+  numcode: 72
+  position: 31
+  created_at: 2009-02-12 16:04:41.741574 Z
+countries_012: 
+  name: DENMARK
+  updated_at: 2009-02-12 16:04:41.981158 Z
+  iso3: DNK
+  id: 304
+  iso: DK
+  printable_name: Denmark
+  numcode: 208
+  position: 57
+  created_at: 2009-02-12 16:04:41.981158 Z
+countries_200: 
+  name: SAMOA
+  updated_at: 2009-02-12 16:04:42.494206 Z
+  iso3: WSM
+  id: 426
+  iso: WS
+  printable_name: Samoa
+  numcode: 882
+  position: 179
+  created_at: 2009-02-12 16:04:42.494206 Z
+countries_013: 
+  name: GUADELOUPE
+  updated_at: 2009-02-12 16:04:42.078414 Z
+  iso3: GLP
+  id: 331
+  iso: GP
+  printable_name: Guadeloupe
+  numcode: 312
+  position: 84
+  created_at: 2009-02-12 16:04:42.078414 Z
+countries_120: 
+  name: GIBRALTAR
+  updated_at: 2009-02-12 16:04:42.064559 Z
+  iso3: GIB
+  id: 327
+  iso: GI
+  printable_name: Gibraltar
+  numcode: 292
+  position: 80
+  created_at: 2009-02-12 16:04:42.064559 Z
+countries_201: 
+  name: FRENCH GUIANA
+  updated_at: 2009-02-12 16:04:42.040603 Z
+  iso3: GUF
+  id: 320
+  iso: GF
+  printable_name: French Guiana
+  numcode: 254
+  position: 73
+  created_at: 2009-02-12 16:04:42.040603 Z
+countries_014: 
+  name: KYRGYZSTAN
+  updated_at: 2009-02-12 16:04:42.246581 Z
+  iso3: KGZ
+  id: 359
+  iso: KG
+  printable_name: Kyrgyzstan
+  numcode: 417
+  position: 112
+  created_at: 2009-02-12 16:04:42.246581 Z
+countries_040: 
+  name: SURINAME
+  updated_at: 2009-02-12 16:04:42.549484 Z
+  iso3: SUR
+  id: 442
+  iso: SR
+  printable_name: Suriname
+  numcode: 740
+  position: 195
+  created_at: 2009-02-12 16:04:42.549484 Z
+countries_121: 
+  name: PAPUA NEW GUINEA
+  updated_at: 2009-02-12 16:04:42.428890 Z
+  iso3: PNG
+  id: 408
+  iso: PG
+  printable_name: Papua New Guinea
+  numcode: 598
+  position: 161
+  created_at: 2009-02-12 16:04:42.428890 Z
+countries_202: 
+  name: IRAQ
+  updated_at: 2009-02-12 16:04:42.135408 Z
+  iso3: IRQ
+  id: 346
+  iso: IQ
+  printable_name: Iraq
+  numcode: 368
+  position: 99
+  created_at: 2009-02-12 16:04:42.135408 Z
+countries_015: 
+  name: MONGOLIA
+  updated_at: 2009-02-12 16:04:42.345140 Z
+  iso3: MNG
+  id: 385
+  iso: MN
+  printable_name: Mongolia
+  numcode: 496
+  position: 138
+  created_at: 2009-02-12 16:04:42.345140 Z
+countries_041: 
+  name: VIET NAM
+  updated_at: 2009-02-12 16:04:42.684818 Z
+  iso3: VNM
+  id: 470
+  iso: VN
+  printable_name: Viet Nam
+  numcode: 704
+  position: 223
+  created_at: 2009-02-12 16:04:42.684818 Z
+countries_122: 
+  name: SLOVAKIA
+  updated_at: 2009-02-12 16:04:42.519436 Z
+  iso3: SVK
+  id: 434
+  iso: SK
+  printable_name: Slovakia
+  numcode: 703
+  position: 187
+  created_at: 2009-02-12 16:04:42.519436 Z
+countries_203: 
+  name: SAN MARINO
+  updated_at: 2009-02-12 16:04:42.497131 Z
+  iso3: SMR
+  id: 427
+  iso: SM
+  printable_name: San Marino
+  numcode: 674
+  position: 180
+  created_at: 2009-02-12 16:04:42.497131 Z
+countries_016: 
+  name: PHILIPPINES
+  updated_at: 2009-02-12 16:04:42.440146 Z
+  iso3: PHL
+  id: 411
+  iso: PH
+  printable_name: Philippines
+  numcode: 608
+  position: 164
+  created_at: 2009-02-12 16:04:42.440146 Z
+countries_042: 
+  name: EGYPT
+  updated_at: 2009-02-12 16:04:42.000462 Z
+  iso3: EGY
+  id: 309
+  iso: EG
+  printable_name: Egypt
+  numcode: 818
+  position: 62
+  created_at: 2009-02-12 16:04:42.000462 Z
+countries_123: 
+  name: GREECE
+  updated_at: 2009-02-12 16:04:42.067854 Z
+  iso3: GRC
+  id: 328
+  iso: GR
+  printable_name: Greece
+  numcode: 300
+  position: 81
+  created_at: 2009-02-12 16:04:42.067854 Z
+countries_204: 
+  name: IRELAND
+  updated_at: 2009-02-12 16:04:42.138979 Z
+  iso3: IRL
+  id: 347
+  iso: IE
+  printable_name: Ireland
+  numcode: 372
+  position: 100
+  created_at: 2009-02-12 16:04:42.138979 Z
+countries_017: 
+  name: URUGUAY
+  updated_at: 2009-02-12 16:04:42.640420 Z
+  iso3: URY
+  id: 466
+  iso: UY
+  printable_name: Uruguay
+  numcode: 858
+  position: 219
+  created_at: 2009-02-12 16:04:42.640420 Z
+countries_043: 
+  name: GUINEA-BISSAU
+  updated_at: 2009-02-12 16:04:42.092421 Z
+  iso3: GNB
+  id: 335
+  iso: GW
+  printable_name: Guinea-Bissau
+  numcode: 624
+  position: 88
+  created_at: 2009-02-12 16:04:42.092421 Z
+countries_070: 
+  name: TOGO
+  updated_at: 2009-02-12 16:04:42.586850 Z
+  iso3: TGO
+  id: 452
+  iso: TG
+  printable_name: Togo
+  numcode: 768
+  position: 205
+  created_at: 2009-02-12 16:04:42.586850 Z
+countries_124: 
+  name: PARAGUAY
+  updated_at: 2009-02-12 16:04:42.433114 Z
+  iso3: PRY
+  id: 409
+  iso: PY
+  printable_name: Paraguay
+  numcode: 600
+  position: 162
+  created_at: 2009-02-12 16:04:42.433114 Z
+countries_150: 
+  name: VIRGIN ISLANDS, U.S.
+  updated_at: 2009-02-12 16:04:42.689924 Z
+  iso3: VIR
+  id: 472
+  iso: VI
+  printable_name: Virgin Islands, U.s.
+  numcode: 850
+  position: 225
+  created_at: 2009-02-12 16:04:42.689924 Z
+countries_205: 
+  name: SAO TOME AND PRINCIPE
+  updated_at: 2009-02-12 16:04:42.499566 Z
+  iso3: STP
+  id: 428
+  iso: ST
+  printable_name: Sao Tome and Principe
+  numcode: 678
+  position: 181
+  created_at: 2009-02-12 16:04:42.499566 Z
+countries_018: 
+  name: BRAZIL
+  updated_at: 2009-02-12 16:04:41.743624 Z
+  iso3: BRA
+  id: 279
+  iso: BR
+  printable_name: Brazil
+  numcode: 76
+  position: 32
+  created_at: 2009-02-12 16:04:41.743624 Z
+countries_044: 
+  name: NAMIBIA
+  updated_at: 2009-02-12 16:04:42.363009 Z
+  iso3: NAM
+  id: 390
+  iso: NA
+  printable_name: Namibia
+  numcode: 516
+  position: 143
+  created_at: 2009-02-12 16:04:42.363009 Z
+countries_071: 
+  name: AZERBAIJAN
+  updated_at: 2009-02-12 16:04:41.711997 Z
+  iso3: AZE
+  id: 265
+  iso: AZ
+  printable_name: Azerbaijan
+  numcode: 31
+  position: 18
+  created_at: 2009-02-12 16:04:41.711997 Z
+countries_125: 
+  name: SLOVENIA
+  updated_at: 2009-02-12 16:04:42.524247 Z
+  iso3: SVN
+  id: 435
+  iso: SI
+  printable_name: Slovenia
+  numcode: 705
+  position: 188
+  created_at: 2009-02-12 16:04:42.524247 Z
+countries_151: 
+  name: ANGUILLA
+  updated_at: 2009-02-12 16:04:41.689662 Z
+  iso3: AIA
+  id: 258
+  iso: AI
+  printable_name: Anguilla
+  numcode: 660
+  position: 11
+  created_at: 2009-02-12 16:04:41.689662 Z
+countries_206: 
+  name: ISRAEL
+  updated_at: 2009-02-12 16:04:42.143578 Z
+  iso3: ISR
+  id: 348
+  iso: IL
+  printable_name: Israel
+  numcode: 376
+  position: 101
+  created_at: 2009-02-12 16:04:42.143578 Z
+countries_019: 
+  name: DJIBOUTI
+  updated_at: 2009-02-12 16:04:41.985008 Z
+  iso3: DJI
+  id: 305
+  iso: DJ
+  printable_name: Djibouti
+  numcode: 262
+  position: 58
+  created_at: 2009-02-12 16:04:41.985008 Z
+countries_045: 
+  name: QATAR
+  updated_at: 2009-02-12 16:04:42.455056 Z
+  iso3: QAT
+  id: 416
+  iso: QA
+  printable_name: Qatar
+  numcode: 634
+  position: 169
+  created_at: 2009-02-12 16:04:42.455056 Z
+countries_126: 
+  name: GREENLAND
+  updated_at: 2009-02-12 16:04:42.071057 Z
+  iso3: GRL
+  id: 329
+  iso: GL
+  printable_name: Greenland
+  numcode: 304
+  position: 82
+  created_at: 2009-02-12 16:04:42.071057 Z
+countries_152: 
+  name: CAMBODIA
+  updated_at: 2009-02-12 16:04:41.759239 Z
+  iso3: KHM
+  id: 284
+  iso: KH
+  printable_name: Cambodia
+  numcode: 116
+  position: 37
+  created_at: 2009-02-12 16:04:41.759239 Z
+countries_207: 
+  name: SAUDI ARABIA
+  updated_at: 2009-02-12 16:04:42.502725 Z
+  iso3: SAU
+  id: 429
+  iso: SA
+  printable_name: Saudi Arabia
+  numcode: 682
+  position: 182
+  created_at: 2009-02-12 16:04:42.502725 Z
+countries_046: 
+  name: SVALBARD AND JAN MAYEN
+  updated_at: 2009-02-12 16:04:42.553443 Z
+  iso3: SJM
+  id: 443
+  iso: SJ
+  printable_name: Svalbard and Jan Mayen
+  numcode: 744
+  position: 196
+  created_at: 2009-02-12 16:04:42.553443 Z
+countries_072: 
+  name: CHILE
+  updated_at: 2009-02-12 16:04:41.787967 Z
+  iso3: CHL
+  id: 291
+  iso: CL
+  printable_name: Chile
+  numcode: 152
+  position: 44
+  created_at: 2009-02-12 16:04:41.787967 Z
+countries_127: 
+  name: PERU
+  updated_at: 2009-02-12 16:04:42.437130 Z
+  iso3: PER
+  id: 410
+  iso: PE
+  printable_name: Peru
+  numcode: 604
+  position: 163
+  created_at: 2009-02-12 16:04:42.437130 Z
+countries_153: 
+  name: EQUATORIAL GUINEA
+  updated_at: 2009-02-12 16:04:42.006440 Z
+  iso3: GNQ
+  id: 311
+  iso: GQ
+  printable_name: Equatorial Guinea
+  numcode: 226
+  position: 64
+  created_at: 2009-02-12 16:04:42.006440 Z
+countries_180: 
+  name: FALKLAND ISLANDS (MALVINAS)
+  updated_at: 2009-02-12 16:04:42.020079 Z
+  iso3: FLK
+  id: 315
+  iso: FK
+  printable_name: Falkland Islands (Malvinas)
+  numcode: 238
+  position: 68
+  created_at: 2009-02-12 16:04:42.020079 Z
+countries_208: 
+  name: ITALY
+  updated_at: 2009-02-12 16:04:42.147851 Z
+  iso3: ITA
+  id: 349
+  iso: IT
+  printable_name: Italy
+  numcode: 380
+  position: 102
+  created_at: 2009-02-12 16:04:42.147851 Z
+countries_047: 
+  name: GUYANA
+  updated_at: 2009-02-12 16:04:42.096050 Z
+  iso3: GUY
+  id: 336
+  iso: GY
+  printable_name: Guyana
+  numcode: 328
+  position: 89
+  created_at: 2009-02-12 16:04:42.096050 Z
+countries_073: 
+  name: MALAWI
+  updated_at: 2009-02-12 16:04:42.296307 Z
+  iso3: MWI
+  id: 372
+  iso: MW
+  printable_name: Malawi
+  numcode: 454
+  position: 125
+  created_at: 2009-02-12 16:04:42.296307 Z
+countries_128: 
+  name: SOLOMON ISLANDS
+  updated_at: 2009-02-12 16:04:42.527991 Z
+  iso3: SLB
+  id: 436
+  iso: SB
+  printable_name: Solomon Islands
+  numcode: 90
+  position: 189
+  created_at: 2009-02-12 16:04:42.527991 Z
+countries_154: 
+  name: LIBYAN ARAB JAMAHIRIYA
+  updated_at: 2009-02-12 16:04:42.268823 Z
+  iso3: LBY
+  id: 365
+  iso: LY
+  printable_name: Libyan Arab Jamahiriya
+  numcode: 434
+  position: 118
+  created_at: 2009-02-12 16:04:42.268823 Z
+countries_181: 
+  name: ICELAND
+  updated_at: 2009-02-12 16:04:42.120475 Z
+  iso3: ISL
+  id: 342
+  iso: IS
+  printable_name: Iceland
+  numcode: 352
+  position: 95
+  created_at: 2009-02-12 16:04:42.120475 Z
+countries_209: 
+  name: SENEGAL
+  updated_at: 2009-02-12 16:04:42.506680 Z
+  iso3: SEN
+  id: 430
+  iso: SN
+  printable_name: Senegal
+  numcode: 686
+  position: 183
+  created_at: 2009-02-12 16:04:42.506680 Z
+countries_048: 
+  name: REUNION
+  updated_at: 2009-02-12 16:04:42.458435 Z
+  iso3: REU
+  id: 417
+  iso: RE
+  printable_name: Reunion
+  numcode: 638
+  position: 170
+  created_at: 2009-02-12 16:04:42.458435 Z
+countries_074: 
+  name: TOKELAU
+  updated_at: 2009-02-12 16:04:42.590743 Z
+  iso3: TKL
+  id: 453
+  iso: TK
+  printable_name: Tokelau
+  numcode: 772
+  position: 206
+  created_at: 2009-02-12 16:04:42.590743 Z
+countries_129: 
+  name: GRENADA
+  updated_at: 2009-02-12 16:04:42.074462 Z
+  iso3: GRD
+  id: 330
+  iso: GD
+  printable_name: Grenada
+  numcode: 308
+  position: 83
+  created_at: 2009-02-12 16:04:42.074462 Z
+countries_155: 
+  name: NEPAL
+  updated_at: 2009-02-12 16:04:42.370275 Z
+  iso3: NPL
+  id: 392
+  iso: NP
+  printable_name: Nepal
+  numcode: 524
+  position: 145
+  created_at: 2009-02-12 16:04:42.370275 Z
+countries_049: 
+  name: EL SALVADOR
+  updated_at: 2009-02-12 16:04:42.003395 Z
+  iso3: SLV
+  id: 310
+  iso: SV
+  printable_name: El Salvador
+  numcode: 222
+  position: 63
+  created_at: 2009-02-12 16:04:42.003395 Z
+countries_075: 
+  name: BAHAMAS
+  updated_at: 2009-02-12 16:04:41.715234 Z
+  iso3: BHS
+  id: 266
+  iso: BS
+  printable_name: Bahamas
+  numcode: 44
+  position: 19
+  created_at: 2009-02-12 16:04:41.715234 Z
+countries_156: 
+  name: WALLIS AND FUTUNA
+  updated_at: 2009-02-12 16:04:42.693227 Z
+  iso3: WLF
+  id: 473
+  iso: WF
+  printable_name: Wallis and Futuna
+  numcode: 876
+  position: 226
+  created_at: 2009-02-12 16:04:42.693227 Z
+countries_182: 
+  name: MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF
+  updated_at: 2009-02-12 16:04:42.289326 Z
+  iso3: MKD
+  id: 370
+  iso: MK
+  printable_name: Macedonia
+  numcode: 807
+  position: 123
+  created_at: 2009-02-12 16:04:42.289326 Z
+countries_076: 
+  name: CHINA
+  updated_at: 2009-02-12 16:04:41.791921 Z
+  iso3: CHN
+  id: 292
+  iso: CN
+  printable_name: China
+  numcode: 156
+  position: 45
+  created_at: 2009-02-12 16:04:41.791921 Z
+countries_157: 
+  name: ANTIGUA AND BARBUDA
+  updated_at: 2009-02-12 16:04:41.692711 Z
+  iso3: ATG
+  id: 259
+  iso: AG
+  printable_name: Antigua and Barbuda
+  numcode: 28
+  position: 12
+  created_at: 2009-02-12 16:04:41.692711 Z
+countries_183: 
+  name: NEW ZEALAND
+  updated_at: 2009-02-12 16:04:42.385371 Z
+  iso3: NZL
+  id: 396
+  iso: NZ
+  printable_name: New Zealand
+  numcode: 554
+  position: 149
+  created_at: 2009-02-12 16:04:42.385371 Z
+countries_077: 
+  name: MALAYSIA
+  updated_at: 2009-02-12 16:04:42.299339 Z
+  iso3: MYS
+  id: 373
+  iso: MY
+  printable_name: Malaysia
+  numcode: 458
+  position: 126
+  created_at: 2009-02-12 16:04:42.299339 Z
+countries_158: 
+  name: CAMEROON
+  updated_at: 2009-02-12 16:04:41.762236 Z
+  iso3: CMR
+  id: 285
+  iso: CM
+  printable_name: Cameroon
+  numcode: 120
+  position: 38
+  created_at: 2009-02-12 16:04:41.762236 Z
+countries_184: 
+  name: SAINT KITTS AND NEVIS
+  updated_at: 2009-02-12 16:04:42.477440 Z
+  iso3: KNA
+  id: 422
+  iso: KN
+  printable_name: Saint Kitts and Nevis
+  numcode: 659
+  position: 175
+  created_at: 2009-02-12 16:04:42.477440 Z
+countries_078: 
+  name: TONGA
+  updated_at: 2009-02-12 16:04:42.593595 Z
+  iso3: TON
+  id: 454
+  iso: TO
+  printable_name: Tonga
+  numcode: 776
+  position: 207
+  created_at: 2009-02-12 16:04:42.593595 Z
+countries_159: 
+  name: LIECHTENSTEIN
+  updated_at: 2009-02-12 16:04:42.272516 Z
+  iso3: LIE
+  id: 366
+  iso: LI
+  printable_name: Liechtenstein
+  numcode: 438
+  position: 119
+  created_at: 2009-02-12 16:04:42.272516 Z
+countries_185: 
+  name: CHAD
+  updated_at: 2009-02-12 16:04:41.783705 Z
+  iso3: TCD
+  id: 290
+  iso: TD
+  printable_name: Chad
+  numcode: 148
+  position: 43
+  created_at: 2009-02-12 16:04:41.783705 Z
+countries_079: 
+  name: BAHRAIN
+  updated_at: 2009-02-12 16:04:41.718207 Z
+  iso3: BHR
+  id: 267
+  iso: BH
+  printable_name: Bahrain
+  numcode: 48
+  position: 20
+  created_at: 2009-02-12 16:04:41.718207 Z
+countries_186: 
+  name: FAROE ISLANDS
+  updated_at: 2009-02-12 16:04:42.024080 Z
+  iso3: FRO
+  id: 316
+  iso: FO
+  printable_name: Faroe Islands
+  numcode: 234
+  position: 69
+  created_at: 2009-02-12 16:04:42.024080 Z
+countries_187: 
+  name: INDIA
+  updated_at: 2009-02-12 16:04:42.124099 Z
+  iso3: IND
+  id: 343
+  iso: IN
+  printable_name: India
+  numcode: 356
+  position: 96
+  created_at: 2009-02-12 16:04:42.124099 Z
+countries_188: 
+  name: NICARAGUA
+  updated_at: 2009-02-12 16:04:42.389240 Z
+  iso3: NIC
+  id: 397
+  iso: NI
+  printable_name: Nicaragua
+  numcode: 558
+  position: 150
+  created_at: 2009-02-12 16:04:42.389240 Z
+countries_189: 
+  name: SAINT LUCIA
+  updated_at: 2009-02-12 16:04:42.481531 Z
+  iso3: LCA
+  id: 423
+  iso: LC
+  printable_name: Saint Lucia
+  numcode: 662
+  position: 176
+  created_at: 2009-02-12 16:04:42.481531 Z
+countries_001: 
+  name: BOLIVIA
+  updated_at: 2009-02-12 16:04:41.737452 Z
+  iso3: BOL
+  id: 276
+  iso: BO
+  printable_name: Bolivia
+  numcode: 68
+  position: 29
+  created_at: 2009-02-12 16:04:41.737452 Z
+countries_002: 
+  name: CYPRUS
+  updated_at: 2009-02-12 16:04:41.973587 Z
+  iso3: CYP
+  id: 302
+  iso: CY
+  printable_name: Cyprus
+  numcode: 196
+  position: 55
+  created_at: 2009-02-12 16:04:41.973587 Z
+countries_110: 
+  name: SIERRA LEONE
+  updated_at: 2009-02-12 16:04:42.512248 Z
+  iso3: SLE
+  id: 432
+  iso: SL
+  printable_name: Sierra Leone
+  numcode: 694
+  position: 185
+  created_at: 2009-02-12 16:04:42.512248 Z
+countries_003: 
+  name: KOREA, REPUBLIC OF
+  updated_at: 2009-02-12 16:04:42.239210 Z
+  iso3: KOR
+  id: 357
+  iso: KR
+  printable_name: Korea, Republic of
+  numcode: 410
+  position: 110
+  created_at: 2009-02-12 16:04:42.239210 Z
+countries_111: 
+  name: TUVALU
+  updated_at: 2009-02-12 16:04:42.617180 Z
+  iso3: TUV
+  id: 460
+  iso: TV
+  printable_name: Tuvalu
+  numcode: 798
+  position: 213
+  created_at: 2009-02-12 16:04:42.617180 Z
+countries_004: 
+  name: MOLDOVA, REPUBLIC OF
+  updated_at: 2009-02-12 16:04:42.337357 Z
+  iso3: MDA
+  id: 383
+  iso: MD
+  printable_name: Moldova, Republic of
+  numcode: 498
+  position: 136
+  created_at: 2009-02-12 16:04:42.337357 Z
+countries_030: 
+  name: VANUATU
+  updated_at: 2009-02-12 16:04:42.680230 Z
+  iso3: VUT
+  id: 468
+  iso: VU
+  printable_name: Vanuatu
+  numcode: 548
+  position: 221
+  created_at: 2009-02-12 16:04:42.680230 Z
+countries_112: 
+  name: COTE D'IVOIRE
+  updated_at: 2009-02-12 16:04:41.815593 Z
+  iso3: CIV
+  id: 299
+  iso: CI
+  printable_name: Cote D'Ivoire
+  numcode: 384
+  position: 52
+  created_at: 2009-02-12 16:04:41.815593 Z
+countries_005: 
+  name: UNITED KINGDOM
+  updated_at: 2009-02-12 16:04:42.632514 Z
+  iso3: GBR
+  id: 464
+  iso: GB
+  printable_name: United Kingdom
+  numcode: 826
+  position: 217
+  created_at: 2009-02-12 16:04:42.632514 Z
+countries_031: 
+  name: DOMINICAN REPUBLIC
+  updated_at: 2009-02-12 16:04:41.992752 Z
+  iso3: DOM
+  id: 307
+  iso: DO
+  printable_name: Dominican Republic
+  numcode: 214
+  position: 60
+  created_at: 2009-02-12 16:04:41.992752 Z
+countries_113: 
+  name: GERMANY
+  updated_at: 2009-02-12 16:04:42.057775 Z
+  iso3: DEU
+  id: 325
+  iso: DE
+  printable_name: Germany
+  numcode: 276
+  position: 78
+  created_at: 2009-02-12 16:04:42.057775 Z
+countries_220: 
   name: KIRIBATI
   updated_at: 2009-02-12 16:04:42.231884 Z
   iso3: KIR
@@ -2198,7 +1448,37 @@ countries_104:
   numcode: 296
   position: 108
   created_at: 2009-02-12 16:04:42.231884 Z
-countries_130: 
+countries_006: 
+  name: BOSNIA AND HERZEGOVINA
+  updated_at: 2009-02-12 16:04:41.739511 Z
+  iso3: BIH
+  id: 277
+  iso: BA
+  printable_name: Bosnia and Herzegovina
+  numcode: 70
+  position: 30
+  created_at: 2009-02-12 16:04:41.739511 Z
+countries_032: 
+  name: MOZAMBIQUE
+  updated_at: 2009-02-12 16:04:42.356334 Z
+  iso3: MOZ
+  id: 388
+  iso: MZ
+  printable_name: Mozambique
+  numcode: 508
+  position: 141
+  created_at: 2009-02-12 16:04:42.356334 Z
+countries_140: 
+  name: BULGARIA
+  updated_at: 2009-02-12 16:04:41.749084 Z
+  iso3: BGR
+  id: 281
+  iso: BG
+  printable_name: Bulgaria
+  numcode: 100
+  position: 34
+  created_at: 2009-02-12 16:04:41.749084 Z
+countries_221: 
   name: MEXICO
   updated_at: 2009-02-12 16:04:42.329464 Z
   iso3: MEX
@@ -2208,7 +1488,57 @@ countries_130:
   numcode: 484
   position: 134
   created_at: 2009-02-12 16:04:42.329464 Z
-countries_211: 
+countries_007: 
+  name: CZECH REPUBLIC
+  updated_at: 2009-02-12 16:04:41.977336 Z
+  iso3: CZE
+  id: 303
+  iso: CZ
+  printable_name: Czech Republic
+  numcode: 203
+  position: 56
+  created_at: 2009-02-12 16:04:41.977336 Z
+countries_033: 
+  name: PORTUGAL
+  updated_at: 2009-02-12 16:04:42.448607 Z
+  iso3: PRT
+  id: 414
+  iso: PT
+  printable_name: Portugal
+  numcode: 620
+  position: 167
+  created_at: 2009-02-12 16:04:42.448607 Z
+countries_060: 
+  name: HONG KONG
+  updated_at: 2009-02-12 16:04:42.112550 Z
+  iso3: HKG
+  id: 340
+  iso: HK
+  printable_name: Hong Kong
+  numcode: 344
+  position: 93
+  created_at: 2009-02-12 16:04:42.112550 Z
+countries_114: 
+  name: MAURITIUS
+  updated_at: 2009-02-12 16:04:42.325533 Z
+  iso3: MUS
+  id: 380
+  iso: MU
+  printable_name: Mauritius
+  numcode: 480
+  position: 133
+  created_at: 2009-02-12 16:04:42.325533 Z
+countries_141: 
+  name: LESOTHO
+  updated_at: 2009-02-12 16:04:42.262008 Z
+  iso3: LSO
+  id: 363
+  iso: LS
+  printable_name: Lesotho
+  numcode: 426
+  position: 116
+  created_at: 2009-02-12 16:04:42.262008 Z
+countries_222: 
   name: UKRAINE
   updated_at: 2009-02-12 16:04:42.624408 Z
   iso3: UKR
@@ -2218,47 +1548,37 @@ countries_211:
   numcode: 804
   position: 215
   created_at: 2009-02-12 16:04:42.624408 Z
-countries_024: 
-  name: BHUTAN
-  updated_at: 2009-02-12 16:04:41.735218 Z
-  iso3: BTN
-  id: 275
-  iso: BT
-  printable_name: Bhutan
-  numcode: 64
-  position: 28
-  created_at: 2009-02-12 16:04:41.735218 Z
-countries_050: 
-  name: CUBA
-  updated_at: 2009-02-12 16:04:41.969881 Z
-  iso3: CUB
-  id: 301
-  iso: CU
-  printable_name: Cuba
-  numcode: 192
-  position: 54
-  created_at: 2009-02-12 16:04:41.969881 Z
-countries_105: 
-  name: KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF
-  updated_at: 2009-02-12 16:04:42.235591 Z
-  iso3: PRK
-  id: 356
-  iso: KP
-  printable_name: Korea
-  numcode: 408
-  position: 109
-  created_at: 2009-02-12 16:04:42.235591 Z
-countries_131: 
-  name: MICRONESIA, FEDERATED STATES OF
-  updated_at: 2009-02-12 16:04:42.333381 Z
-  iso3: FSM
-  id: 382
-  iso: FM
-  printable_name: Micronesia, Federated States of
-  numcode: 583
-  position: 135
-  created_at: 2009-02-12 16:04:42.333381 Z
-countries_212: 
+countries_008: 
+  name: KUWAIT
+  updated_at: 2009-02-12 16:04:42.243045 Z
+  iso3: KWT
+  id: 358
+  iso: KW
+  printable_name: Kuwait
+  numcode: 414
+  position: 111
+  created_at: 2009-02-12 16:04:42.243045 Z
+countries_034: 
+  name: SUDAN
+  updated_at: 2009-02-12 16:04:42.545583 Z
+  iso3: SDN
+  id: 441
+  iso: SD
+  printable_name: Sudan
+  numcode: 736
+  position: 194
+  created_at: 2009-02-12 16:04:42.545583 Z
+countries_115: 
+  name: PALAU
+  updated_at: 2009-02-12 16:04:42.421462 Z
+  iso3: PLW
+  id: 406
+  iso: PW
+  printable_name: Palau
+  numcode: 585
+  position: 159
+  created_at: 2009-02-12 16:04:42.421462 Z
+countries_223: 
   name: UNITED ARAB EMIRATES
   updated_at: 2009-02-12 16:04:42.628535 Z
   iso3: ARE
@@ -2268,3 +1588,683 @@ countries_212:
   numcode: 784
   position: 216
   created_at: 2009-02-12 16:04:42.628535 Z
+countries_009: 
+  name: MONACO
+  updated_at: 2009-02-12 16:04:42.341450 Z
+  iso3: MCO
+  id: 384
+  iso: MC
+  printable_name: Monaco
+  numcode: 492
+  position: 137
+  created_at: 2009-02-12 16:04:42.341450 Z
+countries_035: 
+  name: VENEZUELA
+  updated_at: 2009-02-12 16:04:42.682858 Z
+  iso3: VEN
+  id: 469
+  iso: VE
+  printable_name: Venezuela
+  numcode: 862
+  position: 222
+  created_at: 2009-02-12 16:04:42.682858 Z
+countries_061: 
+  name: TAIWAN, PROVINCE OF CHINA
+  updated_at: 2009-02-12 16:04:42.573379 Z
+  iso3: TWN
+  id: 448
+  iso: TW
+  printable_name: Taiwan, Province of China
+  numcode: 158
+  position: 201
+  created_at: 2009-02-12 16:04:42.573379 Z
+countries_116: 
+  name: CROATIA
+  updated_at: 2009-02-12 16:04:41.819696 Z
+  iso3: HRV
+  id: 300
+  iso: HR
+  printable_name: Croatia
+  numcode: 191
+  position: 53
+  created_at: 2009-02-12 16:04:41.819696 Z
+countries_142: 
+  name: Everywhere Else
+  updated_at: 2009-02-12 16:04:42.636448 Z
+  iso3: NONE
+  id: 1000
+  iso: NONE
+  printable_name: Everywhere Else
+  numcode: 1000
+  position: 3
+  created_at: 2009-02-12 16:04:42.636448 Z
+countries_224: 
+  name: MICRONESIA, FEDERATED STATES OF
+  updated_at: 2009-02-12 16:04:42.333381 Z
+  iso3: FSM
+  id: 382
+  iso: FM
+  printable_name: Micronesia, Federated States of
+  numcode: 583
+  position: 135
+  created_at: 2009-02-12 16:04:42.333381 Z
+countries_170: 
+  name: LUXEMBOURG
+  updated_at: 2009-02-12 16:04:42.281196 Z
+  iso3: LUX
+  id: 368
+  iso: LU
+  printable_name: Luxembourg
+  numcode: 442
+  position: 121
+  created_at: 2009-02-12 16:04:42.281196 Z
+countries_036: 
+  name: ECUADOR
+  updated_at: 2009-02-12 16:04:41.996691 Z
+  iso3: ECU
+  id: 308
+  iso: EC
+  printable_name: Ecuador
+  numcode: 218
+  position: 61
+  created_at: 2009-02-12 16:04:41.996691 Z
+countries_062: 
+  name: TAJIKISTAN
+  updated_at: 2009-02-12 16:04:42.575714 Z
+  iso3: TJK
+  id: 449
+  iso: TJ
+  printable_name: Tajikistan
+  numcode: 762
+  position: 202
+  created_at: 2009-02-12 16:04:42.575714 Z
+countries_117: 
+  name: GHANA
+  updated_at: 2009-02-12 16:04:42.061680 Z
+  iso3: GHA
+  id: 326
+  iso: GH
+  printable_name: Ghana
+  numcode: 288
+  position: 79
+  created_at: 2009-02-12 16:04:42.061680 Z
+countries_143: 
+  name: ANDORRA
+  updated_at: 2009-02-12 16:04:41.681378 Z
+  iso3: AND
+  id: 256
+  iso: AD
+  printable_name: Andorra
+  numcode: 20
+  position: 9
+  created_at: 2009-02-12 16:04:41.681378 Z
+countries_225: 
+  name: KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF
+  updated_at: 2009-02-12 16:04:42.235591 Z
+  iso3: PRK
+  id: 356
+  iso: KP
+  printable_name: Korea
+  numcode: 408
+  position: 109
+  created_at: 2009-02-12 16:04:42.235591 Z
+countries_037: 
+  name: GUINEA
+  updated_at: 2009-02-12 16:04:42.088709 Z
+  iso3: GIN
+  id: 334
+  iso: GN
+  printable_name: Guinea
+  numcode: 324
+  position: 87
+  created_at: 2009-02-12 16:04:42.088709 Z
+countries_063: 
+  name: TANZANIA, UNITED REPUBLIC OF
+  updated_at: 2009-02-12 16:04:42.579173 Z
+  iso3: TZA
+  id: 450
+  iso: TZ
+  printable_name: Tanzania, United Republic of
+  numcode: 834
+  position: 203
+  created_at: 2009-02-12 16:04:42.579173 Z
+countries_090: 
+  name: CONGO
+  updated_at: 2009-02-12 16:04:41.804181 Z
+  iso3: COG
+  id: 295
+  iso: CG
+  printable_name: Congo
+  numcode: 178
+  position: 48
+  created_at: 2009-02-12 16:04:41.804181 Z
+countries_118: 
+  name: PANAMA
+  updated_at: 2009-02-12 16:04:42.425182 Z
+  iso3: PAN
+  id: 407
+  iso: PA
+  printable_name: Panama
+  numcode: 591
+  position: 160
+  created_at: 2009-02-12 16:04:42.425182 Z
+countries_144: 
+  name: BURKINA FASO
+  updated_at: 2009-02-12 16:04:41.753015 Z
+  iso3: BFA
+  id: 282
+  iso: BF
+  printable_name: Burkina Faso
+  numcode: 854
+  position: 35
+  created_at: 2009-02-12 16:04:41.753015 Z
+countries_226: 
+  name: CUBA
+  updated_at: 2009-02-12 16:04:41.969881 Z
+  iso3: CUB
+  id: 301
+  iso: CU
+  printable_name: Cuba
+  numcode: 192
+  position: 54
+  created_at: 2009-02-12 16:04:41.969881 Z
+countries_038: 
+  name: MYANMAR
+  updated_at: 2009-02-12 16:04:42.360005 Z
+  iso3: MMR
+  id: 389
+  iso: MM
+  printable_name: Myanmar
+  numcode: 104
+  position: 142
+  created_at: 2009-02-12 16:04:42.360005 Z
+countries_064: 
+  name: ARMENIA
+  updated_at: 2009-02-12 16:04:41.699136 Z
+  iso3: ARM
+  id: 261
+  iso: AM
+  printable_name: Armenia
+  numcode: 51
+  position: 14
+  created_at: 2009-02-12 16:04:41.699136 Z
+countries_091: 
+  name: GABON
+  updated_at: 2009-02-12 16:04:42.048177 Z
+  iso3: GAB
+  id: 322
+  iso: GA
+  printable_name: Gabon
+  numcode: 266
+  position: 75
+  created_at: 2009-02-12 16:04:42.048177 Z
+countries_119: 
+  name: SINGAPORE
+  updated_at: 2009-02-12 16:04:42.515426 Z
+  iso3: SGP
+  id: 433
+  iso: SG
+  printable_name: Singapore
+  numcode: 702
+  position: 186
+  created_at: 2009-02-12 16:04:42.515426 Z
+countries_145: 
+  name: LIBERIA
+  updated_at: 2009-02-12 16:04:42.265423 Z
+  iso3: LBR
+  id: 364
+  iso: LR
+  printable_name: Liberia
+  numcode: 430
+  position: 117
+  created_at: 2009-02-12 16:04:42.265423 Z
+countries_171: 
+  name: NETHERLANDS ANTILLES
+  updated_at: 2009-02-12 16:04:42.377577 Z
+  iso3: ANT
+  id: 394
+  iso: AN
+  printable_name: Netherlands Antilles
+  numcode: 530
+  position: 147
+  created_at: 2009-02-12 16:04:42.377577 Z
+countries_227: 
+  name: BHUTAN
+  updated_at: 2009-02-12 16:04:41.735218 Z
+  iso3: BTN
+  id: 275
+  iso: BT
+  printable_name: Bhutan
+  numcode: 64
+  position: 28
+  created_at: 2009-02-12 16:04:41.735218 Z
+countries_039: 
+  name: PUERTO RICO
+  updated_at: 2009-02-12 16:04:42.451834 Z
+  iso3: PRI
+  id: 415
+  iso: PR
+  printable_name: Puerto Rico
+  numcode: 630
+  position: 168
+  created_at: 2009-02-12 16:04:42.451834 Z
+countries_065: 
+  name: ARUBA
+  updated_at: 2009-02-12 16:04:41.702611 Z
+  iso3: ABW
+  id: 262
+  iso: AW
+  printable_name: Aruba
+  numcode: 533
+  position: 15
+  created_at: 2009-02-12 16:04:41.702611 Z
+countries_092: 
+  name: MALTA
+  updated_at: 2009-02-12 16:04:42.310292 Z
+  iso3: MLT
+  id: 376
+  iso: MT
+  printable_name: Malta
+  numcode: 470
+  position: 129
+  created_at: 2009-02-12 16:04:42.310292 Z
+countries_146: 
+  name: VIRGIN ISLANDS, BRITISH
+  updated_at: 2009-02-12 16:04:42.687482 Z
+  iso3: VGB
+  id: 471
+  iso: VG
+  printable_name: Virgin Islands, British
+  numcode: 92
+  position: 224
+  created_at: 2009-02-12 16:04:42.687482 Z
+countries_172: 
+  name: ZAMBIA
+  updated_at: 2009-02-12 16:04:42.701427 Z
+  iso3: ZMB
+  id: 476
+  iso: ZM
+  printable_name: Zambia
+  numcode: 894
+  position: 229
+  created_at: 2009-02-12 16:04:42.701427 Z
+countries_066: 
+  name: AUSTRALIA
+  updated_at: 2009-02-12 16:04:41.705759 Z
+  iso3: AUS
+  id: 263
+  iso: AU
+  printable_name: Australia
+  numcode: 36
+  position: 16
+  created_at: 2009-02-12 16:04:41.705759 Z
+countries_093: 
+  name: NORTHERN MARIANA ISLANDS
+  updated_at: 2009-02-12 16:04:42.407616 Z
+  iso3: MNP
+  id: 402
+  iso: MP
+  printable_name: Northern Mariana Islands
+  numcode: 580
+  position: 155
+  created_at: 2009-02-12 16:04:42.407616 Z
+countries_147: 
+  name: ANGOLA
+  updated_at: 2009-02-12 16:04:41.685553 Z
+  iso3: AGO
+  id: 257
+  iso: AO
+  printable_name: Angola
+  numcode: 24
+  position: 10
+  created_at: 2009-02-12 16:04:41.685553 Z
+countries_173: 
+  name: CAYMAN ISLANDS
+  updated_at: 2009-02-12 16:04:41.774148 Z
+  iso3: CYM
+  id: 288
+  iso: KY
+  printable_name: Cayman Islands
+  numcode: 136
+  position: 41
+  created_at: 2009-02-12 16:04:41.774148 Z
+countries_067: 
+  name: THAILAND
+  updated_at: 2009-02-12 16:04:42.582979 Z
+  iso3: THA
+  id: 451
+  iso: TH
+  printable_name: Thailand
+  numcode: 764
+  position: 204
+  created_at: 2009-02-12 16:04:42.582979 Z
+countries_148: 
+  name: BURUNDI
+  updated_at: 2009-02-12 16:04:41.756130 Z
+  iso3: BDI
+  id: 283
+  iso: BI
+  printable_name: Burundi
+  numcode: 108
+  position: 36
+  created_at: 2009-02-12 16:04:41.756130 Z
+countries_174: 
+  name: ETHIOPIA
+  updated_at: 2009-02-12 16:04:42.016414 Z
+  iso3: ETH
+  id: 314
+  iso: ET
+  printable_name: Ethiopia
+  numcode: 231
+  position: 67
+  created_at: 2009-02-12 16:04:42.016414 Z
+countries_068: 
+  name: AUSTRIA
+  updated_at: 2009-02-12 16:04:41.708767 Z
+  iso3: AUT
+  id: 264
+  iso: AT
+  printable_name: Austria
+  numcode: 40
+  position: 17
+  created_at: 2009-02-12 16:04:41.708767 Z
+countries_094: 
+  name: TURKEY
+  updated_at: 2009-02-12 16:04:42.605637 Z
+  iso3: TUR
+  id: 457
+  iso: TR
+  printable_name: Turkey
+  numcode: 792
+  position: 210
+  created_at: 2009-02-12 16:04:42.605637 Z
+countries_149: 
+  name: NAURU
+  updated_at: 2009-02-12 16:04:42.366270 Z
+  iso3: NRU
+  id: 391
+  iso: NR
+  printable_name: Nauru
+  numcode: 520
+  position: 144
+  created_at: 2009-02-12 16:04:42.366270 Z
+countries_175: 
+  name: HUNGARY
+  updated_at: 2009-02-12 16:04:42.116291 Z
+  iso3: HUN
+  id: 341
+  iso: HU
+  printable_name: Hungary
+  numcode: 348
+  position: 94
+  created_at: 2009-02-12 16:04:42.116291 Z
+countries_069: 
+  name: MADAGASCAR
+  updated_at: 2009-02-12 16:04:42.292678 Z
+  iso3: MDG
+  id: 371
+  iso: MG
+  printable_name: Madagascar
+  numcode: 450
+  position: 124
+  created_at: 2009-02-12 16:04:42.292678 Z
+countries_095: 
+  name: BELARUS
+  updated_at: 2009-02-12 16:04:41.724962 Z
+  iso3: BLR
+  id: 270
+  iso: BY
+  printable_name: Belarus
+  numcode: 112
+  position: 23
+  created_at: 2009-02-12 16:04:41.724962 Z
+countries_176: 
+  name: MACAO
+  updated_at: 2009-02-12 16:04:42.285113 Z
+  iso3: MAC
+  id: 369
+  iso: MO
+  printable_name: Macao
+  numcode: 446
+  position: 122
+  created_at: 2009-02-12 16:04:42.285113 Z
+countries_096: 
+  name: CONGO, THE DEMOCRATIC REPUBLIC OF THE
+  updated_at: 2009-02-12 16:04:41.806824 Z
+  iso3: COD
+  id: 296
+  iso: CD
+  printable_name: Congo
+  numcode: 180
+  position: 49
+  created_at: 2009-02-12 16:04:41.806824 Z
+countries_177: 
+  name: NEW CALEDONIA
+  updated_at: 2009-02-12 16:04:42.381491 Z
+  iso3: NCL
+  id: 395
+  iso: NC
+  printable_name: New Caledonia
+  numcode: 540
+  position: 148
+  created_at: 2009-02-12 16:04:42.381491 Z
+countries_097: 
+  name: MARSHALL ISLANDS
+  updated_at: 2009-02-12 16:04:42.314270 Z
+  iso3: MHL
+  id: 377
+  iso: MH
+  printable_name: Marshall Islands
+  numcode: 584
+  position: 130
+  created_at: 2009-02-12 16:04:42.314270 Z
+countries_178: 
+  name: ZIMBABWE
+  updated_at: 2009-02-12 16:04:42.703603 Z
+  iso3: ZWE
+  id: 477
+  iso: ZW
+  printable_name: Zimbabwe
+  numcode: 716
+  position: 230
+  created_at: 2009-02-12 16:04:42.703603 Z
+countries_098: 
+  name: NORWAY
+  updated_at: 2009-02-12 16:04:42.411420 Z
+  iso3: NOR
+  id: 403
+  iso: "NO"
+  printable_name: Norway
+  numcode: 578
+  position: 156
+  created_at: 2009-02-12 16:04:42.411420 Z
+countries_179: 
+  name: CENTRAL AFRICAN REPUBLIC
+  updated_at: 2009-02-12 16:04:41.777987 Z
+  iso3: CAF
+  id: 289
+  iso: CF
+  printable_name: Central African Republic
+  numcode: 140
+  position: 42
+  created_at: 2009-02-12 16:04:41.777987 Z
+countries_099: 
+  name: TURKMENISTAN
+  updated_at: 2009-02-12 16:04:42.609843 Z
+  iso3: TKM
+  id: 458
+  iso: TM
+  printable_name: Turkmenistan
+  numcode: 795
+  position: 211
+  created_at: 2009-02-12 16:04:42.609843 Z
+countries_100: 
+  name: COOK ISLANDS
+  updated_at: 2009-02-12 16:04:41.809478 Z
+  iso3: COK
+  id: 297
+  iso: CK
+  printable_name: Cook Islands
+  numcode: 184
+  position: 50
+  created_at: 2009-02-12 16:04:41.809478 Z
+countries_020: 
+  name: GUAM
+  updated_at: 2009-02-12 16:04:42.082511 Z
+  iso3: GUM
+  id: 332
+  iso: GU
+  printable_name: Guam
+  numcode: 316
+  position: 85
+  created_at: 2009-02-12 16:04:42.082511 Z
+countries_101: 
+  name: GAMBIA
+  updated_at: 2009-02-12 16:04:42.051778 Z
+  iso3: GMB
+  id: 323
+  iso: GM
+  printable_name: Gambia
+  numcode: 270
+  position: 76
+  created_at: 2009-02-12 16:04:42.051778 Z
+countries_021: 
+  name: LAO PEOPLE'S DEMOCRATIC REPUBLIC
+  updated_at: 2009-02-12 16:04:42.250035 Z
+  iso3: LAO
+  id: 360
+  iso: LA
+  printable_name: Lao People's Democratic Republic
+  numcode: 418
+  position: 113
+  created_at: 2009-02-12 16:04:42.250035 Z
+countries_102: 
+  name: MARTINIQUE
+  updated_at: 2009-02-12 16:04:42.318264 Z
+  iso3: MTQ
+  id: 378
+  iso: MQ
+  printable_name: Martinique
+  numcode: 474
+  position: 131
+  created_at: 2009-02-12 16:04:42.318264 Z
+countries_022: 
+  name: MONTSERRAT
+  updated_at: 2009-02-12 16:04:42.349656 Z
+  iso3: MSR
+  id: 386
+  iso: MS
+  printable_name: Montserrat
+  numcode: 500
+  position: 139
+  created_at: 2009-02-12 16:04:42.349656 Z
+countries_103: 
+  name: OMAN
+  updated_at: 2009-02-12 16:04:42.414432 Z
+  iso3: OMN
+  id: 404
+  iso: OM
+  printable_name: Oman
+  numcode: 512
+  position: 157
+  created_at: 2009-02-12 16:04:42.414432 Z
+countries_210: 
+  name: JAMAICA
+  updated_at: 2009-02-12 16:04:42.151644 Z
+  iso3: JAM
+  id: 350
+  iso: JM
+  printable_name: Jamaica
+  numcode: 388
+  position: 103
+  created_at: 2009-02-12 16:04:42.151644 Z
+countries_023: 
+  name: PITCAIRN
+  updated_at: 2009-02-12 16:04:42.442389 Z
+  iso3: PCN
+  id: 412
+  iso: PN
+  printable_name: Pitcairn
+  numcode: 612
+  position: 165
+  created_at: 2009-02-12 16:04:42.442389 Z
+countries_104: 
+  name: SEYCHELLES
+  updated_at: 2009-02-12 16:04:42.509935 Z
+  iso3: SYC
+  id: 431
+  iso: SC
+  printable_name: Seychelles
+  numcode: 690
+  position: 184
+  created_at: 2009-02-12 16:04:42.509935 Z
+countries_130: 
+  name: SOMALIA
+  updated_at: 2009-02-12 16:04:42.531665 Z
+  iso3: SOM
+  id: 437
+  iso: SO
+  printable_name: Somalia
+  numcode: 706
+  position: 190
+  created_at: 2009-02-12 16:04:42.531665 Z
+countries_211: 
+  name: JAPAN
+  updated_at: 2009-02-12 16:04:42.155687 Z
+  iso3: JPN
+  id: 351
+  iso: JP
+  printable_name: Japan
+  numcode: 392
+  position: 104
+  created_at: 2009-02-12 16:04:42.155687 Z
+countries_024: 
+  name: UZBEKISTAN
+  updated_at: 2009-02-12 16:04:42.644201 Z
+  iso3: UZB
+  id: 467
+  iso: UZ
+  printable_name: Uzbekistan
+  numcode: 860
+  position: 220
+  created_at: 2009-02-12 16:04:42.644201 Z
+countries_050: 
+  name: HAITI
+  updated_at: 2009-02-12 16:04:42.100175 Z
+  iso3: HTI
+  id: 337
+  iso: HT
+  printable_name: Haiti
+  numcode: 332
+  position: 90
+  created_at: 2009-02-12 16:04:42.100175 Z
+countries_105: 
+  name: TURKS AND CAICOS ISLANDS
+  updated_at: 2009-02-12 16:04:42.613564 Z
+  iso3: TCA
+  id: 459
+  iso: TC
+  printable_name: Turks and Caicos Islands
+  numcode: 796
+  position: 212
+  created_at: 2009-02-12 16:04:42.613564 Z
+countries_131: 
+  name: SOUTH AFRICA
+  updated_at: 2009-02-12 16:04:42.534304 Z
+  iso3: ZAF
+  id: 438
+  iso: ZA
+  printable_name: South Africa
+  numcode: 710
+  position: 191
+  created_at: 2009-02-12 16:04:42.534304 Z
+countries_212: 
+  name: BELGIUM
+  updated_at: 2009-02-12 16:04:41.727077 Z
+  iso3: BEL
+  id: 271
+  iso: BE
+  printable_name: Belgium
+  numcode: 56
+  position: 24
+  created_at: 2009-02-12 16:04:41.727077 Z

@@ -8,4 +8,14 @@
 	<div class="span-4 text-center <% if @state == 'card_rejected' %>selected<% end %>">
 		<%= link_to 'rejected', manage_orders_url + '?state=card_rejected' %>
 	</div>
+	<div class="span-8">&nbsp;</div>
+	<div class="span-4 last text-center">
+		<div class="span-1">search:</div>
+		<div class="span-3 last">
+			<form action="/manage/orders">
+				<input type="text" name="search_terms" class="span-2"/>
+				<input type="submit" value="Go"/>
+			</form>
+		</div>
+	</div>
 </div>

@@ -8,8 +8,10 @@ class Order < ActiveRecord::Base
   has_many :addresses, :dependent => :destroy
   before_save :update_shipping
   before_save :update_subtotal
+  before_save :update_sales_tax
   composed_of :shipping_total, :class_name => 'Money', :mapping => [%w(shipping_total cents)]
   composed_of :subtotal, :class_name => 'Money', :mapping => [%w(subtotal cents)]
+  composed_of :sales_tax, :class_name => 'Money', :mapping => [%w(sales_tax cents)]
   named_scope :carts, :condtions => {:state => 'cart'}
   named_scope :orders, :conditions => ["state != 'cart'",nil]
   named_scope :pending, :conditions => {:state => 'pending'}
@@ -17,6 +19,7 @@ class Order < ActiveRecord::Base
   named_scope :card_rejected, :conditions => {:state => 'card_rejected'}
   
   state_machine :initial => :cart do
+    after_transition :on => :fulfill, :do => :set_shipping_date
     event :accept_card do
       transition [:cart, :card_rejected] => :pending
     end
@@ -27,13 +30,42 @@ class Order < ActiveRecord::Base
       transition :pending => :fulfilled
     end
     state :cart do
+      def ordered?
+        false
+      end
+      def shipped?
+        false
+      end
     end
     state :card_rejected do
+      def ordered?
+        false
+      end
+      def shipped?
+        false
+      end
     end
     state :pending do
+      def ordered?
+       true
+      end
+      def shipped?
+        false
+      end
     end
     state :fulfilled do
+      def ordered?
+        true
+      end
+      def shipped?
+        true
+      end
     end
+  end
+  
+  def set_shipping_date
+    self.shipped_at = Time.now
+    self.save(false)
   end
   
   def ready_to_charge?
@@ -57,6 +89,10 @@ class Order < ActiveRecord::Base
     end
   end
   
+  def taxable?
+    self.shipping_address and self.shipping_address.state == 'ME'
+  end
+  
   def update_shipping
     if !self.shipping_method.blank? and self.order_items.any?
       self.shipping_total = Money.new(self.calculate_shipping.to_f)
@@ -73,8 +109,16 @@ class Order < ActiveRecord::Base
     end
   end
   
+  def update_sales_tax
+    if self.taxable?
+      self.sales_tax = self.calculate_sales_tax
+    else
+      self.sales_tax = Money.new(0)
+    end
+  end
+  
   def total
-    self.shipping_total + self.subtotal
+    self.shipping_total + self.subtotal + (self.taxable? ? self.sales_tax : Money.new(0))
   end
   
   def calculate_shipping
@@ -84,6 +128,11 @@ class Order < ActiveRecord::Base
   def calculate_subtotal
     self.order_items.sum("price * quantity")
   end
+  
+  def calculate_sales_tax
+    self.subtotal * 0.05
+  end
+  
   CARD_MONTHS = ['01','02','03','04','05','06','07','08','09','10','11','12'].freeze
   CARD_YEARS = Array.new(8) {|i| (i + Date.today.year).to_s}
 end

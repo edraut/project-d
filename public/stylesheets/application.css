@@ -109,6 +109,11 @@ div.border-bottom {
 	padding-bottom: 6px;
 	margin-bottom: 10px;
 }
+div div.border-top-blue {
+	border-top: 1px solid #0597BC;
+	padding-top: 6px;
+	margin-top: 10px;
+}
 div.border-top {
 	border-top: 1px solid #8F8F8F;
 	padding-top: 6px;
@@ -121,6 +126,9 @@ div.border-top {
 }
 .border {
 	border-right: 1px solid #8F8F8F;
+}
+div div.border-blue {
+	border-right: 1px solid #0597BC;
 }
 .image-medium-wrapper {
 	height: 110px;

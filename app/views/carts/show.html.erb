@@ -48,23 +48,8 @@
 		<%= link_to 'empty cart', cart_url, :method => :delete, :confirm => 'Are you sure you want to empty this cart?' %>
 	</div>
 </div>
-<% if @cart.order_items.any? %>
+<% if @cart.order_items.any? and !@cart.shipping_method.blank? %>
 	<div class="span-14_75 last text-right margin-top">
 			<%= link_to 'proceed to checkout', { :protocol => ENV_PROTOCOL, :host => request.host, :port => (request.port == 3000) ? 3000 : nil, :controller => 'carts', :action => 'show', :params => {:stage => 'billing_info'}}, :class => 'large bold' %>
 	</div>
-<% end %>
-<% javascript_tag do %>
-	function reloadTotals(){
-		$.ajax({
-			url: '/cart',
-			type: 'GET',
-			data: {get_totals: 'true'},
-			dataType: 'json',
-			success: function(data,textStatus) {
-				$('#shipping_total').html(data.shipping_total);
-				$('#subtotal').html(data.subtotal);
-				$('#total').html(data.total);
-			}
-		})
-	}
 <% end %>

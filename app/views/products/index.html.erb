@@ -42,21 +42,20 @@
 	<div class="product-index-margin">&nbsp;</div>
 	<div class="span-14 last">
 <% for product in @products %>
-<div class="span-3 <% if (@products.index(product) % 4) != 3 %> product-thumb border <% else %> product-thumb-end last <% end %>">
+<div class="span-3 <% if (@products.index(product) % 4) != 3 %> product-thumb border border-blue <% else %> product-thumb-end last <% end %>">
 	<% 	these_params = []
 			these_params.push "vehicle_make_id=#{@vehicle_make.id}" if @vehicle_make
 			these_params.push "vehicle_model_id=#{@vehicle_model.id}" if @vehicle_model
 			this_url = product_url(product) + (these_params.any? ? '?' + these_params.join('&') : '') %>
 	<div class="span-3 image-medium-wrapper"><%= link_to image_tag(product.product_images.first.image.url(:medium)), this_url if product.product_images.any? %></div>
-	<%= link_to product.name, this_url %><br/>
+	<%= product.name %><br/>
 	<% if product.product_options.length == 1 %>
-		<%= product.product_options.first.price.format %>
-		<%= link_to 'add to cart', cart_url + "?order_item[product_option_id]=#{product.product_options.first.id}"%>
+		<%= link_to product.product_options.first.price.format, cart_url + "?order_item[product_option_id]=#{product.product_options.first.id}"%>
 	<% else %>
 		<%= link_to 'see options', this_url %>
 	<% end %>
 </div>
-<% if ((@products.index(product) % 4) == 3) %><div class="span-13_75 last product-row-spacer border-top product-thumb-border margin-top">&nbsp;</div><% end %>
+<% if ((@products.index(product) % 4) == 3) %><div class="span-13_75 last product-row-spacer border-top-blue product-thumb-border margin-top">&nbsp;</div><% end %>
 <% end %>
 </div>
 </div>

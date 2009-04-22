@@ -5,7 +5,8 @@ class CartsController < ApplicationController
   # GET /carts/1.xml
   def show
     if params[:get_totals]
-      render :json => {:shipping_total => @cart.shipping_total.format, :total => @cart.total.format, :subtotal => @cart.subtotal.format} and return
+      totals_data = {:shipping_total => @cart.shipping_total.format, :total => @cart.total.format, :subtotal => @cart.subtotal.format, :sales_tax => @cart.taxable? ? @cart.sales_tax.format : '$0.00'}
+      render :json => totals_data and return
     end
     if params[:stage]
       case params[:stage]

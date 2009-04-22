@@ -3,6 +3,8 @@
 
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
+  include AuthenticatedSystem
+
   before_filter :set_nav_area
   before_filter :set_nav_tab
   # See ActionController::RequestForgeryProtection for details

@@ -5,7 +5,7 @@
 		:ajax_binding => 'ajax_form',
 		:ajax_success_element => "address_#{address.id}",
 		:ajax_method => 'PUT',
-		:ajax_success_callback => "$('#address_#{address.id}').removeClass('editing');",
+		:ajax_success_callback => "$('#address_#{address.id}').removeClass('editing');reloadTotals();",
 		:ajax_error_element => "address_#{address.id}",
 		:id => "edit_address_form_#{address.id}",
 		:ui_binding => 'address_form'

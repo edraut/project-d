@@ -17,3 +17,5 @@ config.action_controller.perform_caching             = false
 config.action_mailer.raise_delivery_errors = true
 ENV_PROTOCOL = 'http'
 ENV_HOST = 'madracingmx.com'
+
+WEB_SITE_URL = 'http://localhost:3000'

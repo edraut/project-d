@@ -3,6 +3,8 @@ class Address < ActiveRecord::Base
   belongs_to :user
   belongs_to :order
   belongs_to :country
+  after_save :update_order_sales_tax
+  
   named_scope :id_only, :conditions => {:status => 'id_only'}
   named_scope :live, :conditions => {:status => 'live'}
   
@@ -27,6 +29,12 @@ class Address < ActiveRecord::Base
   
   def editable?
     self.order.nil? or self.status != 'live' or ['cart','card_rejected'].include? self.order.state
+  end
+  
+  def update_order_sales_tax
+    if self.order
+      self.order.save
+    end
   end
   
   def self.create_or_find_by_order_id(order_id)

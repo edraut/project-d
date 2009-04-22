@@ -73,7 +73,7 @@ namespace :db do
         end
         for name, product_hash in products
           product = Product.find_by_sql(["select * from products where lower(name) = lower(?)",name]).first
-          product ||= Product.create(:name => name, :category_id => category.id, :ground_price => Money.new(500), :second_day_price => Money.new(1500), :overnight_price => Money.new(5000), :international_price => Money.new(5000))
+          product ||= Product.create(:name => name, :category_id => category.id, :ground_price => Money.new(0), :second_day_price => Money.new(0), :overnight_price => Money.new(0), :international_price => Money.new(0))
           product_image = product.product_images.first
           product_image ||= ProductImage.create(:image_url => product_hash[:picture_url], :product_id => product.id)
           puts "PROD NAME: #{name}"

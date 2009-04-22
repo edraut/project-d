@@ -4,7 +4,9 @@
 		<h1>order <%= @order.id %></h1>
 	</div>
 	<div class="span-10">
-		<%= link_to 'mark as shipped', manage_order_url(@order) + '?event=fulfill', :method => :put %>
+		<% unless @order.shipped? %>
+			<%= link_to 'mark as shipped', manage_order_url(@order) + '?event=fulfill', :method => :put, :confirm => 'Are you sure you want to mark this order as shipped?' %>
+		<% end %>
 	</div>
 </div>
 <%= render :partial => 'carts/summary', :object => @order %>

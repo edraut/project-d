@@ -1,6 +1,20 @@
 <% order = summary %>
 <div id="order_summary" class="span-14_75 last">
-	<h2>Order Summary</h2>
+	<div class="span-14_75 last">
+		<div class="span-7">
+			<h2>Order Summary</h2>
+		</div>
+		<% if order.ordered? %>
+			<div class="span-3 text-right">
+				ordered: <%= order.created_at.strftime('%m/%d/%y') %>
+			</div>
+		<% end %>
+		<% if order.shipped? %>
+			<div class="span-3 text-right">
+				shipped: <%= order.shipped_at.strftime('%m/%d/%y') %>
+			</div>
+		<% end %>
+	</div>
 	<div class="span-14_75 last border-bottom margin-bottom">
 		<div class="span-5 field-label">Item</div>
 		<div class="span-5 field-label">Option</div>
@@ -35,6 +49,11 @@
 	<div class="span-8">&nbsp;</div>
 	<div class="span-3 text-right">shipping:</div>
 	<div id="subtotal" class="span-1"><%= order.shipping_total.format %></div>
+</div>
+<div id="sales_tax_container" class="span-14_75" <% unless order.taxable? %>style="display: none;"<% end %>>
+	<div class="span-8">&nbsp;</div>
+	<div class="span-3 text-right">ME sales tax:</div>
+	<div id="sales_tax" class="span-1"><%= order.sales_tax.format if order.taxable? %></div>
 </div>
 <div class="span-14_75">
 	<div class="span-8">&nbsp;</div>
