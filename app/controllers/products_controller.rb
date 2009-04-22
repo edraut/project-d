@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_filter :get_product, :only => [:show,:edit,:update,:destroy]
 
   def index
-    prepare_products(16)
+    prepare_products(16,'published')
   end
 
   # GET /products/1

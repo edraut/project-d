@@ -7,7 +7,7 @@ class Manage::ProductsController < Manage::ApplicationController
       @featured = true
       @products = Product.paginate(:all, :conditions => {:featured => true}, :per_page => 25, :page => params[:page])
     else
-      prepare_products(25)
+      prepare_products(25,'any')
     end
     @product = nil
   end

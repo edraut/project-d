@@ -84,7 +84,7 @@ namespace :db do
             product_option = ProductOption.find_by_sql(["select * from product_options where product_id = :product_id and sku = :sku",{:product_id => product.id, :sku => number}]).first
             product_option ||= ProductOption.create(:product_id => product.id,:sku => number,:price => Money.new(0))
             # puts "\t\t#{number}"
-            product.publish unless product.state == :published
+            # product.publish unless product.state == :published
             for make_name, model_hash in vehicle_hash
               make = VehicleMake.find_by_sql(["select * from vehicle_makes where lower(name) = lower(?)",make_name]).first
               make ||= VehicleMake.create(:name => make_name)

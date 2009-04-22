@@ -15,6 +15,7 @@ class Product < ActiveRecord::Base
   composed_of :international_price, :class_name => 'Money', :mapping => [%w(international_price cents)]
   named_scope :published, :conditions => {:state => 'published'}
   named_scope :featured, :conditions => {:featured => true}
+  named_scope :any, :conditions => ["1 = 1",nil]
   after_save :update_vector_row
   
   state_machine :initial => :unpublished do

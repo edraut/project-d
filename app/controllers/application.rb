@@ -27,20 +27,30 @@ class ApplicationController < ActionController::Base
     end
   end
   
-  def prepare_products(limit)
+  def prepare_products(limit,state)
     if params[:search_terms]
-      product_vectors = ProductVector.find_by_tsearch(params[:search_terms], :limit => 128)
-      vehicle_models = VehicleModel.find_by_tsearch(params[:search_terms], :include => {:product_option_vehicle_models => :product_option}, :limit => 128)
-      product_ids = product_vectors.map{|pv| pv.product_id} + vehicle_models.map{|vm| vm.product_option_vehicle_models.map{|povm| povm.product_option.product_id}}.flatten
+      tsearch_params = {}
+      prod_vect_tsearch_params = {}
+      unless state == 'any'
+        tsearch_params[:conditions] = ["products.state ='#{state}'",nil]
+        prod_vect_tsearch_params[:joins] = :product
+      end
+      product_vectors = ProductVector.find_by_tsearch(params[:search_terms], tsearch_params.merge(prod_vect_tsearch_params).merge(:limit => 128))
+      vehicle_models = VehicleModel.find_by_tsearch(params[:search_terms], :include => {:product_option_vehicle_models => {:product_option => :product}}, :limit => 128)
+      product_ids = product_vectors.map{|pv| pv.product_id} + vehicle_models.map{|vm| vm.product_option_vehicle_models.map{|povm| (state == 'any' or povm.product_option.product.state == state) ? povm.product_option.product_id : nil}}.flatten.compact
       if product_ids.any?
         @products = Product.paginate(product_ids.uniq, :per_page => limit, :page => params[:page])
       else
-        @products = Product.paginate(:per_page => limit, :page => params[:page], :order => 'random()', :limit => 128)
+        @products = Product.send(state).paginate(:per_page => limit, :page => params[:page], :order => 'random()', :limit => 128)
       end
     else
       if params[:category_id] or params[:vehicle_make_id]
         sql_joins = []
-        sql_where = ["products.state = 'published'"]
+        if state = 'published'
+          sql_where = ["products.state = '#{state}'"]
+        else
+          sql_where = []
+        end
         sql_hash = {}
         unless params[:category_id].blank?
           @category = Category.find(params[:category_id].to_i)
@@ -74,7 +84,7 @@ class ApplicationController < ActionController::Base
         end
         @products = Product.paginate :joins => sql_joins.join(' '), :conditions => [sql_where.join(' and '),sql_hash], :include => :product_images, :page => params[:page], :per_page => limit, :order => 'product_images.position'
       else
-        @products = Product.published.paginate(:per_page => limit, :page => params[:page])
+        @products = Product.send(state).paginate(:per_page => limit, :page => params[:page])
       end
     end
   end
