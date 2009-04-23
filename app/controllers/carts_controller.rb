@@ -59,12 +59,13 @@ class CartsController < ApplicationController
         }
       }
       response = gateway.purchase(@cart.total, credit_card, options)
-      if response.success? or true
+      if response.success?
         @cart.accept_card
         session[:order_id] = nil
         render :template => 'carts/card_accepted' and return
       else
         @cart.reject_card
+        @cart.gateway_status_message = response.message
         flash[:error] = "The credit card processor rejected the transaction. Here's the reason they gave-- #{response.message}"
         render :template => 'carts/billing_info' and return
       end
