@@ -52,7 +52,7 @@
 				<%= select_tag 'credit_card_month', options_for_select(Order::CARD_MONTHS.map{|m| [m,m]}) %>
 			</div>
 			<div class="span-2">
-				<%= select_tag 'credit_card_month', options_for_select(Order::CARD_YEARS.map{|y| [y,y]}) %>
+				<%= select_tag 'credit_card_year', options_for_select(Order::CARD_YEARS.map{|y| [y,y]}) %>
 			</div>
 			<div class="span-2">
 				<%= text_field_tag 'credit_card_cvv', nil, :class => 'span-1' %>

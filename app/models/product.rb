@@ -1,4 +1,5 @@
 class Product < ActiveRecord::Base
+  attr_accessor :dirty_index
   include FormatsErrors
   belongs_to :category
   belongs_to :manufacturer
@@ -16,6 +17,7 @@ class Product < ActiveRecord::Base
   named_scope :published, :conditions => {:state => 'published'}
   named_scope :featured, :conditions => {:featured => true}
   named_scope :any, :conditions => ["1 = 1",nil]
+  before_save :set_index_state
   after_save :update_vector_row
   
   state_machine :initial => :unpublished do
@@ -55,8 +57,15 @@ class Product < ActiveRecord::Base
     self.save(false)
   end
   
+  def set_index_state
+    self.dirty_index = self.name_changed?
+    return true
+  end
+  
   def update_vector_row
-    self.product_vector ||= ProductVector.new(:product_id => self.id)
-    ProductVector.update_vectors
+    if self.dirty_index
+      self.product_vector ||= ProductVector.new(:product_id => self.id)
+      ProductVector.update_vectors
+    end
   end
 end
