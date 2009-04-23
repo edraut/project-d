@@ -12,7 +12,7 @@ class Order < ActiveRecord::Base
   composed_of :shipping_total, :class_name => 'Money', :mapping => [%w(shipping_total cents)]
   composed_of :subtotal, :class_name => 'Money', :mapping => [%w(subtotal cents)]
   composed_of :sales_tax, :class_name => 'Money', :mapping => [%w(sales_tax cents)]
-  named_scope :carts, :condtions => {:state => 'cart'}
+  named_scope :carts, :conditions => {:state => 'cart'}
   named_scope :orders, :conditions => ["state != 'cart'",nil]
   named_scope :pending, :conditions => {:state => 'pending'}
   named_scope :fulfilled, :conditions => {:state => 'fulfilled'}
