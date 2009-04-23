@@ -23,21 +23,21 @@
 		<div class="span-1_5 field-label">Total</div>
 	</div>
 	<% for order_item in order.order_items %>
-	<div id="order_summary" class="span-14_75 last border-bottom margin-bottom">
-		<div class="span-5"><%= order_item.product_option.product.name %></div>
-		<div class="span-5">
-			<% if order_item.product_option_vehicle_model_id %>
-				<%= order_item.product_option_vehicle_model.vehicle_model.name %> <%= order_item.product_option_vehicle_model.year_begin %>-<%= order_item.product_option_vehicle_model.year_end %>
-			<% elsif !order_item.product_option.name.blank? %>
-				<%= order_item.product_option.name %>
-			<% else %>
-				-
-			<% end %>
+		<div id="order_summary" class="span-14_75 last border-bottom margin-bottom">
+			<div class="span-5"><%= order_item.product_option.product.name %></div>
+			<div class="span-5">
+				<% if order_item.product_option_vehicle_model_id %>
+					<%= order_item.product_option_vehicle_model.vehicle_model.name %> <%= order_item.product_option_vehicle_model.year_begin %>-<%= order_item.product_option_vehicle_model.year_end %>
+				<% elsif !order_item.product_option.name.blank? %>
+					<%= order_item.product_option.name %>
+				<% else %>
+					-
+				<% end %>
+			</div>
+			<div class="span-1"><%= order_item.quantity %></div>
+			<div class="span-1_5"><%= order_item.price.format %></div>
+			<div class="span-1_5"><%= order_item.total.format %></div>
 		</div>
-		<div class="span-1"><%= order_item.quantity %></div>
-		<div class="span-1_5"><%= order_item.price.format %></div>
-		<div class="span-1_5"><%= order_item.total.format %></div>
-	</div>
 	<% end %>
 </div>
 <div class="span-14_75">
@@ -50,7 +50,7 @@
 	<div class="span-3 text-right">shipping:</div>
 	<div id="shipping_total" class="span-2"><%= order.shipping_total.format %></div>
 </div>
-<div id="sales_tax_container" class="span-14_75" <% unless order.taxable? %>style="display: none;"<% end %>>
+<div id="sales_tax_container" class="span-14_75" <% unless order.taxable? %>style="display: none; z-index: -2;"<% end %>>
 	<div class="span-8">&nbsp;</div>
 	<div class="span-3 text-right">ME sales tax:</div>
 	<div id="sales_tax" class="span-2"><%= order.sales_tax.format if order.taxable? %></div>

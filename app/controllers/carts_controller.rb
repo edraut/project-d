@@ -58,7 +58,7 @@ class CartsController < ApplicationController
           :zip => @cart.billing_address.zipcode
         }
       }
-      response = gateway.authorize(@cart.total, credit_card, options)
+      response = gateway.purchase(@cart.total, credit_card, options)
       if response.success? or true
         @cart.accept_card
         session[:order_id] = nil

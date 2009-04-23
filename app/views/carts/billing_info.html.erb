@@ -34,6 +34,7 @@
 	</div>
 </div>
 <%= render :partial => 'summary', :object => @cart %>
+&nbsp;<br/>
 <div id="place_order" class="span-14_75 last margin-top border-top" <% unless @cart.ready_to_charge? %> style="display: none;" <% end %>>
 	<h2>Credit Card</h2>
 	<div class="span-14_75">
