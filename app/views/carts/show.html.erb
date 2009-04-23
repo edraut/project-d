@@ -13,7 +13,7 @@
 	<div class="span-14_75">
 		<div class="span-8">&nbsp;</div>
 		<div class="span-2_5 text-right">sub-total:</div>
-		<div id="subtotal" class="span-1"><%= @cart.subtotal.format %></div>
+		<div id="subtotal" class="span-2"><%= @cart.subtotal.format %></div>
 	</div>
 <% end %>
 <div class="span-14_75 margin-top">
@@ -38,14 +38,14 @@
 		<div class="span-2_5 text-right">
 			Shipping Total:
 		</div>
-		<div id="shipping_total" class="span-1"><%= @cart.shipping_total.format %></div>
+		<div id="shipping_total" class="span-2"><%= @cart.shipping_total.format %></div>
 		<% end %>
 <% end %>
 </div>
 <div class="span-14_75 last margin-top">
 	<div class="span-8">&nbsp;</div>
 	<div class="span-2_5 text-right">Order Total:</div>
-	<div id="total" class="span-1_5"><%= @cart.total.format %></div>
+	<div id="total" class="span-2"><%= @cart.total.format %></div>
 	<div class="span-2_75 last text-right">
 		<%= link_to 'empty cart', cart_url, :method => :delete, :confirm => 'Are you sure you want to empty this cart?' %>
 	</div>

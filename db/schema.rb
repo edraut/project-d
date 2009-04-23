@@ -100,7 +100,7 @@ ActiveRecord::Schema.define(:version => 20090324133514) do
     t.string   "image_content_type"
     t.integer  "image_fize_size"
     t.datetime "image_updated_at"
-    t.integer  "position"
+    t.integer  "position", :default => 0
   end
   
   add_index "product_images", ["product_id"], :name => "index_product_images_on_product_id"

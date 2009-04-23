@@ -74,13 +74,9 @@ class Manage::CategoriesController < Manage::ApplicationController
   # PUT /manage_categories/1.xml
   def update
     if params[:id] == 'multiple'
-      logger.info("MULTIPLE")
       @categories.each do |category|
-        logger.info("CAT: #{category.name}")
         category.position = params[:category].index(category.id.to_s)
-        logger.info("CATPOS: #{category.position}")
         category.save
-        logger.info("CATERR: #{category.errors.full_messages}")
       end
       render :nothing => true and return
     end

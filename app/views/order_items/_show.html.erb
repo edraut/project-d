@@ -1,5 +1,5 @@
 <% order_item = show %>
-<div class="span-14_75 last">
+<div class="span-14_5 last">
 <div class="span-4">
 	<%= order_item.product_option.product.name %>
 </div>
@@ -15,14 +15,14 @@
 <div class="span-1">
 	<%= order_item.quantity %>
 </div>
-<div class="span-1_5">
+<div class="span-1_75">
 	<%= order_item.price.format %>
 </div>
-<div class="span-1_5">
+<div class="span-1_75">
 	<%= order_item.total.format %>
 </div>
 
-<div class="span-2_5 last">
+<div class="span-2 last">
 <%= link_to 'edit', edit_order_item_url(order_item),
 	:ajax_binding => 'ajax_link',
 	:ajax_method => 'GET',

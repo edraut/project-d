@@ -50,7 +50,7 @@ class Manage::ProductsController < Manage::ApplicationController
       @product_section = 'options'
       render :template => 'manage/products/options_images_form' and return
     else
-      @products = Product.find(:all)
+      prepare_products(25,'any')
       render :template => 'manage/products/index' and return
     end
   end
@@ -75,7 +75,7 @@ class Manage::ProductsController < Manage::ApplicationController
   # DELETE /manage_products/1.xml
   def destroy
     @product.destroy
-    @products = Product.paginate(:page => params[:page], :per_page => 25)
+    prepare_products(25,'any')
     render :template => 'manage/products/index' and return
   end
   
@@ -83,6 +83,7 @@ class Manage::ProductsController < Manage::ApplicationController
   def get_product
     @product = Product.find(params[:id]) unless params[:id].to_i == 0
   end
+    
   def prepare_params
     if params.has_key? :product
       @editable_params = params[:product].dup

@@ -52,6 +52,9 @@ hr.heavy {
 .span-1_5 {
 	width: 50px;
 }
+.span-1_75 {
+	width: 60px;
+}
 .span-2_5 {
 	width: 90px;
 }
@@ -70,10 +73,13 @@ hr.heavy {
 .span-13_75 {
 	width: 540px;
 }
+.span-14_5 {
+	width: 570px;
+}
 .span-14_75 {
 	width: 580px;
 }
-.span-1_5, .span-2_5, .span-3_5, .span-2_75, .span-3_75, .span-4_75, .span-13_75, .span-14_75, .top-category, .sub-category, .feature_bar {float:left;margin-right:10px;}
+.span-1_5, .span-1_75, .span-2_5, .span-3_5, .span-2_75, .span-3_75, .span-4_75, .span-13_75, .span-14_5, .span-14_75, .top-category, .sub-category, .feature_bar {float:left;margin-right:10px;}
 .text-right {
 	text-align: right;
 }
