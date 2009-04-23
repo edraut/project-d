@@ -88,3 +88,4 @@ ActionMailer::Base.smtp_settings = {
   :password => 'm4drac1ng',
   :authentication => :plain
 }
+ActiveMerchant::Billing::CreditCard.require_verification_value = true

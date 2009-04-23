@@ -38,7 +38,7 @@ class CartsController < ApplicationController
     elsif params.has_key? :credit_card_number
       gateway = ActiveMerchant::Billing::AuthorizeNetGateway.new(
         :login    => '4MEdAu2X7K',	
-        :password => '4DXg2ev7wK72V5v'
+        :password => '7nmd9vK4333BHW5u'
       )
       credit_card = ActiveMerchant::Billing::CreditCard.new(
         :number => params[:credit_card_number],
