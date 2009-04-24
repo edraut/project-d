@@ -6,5 +6,6 @@ class ProductOption < ActiveRecord::Base
   has_many :product_option_vehicle_models, :dependent => :destroy
   has_many :vehicle_makes, :through => :product_option_vehicle_makes
   has_many :vehicle_models, :through => :product_option_vehicle_models
+  has_many :order_items
   
 end

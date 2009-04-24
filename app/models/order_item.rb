@@ -4,6 +4,7 @@ class OrderItem < ActiveRecord::Base
   belongs_to :product_option
   belongs_to :product_option_vehicle_model
   composed_of :price, :class_name => 'Money', :mapping => [%w(price cents)]
+
   after_save :refresh_order_totals
   
   def total

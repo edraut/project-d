@@ -6,4 +6,21 @@
 	<div class="span-8 prepend-1 border">
 		<%= render :partial => 'manage/products/form', :object => @product %>
 	</div>
+	<div class="span-8">
+		<div class="span-8 last text-center large loud">
+			Product Options
+		</div>
+		<div class="span-4 field-label">name</div>
+		<div class="span-4 last field-label">SKU</div>
+		<% for product_option in @product.product_options %>
+			<div class="span-8 last">
+				<div class="span-4">
+					<%= product_option.name.blank? ? '-' : product_option.name %>
+				</div>
+				<div class="span-4 last">
+					<%= product_option.sku.blank? ? '-' : product_option.sku %>
+				</div>
+			</div>
+		<% end %>
+	</div>
 </div>

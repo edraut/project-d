@@ -5,6 +5,7 @@ class Product < ActiveRecord::Base
   belongs_to :manufacturer
   has_many :product_images, :dependent => :destroy, :order => 'position'
   has_many :product_options, :dependent => :destroy, :order => 'position'
+  has_many :order_items, :through => :product_options
   has_many :product_colors, :dependent => :destroy
   has_many :colors, :through => :product_colors
   has_many :product_sizes, :dependent => :destroy
