@@ -1,7 +1,7 @@
 body {
-	background: url('../images/site_background.jpg');
+	background: url('../images/background.jpg');
 	background-repeat: no-repeat;
-	background-color: #EE1C05;
+	background-color: #FF5008;
 }
 h1 {
 	font-size: 30px;
@@ -171,12 +171,14 @@ a.tiny {
 .container-padding {
 	padding: 10px;
 }
-.right-frame, .left-frame, .middle-frame, .header, .category-bar, .content-frame, .content-frame-inner, .tagline-spacer, .nav-bar, .nav-spacer, .content-frame-height, .product-index-margin {
+.right-frame, .left-frame, .middle-frame, .header, .category-bar, .content-frame, .content-frame-inner, .tagline-spacer, .nav-bar, .nav-spacer, .content-frame-height, .category-bar-border-left, .product-index-margin {
 	overflow: hidden;
 	position:relative;
 	display: block;
+	float: left;
+	clear: none;
 }
-.right-frame, .left-frame, .middle-frame, .tagline-spacer, .product-index-margin {
+.right-frame, .left-frame, .middle-frame, .header, .tagline-spacer, .product-index-margin {
 	float:left;
 	clear:none;
 }
@@ -187,19 +189,18 @@ a.tiny {
 	width: 761px;
 }
 .header {
-	left: 0px;
-	top: 0px;
-	background: url('../images/banner.jpg');
+	background: url('../images/header.jpg');
 	background-position: 0px 0px;
 	background-repeat: none;
 	padding: 7px 10px;
 }
 .category-bar {
-	padding: 10px;
+	padding: 10px 9px 10px 10px;
 	width: 140px;
 	height: 762px;
-	background-color: #C5C5C5;
+	border-left: 1px solid #FFFFFF;
 	background: url('../images/category_bar.jpg');
+	background-color: #CACACA;
 	background-position: 0px 0px;
 	background-repeat: no-repeat;
 	line-height: 20px;
@@ -214,21 +215,16 @@ a.tiny {
 .content-frame {
 	background-color: #FFFFFF;
 	background-repeat: repeat-y;
-	width: 600px;
-	top: -806px;
-	left: 160px;
+	width: 592px;
 	padding: 10px 0px 10px 9px;
-	border-left: 160px solid #CACACA;
-	margin-left: -160px;
-}
-.content-frame-inner {
-	left: 0px;
-	top: -740px;
 }
 .content-frame-height {
 	width: 1px;
-	left: 0px;
-	top: 0px;
+}
+.category-bar-border-left {
+	width: 1px;
+	background-color: #FFFFFF;
+	height: 800px;
 }
 .block{
 	display: block;
@@ -254,9 +250,9 @@ a.tiny {
 	font-size: 14px;
 }
 .nav-bar {
-	top: -782px;
+/*	top: -782px;
 	left: 160px;
-	width: 599px;
+*/	width: 600px;
 	color: #FFFFFF;
 }
 .nav-bar div {
@@ -269,12 +265,10 @@ a.tiny {
 	font-size: 11px;
 }
 .nav-selected {
-	background-color: #016C87;
+	background: url('../images/button.jpg');
 }
 div.nav-spacer {
-	top:-806px;
-	left:759px;
-	width: 2px;
+	width: 1px;
 	padding: 0px;
 }
 .orange, a {

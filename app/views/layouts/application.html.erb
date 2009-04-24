@@ -51,7 +51,7 @@
 						<div class="span-19 last"><div class="tagline-spacer">WE'RE MAD ABOUT GREAT SERVICE!</div></div>
 					</div>
 				</div>
-				<div class="category-bar">
+				<div id="category-bar" class="category-bar">
 					<div class="span-3_75">&nbsp;</div>
 					<% for category in Category.top_level %>
 						<% if @category %>
@@ -86,7 +86,8 @@
 					</div>
 				</div>
 				<div class="nav-spacer"><img src="/images/nav_whiteback.gif"></div>
-				<div class="content-frame"><div class="content-frame-height"><img src="/images/whiteback.gif" class="block"></div><div class="span-14_75 last content-frame-inner">
+				<div id="content-frame" class="content-frame">
+					<div class="content-frame-height"><img src="/images/whiteback.gif" class="block"></div><div class="span-14_75 last content-frame-inner">
 		<% end %>
 		<%= flash[:notice] %>
 		<%= yield %>
@@ -97,5 +98,11 @@
 			</div>
 		<% end %>
 	</div>
+	<% javascript_tag do %>
+	$(document).ready(function(){
+		var new_height = $('#content-frame').height() + 24
+		$('#category-bar').css({'height' : new_height + 'px'});
+	});
+	<% end %>
 </body>
 </html>
