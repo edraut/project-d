@@ -266,6 +266,7 @@ a.tiny {
 .nav-bar div a{
 	color: #FFFFFF;
 	text-decoration: none;
+	font-size: 11px;
 }
 .nav-selected {
 	background-color: #016C87;

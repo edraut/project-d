@@ -91,7 +91,7 @@ class CartsController < ApplicationController
   def get_cart
     @cart = Order.find(:first, :conditions => {:id => session[:cart_id].to_i})
     @cart ||= @this_user.cart if @this_user
-    @cart ||= Order.create
+    @cart ||= Order.create(:shipping_method => "Ground")
     session[:cart_id] = @cart.id
   end
 end
