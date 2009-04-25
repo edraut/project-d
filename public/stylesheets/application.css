@@ -2,6 +2,8 @@ body {
 	background: url('../images/background.jpg');
 	background-repeat: no-repeat;
 	background-color: #FF5008;
+	background-attachment: fixed;
+	margin-bottom: 0px;
 }
 h1 {
 	font-size: 30px;
@@ -206,16 +208,18 @@ a.tiny {
 	line-height: 20px;
 	text-align: right;
 	z-index: 10;
+	line-height: 2em;
 }
 .category-bar div a {
 	color: #2F2F2F;
-	font-size: 11px;
+	font-size: 12px;
 	text-decoration: none;
 }
 .content-frame {
 	background-color: #FFFFFF;
 	background-repeat: repeat-y;
 	width: 592px;
+	min-height: 800px;
 	padding: 10px 0px 10px 9px;
 }
 .content-frame-height {
@@ -254,6 +258,7 @@ a.tiny {
 	left: 160px;
 */	width: 600px;
 	color: #FFFFFF;
+	height: 24px;
 }
 .nav-bar div {
 	padding-top: 3px;

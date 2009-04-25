@@ -46,7 +46,7 @@ class ApplicationController < ActionController::Base
     else
       if params[:category_id] or params[:vehicle_make_id]
         sql_joins = []
-        if state = 'published'
+        if state == 'published'
           sql_where = ["products.state = '#{state}'"]
         else
           sql_where = []
