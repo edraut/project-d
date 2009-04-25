@@ -22,6 +22,7 @@ class Product < ActiveRecord::Base
   after_save :update_vector_row
   
   state_machine :initial => :unpublished do
+    before_transition :on => :unpublish, :do => :unfeature
     event :publish do
       transition :unpublished => :published
     end
@@ -53,6 +54,11 @@ class Product < ActiveRecord::Base
     end
   end
   
+  def unfeature
+    self.featured = false
+    return true
+  end
+  
   def hit
     self.hit_count += 1
     self.save(false)
@@ -68,5 +74,6 @@ class Product < ActiveRecord::Base
       self.product_vector ||= ProductVector.new(:product_id => self.id)
       ProductVector.update_vectors
     end
+    return true
   end
 end

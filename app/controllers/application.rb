@@ -82,9 +82,9 @@ class ApplicationController < ActionController::Base
           sql_where.push "(povmo.vehicle_model_id = :vehicle_model_id)"
           sql_hash[:vehicle_model_id] = @vehicle_model.id
         end
-        @products = Product.paginate :joins => sql_joins.join(' '), :conditions => [sql_where.join(' and '),sql_hash], :include => :product_images, :page => params[:page], :per_page => limit, :order => 'product_images.position'
+        @products = Product.paginate :joins => sql_joins.join(' '), :conditions => [sql_where.join(' and '),sql_hash], :include => :product_images, :page => params[:page], :per_page => limit, :order => 'products.name, product_images.position'
       else
-        @products = Product.send(state).paginate(:per_page => limit, :page => params[:page])
+        @products = Product.send(state).paginate(:per_page => limit, :page => params[:page], :order => :name)
       end
     end
   end
