@@ -72,10 +72,15 @@ class Order < ActiveRecord::Base
   end
   
   def update_inventory
-    self.product_options.each do |product_option|
+    Rails.logger.info("O: #{self.id}")
+    self.order_items.each do |order_item|
+      product_option = order_item.product_option
+      Rails.logger.info("OI: #{order_item.id} : Q: #{order_item.quantity}")
       if product_option.inventory_quantity > 0
-        product_option.inventory_quantity -= 1
+        Rails.logger.info("PO: #{product_option.id} : Q #{product_option.inventory_quantity}")
+        product_option.inventory_quantity -= order_item.quantity
         product_option.save
+        Rails.logger.info("PO: #{product_option.id} : Q #{product_option.inventory_quantity}")
       end
     end
     return true
