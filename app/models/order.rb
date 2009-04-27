@@ -2,7 +2,8 @@ class Order < ActiveRecord::Base
   SHIPPING_METHODS = ['Ground','2nd Day','Overnight','International'].freeze
   include FormatsErrors
   belongs_to :user
-  has_many :order_items
+  has_many :order_items, :dependent => :destroy
+  has_many :product_options, :through => :order_items
   has_one :billing_address, :dependent => :destroy
   has_one :shipping_address, :dependent => :destroy
   has_many :addresses, :dependent => :destroy
@@ -20,6 +21,8 @@ class Order < ActiveRecord::Base
   
   state_machine :initial => :cart do
     after_transition :on => :fulfill, :do => :set_shipping_date
+    before_transition :on => :accept_card, :do => :update_inventory
+    
     event :accept_card do
       transition [:cart, :card_rejected] => :pending
     end
@@ -66,6 +69,16 @@ class Order < ActiveRecord::Base
   def set_shipping_date
     self.shipped_at = Time.now
     self.save(false)
+  end
+  
+  def update_inventory
+    self.product_options.each do |product_option|
+      if product_option.inventory_quantity > 0
+        product_option.inventory_quantity -= 1
+        product_option.save
+      end
+    end
+    return true
   end
   
   def ready_to_charge?

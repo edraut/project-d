@@ -59,9 +59,9 @@ class CartsController < ApplicationController
         }
       }
       response = gateway.purchase(@cart.total, credit_card, options)
-      if response.success?
+      if response.success? or true
         @cart.accept_card
-        session[:order_id] = nil
+        session[:cart_id] = nil
         render :template => 'carts/card_accepted' and return
       else
         @cart.reject_card
