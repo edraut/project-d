@@ -28,7 +28,7 @@
 		<% elsif @product_options %>
 			<div class="span-4 last">
 				<% form_tag cart_url, :method => :put do %>
-					<%= select_tag 'order_item[product_option_id]', options_for_select([['Select Option',nil]] + @product_options.map{|opt| [opt.name,opt.id]}), :ui_binding => "option_select", :id => 'product_option_select', :class => 'span-4' %>
+					<%= select_tag 'order_item[product_option_id]', options_for_select([['Select Option',nil]] + @product_options.in_stock.map{|opt| [opt.name,opt.id]}), :ui_binding => "option_select", :id => 'product_option_select', :class => 'span-4' %>
 					<div class="span-4 last" style="display: none" ui_binding="add_to_cart_button">
 					<div class="span-1">price:</div>
 					<div id="price" class="span-3 last"></div>
@@ -44,9 +44,13 @@
 				<% unless @product.new? %>
 				this product is used<br/>
 				<% end %>
+				<% if product_option.inventory_quantity == 0 %>
+				out of stock<br/>
+				<% else %>
 				<%= link_to 'add to cart', cart_url + "?order_item[product_option_id]=#{product_option.id}", :method => :put %>
 				<% unless @product.new? %>
 				or <%= link_to 'make an offer', 'mailto:contact@madracingmx.com' %>
+				<% end %>
 				<% end %>
 			</div>
 		<% end %>
