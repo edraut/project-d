@@ -39,7 +39,6 @@
 			<div class="span-4 last">
 				<% product_option = @product.product_options.first %>
 				
-				part number: <%= product_option.sku %><br/>
 				price: <%= product_option.price.format %><br/>
 				<% unless @product.new? %>
 				this product is used<br/>
