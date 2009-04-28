@@ -1,0 +1,16 @@
+Add a new post<br/>
+<p>
+<% form_for :post, @post, :url => manage_posts_url(:_method => :post) do |f| %>
+title
+<%= @post.first_error_on :title %>
+<%= f.text_field :title %><br/>
+body
+<%= @post.first_error_on :body %>
+<%= f.text_area :body %><br/>
+image
+<%= @post.first_error_on :image %>
+<%= f.text_field :image %><br/>
+
+<%= f.submit :add %>
+<% end %>
+</p>

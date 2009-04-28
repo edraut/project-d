@@ -1,0 +1,14 @@
+<% form_for :post, @post, :url => manage_post_url(:id => @post.id, :_method => :put) do |f| %>
+		title
+	<%= @post.first_error_on :title %>
+	<%= f.text_field :title %><br/>
+		body
+	<%= @post.first_error_on :body %>
+	<%= f.text_area :body %><br/>
+		image
+	<%= @post.first_error_on :image %>
+	<%= f.text_field :image %><br/>
+	
+<%= f.submit :save %>
+<%= link_to 'cancel', manage_post_url(@post) %>
+<% end %>

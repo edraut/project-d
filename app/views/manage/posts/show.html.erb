@@ -1,0 +1,9 @@
+title:
+<%= @post.title %><br/>
+body:
+<%= @post.body %><br/>
+image:
+<%= @post.image %><br/>
+
+<%= link_to 'edit', edit_manage_post_url(@post) %> | 
+<%= link_to 'delete', manage_post_url(@post), :method => :delete, :confirm => 'Are you sure you want to delete this post?' %>
