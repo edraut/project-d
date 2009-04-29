@@ -26,9 +26,9 @@ Add a new <% unless category.parent.nil? %>sub<% end %>category</br>
 		</div>
 	</div>
 <% end %>
-<%= link_to '', new_manage_category_url,
+<%= link_to '', new_manage_category_url + "?parent_id=#{category.parent_id}",
  	:ajax_method => 'GET',
 	:ajax_binding => 'ajax_link',
-	:ajax_success_element => "category_new_#{category.parent_id}",
+	:ajax_success_element => "category_new_#{category.id}",
 	:id => "category_new_link_#{category.parent_id}"
 	%>

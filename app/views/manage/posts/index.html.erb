@@ -1,5 +1,13 @@
-<h1>posts</h1>
-<% for post in @posts %>
-	<%= link_to post.name, manage_post_url(post) %>
-<% end %>
-<%= link_to 'new post', new_manage_post_url %>
+<%= render :partial => 'section_nav' %>
+<div class="span-24 last dash-foreground-color container-padding">
+	<div class="span-24 last border-bottom margin-bottom">
+		<div class="span-10">
+			<h1>Content for <%= @postable.class.display_name %> <span class="orange"><%= @postable.name %></span></h1>
+		</div>
+		<div class="span-10">
+		</div>
+	</div>
+	<% for post in @posts %>
+		<%= render :partial => 'show', :object => post %>
+	<% end %>
+</div>

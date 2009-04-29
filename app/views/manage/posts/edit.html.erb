@@ -1,14 +1,22 @@
-<% form_for :post, @post, :url => manage_post_url(:id => @post.id, :_method => :put) do |f| %>
-		title
+<%= render :partial => 'section_nav' %>
+<div class="span-24 last small-links dash-foreground-color container-padding">
+	<div class="span-24 last margin-bottom">
+	<h2>Content for <%= @postable.class.display_name %> <%= @postable.name %></h2>
+	</div>
+<% form_for :post, @post, :url => manage_post_url(:id => @post.id, :_method => :put), :html => {:multipart => true} do |f| %>
+	title
 	<%= @post.first_error_on :title %>
 	<%= f.text_field :title %><br/>
-		body
+	image
+	<%= @post.first_error_on :image %>
+	<%= f.file_field :image %><br/>
+	body
 	<%= @post.first_error_on :body %>
 	<%= f.text_area :body %><br/>
-		image
-	<%= @post.first_error_on :image %>
-	<%= f.text_field :image %><br/>
-	
-<%= f.submit :save %>
-<%= link_to 'cancel', manage_post_url(@post) %>
+
+	<%= f.hidden_field :postable_type %>
+	<%= f.hidden_field :postable_id %>
+	<%= f.submit :save %>
+	<%= link_to 'cancel', manage_posts_url + "?postable_type=Page&postable_id=#{@postable.id}" %>
 <% end %>
+</div>

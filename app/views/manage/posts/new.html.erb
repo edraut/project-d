@@ -1,16 +1,23 @@
-Add a new post<br/>
-<p>
-<% form_for :post, @post, :url => manage_posts_url(:_method => :post) do |f| %>
-title
-<%= @post.first_error_on :title %>
-<%= f.text_field :title %><br/>
-body
-<%= @post.first_error_on :body %>
-<%= f.text_area :body %><br/>
-image
-<%= @post.first_error_on :image %>
-<%= f.text_field :image %><br/>
+<%= render :partial => 'section_nav' %>
+<div class="span-24 last small-links dash-foreground-color container-padding">
+	<div class="span-24 last margin-bottom">
+	<h2>Content for <%= @postable.class.display_name %> <%= @postable.name %></h2>
+	</div>
+	<p>
+	<% form_for :post, @post, :url => manage_posts_url(:_method => :post), :html => {:multipart => true} do |f| %>
+	title
+	<%= @post.first_error_on :title %>
+	<%= f.text_field :title %><br/>
+	image
+	<%= @post.first_error_on :image %>
+	<%= f.file_field :image %><br/>
+	body
+	<%= @post.first_error_on :body %>
+	<%= f.text_area :body %><br/>
 
-<%= f.submit :add %>
-<% end %>
-</p>
+	<%= f.hidden_field :postable_type %>
+	<%= f.hidden_field :postable_id %>
+	<%= f.submit :add %>
+	<% end %>
+	</p>
+</div>

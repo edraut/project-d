@@ -80,6 +80,7 @@ ActionController::Routing::Routes.draw do |map|
     manage.resources :vehicle_types
     manage.resources :product_option_vehicle_models
     manage.resources :orders
+    manage.resources :posts
     manage.textile_manual '/products/textile_manual', :controller => 'products', :action => 'show', :page => 'textile_manual'
   end
   

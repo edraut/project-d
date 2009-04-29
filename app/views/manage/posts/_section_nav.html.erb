@@ -1,0 +1,15 @@
+<div class="span-24 last dash-frame-color padding-bottom product-section-nav">
+	<% for page in Page.all %>
+		<div class="span-4 text-center <% if @postable == page %>selected<% end %>">
+			<%= link_to page.name, manage_posts_url + "?postable_type=Page&postable_id=#{page.id}" %>
+		</div>
+	<% end %>
+	<% (5 - Page.count).times do %>
+	<div class="span-4">&nbsp;</div>
+	<% end %>
+	<div class="span-4 last text-center">
+		<% if Page.post_quantity_for(@postable.name) > 1 %>
+			<%= link_to 'new content for ' + @postable.name, new_manage_post_url + "?post[postable_type]=#{@postable.class.name}&post[postable_id]=#{@postable.id}" %>
+		<% end %>
+	</div>
+</div>

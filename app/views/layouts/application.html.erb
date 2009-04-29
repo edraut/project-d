@@ -59,17 +59,21 @@
 						<% end %>
 						<div class="top-category">
 							<%= link_to category.name, products_url + "?category_id=#{category.id}", :class => (top_category == category) ? 'category-selected' : '' %>
-								<% if top_category == category %>
-								  <div class="top-category border-top border-bottom">
+							<% if top_category == category %>
+							  <div class="top-category border-top border-bottom">
 									<% for sub_category in category.children %>
 										<div class="sub-category">
 											<%= link_to sub_category.name, products_url + "?category_id=#{sub_category.id}", :class => (@category == sub_category) ? 'category-selected' : '' %>
 										</div>
 									<% end %>
 								</div>
-								<% end %>
+							<% end %>
 						</div>
 					<% end %>
+					<div class="span-3_75">&nbsp;</div>
+					<img src="/images/visa_mastercard_logo.gif"/>
+					<div class="span-3_75">&nbsp;</div>
+					<span id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=184210802406a37416510120b22a62e057e529420953497925723837615"></script><br/><a style="font-family:arial;font-size:9px" href="https://www.godaddy.com/gdshop/ssl/ssl.asp" target="_blank">SSL Certificate</a></span>
 				</div>
 				<div class="nav-bar blue-background">
 					<div class="span-2 text-center <% if @nav_tab == 'home' %>nav-selected<% end %>">
@@ -87,15 +91,20 @@
 				</div>
 				<div class="nav-spacer"><img src="/images/nav_whiteback.gif"></div>
 				<div id="content-frame" class="content-frame">
-					<div class="content-frame-height"><img src="/images/whiteback.gif" class="block"></div><div class="span-14_75 last content-frame-inner">
+					<div class="content-frame-height">
+						<img src="/images/whiteback.gif" class="block">
+					</div>
+					<div class="span-14_75 last content-frame-inner">
 		<% end %>
 		<%= flash[:notice] %>
 		<%= yield %>
 		<% unless @nav_area == 'manage' %>
+					</div>
+				</div>
 			</div>
-			</div>
-			</div>
-			</div>
+			2 Main street suite 15-212,
+			Biddeford, Me. 04005
+		</div>
 		<% end %>
 	</div>
 	<% javascript_tag do %>
