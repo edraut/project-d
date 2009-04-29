@@ -42,7 +42,6 @@ class Manage::PostsController < Manage::ApplicationController
   def update
 
     if @post.update_attributes(params[:post])
-      flash[:notice] = 'Post was successfully updated.'
       render :template => 'manage/posts/index' and return
     else
       render :template => 'manage/posts/edit' and return

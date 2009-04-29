@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
   include FormatsErrors
   belongs_to :postable, :polymorphic => true
+  named_scope :published, :conditions => {:published => true}
   has_attached_file :image,
     :url => "/system/:class/:id/:style/:basename.:extension",
     :path => ":rails_root/public/system/:class/:id/:style/:basename.:extension",

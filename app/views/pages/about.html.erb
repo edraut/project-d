@@ -1,3 +1,7 @@
-<div class="span-14_75 text-center"><h1 class="large bold"><%= @page.posts.first.title %></h1></div><br/>
-<%= image_tag(@page.posts.first.image.url(:full_width)) if @page.posts.first.image.exists? %><br/>
-<%= RedCloth.new(@page.posts.first.body).to_html if @page.posts.first.body %><br/>
+<% if @page.posts.first.published %>
+	<div class="span-14_75 text-center"><h1 class="large bold"><%= @page.posts.first.title %></h1></div><br/>
+	<%= image_tag(@page.posts.first.image.url(:full_width)) if @page.posts.first.image.exists? %><br/>
+	<%= RedCloth.new(@page.posts.first.body).to_html if @page.posts.first.body %><br/>
+<% else %>
+	We're updating this page, check back shortly.
+<% end %>

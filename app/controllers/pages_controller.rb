@@ -16,6 +16,7 @@ class PagesController < ApplicationController
       page_name = 'News'
     end
     @page = Page.find_by_name(page_name)
+    @posts = @page.posts.published.paginate(:page => params[:page], :per_page => 4) if page_name == 'News'
     
     render :template => 'pages/' + params[:name] and return
   end
