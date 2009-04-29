@@ -10,4 +10,7 @@ class Post < ActiveRecord::Base
       :large => "390x390>",
       :full_width => "578x578>"
     }
+  def validate
+    self.errors.add_to_base("Must have at least a title, image or body text.") if self.title.blank? and self.body.blank? and !self.image.exists?
+  end
 end

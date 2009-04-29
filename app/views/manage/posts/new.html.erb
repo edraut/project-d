@@ -4,14 +4,19 @@
 	<h2>Content for <%= @postable.class.display_name %> <%= @postable.name %></h2>
 	</div>
 	<p>
+		<%= @post.first_error_on :base %>
 	<% form_for :post, @post, :url => manage_posts_url(:_method => :post), :html => {:multipart => true} do |f| %>
+	<div class="span-1">
 	title
+	</div>
+	<div class="span-23 last">
 	<%= @post.first_error_on :title %>
 	<%= f.text_field :title %><br/>
+	</div>
 	image
 	<%= @post.first_error_on :image %>
 	<%= f.file_field :image %><br/>
-	body
+	body <a href="/manage/products/textile_manual" target="_blank">?</a>
 	<%= @post.first_error_on :body %>
 	<%= f.text_area :body %><br/>
 

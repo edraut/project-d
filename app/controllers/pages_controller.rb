@@ -9,13 +9,22 @@ class PagesController < ApplicationController
   # GET /pages/1
   # GET /pages/1.xml
   def show
+    case params[:name]
+    when 'about'
+      page_name = 'About Us'
+    when 'news'
+      page_name = 'News'
+    end
+    @page = Page.find_by_name(page_name)
+    
     render :template => 'pages/' + params[:name] and return
   end
 
   def home
     @nav_tab = 'home'
     @products = Product.featured.find(:all, :limit => 16)
-    
+    @page = Page.find_by_name('Home')
+    @post = @page.posts.first
   end
   
   protected

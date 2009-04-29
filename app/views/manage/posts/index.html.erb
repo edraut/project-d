@@ -7,7 +7,9 @@
 		<div class="span-10">
 		</div>
 	</div>
-	<% for post in @posts %>
-		<%= render :partial => 'show', :object => post %>
-	<% end %>
+	<div class="span-14">
+		<% for post in @posts %>
+			<%= render :partial => 'show', :object => post %>
+		<% end %>
+	</div>
 </div>

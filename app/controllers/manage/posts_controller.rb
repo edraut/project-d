@@ -18,6 +18,8 @@ class Manage::PostsController < Manage::ApplicationController
   # GET /manage_posts/new
   # GET /manage_posts/new.xml
   def new
+    @post = Post.new
+    @postable.posts << @post
   end
 
   # GET /manage_posts/1/edit

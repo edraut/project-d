@@ -3,16 +3,29 @@
 	<div class="span-24 last margin-bottom">
 	<h2>Content for <%= @postable.class.display_name %> <%= @postable.name %></h2>
 	</div>
+	<%= @post.first_error_on :base %>
 <% form_for :post, @post, :url => manage_post_url(:id => @post.id, :_method => :put), :html => {:multipart => true} do |f| %>
+	<div class="span-1 text-right field-label">
 	title
+	</div>
+	<div class="span-23 last">
 	<%= @post.first_error_on :title %>
-	<%= f.text_field :title %><br/>
+	<%= f.text_field :title, :class => "span-8"%>
+	</div>
+	<div class="span-1 text-right field-label">
 	image
+</div>
+<div class="span-23 last">
 	<%= @post.first_error_on :image %>
-	<%= f.file_field :image %><br/>
-	body
+	<%= f.file_field :image, :class => "span-8" %>
+</div>
+<div class="span-1 text-right field-label">
+	body <a href="/manage/products/textile_manual" target="_blank">?</a>
+</div>
+<div class="span-23 last">
 	<%= @post.first_error_on :body %>
-	<%= f.text_area :body %><br/>
+	<%= f.text_area :body, :class => "span-12" %>
+</div>
 
 	<%= f.hidden_field :postable_type %>
 	<%= f.hidden_field :postable_id %>

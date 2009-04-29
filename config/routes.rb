@@ -11,8 +11,6 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :carts
 
-  map.resources :news
-
   map.resources :pages
 
   map.root :controller => 'pages', :action => 'home'
@@ -22,7 +20,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.home '/home', :controller => 'pages', :action => 'home'
   map.cart '/cart', :controller => 'carts', :action => 'show'
-  map.news '/news', :controller => 'news', :action => 'index'
+  map.news '/news', :controller => 'pages', :action => 'show', :name => 'news'
   map.about '/about', :controller => 'pages', :action => 'show', :name => 'about'
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'

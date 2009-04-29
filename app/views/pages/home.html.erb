@@ -2,11 +2,10 @@
 <div class="span-14_75 last">
 	<div class="product-index-margin">&nbsp;</div>
 	<div class="span-14 last">
-		<div class="span-14 last large bold text-center">
-			WELCOME TO MAD RACING MX!
-		</div>
-		<div class="span-14 last text-center margin-bottom orange">Check back often, we're adding new products daily!</div>
-<div class="feature-bar padding-left margin-bottom">Featured Products</div>
-	<%= render :partial => 'products/thumb', :object => @products %>
-</div>
+		<div class="span-14 last text-center"><h1 class="large bold"><%= @post.title %></h1></div><br/>
+		<%= image_tag(@post.image.url(:full_width)) if @post.image.exists? %><br/>
+		<%= RedCloth.new(@post.body).to_html if @post.body %>
+		<div class="feature-bar padding-left margin-bottom">Featured Products</div>
+		<%= render :partial => 'products/thumb', :object => @products %>
+	</div>
 </div>
