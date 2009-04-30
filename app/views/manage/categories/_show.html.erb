@@ -6,10 +6,11 @@
 
 <div class="span-4">
 <% if category.parent.nil? %>
-	<%= link_to 'expand', manage_category_url(category) + '?section=subcategories',
+	<%# link_to 'expand', manage_category_url(category) + '?section=subcategories',
 		:ajax_binding => 'ajax_link',
 		:ajax_method => 'GET',
-		:ajax_success_element => "category_#{category.id}" %> | 
+		:ajax_success_element => "category_#{category.id}" %>
+	<%= link_to 'expand', manage_categories_url + "?parent_id=#{category.id}&category_area=true" %> | 
 <% end %>
 <%= link_to 'edit', edit_manage_category_url(category),
 	:ajax_binding => 'ajax_link',

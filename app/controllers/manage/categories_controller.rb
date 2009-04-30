@@ -15,7 +15,12 @@ class Manage::CategoriesController < Manage::ApplicationController
         @owner_class_name = @owner_class.name
         @owner = @owner_class.find(params[:owner_id]) if params[:owner_id]
       end
-      render :partial => params[:ui_element] and return
+      if params[:category_area]
+        @category = @parent
+        render :template => 'manage/categories/subcategories'
+      else
+        render :partial => params[:ui_element] and return
+      end
     end
   end
 
@@ -59,7 +64,6 @@ class Manage::CategoriesController < Manage::ApplicationController
   def create
     @category = Category.new(params[:category])
     if @category.save
-      flash[:notice] = 'Category was successfully created.'
       if params[:ui_element]
         render :partial => params[:ui_element] + '_tag', :object => @category
       else

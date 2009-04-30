@@ -1,0 +1,27 @@
+<div class="span-24 last dash-foreground-color container-padding">
+<div class="span-11 last">
+<div class="span-11 last border-bottom">
+<div class="span-5">
+<%= @category.name %>
+</div>
+
+<div class="span-4 last">
+	<%= link_to 'back to category list', manage_categories_url %>
+</div>
+</div>
+<div class="span-10 prepend-1 last border-bottom">
+<div id="category_list_<%= @category.id %>" class="span-10 last" ui_binding="sortable" ui_url="<%= manage_category_url(:id => :multiple)  %>">
+	<% for category in @category.children %>
+		<%= render :partial => "manage/categories/element_container", :object => category %>
+	<% end %>
+</div>
+<div id="category_new_<%= @category.id %>" class="span-6 last">
+	<%= render :partial => "manage/categories/new", :object => Category.new(:parent_id => @category.id) %>
+</div>
+</div>
+</div>
+</div>
+<% javascript_tag do %>
+bindSortables();
+$('#category_list_').sortable('destroy');
+<% end %>

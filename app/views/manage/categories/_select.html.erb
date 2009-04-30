@@ -5,14 +5,14 @@
 			url_params[:owner_id] = @owner.id
 		end
 %>
-<div class="span-4 last"><%= link_to '(add a new subcategory)', new_manage_category_url(url_params), 
+<div class="span-4 last"><%# link_to '(add a new subcategory)', new_manage_category_url(url_params), 
 	:ajax_binding => 'ajax_link',
 	:ajax_method => 'GET',
 	:ajax_success_element => 'new_subcategory',
 	:ajax_success_callback => "$('#new_subcategory_link').hide();",
 	:id => 'new_subcategory_link',
 	:class => 'quiet tiny'
-%></div>
+%>&nbsp;</div>
 <% else %>
 <div class="span-4 last">&nbsp;</div>
 <% end %>

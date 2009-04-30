@@ -20,14 +20,14 @@
 			category
 		</div>
 		<div class="span-4 last">
-		<%= link_to '(add a new category)', new_manage_category_url(:ui_element => 'select_option'), 
+		<%# link_to '(add a new category)', new_manage_category_url(:ui_element => 'select_option'), 
 			:ajax_binding => 'ajax_link',
 			:ajax_method => 'GET',
 			:ajax_success_element => 'new_category',
 			:ajax_success_callback => "$('#new_category_link').hide();",
 			:id => 'new_category_link',
 			:class => 'quiet tiny'
-		%>
+		%>&nbsp;
 		</div>
 	</div>
 	<div class="span-8 last border-bottom">

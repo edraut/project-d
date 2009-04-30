@@ -52,7 +52,7 @@
 						<div class="span-19 last"><div class="tagline-spacer">WE'RE MAD ABOUT GREAT SERVICE!</div></div>
 					</div>
 				</div>
-				<div id="category-bar" class="category-bar">
+				<div id="category-bar" class="category-bar" >
 					<div class="span-3_75">&nbsp;</div>
 					<% for category in Category.top_level %>
 						<% if @category %>
@@ -72,9 +72,18 @@
 						</div>
 					<% end %>
 					<div class="span-3_75">&nbsp;</div>
+					<div class="span-3_75">
 					<img src="/images/visa_mastercard_logo.gif"/>
+					</div>
 					<div class="span-3_75">&nbsp;</div>
+					<div class="span-3_5">
 					<span id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=184210802406a37416510120b22a62e057e529420953497925723837615"></script><br/><a style="font-family:arial;font-size:9px" href="https://www.godaddy.com/gdshop/ssl/ssl.asp" target="_blank">SSL Certificate</a></span>
+					</div>
+					<div class="span-3_75">&nbsp;</div>
+					<div class="span-1">&nbsp;</div>
+					<div class="span-2_5">
+					<!-- (c) 2005, 2009. Authorize.Net is a registered trademark of CyberSource Corporation --> <div class="AuthorizeNetSeal"> <script type="text/javascript" language="javascript">var ANS_customer_id="3e1394d7-0d37-4556-8cd0-336269d3f0d6";</script> <script type="text/javascript" language="javascript" src="//verify.authorize.net/anetseal/seal.js" ></script> <a href="http://www.authorize.net/" id="AuthorizeNetText" target="_blank">Credit Card Processing</a> </div>
+					</div>
 				</div>
 				<div class="nav-bar blue-background">
 					<div class="span-2 text-center <% if @nav_tab == 'home' %>nav-selected<% end %>">
@@ -110,8 +119,15 @@
 	</div>
 	<% javascript_tag do %>
 	$(document).ready(function(){
-		var new_height = $('#content-frame').height() + 24
-		$('#category-bar').css({'height' : new_height + 'px'});
+		var new_height = $('#content-frame').height() + 24;
+		var cat_height = 20;
+		$('#category-bar').children().each(function(i){cat_height += $(this).height()});
+		if(cat_height > new_height) {
+			$('#content-frame').css({'height' : (cat_height - 24) + 'px'});
+			$('#category-bar').css({'height' : cat_height + 'px'});
+		} else {
+			$('#category-bar').css({'height' : new_height + 'px'});
+		}
 	});
 	<% end %>
 </body>
