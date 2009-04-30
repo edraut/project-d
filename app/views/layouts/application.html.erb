@@ -54,22 +54,37 @@
 				</div>
 				<div id="category-bar" class="category-bar" >
 					<div class="span-3_75">&nbsp;</div>
-					<% for category in Category.top_level %>
-						<% if @category %>
-							<% top_category = @category.parent.nil? ? @category : @category.parent %>
-						<% end %>
+					<% if @category %>
+						<% top_category = @category.parent.nil? ? @category : @category.parent
+						%>
 						<div class="top-category">
-							<%= link_to category.name, products_url + "?category_id=#{category.id}", :class => (top_category == category) ? 'category-selected' : '' %>
-							<% if top_category == category %>
-							  <div class="top-category border-top border-bottom">
-									<% for sub_category in category.children %>
-										<div class="sub-category">
-											<%= link_to sub_category.name, products_url + "?category_id=#{sub_category.id}", :class => (@category == sub_category) ? 'category-selected' : '' %>
-										</div>
-									<% end %>
-								</div>
-							<% end %>
+							<%= link_to 'All Categories', '/' %>
 						</div>
+						<div class="top-category">
+							<%= link_to top_category.name, products_url + "?category_id=#{top_category.id}", :class => 'category-selected' %>
+						  <div class="top-category border-top border-bottom">
+								<% for sub_category in top_category.children %>
+									<div class="sub-category">
+										<%= link_to sub_category.name, products_url + "?category_id=#{sub_category.id}", :class => (@category == sub_category) ? 'category-selected' : '' %>
+									</div>
+								<% end %>
+							</div>
+						</div>
+					<% else %>
+						<% for category in Category.top_level %>
+							<div class="top-category">
+								<%= link_to category.name, products_url + "?category_id=#{category.id}", :class => (top_category == category) ? 'category-selected' : '' %>
+								<% if top_category == category %>
+								  <div class="top-category border-top border-bottom">
+										<% for sub_category in category.children %>
+											<div class="sub-category">
+												<%= link_to sub_category.name, products_url + "?category_id=#{sub_category.id}", :class => (@category == sub_category) ? 'category-selected' : '' %>
+											</div>
+										<% end %>
+									</div>
+								<% end %>
+							</div>
+						<% end %>
 					<% end %>
 					<div class="span-3_75">&nbsp;</div>
 					<div class="span-3_75">
@@ -114,8 +129,7 @@
 				<div class="footer" style="background-color: #FFFFFF;">
 					<div class="footer-cat-spacer" style="background-color: #CACACA; border-left: 1px solid #FFFFFF;">&nbsp;</div>
 					<div class="span-14_75 last text-center">
-				2 Main street suite 15-212,
-				Biddeford, Me. 04005
+						2 Main Street, Suite 15-212, Biddeford, ME 04005
 					</div>
 				</div>
 			</div>
