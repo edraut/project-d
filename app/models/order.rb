@@ -1,5 +1,16 @@
 class Order < ActiveRecord::Base
   SHIPPING_METHODS = ['Ground','2nd Day','Overnight','International'].freeze
+  SHIPPING_RATES = {
+    'Ground' =>         [Money.new(795),  Money.new(995),  Money.new(1495)],
+    '2nd Day' =>        [Money.new(2500), Money.new(3000),  Money.new(4000)],
+    'Overnight' =>      [Money.new(5000), Money.new(5500),  Money.new(6500)],
+    'International' =>  [Money.new(5000), Money.new(5500),  Money.new(6500)]
+  }.freeze
+  SHIPPING_RANGES = [
+    [Money.new(0),Money.new(9999)],
+    [Money.new(10000),Money.new(19999)],
+    [Money.new(20000),Money.new(29999)]
+  ].freeze
   include FormatsErrors
   belongs_to :user
   has_many :order_items, :dependent => :destroy
@@ -7,8 +18,8 @@ class Order < ActiveRecord::Base
   has_one :billing_address, :dependent => :destroy
   has_one :shipping_address, :dependent => :destroy
   has_many :addresses, :dependent => :destroy
-  before_save :update_shipping
   before_save :update_subtotal
+  before_save :update_shipping
   before_save :update_sales_tax
   composed_of :shipping_total, :class_name => 'Money', :mapping => [%w(shipping_total cents)]
   composed_of :subtotal, :class_name => 'Money', :mapping => [%w(subtotal cents)]
@@ -72,15 +83,11 @@ class Order < ActiveRecord::Base
   end
   
   def update_inventory
-    Rails.logger.info("O: #{self.id}")
     self.order_items.each do |order_item|
       product_option = order_item.product_option
-      Rails.logger.info("OI: #{order_item.id} : Q: #{order_item.quantity}")
       if product_option.inventory_quantity > 0
-        Rails.logger.info("PO: #{product_option.id} : Q #{product_option.inventory_quantity}")
         product_option.inventory_quantity -= order_item.quantity
         product_option.save
-        Rails.logger.info("PO: #{product_option.id} : Q #{product_option.inventory_quantity}")
       end
     end
     return true
@@ -113,7 +120,7 @@ class Order < ActiveRecord::Base
   
   def update_shipping
     if !self.shipping_method.blank? and self.order_items.any?
-      self.shipping_total = Money.new(self.calculate_shipping.to_f)
+      self.shipping_total = self.calculate_shipping
     else
       self.shipping_total = Money.new(0)
     end
@@ -140,7 +147,8 @@ class Order < ActiveRecord::Base
   end
   
   def calculate_shipping
-    self.order_items.sum("order_items.quantity * products.#{shipping_method_price_col}", :joins => {:product_option => :product})
+    this_range_index = SHIPPING_RANGES.index SHIPPING_RANGES.find{|range| range.first <= self.subtotal and self.subtotal <= range.last}
+    this_rate = SHIPPING_RATES[self.shipping_method][this_range_index]
   end
   
   def calculate_subtotal
