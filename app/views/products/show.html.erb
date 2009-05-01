@@ -5,38 +5,43 @@
 	<div class="span-10">
 		<%= link_to image_tag(@product.product_images.first.image.url(:large)) %>
 	</div>
+	<div class="span-4_75 last">
+		&nbsp;
+	</div>
+</div>
+<div class="span-14_75">
 		<% if @vehicle_makes.any? %>
-			<div class="span-4 last">
+			<div class="span-4_75 last">
 				<%= select_tag 'vehicle_make_id', options_for_select([['Select Make',nil]] + @vehicle_makes.map{|vm| [vm.name,vm.id]},(@vehicle_make ? @vehicle_make.id : nil)), :id => 'vehicle_make_select' %>
 			</div>
-			<div id="vehicle_model_container" class="span-4 last">
+			<div id="vehicle_model_container" class="span-8 last">
 				-
 			</div>
 			<% for vehicle_make in @vehicle_makes %>
-				<div id="vehicle_model_container_<%= vehicle_make.id %>" class="span-4 last" style="display: none">
+				<div id="vehicle_model_container_<%= vehicle_make.id %>" class="span-8 last" style="display: none">
 					<% form_tag cart_url, :method => :put do %>
 						<%= select_tag 'product_option_vehicle_model_id', options_for_select([['Select Model',nil]] + @vehicle_models[vehicle_make.id].map{|mod| ["#{mod.vehicle_model.name}:#{mod.year_begin}-#{mod.year_end}",mod.id]},
-					(	@vehicle_model and this_povm = @vehicle_models[vehicle_make.id].detect{|povm| povm.vehicle_model_id == @vehicle_model.id}) ? this_povm.id : nil), :ui_binding => "option_select", :class => 'span-4' %>
-					<div class="span-4 last" style="display: none" ui_binding="add_to_cart_button">
+					(	@vehicle_model and this_povm = @vehicle_models[vehicle_make.id].detect{|povm| povm.vehicle_model_id == @vehicle_model.id}) ? this_povm.id : nil), :ui_binding => "option_select", :class => 'span-8 last' %>
+					<div class="span-8 last" style="display: none" ui_binding="add_to_cart_button">
 						<div class="span-1">price:</div>
-						<div id="price" class="span-3 last"></div>
-						<div class="span-4 last"> <%= submit_tag 'add to cart' %></div>
+						<div id="price" class="span-7 last"></div>
+						<div class="span-8 last"> <%= submit_tag 'add to cart' %></div>
 					</div>
 					<% end %>
 				</div>
 			<% end %>
 		<% elsif @product_options %>
-			<div class="span-4 last">
+			<div class="span-8 last">
 				<% form_tag cart_url, :method => :put do %>
-					<%= select_tag 'order_item[product_option_id]', options_for_select([['Select Option',nil]] + @product_options.in_stock.map{|opt| [opt.name,opt.id]}), :ui_binding => "option_select", :id => 'product_option_select', :class => 'span-4' %>
-					<div class="span-4 last" style="display: none" ui_binding="add_to_cart_button">
+					<%= select_tag 'order_item[product_option_id]', options_for_select([['Select Option',nil]] + @product_options.in_stock.map{|opt| [opt.name,opt.id]}), :ui_binding => "option_select", :id => 'product_option_select', :class => 'span-8 last' %>
+					<div class="span-8 last" style="display: none" ui_binding="add_to_cart_button">
 					<div class="span-1">price:</div>
-					<div id="price" class="span-3 last"></div>
-					<div class="span-4 last"><%= submit_tag 'add to cart' %></div>
+					<div id="price" class="span-7 last"></div>
+					<div class="span-8 last"><%= submit_tag 'add to cart' %></div>
 				<% end %>
 			</div>
 		<% else %>
-			<div class="span-4 last">
+			<div class="span-6 last">
 				<% product_option = @product.product_options.first %>
 				
 				price: <%= product_option.price.format %><br/>
@@ -53,6 +58,7 @@
 				<% end %>
 			</div>
 		<% end %>
+		</div>
 </div>
 <div class="span-14_75">
 	<div class="span-4">
