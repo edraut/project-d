@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_nav_area
   before_filter :set_nav_tab
+  filter_parameter_logging :credit_card_number, :credit_card_month, :credit_card_year, :credit_card_cvv
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
   # protect_from_forgery # :secret => '43c771a06b224b59eadad4cc84ca056e'
