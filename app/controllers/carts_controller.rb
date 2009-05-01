@@ -82,7 +82,9 @@ class CartsController < ApplicationController
   # DELETE /carts/1
   # DELETE /carts/1.xml
   def destroy
-    @cart.destroy
+    if @cart.cart?
+      @cart.destroy
+    end
     session[:cart_id] = nil
     redirect_to cart_url
   end
