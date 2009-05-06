@@ -8,7 +8,7 @@ set :db_pass, "m4drac1ngmx"
 set :mail_user, 'do-not-reply'
 set :mail_password, 'm4drac1ngmx'
 
-set :branch, "master"
+set :branch, "production"
 
 set :rails_env, "production"
 before "deploy:wipe_and_load", "deploy"

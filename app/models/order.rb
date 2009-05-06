@@ -1,15 +1,17 @@
 class Order < ActiveRecord::Base
   SHIPPING_METHODS = ['Ground','2nd Day','Overnight','International'].freeze
   SHIPPING_RATES = {
-    'Ground' =>         [Money.new(795),  Money.new(995),  Money.new(1495)],
-    '2nd Day' =>        [Money.new(2500), Money.new(3000),  Money.new(4000)],
-    'Overnight' =>      [Money.new(5000), Money.new(5500),  Money.new(6500)],
-    'International' =>  [Money.new(5000), Money.new(5500),  Money.new(6500)]
+    'Ground' =>         [Money.new(795),  Money.new(995),  Money.new(1495), Money.new(1795), Money.new(1995), Money.new(2495)],
+    '2nd Day' =>        [Money.new(1795),  Money.new(1995),  Money.new(2495), Money.new(2795), Money.new(2995), Money.new(3495)],
+    'Overnight' =>      [Money.new(2795),  Money.new(2995),  Money.new(3495), Money.new(3795), Money.new(3995), Money.new(4495)]
   }.freeze
   SHIPPING_RANGES = [
     [Money.new(0),Money.new(9999)],
     [Money.new(10000),Money.new(19999)],
-    [Money.new(20000),Money.new(29999)]
+    [Money.new(20000),Money.new(29999)],
+    [Money.new(30000),Money.new(39999)],
+    [Money.new(40000),Money.new(49999)],
+    [Money.new(50000),Money.new(50000000)]
   ].freeze
   include FormatsErrors
   belongs_to :user
