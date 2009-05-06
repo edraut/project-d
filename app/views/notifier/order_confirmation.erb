@@ -1,0 +1,32 @@
+Dear <%= @order.billing_address.full_name %>,
+
+Thank you for your order at Mad Racing MX! Here are the details.
+You can always view your full order details at http://madracingmx.com/orders/<%= @order.id %>
+
+Order Reference Number: <%= @order.id %>
+
+<% for order_item in @order.order_items -%>
+<% if order_item.product_option_vehicle_model_id -%>
+<% option_string = order_item.product_option_vehicle_model.vehicle_model.name + ' ' + order_item.product_option_vehicle_model.year_begin.to_s + '-' + order_item.product_option_vehicle_model.year_end.to_s -%>
+<% elsif !order_item.product_option.name.blank? -%>
+<% option_string =  order_item.product_option.name -%>
+<% else -%>
+<% option_string =  order_item.product_option.id.to_s -%>
+<% end -%>
+<%= order_item.quantity.to_s + ' x ' + order_item.product_option.product.name + ' (' + option_string + ')' %>
+<% end -%>
+
+Shipping Address
+
+<%= @order.shipping_address.full_name %>
+<%= @order.shipping_address.address_1 %>
+<% unless @order.shipping_address.address_2.blank? -%>
+<%= @order.shipping_address.address_2 %>
+<% end -%>
+<%= @order.shipping_address.city %>
+<%= @order.shipping_address.state %>
+<%= @order.shipping_address.zipcode %>
+
+Thank you!
+Mad Racing MX
+

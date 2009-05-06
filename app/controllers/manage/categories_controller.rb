@@ -15,6 +15,10 @@ class Manage::CategoriesController < Manage::ApplicationController
         @owner_class_name = @owner_class.name
         @owner = @owner_class.find(params[:owner_id]) if params[:owner_id]
       end
+      if params[:category_id] and @parent and @owner
+        @category = Category.find(params[:category_id].to_i)
+        @category = nil unless @owner.categories.include? @category and @parent.children.include? @category
+      end
       if params[:category_area]
         @category = @parent
         render :template => 'manage/categories/subcategories'

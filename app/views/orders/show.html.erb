@@ -1,0 +1,20 @@
+<div id="order_id" class="span-14_75 last margin-top large bold">
+	Your Order Reference Number: <%= @order.id %>
+</div>
+<%= render :partial => 'carts/summary', :object => @order %>
+<div class="span-14_75 last margin-top">
+	<div id="billing_address" class="span-7 extra-margin-right">
+		<h2>Billing Address</h2>
+		<% billing_address = BillingAddress.create_or_find_by_order_id(@order.id) %>
+		<div id="address_<%= billing_address.id %>" class="span-7 last border-bottom margin-bottom">
+			<%= render :partial => 'addresses/show', :object => @order.billing_address %>
+		</div>
+	</div>
+	<div id="shipping_address" class="span-7">
+		<h2>Shipping Address</h2>
+		<% shipping_address = ShippingAddress.create_or_find_by_order_id(@order.id) %>
+		<div id="address_<%= shipping_address.id %>" class="span-7 last border-bottom margin-bottom">
+			<%= render :partial => 'addresses/show', :object => @order.shipping_address %>
+		</div>
+	</div>
+</div>

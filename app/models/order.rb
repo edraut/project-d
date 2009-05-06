@@ -83,7 +83,7 @@ class Order < ActiveRecord::Base
   end
   
   def ready_to_charge?
-    if self.order_items.any? and self.billing_address and self.shipping_address and (self.billing_address.status == 'live') and (self.shipping_address.status == 'live')
+    if self.order_items.any? and self.billing_address and self.shipping_address and (self.billing_address.status == 'live') and (self.shipping_address.status == 'live') and !self.email.blank?
       return true
     else
       return false

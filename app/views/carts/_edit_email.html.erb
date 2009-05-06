@@ -1,0 +1,16 @@
+<% form_for :cart, @cart,
+	:url => cart_url(:id => @cart.id, :_method => :put),
+	:html => {
+		:ajax_binding => 'ajax_form',
+		:ajax_success_element => "order_email_container",
+		:ajax_method => 'PUT',
+		:ajax_success_callback => "$('#order_email_container').removeClass('editing');",
+		:ajax_error_element => "order_email_container",
+		:id => "edit_order_email_form"
+		}	do |f| %>
+
+	<div class="span-14_75 last field-label margin-bottom"> We require an email address. We only use this address to send you correspondence regarding this order.</div>
+	<div class="span-4 field-label">Email Address</div>
+	<div class="span-4"><%= f.text_field :email, :class => 'span-4 last' %></div>
+	<div class="span-4"><%= f.submit 'save email' %></div>
+<% end %>

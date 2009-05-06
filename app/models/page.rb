@@ -1,5 +1,5 @@
 class Page < ActiveRecord::Base
-  has_many :posts, :as => :postable, :order => 'created_at desc'
+  has_many :posts, :as => :postable, :order => 'created_at desc', :dependent => :destroy
   
   def self.display_name
     'Page'
@@ -7,9 +7,7 @@ class Page < ActiveRecord::Base
   
   def self.post_quantity_for(page_name)
     case page_name
-    when 'Home'
-      1
-    when 'About Us'
+    when 'Home','About Us','Policies','Contact Us'
       1
     when 'News'
       100000

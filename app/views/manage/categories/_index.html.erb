@@ -1,0 +1,6 @@
+<% product = index %>
+<% for category in product.categories %>
+	<%= render :partial => 'manage/categories/edit_from_product', :object => category, :locals => {:product => product} %>
+<% end %>
+
+<%= render :partial => 'manage/categories/new_from_product', :locals => {:product => product} %>

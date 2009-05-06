@@ -1,0 +1,35 @@
+<% this_index = product.categories.length %>
+<div class="span-8 last">
+	<div class="span-4 field-label">
+		<span class="orange">new</span> category <%= this_index + 1 %>
+	</div>
+	<div class="span-4 last">
+	&nbsp;
+	</div>
+</div>
+<div class="span-8 last">
+	<%= select_tag "top_level_category_#{this_index}", options_for_select( [['Select a Category',nil]] + Category.top_level.map{|c| [c.name,c.id]}), :class => 'select_large', :ui_binding => 'top_level_category', :id => "top_level_category_#{this_index}", :ui_id => "#{this_index}" %><br/>
+</div>
+<div class="span-8 last border-bottom">
+	<div class="span-4 field-label"><span class="orange">new</span> sub category <%= this_index + 1 %></div>
+	<div id="sub_category_<%= this_index %>">
+	</div>
+</div>
+<% javascript_tag do %>
+$(document).ready(function(){
+	$("#top_level_category_<%= this_index %>").change(function(e){
+		loadSubCategorySelect($(e.target).val(),$(e.target).attr('ui_id'));
+	});
+	function loadSubCategorySelect(parent_val,parent_id){
+		$.ajax({
+			type: 'GET',
+			url: '<%= manage_categories_url %>',
+			data: { 'parent_id' : parent_val, 'owner_id' : '<%= product.id %>', 'owner_type' : 'Product', 'ui_element' : 'select'},
+			success: function(data,textStatus){
+				$('#sub_category_' + parent_id).html(data);
+				bindAjaxEvents();
+			}
+		});
+	};
+});
+<% end %>

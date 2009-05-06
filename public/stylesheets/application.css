@@ -211,7 +211,7 @@ a.tiny {
 	background-color: #CACACA;
 	background-position: 0px 0px;
 	background-repeat: no-repeat;
-	line-height: 20px;
+	line-height: 17px;
 	text-align: right;
 	z-index: 10;
 	line-height: 2em;
@@ -220,6 +220,9 @@ a.tiny {
 	color: #2F2F2F;
 	font-size: 12px;
 	text-decoration: none;
+}
+.category-bar div a:hover {
+	color: #FFFFFF;
 }
 .content-frame {
 	background-color: #FFFFFF;
@@ -301,6 +304,10 @@ div.nav-spacer {
 div.sub-category {
 	width: 145px;
 	margin-right: 5px;
+}
+div.top-category, div.sub-category{
+	margin-bottom: 8px;
+	line-height: 17px;
 }
 a.category-selected{
 	color: #111111;

@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :orders
+
   map.resources :posts
 
   map.resources :orders
@@ -22,6 +24,8 @@ ActionController::Routing::Routes.draw do |map|
   map.cart '/cart', :controller => 'carts', :action => 'show'
   map.news '/news', :controller => 'pages', :action => 'show', :name => 'news'
   map.about '/about', :controller => 'pages', :action => 'show', :name => 'about'
+  map.about '/policies', :controller => 'pages', :action => 'show', :name => 'policies'
+  map.about '/contact', :controller => 'pages', :action => 'show', :name => 'contact'
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.register '/register', :controller => 'users', :action => 'create'

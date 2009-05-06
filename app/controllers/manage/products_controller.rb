@@ -58,6 +58,7 @@ class Manage::ProductsController < Manage::ApplicationController
   # PUT /manage_products/1
   # PUT /manage_products/1.xml
   def update
+    @editable_params[:category_ids].uniq! if @editable_params.has_key? :category_ids
     @product.send(params[:event]) if params.has_key? :event
     if params.has_key? :product and @product.update_attributes(@editable_params)
       @product_section = 'overview'
