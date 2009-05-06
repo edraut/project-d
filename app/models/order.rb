@@ -1,5 +1,4 @@
 class Order < ActiveRecord::Base
-<<<<<<< HEAD:app/models/order.rb
   SHIPPING_METHODS = ['Ground','2nd Day','Overnight','International'].freeze
   SHIPPING_RATES = {
     'Ground' =>         [Money.new(795),  Money.new(995),  Money.new(1495)],
@@ -12,8 +11,6 @@ class Order < ActiveRecord::Base
     [Money.new(10000),Money.new(19999)],
     [Money.new(20000),Money.new(29999)]
   ].freeze
-=======
->>>>>>> multicategory:app/models/order.rb
   include FormatsErrors
   belongs_to :user
   has_many :order_items, :dependent => :destroy
@@ -88,11 +85,7 @@ class Order < ActiveRecord::Base
   def update_inventory
     self.order_items.each do |order_item|
       product_option = order_item.product_option
-<<<<<<< HEAD:app/models/order.rb
-      if product_option.inventory_quantity > 0
-=======
       if product_option.inventory_quantity != nil and product_option.inventory_quantity > 0
->>>>>>> multicategory:app/models/order.rb
         product_option.inventory_quantity -= order_item.quantity
         product_option.save
       end
