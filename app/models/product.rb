@@ -1,7 +1,8 @@
 class Product < ActiveRecord::Base
   attr_accessor :dirty_index
   include FormatsErrors
-  belongs_to :category
+  has_many :category_products, :dependent => :destroy
+  has_many :categories, :through => :category_products
   belongs_to :manufacturer
   has_many :product_images, :dependent => :destroy, :order => 'position'
   has_many :product_options, :dependent => :destroy, :order => 'position'

@@ -102,22 +102,28 @@
 				</div>
 				<div class="nav-bar blue-background">
 					<div class="span-2 text-center <% if @nav_tab == 'home' %>nav-selected<% end %>">
-						<a href="/home">HOME</a>
+						<a href="/home" <% if @nav_tab == 'home' %>ui_binding="nav-selected"<% end %>>HOME</a>
 					</div>
-					<div class="span-2 text-center <% if @nav_tab == 'cart' %>nav-selected<% end %>">
-						<a href="/cart">MY CART</a>
+					<div class="span-2 text-center <% if @nav_tab == 'carts' %>nav-selected<% end %>">
+						<a href="/cart" <% if @nav_tab == 'carts' %>ui_binding="nav-selected"<% end %>>MY CART</a>
 					</div>
 					<div class="span-2 text-center <% if @nav_tab == 'news' %>nav-selected<% end %>">
-						<a href="/news">NEWS</a>
+						<a href="/news" <% if @nav_tab == 'news' %>ui_binding="nav-selected"<% end %>>NEWS</a>
 					</div>
 					<div class="span-2 text-center <% if @nav_tab == 'about' %>nav-selected<% end %>">
-						<a href="/about">ABOUT US</a>
+						<a href="/about" <% if @nav_tab == 'about' %>ui_binding="nav-selected"<% end %>>ABOUT US</a>
+					</div>
+					<div class="span-2 text-center <% if @nav_tab == 'policies' %>nav-selected<% end %>">
+						<a href="/policies" <% if @nav_tab == 'policies' %>ui_binding="nav-selected"<% end %>>POLICIES</a>
+					</div>
+					<div class="span-2_5 text-center <% if @nav_tab == 'contact' %>nav-selected<% end %>">
+						<a href="/contact" <% if @nav_tab == 'contact' %>ui_binding="nav-selected"<% end %>>CONTACT US</a>
 					</div>
 				</div>
 				<div class="nav-spacer"><img src="/images/nav_whiteback.gif"></div>
 				<div id="content-frame" class="content-frame">
 					<div class="content-frame-height">
-						<img src="/images/whiteback.gif" class="block">
+						&nbsp;
 					</div>
 					<div class="span-14_75 last content-frame-inner">
 		<% end %>
@@ -147,6 +153,12 @@
 		} else {
 			$('#category-bar').css({'height' : new_height + 'px'});
 		}
+		$(".nav-bar div a:not(\"[ui_binding='nav-selected']\")").mouseover(function(e){
+			$(e.target).parent().css({ 'background' : "url(/images/button.jpg)"})
+		})
+		$(".nav-bar div a:not(\"[ui_binding='nav-selected']\")").mouseout(function(e){
+			$(e.target).parent().css({ 'background' : "transparent"})
+		})
 	});
 	<% end %>
 </body>

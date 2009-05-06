@@ -33,6 +33,13 @@
 		</div>
 	</div>
 </div>
+<div id="order_email_container" class="span-14_75 last margin-bottom border-bottom">
+	<% if @cart.email.blank? %>
+		<%= render :partial => 'edit_email' %>
+	<% else %>
+		<%= render :partial => 'show_email' %>
+	<% end %>
+</div>
 <%= render :partial => 'summary', :object => @cart %>
 &nbsp;<br/>
 <div id="place_order" class="span-14_75 last margin-top border-top" <% unless @cart.ready_to_charge? %> style="display: none;" <% end %>>

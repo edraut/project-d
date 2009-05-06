@@ -8,6 +8,9 @@ class CartsController < ApplicationController
       totals_data = {:shipping_total => @cart.shipping_total.format, :total => @cart.total.format, :subtotal => @cart.subtotal.format, :sales_tax => @cart.taxable? ? @cart.sales_tax.format : '$0.00'}
       render :json => totals_data and return
     end
+    if params[:show_email]
+      render :partial => 'show_email' and return
+    end
     if params[:stage]
       case params[:stage]
       when 'billing_info'
@@ -17,8 +20,11 @@ class CartsController < ApplicationController
     end
   end
 
-  # GET /carts/new
-
+  def edit
+    if params[:show_email]
+      render :partial => 'edit_email' and return
+    end
+  end
   # PUT /carts/1
   # PUT /carts/1.xml
   def update
@@ -61,6 +67,7 @@ class CartsController < ApplicationController
       response = gateway.purchase(@cart.total, credit_card, options)
       if response.success?
         @cart.accept_card
+        Notifier.deliver_order_confirmation(@cart)
         session[:cart_id] = nil
         render :template => 'carts/card_accepted' and return
       else
@@ -68,6 +75,12 @@ class CartsController < ApplicationController
         @cart.gateway_status_message = response.message
         flash[:error] = "The credit card processor rejected the transaction. Here's the reason they gave-- #{response.message}"
         render :template => 'carts/billing_info' and return
+      end
+    elsif params.has_key? :cart and params[:cart].has_key? :email
+      if @cart.update_attributes(params[:cart])
+        render :partial => 'show_email' and return
+      else
+        render :partial => 'edit_email', :status => 409 and return
       end
     else
       @cart.update_attributes(params[:cart]) || success = false
@@ -82,7 +95,9 @@ class CartsController < ApplicationController
   # DELETE /carts/1
   # DELETE /carts/1.xml
   def destroy
-    @cart.destroy
+    if @cart.cart?
+      @cart.destroy
+    end
     session[:cart_id] = nil
     redirect_to cart_url
   end

@@ -40,7 +40,9 @@ class Manage::PostsController < Manage::ApplicationController
   # PUT /manage_posts/1
   # PUT /manage_posts/1.xml
   def update
-
+    if params.has_key? :image and params[:image] == 'delete'
+      @post.image = nil
+    end
     if @post.update_attributes(params[:post])
       render :template => 'manage/posts/index' and return
     else

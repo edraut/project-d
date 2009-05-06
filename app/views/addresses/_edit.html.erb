@@ -28,7 +28,7 @@
 		</div>
 		<div class="span-1">
 			<%= address.first_error_on :middle_initial %>
-			<%= f.text_field :middle_initial, :class => 'span-1' %>
+			<%= f.text_field :middle_initial, :class => 'span-1 last' %>
 		</div>
 		<div class="span-3 last text-right">
 			<%= address.first_error_on :last_name %>
@@ -54,7 +54,7 @@
 		</div>
 	</div>
 	<div class="span-7 last">
-		<div class="span-3">
+		<div class="span-4">
 			<%= address.first_error_on :address_2 %>
 			<%= f.text_field :address_2, :class => 'span-4' %>
 		</div>
@@ -79,28 +79,26 @@
 	</div>
 	<div class="span-7 last">
 		<div class="span-4">
-			Country
+			Alaska, Hawaii, and international orders please <%= link_to 'contact us', contact_url %>.
 		</div>
 		<div class="span-3 last text-right">
-			State / Provence
-		</div>
-	</div>
-	<div class="span-7 last">
-		<div class="span-4">
-			<%= address.first_error_on :country_id %>
-			<%= f.select :country_id, Country.sorted.map{|c| [c.name,c.id]}, {}, :class => 'span-4', :id => "country_select_#{address.id}" %>
-		</div>
-		<div id="state_<%= address.id %>" class="span-3 last text-right">
+			<div class="span-3 last text-right">State</div>
+			<div id="state_<%= address.id %>" class="span-3 last text-right">
+				<%= address.first_error_on :state %>
+				<%= select_tag 'address[state]', options_for_select(Address::STATES,address.state), :class => 'span-3' %>
 
+			</div>
 		</div>
 	</div>
-	<div class="span-3 last">
+	<div class="span-7 last margin-top">
+	<div class="span-3 prepend-4 text-right last">
 		<%= f.hidden_field :order_id %>
 		<% if address.status == 'live' %>
 			<%= f.submit :update %>
 		<% else %>
 			<%= f.submit :add %>
 		<% end %>
+	</div>
 	</div>
 <% end %>
 <div id="non_usa_state_<%= address.id %>" class="span-3 last text-right" style="display: none;">

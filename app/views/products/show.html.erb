@@ -1,7 +1,7 @@
 <div class="span-14_75 last">
 	<h2><%= @product.name %></h2>
 </div>
-<div class="span-14_75">
+<div class="span-14_75 margin-bottom">
 	<div class="span-10">
 		<%= link_to image_tag(@product.product_images.first.image.url(:large)) %>
 	</div>
@@ -60,7 +60,7 @@
 		<% end %>
 		</div>
 </div>
-<div class="span-14_75">
+<div class="span-14_75 margin-top">
 	<div class="span-4">
 		<% for product_image in @product.product_images[1..-1] %>
 			<div class="span-4 last margin-top">

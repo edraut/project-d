@@ -15,31 +15,7 @@
 		<%= product.first_error_on :description %>
 		<%= f.text_area :description, :class => 'textarea-8' %><br/>
 	</div>
-	<div class="span-8 last">
-		<div class="span-4 field-label">
-			category
-		</div>
-		<div class="span-4 last">
-		<%# link_to '(add a new category)', new_manage_category_url(:ui_element => 'select_option'), 
-			:ajax_binding => 'ajax_link',
-			:ajax_method => 'GET',
-			:ajax_success_element => 'new_category',
-			:ajax_success_callback => "$('#new_category_link').hide();",
-			:id => 'new_category_link',
-			:class => 'quiet tiny'
-		%>&nbsp;
-		</div>
-	</div>
-	<div class="span-8 last border-bottom">
-		<%= product.first_error_on :category_id %>
-		<%= select_tag 'top_level_category', options_for_select([['Select Top Level Category',nil]] + Category.top_level.map{|c| [c.name,c.id]}, product.category ? product.category.parent_id : nil), :class => 'select_large' %><br/>
-		<div id="new_category"></div>
-	</div>
-	<div class="span-8 last border-bottom">
-		<div class="span-4 field-label">sub category</div>
-		<div id="sub_category">
-		</div>
-	</div>
+	<%= render :partial => 'manage/categories/index', :object => product %>
 	<div class="span-8 last border-bottom">
 		<div class="span-8 last field-label">shipping prices</div>
 		<div class="span-8 last">
@@ -98,23 +74,4 @@
 	</div>
 </div>
 	<%# render :partial => 'textile_manual' %>
-<% end %>
-<% javascript_tag do %>
-$(document).ready(function(){
-	$('#top_level_category').change(function(e){
-		loadSubCategorySelect($(e.target).val());
-	});
-	function loadSubCategorySelect(parent_val){
-		$.ajax({
-			type: 'GET',
-			url: '<%= manage_categories_url %>',
-			data: { 'parent_id' : parent_val,<%= product.new_record? ? '' : "'owner_id' : #{product.id}, " %> 'owner_type' : 'Product', 'ui_element' : 'select'},
-			success: function(data,textStatus){
-				$('#sub_category').html(data);
-				bindAjaxEvents();
-			}
-		});
-	};
-	loadSubCategorySelect('<%= product.category ? product.category.parent.id : nil %>');
-});
 <% end %>

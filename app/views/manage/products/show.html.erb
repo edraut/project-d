@@ -56,18 +56,21 @@
 		</div>
 		<div class="span-2">&nbsp;</div>
 		<div class="span-6  border-all last">
+			<% for category in @product.categories %>
+			<% this_index = @product.categories.index category %>
 			<div class="span-3 text-right field-label">
-				category:
+				category: <%= this_index + 1 %>
 			</div>
 			<div class="span-3 last">
-				<%= @product.category.parent.name %><br/>
+				<%= category.parent.name %><br/>
 			</div>
 			<div class="span-3 text-right field-label">
-				sub category:
+				sub category: <%= this_index + 1 %>
 			</div>
 			<div class="span-3 last">
-				<%= @product.category.name %><br/>
+				<%= category.name %><br/>
 			</div>
+			<% end %>
 			<div class="span-3 text-right">
 				&nbsp;
 			</div>

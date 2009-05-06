@@ -1,4 +1,5 @@
 class Order < ActiveRecord::Base
+<<<<<<< HEAD:app/models/order.rb
   SHIPPING_METHODS = ['Ground','2nd Day','Overnight','International'].freeze
   SHIPPING_RATES = {
     'Ground' =>         [Money.new(795),  Money.new(995),  Money.new(1495)],
@@ -11,6 +12,8 @@ class Order < ActiveRecord::Base
     [Money.new(10000),Money.new(19999)],
     [Money.new(20000),Money.new(29999)]
   ].freeze
+=======
+>>>>>>> multicategory:app/models/order.rb
   include FormatsErrors
   belongs_to :user
   has_many :order_items, :dependent => :destroy
@@ -85,7 +88,11 @@ class Order < ActiveRecord::Base
   def update_inventory
     self.order_items.each do |order_item|
       product_option = order_item.product_option
+<<<<<<< HEAD:app/models/order.rb
       if product_option.inventory_quantity > 0
+=======
+      if product_option.inventory_quantity != nil and product_option.inventory_quantity > 0
+>>>>>>> multicategory:app/models/order.rb
         product_option.inventory_quantity -= order_item.quantity
         product_option.save
       end
@@ -94,7 +101,7 @@ class Order < ActiveRecord::Base
   end
   
   def ready_to_charge?
-    if self.order_items.any? and self.billing_address and self.shipping_address and (self.billing_address.status == 'live') and (self.shipping_address.status == 'live')
+    if self.order_items.any? and self.billing_address and self.shipping_address and (self.billing_address.status == 'live') and (self.shipping_address.status == 'live') and !self.email.blank?
       return true
     else
       return false
@@ -161,4 +168,5 @@ class Order < ActiveRecord::Base
   
   CARD_MONTHS = ['01','02','03','04','05','06','07','08','09','10','11','12'].freeze
   CARD_YEARS = Array.new(8) {|i| (i + Date.today.year).to_s}
+  SHIPPING_METHODS = ['Ground','2nd Day','Overnight'].freeze
 end

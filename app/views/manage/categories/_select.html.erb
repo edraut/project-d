@@ -1,4 +1,4 @@
-<% these_options = @categories.any? ? ([['Select a category',nil]] + @categories.map{|category| [category.name,category.id]}) : [['-',nil]] %>
+<% these_options = @categories.any? ? ([[( @category ? 'Remove This Category' : 'Select a Category'),nil]] + @categories.map{|category| [category.name,category.id]}) : [['-',nil]] %>
 <% if @parent %>
 <%	url_params = {:parent_id => @parent.id}
  		if @owner
@@ -17,7 +17,7 @@
 <div class="span-4 last">&nbsp;</div>
 <% end %>
 <div class="span-8 last">
-<%= select_tag @owner_class_name.underscore + '[category_id]', options_for_select(these_options,(@owner and @owner.category) ? @owner.category.id : nil) %>
+<%= select_tag @owner_class_name.underscore + '[category_ids][]', options_for_select(these_options,(@category ? @category.id : nil)) %>
 <% if @parent %>
 <br/>
 <div id="new_subcategory"></div>

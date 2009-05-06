@@ -14,6 +14,10 @@ class PagesController < ApplicationController
       page_name = 'About Us'
     when 'news'
       page_name = 'News'
+    when 'policies'
+      page_name = 'Policies'
+    when 'contact'
+      page_name = 'Contact Us'
     end
     @page = Page.find_by_name(page_name)
     @posts = @page.posts.published.paginate(:page => params[:page], :per_page => 4) if page_name == 'News'

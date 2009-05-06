@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090429184843) do
+ActiveRecord::Schema.define(:version => 20090506214305) do
 
   create_table "addresses", :force => true do |t|
     t.string   "type"
@@ -39,9 +39,16 @@ ActiveRecord::Schema.define(:version => 20090429184843) do
     t.integer "parent_id"
     t.integer "position"
     t.boolean "vehicle_filter", :default => false
+    t.text    "vectors"
   end
 
   add_index "categories", ["name"], :name => "index_categories_on_name"
+  add_index "categories", ["vectors"], :name => "categories_fts_vectors_index"
+
+  create_table "category_products", :force => true do |t|
+    t.integer "category_id"
+    t.integer "product_id"
+  end
 
   create_table "color_groups", :force => true do |t|
     t.string "name"

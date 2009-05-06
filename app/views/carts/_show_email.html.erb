@@ -1,0 +1,14 @@
+<div class="span-4">Email Address</div>
+<div class="span-4"><%= @cart.email %></div>
+<div class="span-4">
+	<%= link_to 'edit', edit_cart_url + '?show_email=true', 
+		:ajax_binding => 'ajax_link',
+		:ajax_success_element => "order_email_container",
+		:ajax_method => 'GET',
+		:ajax_success_callback => "$('#order_email_container').addClass('editing');",
+		:id => "edit_order_email_link"
+	 %>
+</div>
+<% javascript_tag do %>
+	handleCCForm();
+<% end %>

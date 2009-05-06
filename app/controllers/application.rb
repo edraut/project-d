@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_nav_area
   before_filter :set_nav_tab
+  filter_parameter_logging :credit_card_number, :credit_card_month, :credit_card_year, :credit_card_cvv
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
   # protect_from_forgery # :secret => '43c771a06b224b59eadad4cc84ca056e'
@@ -37,11 +38,12 @@ class ApplicationController < ActionController::Base
       end
       product_vectors = ProductVector.find_by_tsearch(params[:search_terms], tsearch_params.merge(prod_vect_tsearch_params).merge(:limit => 128))
       vehicle_models = VehicleModel.find_by_tsearch(params[:search_terms], :include => {:product_option_vehicle_models => {:product_option => :product}}, :limit => 128)
-      product_ids = product_vectors.map{|pv| pv.product_id} + vehicle_models.map{|vm| vm.product_option_vehicle_models.map{|povm| (state == 'any' or povm.product_option.product.state == state) ? povm.product_option.product_id : nil}}.flatten.compact
+      categories = Category.find_by_tsearch(params[:search_terms], :include => :products, :limit => 128)
+      product_ids = product_vectors.map{|pv| pv.product_id} + vehicle_models.map{|vm| vm.product_option_vehicle_models.map{|povm| (state == 'any' or povm.product_option.product.state == state) ? povm.product_option.product_id : nil}}.flatten.compact + categories.map{|cat| (cat.children.any?) ? cat.children.map{|cat2| (cat2.products.map{|prod| (state == 'any' or prod.state == state) ? prod.id : nil})} : (cat.products.map{|prod| (state == 'any' or prod.state == state) ? prod.id : nil})}.flatten.compact
       if product_ids.any?
         @products = Product.paginate(product_ids.uniq, :per_page => limit, :page => params[:page])
       else
-        @products = Product.send(state).paginate(:per_page => limit, :page => params[:page], :order => 'random()', :limit => 128)
+        @products = Product.paginate(:conditions => ["1 = 2",nil], :per_page => limit, :page => params[:page])
       end
     else
       if params[:category_id] or params[:vehicle_make_id]
@@ -55,15 +57,16 @@ class ApplicationController < ActionController::Base
         unless params[:category_id].blank?
           @category = Category.find(params[:category_id].to_i)
           # @vehicle_makes = VehicleMake.find_by_sql(["select distinct(v.*) from vehicle_makes v join product_option_vehicle_makes povma on povma.vehicle_make_id = v.id join product_options po on po.id = povma.product_option_id join products p on p.id = po.product_id join categories c on p.category_id = c.id where p.category_id = :category_id or c.parent_id = :category_id order by v.name",{:category_id => @category.id}])
-          @vehicle_makes = VehicleMake.find(:all, :select => "distinct(vehicle_makes.*)", :joins => {:product_option_vehicle_makes => {:product_option => {:product => :category}}}, :conditions => ["categories.id = :category_id or categories.parent_id = :category_id",{:category_id => @category.id}])
+          @vehicle_makes = VehicleMake.find(:all, :select => "distinct(vehicle_makes.*)", :joins => {:product_option_vehicle_makes => {:product_option => {:product => :categories}}}, :conditions => ["categories.id = :category_id or categories.parent_id = :category_id",{:category_id => @category.id}])
           @vehicle_models = {}
           for vehicle_make in @vehicle_makes
-            @vehicle_models[vehicle_make.id] = vehicle_make.vehicle_models.find(:all, :select => "distinct(vehicle_models.*)", :joins => {:product_option_vehicle_models => {:product_option => {:product => :category}}}, :conditions => ["categories.id = :category_id or categories.parent_id = :category_id",{:category_id => @category.id}])
+            @vehicle_models[vehicle_make.id] = vehicle_make.vehicle_models.find(:all, :select => "distinct(vehicle_models.*)", :joins => {:product_option_vehicle_models => {:product_option => {:product => :categories}}}, :conditions => ["categories.id = :category_id or categories.parent_id = :category_id",{:category_id => @category.id}])
           
             # @vehicle_models[vehicle_make.id] = VehicleModel.find_by_sql(["select distinct(v.*) from vehicle_models v join product_option_vehicle_models povm on povm.vehicle_model_id = v.id join product_options po on po.id = povm.product_option_id join products p on p.id = po.product_id join categories c on p.category_id = c.id inner join vehicle_makes vm on vm.id = v.vehicle_make_id where p.category_id = :category_id or c.parent_id = :category_id and vm.id = :vehicle_make_id order by v.name",{:category_id => @category.id, :vehicle_make_id => vehicle_make.id}])
           end
-          sql_joins.push "inner join categories cc on products.category_id = cc.id"
-          sql_where.push "(products.category_id = :category_id or cc.parent_id = :category_id)"
+          sql_joins.push "inner join category_products cp on cp.product_id = products.id"
+          sql_joins.push "inner join categories cc on cp.category_id = cc.id"
+          sql_where.push "(cc.id = :category_id or cc.parent_id = :category_id)"
           sql_hash[:category_id] = @category.id
         end
         if !params[:vehicle_make_id].blank?
