@@ -1,5 +1,4 @@
 class Order < ActiveRecord::Base
-  SHIPPING_METHODS = ['Ground','2nd Day','Overnight','International'].freeze
   include FormatsErrors
   belongs_to :user
   has_many :order_items, :dependent => :destroy
@@ -149,4 +148,5 @@ class Order < ActiveRecord::Base
   
   CARD_MONTHS = ['01','02','03','04','05','06','07','08','09','10','11','12'].freeze
   CARD_YEARS = Array.new(8) {|i| (i + Date.today.year).to_s}
+  SHIPPING_METHODS = ['Ground','2nd Day','Overnight'].freeze
 end

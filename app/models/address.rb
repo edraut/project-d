@@ -15,7 +15,7 @@ class Address < ActiveRecord::Base
     state :id_only do
     end
     state :live do
-      validates_presence_of :first_name, :last_name, :address_1, :city, :country_id
+      validates_presence_of :first_name, :last_name, :address_1, :city, :zipcode
     end
   end
   
