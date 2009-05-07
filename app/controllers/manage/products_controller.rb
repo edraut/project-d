@@ -66,7 +66,9 @@ class Manage::ProductsController < Manage::ApplicationController
       end
       render :nothing => true and return
     end
-    @editable_params[:category_ids].uniq! if @editable_params.has_key? :category_ids
+    if params.has_key? :product
+      @editable_params[:category_ids].uniq! if @editable_params.has_key? :category_ids
+    end
     @product.send(params[:event]) if params.has_key? :event
     if params.has_key? :product and @product.update_attributes(@editable_params)
       @product_section = 'overview'
