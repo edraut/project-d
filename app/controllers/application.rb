@@ -45,7 +45,7 @@ class ApplicationController < ActionController::Base
         tsearch_params_conditions_hash[:category_id] = @search_category.id
         prod_vect_tsearch_params[:joins] = [:product => :categories]
       end
-      tsearch_params[:conditions] = [tsearch_params_conditions_string.join(' and '),tsearch_params_conditions_hash]
+      tsearch_params[:conditions] = [tsearch_params_conditions_string.join(' and '),tsearch_params_conditions_hash] if (params[:category_id] and params[:category_id].to_i > 0) or state != 'any'
       product_vectors = ProductVector.find_by_tsearch(params[:search_terms], tsearch_params.merge(prod_vect_tsearch_params).merge(:limit => 128))
       vehicle_models = VehicleModel.find_by_tsearch(params[:search_terms], :include => {:product_option_vehicle_models => {:product_option => :product}}, :limit => 128)
       product_ids = product_vectors.map{|pv| pv.product_id} + vehicle_models.map{|vm| vm.product_option_vehicle_models.map{|povm| (state == 'any' or povm.product_option.product.state == state) ? povm.product_option.product_id : nil}}.flatten.compact
