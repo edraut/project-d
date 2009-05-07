@@ -4,8 +4,7 @@ class ProductVector < ActiveRecord::Base
   
   self.acts_as_tsearch :vectors => {
     :fields => {
-      'a' => {:columns => ['products.name'], :weight => 1},
-      'c' => {:columns => ['categories.name'], :weight => 0.6}
+      'a' => {:columns => ['products.name'], :weight => 1}
     },
     :tables => {
       :products => {
