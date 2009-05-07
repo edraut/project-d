@@ -13,7 +13,7 @@ class Manage::CategoriesController < Manage::ApplicationController
       if params[:owner_type]
         @owner_class = params[:owner_type].constantize
         @owner_class_name = @owner_class.name
-        @owner = @owner_class.find(params[:owner_id]) if params[:owner_id]
+        @owner = @owner_class.find(params[:owner_id]) if params[:owner_id] and params[:owner_id].to_i > 0
       end
       if params[:category_id] and @parent and @owner
         @category = Category.find(params[:category_id].to_i)
