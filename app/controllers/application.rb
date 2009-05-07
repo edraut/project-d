@@ -30,16 +30,25 @@ class ApplicationController < ActionController::Base
   
   def prepare_products(limit,state)
     if params[:search_terms]
+      @search_terms = params[:search_terms]
       tsearch_params = {}
       prod_vect_tsearch_params = {}
+      tsearch_params_conditions_string = []
+      tsearch_params_conditions_hash = {}
       unless state == 'any'
-        tsearch_params[:conditions] = ["products.state ='#{state}'",nil]
+        tsearch_params_conditions_string.push "products.state ='#{state}'"
         prod_vect_tsearch_params[:joins] = :product
       end
+      if params[:category_id] and params[:category_id].to_i > 0
+        @search_category = Category.find(params[:category_id])
+        tsearch_params_conditions_string.push "(categories.id = :category_id or categories.parent_id = :category_id)"
+        tsearch_params_conditions_hash[:category_id] = @search_category.id
+        prod_vect_tsearch_params[:joins] = [:product => :categories]
+      end
+      tsearch_params[:conditions] = [tsearch_params_conditions_string.join(' and '),tsearch_params_conditions_hash]
       product_vectors = ProductVector.find_by_tsearch(params[:search_terms], tsearch_params.merge(prod_vect_tsearch_params).merge(:limit => 128))
       vehicle_models = VehicleModel.find_by_tsearch(params[:search_terms], :include => {:product_option_vehicle_models => {:product_option => :product}}, :limit => 128)
-      categories = Category.find_by_tsearch(params[:search_terms], :include => :products, :limit => 128)
-      product_ids = product_vectors.map{|pv| pv.product_id} + vehicle_models.map{|vm| vm.product_option_vehicle_models.map{|povm| (state == 'any' or povm.product_option.product.state == state) ? povm.product_option.product_id : nil}}.flatten.compact + categories.map{|cat| (cat.children.any?) ? cat.children.map{|cat2| (cat2.products.map{|prod| (state == 'any' or prod.state == state) ? prod.id : nil})} : (cat.products.map{|prod| (state == 'any' or prod.state == state) ? prod.id : nil})}.flatten.compact
+      product_ids = product_vectors.map{|pv| pv.product_id} + vehicle_models.map{|vm| vm.product_option_vehicle_models.map{|povm| (state == 'any' or povm.product_option.product.state == state) ? povm.product_option.product_id : nil}}.flatten.compact
       if product_ids.any?
         @products = Product.paginate(product_ids.uniq, :per_page => limit, :page => params[:page])
       else

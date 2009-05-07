@@ -1,5 +1,5 @@
 <% for post in @posts %>
-	<div class="span-14_75 text-center"><h1 class="large bold"><%= post.title %></h1></div><br/>
+	<div class="span-14_75 text-center"><h1 class="large orange bold"><%= post.title %></h1></div><br/>
 	<%= image_tag(post.image.url(:full_width)) if post.image.exists? %><br/>
 	<%= RedCloth.new(post.body).to_html if post.body %><br/>
 <% end %>

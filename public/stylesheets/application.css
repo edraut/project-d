@@ -81,7 +81,7 @@ hr.heavy {
 .span-14_75 {
 	width: 580px;
 }
-.span-1_5, .span-1_75, .span-2_5, .span-3_5, .span-2_75, .span-3_75, .span-4_75, .span-13_75, .span-14_5, .span-14_75, .top-category, .sub-category, .feature_bar, .footer, .footer-cat-spacer {float:left;margin-right:10px;}
+.span-1_5, .span-1_75, .span-2_5, .span-3_5, .span-2_75, .span-3_75, .span-4_75, .span-13_75, .span-14_5, .span-14_75, .top-category, .sub-category, .feature_bar, .footer, .footer-cat-spacer, .ssl-centered, .auth-net-centered, .visa-centered, .visa-left, .auth-net-left, .ssl-left {float:left;margin-right:10px;}
 .text-right {
 	text-align: right;
 }
@@ -90,6 +90,9 @@ hr.heavy {
 }
 .text-center {
 	text-align: center;
+}
+.margin-auto {
+	margin: auto;
 }
 .highlight {
 	background-color: #ff8;
@@ -205,7 +208,7 @@ a.tiny {
 .category-bar {
 	padding: 10px 9px 10px 10px;
 	width: 140px;
-	height: 762px;
+	height: 1280px;
 	border-left: 1px solid #FFFFFF;
 	background: url('../images/category_bar.jpg');
 	background-color: #CACACA;
@@ -223,6 +226,36 @@ a.tiny {
 }
 .category-bar div a:hover {
 	color: #FFFFFF;
+}
+.visa-left {
+	width: 12px;
+	margin: 0;
+}
+div.visa-centered {
+	width: 116px;
+	margin-right: 12px;
+}
+div.ssl-left {
+	width: 34px;
+	margin: 0;
+}
+div.ssl-centered {
+/*	width: 108px;
+	padding-right: 32px;
+*/
+	width: 72px;
+	margin-right: 34px;
+}
+div.auth-net-left {
+	width: 25px;
+	margin: 0;
+}
+div.auth-net-centered {
+/*	width: 114px;
+	padding-left: 26px;
+*/
+	width: 90px;
+	margin-right: 25px;
 }
 .content-frame {
 	background-color: #FFFFFF;
