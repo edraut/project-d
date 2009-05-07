@@ -285,7 +285,7 @@ div.nav-spacer {
 	width: 1px;
 	padding: 0px;
 }
-.orange, a {
+.orange, a, div.special-group a {
 	color: #DF440A;
 }
 .blue, .blue a {
@@ -309,7 +309,7 @@ div.top-category, div.sub-category{
 	margin-bottom: 8px;
 	line-height: 17px;
 }
-a.category-selected{
+div a.category-selected{
 	color: #111111;
 	font-weight: bold;
 }

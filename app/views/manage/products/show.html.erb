@@ -19,7 +19,7 @@
 				</div>
 			<% end %>
 			<div class="span-8 last margin-bottom">
-					<% if @product.featured? %>
+				<% if @product.featured? %>
 						<div class="span-8 last text-center large bold" style="margin-bottom: 0;">
 							featured
 						</div>
@@ -32,6 +32,36 @@
 					</div>
 					<div class="span-8 last text-center">
 						Click here to <%= link_to 'feature it', manage_product_url(@product) + '?product[featured]=true', :method => :put %> on the homepage.
+					</div>
+				<% end %>
+				<% if @product.clearance? %>
+						<div class="span-8 last text-center large bold" style="margin-bottom: 0;">
+							clearance
+						</div>
+						<div class="span-8 last text-center">
+						 Click here to <%= link_to 'remove it', manage_product_url(@product) + '?product[clearance]=false', :method => :put %> from the clearance section.
+						</div>
+				<% else %>
+					<div class="span-8 last text-center large bold" style="margin-bottom: 0;">
+						not clearance
+					</div>
+					<div class="span-8 last text-center">
+						Click here to <%= link_to 'add it', manage_product_url(@product) + '?product[clearance]=true', :method => :put %> to the clearance section.
+					</div>
+				<% end %>
+				<% if @product.whats_new? %>
+						<div class="span-8 last text-center large bold" style="margin-bottom: 0;">
+							in "what's new?"
+						</div>
+						<div class="span-8 last text-center">
+						 Click here to <%= link_to 'remove it', manage_product_url(@product) + '?product[whats_new]=false', :method => :put %> from the what's new section.
+						</div>
+				<% else %>
+					<div class="span-8 last text-center large bold" style="margin-bottom: 0;">
+						not in "what's new?"
+					</div>
+					<div class="span-8 last text-center">
+						Click here to <%= link_to 'add it', manage_product_url(@product) + '?product[whats_new]=true', :method => :put %> to the what's new section.
 					</div>
 				<% end %>
 			</div>

@@ -3,9 +3,9 @@ class Manage::ProductsController < Manage::ApplicationController
   before_filter :prepare_params, :only => [:create,:update]
   before_filter :manage_money, :only => [:create,:update]
   def index
-    if params.has_key? :featured
-      @featured = true
-      @products = Product.paginate(:all, :conditions => {:featured => true}, :per_page => 25, :page => params[:page])
+    if params.has_key? :sortable
+      @sortable = params[:sortable]
+      @products = Product.send(@sortable).paginate(:all, :per_page => 25, :page => params[:page])
     else
       prepare_products(25,'any')
     end
@@ -58,6 +58,14 @@ class Manage::ProductsController < Manage::ApplicationController
   # PUT /manage_products/1
   # PUT /manage_products/1.xml
   def update
+    if params[:id].to_i == 0 and ['featured','clearance','whats_new'].include? params[:id]
+      @products = Product.send(params[:id])
+      @products.each do |product|
+        product.send(params[:id] + '_position=', params[params[:id]].index(product.id.to_s))
+        product.save
+      end
+      render :nothing => true and return
+    end
     @editable_params[:category_ids].uniq! if @editable_params.has_key? :category_ids
     @product.send(params[:event]) if params.has_key? :event
     if params.has_key? :product and @product.update_attributes(@editable_params)

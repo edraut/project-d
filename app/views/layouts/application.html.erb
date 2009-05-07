@@ -52,8 +52,14 @@
 						<div class="span-19 last"><div class="tagline-spacer">WE'RE MAD ABOUT GREAT SERVICE!</div></div>
 					</div>
 				</div>
-				<div id="category-bar" class="category-bar" >
+				<div id="category-bar" class="category-bar">
 					<div class="span-3_75">&nbsp;</div>
+					<div class="top-category special-group bold">
+						<%= link_to "WHAT'S NEW?", products_url + "?special_group=whats_new", :class => (@special_group == 'whats_new') ? 'category-selected' : '' %>
+					</div>
+					<div class="top-category special-group bold">
+						<%= link_to "CLEARANCE", products_url + "?special_group=clearance", :class => (@special_group == 'clearance') ? 'category-selected' : '' %>
+					</div>
 					<% if @category %>
 						<% top_category = @category.parent.nil? ? @category : @category.parent
 						%>

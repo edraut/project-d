@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090506214305) do
+ActiveRecord::Schema.define(:version => 20090507124702) do
 
   create_table "addresses", :force => true do |t|
     t.string   "type"
@@ -212,6 +212,11 @@ ActiveRecord::Schema.define(:version => 20090506214305) do
     t.integer  "international_price"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "clearance"
+    t.boolean  "whats_new"
+    t.integer  "featured_position"
+    t.integer  "clearance_position"
+    t.integer  "whats_new_position"
   end
 
   create_table "sessions", :force => true do |t|

@@ -2,7 +2,12 @@ class ProductsController < ApplicationController
   before_filter :get_product, :only => [:show,:edit,:update,:destroy]
 
   def index
-    prepare_products(16,'published')
+    if params.has_key? :special_group
+      @special_group = params[:special_group]
+      @products = Product.send(params[:special_group]).paginate(:per_page => 16, :page => params[:page])
+    else
+      prepare_products(16,'published')
+    end
   end
 
   # GET /products/1
