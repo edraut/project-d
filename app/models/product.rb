@@ -37,7 +37,6 @@ class Product < ActiveRecord::Base
     state :unpublished do
       validates_presence_of :name
       def validate
-        errors.add('category_id','You must select a category and subcategory for your product') unless category_id
       end
       def next_action
         'publish'
@@ -47,7 +46,6 @@ class Product < ActiveRecord::Base
     state :published do
       validates_presence_of :name
       def validate
-        errors.add('category_id','You must select a category and subcategory for your product') unless category_id
         errors.add_to_base('You must add at least one product option before you can publish') unless product_options.any?
         errors.add_to_base('You must add at least one image before you can publish') unless product_images.any?
       end
