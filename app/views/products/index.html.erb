@@ -7,7 +7,9 @@
 			<div class="span-3">make</div>
 			<div class="span-5">model</div>
 		<% end %>
+		<% if @used_exist %>
 		<div class="span-2">new/used</div>
+		<% end %>
 	</div>
 	<div class="span-14_75 last margin-bottom border-bottom">
 		<div class="span-1_5">&nbsp;</div>
@@ -18,10 +20,12 @@
 					<%= select_tag 'vehicle_make_id', options_for_select([['any',nil]] + @vehicle_makes.map{|vm| [vm.name,vm.id]},@vehicle_make ? @vehicle_make.id : nil), :id => 'vehicle_make_select', :class => 'span-3' %>
 				</div>
 				<div id="vehicle_model_select" class="span-5"></div>
-				<% end %>
-			<div id="used_filter" class="span-2">
-				<%= select_tag 'used', options_for_select([['any',nil],['new','new'],['used','used']],@used ? @used : nil) %>
-			</div>
+			<% end %>
+			<% if @used_exist %>
+				<div id="used_filter" class="span-2">
+					<%= select_tag 'used', options_for_select([['any',nil],['new','new'],['used','used']],@used ? @used : nil) %>
+				</div>
+			<% end %>
 			<div class="span-2_5 last"><%= submit_tag 'Browse' %></div>
 		<% end %>
 	</div>
