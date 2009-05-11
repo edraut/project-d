@@ -94,7 +94,15 @@ class ApplicationController < ActionController::Base
           sql_where.push "(povmo.vehicle_model_id = :vehicle_model_id)"
           sql_hash[:vehicle_model_id] = @vehicle_model.id
         end
+        @used = params[:used]
+        case params[:used]
+        when 'used'
+          sql_where.push "products.new = 'f'"
+        when 'new'
+          sql_where.push "products.new = 't'"
+        end
         @products = Product.paginate :joins => sql_joins.join(' '), :conditions => [sql_where.join(' and '),sql_hash], :include => :product_images, :page => params[:page], :per_page => limit, :order => 'products.name, product_images.position'
+        @used_exist = @products.detect{|x| !x.new }
       else
         @products = Product.send(state).paginate(:per_page => limit, :page => params[:page], :order => :name)
       end
