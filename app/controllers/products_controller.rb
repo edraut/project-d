@@ -25,6 +25,7 @@ class ProductsController < ApplicationController
     if !@vehicle_models.keys.any? and @product.product_options.in_stock.length > 1
       @product_options = @product.product_options.in_stock
     end
+    @page_title = @product.name
   end
 
 

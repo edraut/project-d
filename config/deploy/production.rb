@@ -24,3 +24,13 @@ task :export_fixtures, :roles => :db do
     get "#{deploy_to}/current/db/fixtures/#{fixture.to_s}.yml", File.join(File.dirname(__FILE__),'..','..','db','fixtures',fixture.to_s + '.yml')
   end
 end
+namespace :sitemap do
+
+  desc "Copy the sitemap files after deploy"
+  task :copy_sitemap, :roles => :app do
+    puts "copying Rails sitemap files"
+    sudo "cp #{previous_release}/public/sitemap.xml #{current_release}/public/sitemap.xml"
+  end
+
+  after :deploy, 'sitemap:copy_sitemap'
+end

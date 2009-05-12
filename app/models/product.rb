@@ -69,7 +69,11 @@ class Product < ActiveRecord::Base
     self.dirty_index = self.name_changed?
     return true
   end
-  
+
+  def to_param
+    "#{id}-#{PermalinkFu.escape(name)}"
+  end
+    
   def update_vector_row
     if self.dirty_index
       self.product_vector ||= ProductVector.new(:product_id => self.id)
