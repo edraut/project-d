@@ -51,6 +51,9 @@ hr.heavy {
 .textfield-5 {
 	width: 184px;
 }
+.span_5 {
+	width: 20px;
+}
 .span-1_5 {
 	width: 50px;
 }
@@ -81,7 +84,7 @@ hr.heavy {
 .span-14_75 {
 	width: 580px;
 }
-.span-1_5, .span-1_75, .span-2_5, .span-3_5, .span-2_75, .span-3_75, .span-4_75, .span-13_75, .span-14_5, .span-14_75, .top-category, .sub-category, .feature_bar, .footer, .footer-cat-spacer, .ssl-centered, .auth-net-centered, .visa-centered, .visa-left, .auth-net-left, .ssl-left {float:left;margin-right:10px;}
+.span_5, .span-1_5, .span-1_75, .span-2_5, .span-3_5, .span-2_75, .span-3_75, .span-4_75, .span-13_75, .span-14_5, .span-14_75, .top-category, .sub-category, .feature_bar, .footer, .footer-cat-spacer, .ssl-centered, .auth-net-centered, .visa-centered, .visa-left, .auth-net-left, .ssl-left {float:left;margin-right:10px;}
 .text-right {
 	text-align: right;
 }

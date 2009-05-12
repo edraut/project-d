@@ -29,7 +29,7 @@ namespace :sitemap do
   desc "Copy the sitemap files after deploy"
   task :copy_sitemap, :roles => :app do
     puts "copying Rails sitemap files"
-    sudo "cp #{previous_release}/public/sitemap.xml #{current_release}/public/sitemap.xml"
+    run("cp #{previous_release}/public/sitemap.xml #{current_release}/public/sitemap.xml")
   end
 
   after :deploy, 'sitemap:copy_sitemap'
