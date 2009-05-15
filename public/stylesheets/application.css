@@ -1,7 +1,8 @@
 body {
-	background: url('../images/background.jpg');
-	background-repeat: no-repeat;
-	background-color: #FF5008;
+	background: url('../images/tiled-background.jpg');
+	background-repeat: repeat;
+/*	background-color: #FF5008;*/
+	background-color: #000000;
 	background-attachment: fixed;
 	margin-bottom: 0px;
 }
