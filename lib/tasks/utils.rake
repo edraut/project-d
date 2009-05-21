@@ -19,7 +19,7 @@ namespace :utils do
           xml.changefreq "weekly"
           xml.priority 0.95
         end
-        Product.all.each do |product|
+        Product.published.each do |product|
           xml.url do
             xml.loc product_url(product)
             xml.lastmod product.updated_at.xmlschema
