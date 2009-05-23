@@ -19,6 +19,16 @@ namespace :utils do
           xml.changefreq "weekly"
           xml.priority 0.95
         end
+        Category.all.each do |category|
+          if (category.products.any? or (category.children.any? and category.children.detect{|child| child.products.any?}))
+            xml.url do
+              xml.loc products_url + "?category_id=#{category.id}"
+              xml.lastmod Time.local(Time.now.year,Time.now.month,Time.now.day - 5).xmlschema
+              xml.changefreq "weekly"
+              xml.priority 0.5
+            end
+          end
+        end 
         Product.published.each do |product|
           xml.url do
             xml.loc product_url(product)
