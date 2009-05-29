@@ -303,4 +303,24 @@ namespace :db do
       end
     end
   end
+  task :clean_mountain => :environment do
+    # Product.find(15, :include => {:product_options => :product_option_vehicle_models}).each do |product|
+product =      Product.find(15, :include => {:product_options => :product_option_vehicle_models})
+      povms = product.product_options.map{|po| po.product_option_vehicle_models}.flatten
+      list = {}
+      povms.each do |povm|
+        list[povm.vehicle_model_id] ||= {}
+        list[povm.vehicle_model_id][povm.year_begin] ||= []
+        list[povm.vehicle_model_id][povm.year_begin].push povm.id
+      end
+      list.each do |model, year_hash|
+        begin_years = year_hash.keys.select{|year| year_hash[year].length > 1}
+        begin_years.each do |begin_year|
+          year_hash[begin_year][1..-1].each do |povmid|
+            ProductOptionVehicleModel.find(povmid).destroy
+          end
+        end
+      end
+    # end
+  end
 end
