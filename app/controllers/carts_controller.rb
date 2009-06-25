@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-  before_filter :get_cart, :only => [:show,:edit,:update,:destroy]
+  before_filter :get_cart, :only => [:show,:edit,:update,:destroy,:checkout_paypal]
 
   # GET /carts/1
   # GET /carts/1.xml
@@ -92,6 +92,12 @@ class CartsController < ApplicationController
     end
   end
 
+  def checkout_paypal
+  end
+  
+  def paypal_ipn
+  end
+  
   # DELETE /carts/1
   # DELETE /carts/1.xml
   def destroy

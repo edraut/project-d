@@ -86,7 +86,7 @@
 			<div id="state_<%= address.id %>" class="span-3 last text-right">
 				<%= address.first_error_on :state %>
 				<%= select_tag 'address[state]', options_for_select(Address::STATES,address.state), :class => 'span-3' %>
-
+				<%= f.hidden_field :country_id, :value => '465' %>
 			</div>
 		</div>
 	</div>

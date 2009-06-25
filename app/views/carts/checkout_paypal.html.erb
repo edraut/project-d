@@ -1,0 +1,41 @@
+<HTML>
+	<BODY ONLOAD="window.document.form1.submit();">
+			<FORM NAME="form1" ACTION="https://www.paypal.com/cgi-bin/webscr" METHOD="post" ONLOAD="this.submit();">
+			<INPUT TYPE="hidden" NAME="cmd" VALUE="_cart">
+		  <INPUT TYPE="hidden" NAME="upload" VALUE="1">
+			<INPUT TYPE="hidden" NAME="lc" VALUE="US">
+			<INPUT TYPE="hidden" NAME="currency_code" VALUE="USD">
+			<INPUT TYPE="hidden" NAME="business" VALUE="<%=  %>">
+			<INPUT TYPE="hidden" NAME="return" VALUE="<%= cart_checkout_complete_url(:token => @token) %>">
+			<INPUT TYPE="hidden" NAME="cancel_return" VALUE="<%= cart_url %>">
+			<INPUT TYPE="hidden" NAME="notify_url" VALUE="<%= url_for(:controller => 'carts', :action => 'paypal_ipn') %>">
+			<INPUT TYPE="hidden" NAME="invoice" VALUE="<%= @cart.id %>">
+
+			<INPUT TYPE="hidden" NAME="address_override" VALUE="1">
+			<INPUT TYPE="hidden" NAME="first_name" VALUE="<%= @cart.billing_address.first_name %>">
+			<INPUT TYPE="hidden" NAME="last_name" VALUE="<%= @cart.billing_address.last_name %>">
+			<INPUT TYPE="hidden" NAME="address1" VALUE="<%= @cart.billing_address.address_1 %>">
+			<INPUT TYPE="hidden" NAME="address2" VALUE="<%= @cart.billing_address.address_2 %>">
+			<INPUT TYPE="hidden" NAME="city" VALUE="<%= @cart.billing_address.city.strip %>">
+			<INPUT TYPE="hidden" NAME="state" VALUE="<%= @cart.billing_address.state %>">
+			<INPUT TYPE="hidden" NAME="zip" VALUE="<%= @cart.billing_address.zipcode %>">
+			<INPUT TYPE="hidden" NAME="country" VALUE="<%= @cart.billing_address.country.iso %>">
+			<INPUT TYPE="hidden" NAME="phone" VALUE="<%= @cart.billing_address.phone %>">
+
+			<INPUT TYPE="hidden" NAME="shipping_1" VALUE="<%= @cart.shipping_cost %>">
+		<% count = 1 -%>
+		<% if @cart.promotion %>
+			<INPUT TYPE="hidden" NAME="item_name_1" VALUE="Discounted Purchase"> 
+			<INPUT TYPE="hidden" NAME="amount_1" VALUE="<%= @cart.subtotal_display %>">
+			<INPUT TYPE="hidden" NAME="quantity_1" VALUE="1">
+		<% else %>
+  		<% for item in @cart.items -%>
+  			<INPUT TYPE="hidden" NAME="item_name_<%= count %>" VALUE="<%= item.product.name.gsub(/\"/, "'") %><%= " (#{item.option.name.gsub(/\"/, "'")})" unless (item.product.product_options.length < 2) %>"> 
+  			<INPUT TYPE="hidden" NAME="amount_<%= count %>" VALUE="<%= item.price %>">
+  			<INPUT TYPE="hidden" NAME="quantity_<%= count %>" VALUE="<%= item.quantity %>">
+  			<% count += 1 %>
+  		<% end -%>
+    <% end %>
+		</FORM>
+	</BODY>
+</HTML>
