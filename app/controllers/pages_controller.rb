@@ -27,7 +27,8 @@ class PagesController < ApplicationController
 
   def home
     @nav_tab = 'home'
-    @products = Product.featured.find(:all, :limit => 16)
+    @products = Product.featured.published.find(:all, :limit => 16)
+    @specials = Product.specials.published.find(:all, :limit => 4)
     @page = Page.find_by_name('Home')
     @post = @page.posts.first
   end

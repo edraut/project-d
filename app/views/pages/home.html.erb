@@ -9,7 +9,12 @@
 		<% else %>
 			<div class="span-14 last text-center"><h1 class="large orange bold">WELCOME TO MAD RACING MX!!</h1></div><br/>
 		<% end %>
-		<div class="feature-bar padding-left margin-bottom">Featured Products</div>
+		<% if @specials.any? %>
+			<div class="feature-bar padding-left margin-bottom">Specials</div>
+			<%= render :partial => 'products/thumb', :object => @specials %>
+			<div class="span-13_75 last">&nbsp;</div>
+		<% end %>
+		<div class="feature-bar padding-left margin-bottom margin-top">Featured Products</div>
 		<%= render :partial => 'products/thumb', :object => @products %>
 	</div>
 </div>

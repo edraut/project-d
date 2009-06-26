@@ -30,6 +30,8 @@ ActionController::Routing::Routes.draw do |map|
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.register '/register', :controller => 'users', :action => 'create'
   map.signup '/signup', :controller => 'users', :action => 'new'
+  map.checkout_paypal '/checkout_paypal', :controller => 'carts', :action => 'checkout_paypal'
+  map.paypal_ipn '/paypal_ipn', :controller => 'carts', :action => 'paypal_ipn'
   map.resources :users
 
   map.resource :session

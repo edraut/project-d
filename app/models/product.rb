@@ -18,6 +18,7 @@ class Product < ActiveRecord::Base
   composed_of :international_price, :class_name => 'Money', :mapping => [%w(international_price cents)]
   named_scope :published, :conditions => {:state => 'published'}
   named_scope :featured, :conditions => {:featured => true}, :order => :featured_position
+  named_scope :specials, :conditions => {:specials => true}, :order => :specials_position
   named_scope :clearance, :conditions => {:clearance => true}, :order => :clearance_position
   named_scope :whats_new, :conditions => {:whats_new => true}, :order => :whats_new_position
   named_scope :any, :conditions => ["1 = 1",nil]

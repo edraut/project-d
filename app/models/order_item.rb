@@ -16,4 +16,15 @@ class OrderItem < ActiveRecord::Base
     self.order.update_shipping
     self.order.save
   end
+  
+  def full_name
+    temp_name = product_option.product.name
+    if product_option_vehicle_model
+      temp_name += " #{product_option_vehicle_model.vehicle_model.name} #{product_option_vehicle_model.year_begin} - #{product_option_vehicle_model.year_end}"
+    elsif !product_option.name.blank? 
+      temp_name += product_option.name 
+    end 
+    return temp_name
+	end
+  
 end

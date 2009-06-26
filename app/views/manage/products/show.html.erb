@@ -34,6 +34,21 @@
 						Click here to <%= link_to 'feature it', manage_product_url(@product) + '?product[featured]=true', :method => :put %> on the homepage.
 					</div>
 				<% end %>
+				<% if @product.specials? %>
+						<div class="span-8 last text-center large bold" style="margin-bottom: 0;">
+							specials
+						</div>
+						<div class="span-8 last text-center">
+						 Click here to <%= link_to 'remove it', manage_product_url(@product) + '?product[specials]=false', :method => :put %> from the homepage specials.
+						</div>
+				<% else %>
+					<div class="span-8 last text-center large bold" style="margin-bottom: 0;">
+						not in specials
+					</div>
+					<div class="span-8 last text-center">
+						Click here to <%= link_to 'add it', manage_product_url(@product) + '?product[specials]=true', :method => :put %> to the homepage specials.
+					</div>
+				<% end %>
 				<% if @product.clearance? %>
 						<div class="span-8 last text-center large bold" style="margin-bottom: 0;">
 							clearance
