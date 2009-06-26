@@ -2,7 +2,6 @@ class AddPayPalInfo < ActiveRecord::Migration
   def self.up
     add_column :orders, :paypal_transactionid, :string
     add_column :orders, :paypal_paymentstatus, :string
-    marcc
   end
 
   def self.down

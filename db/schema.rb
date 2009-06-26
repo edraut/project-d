@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090626002137) do
+ActiveRecord::Schema.define(:version => 20090626154128) do
 
   create_table "addresses", :force => true do |t|
     t.string   "type"
@@ -105,6 +105,8 @@ ActiveRecord::Schema.define(:version => 20090626002137) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "shipped_at"
+    t.string   "paypal_transactionid"
+    t.string   "paypal_paymentstatus"
   end
 
   add_index "orders", ["state"], :name => "index_orders_on_state"

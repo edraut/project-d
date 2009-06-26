@@ -9,6 +9,12 @@
 		<% end %>
 	</div>
 </div>
+<% unless @order.paypal_transactionid.blank? %>
+<div class="span-24 last">
+	Paypal transaction id:
+	<%= @order.paypal_transactionid %>
+</div>
+<% end %>
 <%= render :partial => 'carts/summary', :object => @order %>
 <div id="email" class="span-14_75 last margin-top">
 	<%= link_to @order.email, "mailto:#{@order.email}" %>
