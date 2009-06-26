@@ -96,6 +96,69 @@ class CartsController < ApplicationController
   end
   
   def paypal_ipn
+    notify = ActiveMerchant::Billing::Integrations::Paypal::Notification.new(request.raw_post)
+    logger.info("PAYPAL_IPN: Received Incoming IPN...")
+    for pair in request.raw_post.split('&')
+      logger.info("PAYPAL_IPN: #{pair}")
+    end
+    order = Order.find(notify.params['invoice'].to_i)
+    if order.nil?
+      logger.error("PAYPAL_IPN: Order not found")
+      render :nothing => true and return
+    elsif notify.acknowledge
+      begin
+        if notify.complete?
+          logger.info("PAYPAL_IPN: Order #{notify.params['invoice']} marked complete")
+          order.paypal_transactionid = notify.params['txn_id']
+          order.paypal_paymentstatus = notify.params['payment_status']
+          order.accept_card unless (notify.params['payment_type'] == 'echeck' and notify.params['payment_status'] == 'Failed')
+
+          if order.total != Money.new(notify.params['payment_gross'].to_f * 100)
+            logger.error("PAYPAL_IPN: Order amount mismatch")
+          end
+
+          # Handle completed e-check payments separately
+          if notify.params['payment_type'] == 'echeck'
+            case notify.params['payment_status']
+
+            when 'Completed'
+              logger.info("PAYPAL_IPN: Delivering completed e-check notifications")
+
+            when 'Failed'
+              logger.info("PAYPAL_IPN: Delivering failed e-check notifications")
+
+            else
+              logger.info("PAYPAL_IPN: Received Unkown E-check Payment Status!")
+            end
+
+          # Handle all of the other completed payment types
+          else
+            logger.info("PAYPAL_IPN: Delivering order notifications")
+            Notifier.deliver_order_confirmation(@cart)
+            
+          end
+        else
+          # Handle pending e-check payments separately
+          if notify.params['payment_type'] == 'echeck'
+            case notify.params['payment_status']
+            when 'Pending'
+              logger.info("PAYPAL_IPN: Pending e-check")
+
+            end
+          end
+        end
+      rescue => e
+        logger.info("PAYPAL_IPN: Unknown Error")
+        raise
+      ensure
+        order.save
+      end
+    else
+      logger.error("PAYPAL_IPN: Unable to acknowledge IPN")      
+    end
+
+    render :nothing => true
+    
   end
   
   # DELETE /carts/1

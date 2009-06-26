@@ -5,9 +5,9 @@
 		  <INPUT TYPE="hidden" NAME="upload" VALUE="1">
 			<INPUT TYPE="hidden" NAME="lc" VALUE="US">
 			<INPUT TYPE="hidden" NAME="currency_code" VALUE="USD">
-			<INPUT TYPE="hidden" NAME="business" VALUE="edraut@gmail.com">
+			<INPUT TYPE="hidden" NAME="business" VALUE="madracingmx@yahoo.com">
 			<INPUT TYPE="hidden" NAME="return" VALUE="https://madracingmx.com/orders/<%= @cart.id %>">
-			<INPUT TYPE="hidden" NAME="cbt" VALUE="Return to Madracingmx">
+			<INPUT TYPE="hidden" NAME="cbt" VALUE="Return to MAD Racing MX">
 			<INPUT TYPE="hidden" NAME="cancel_return" VALUE="<%= cart_url %>">
 			<INPUT TYPE="hidden" NAME="notify_url" VALUE="<%= url_for(:controller => 'carts', :action => 'paypal_ipn') %>">
 			<INPUT TYPE="hidden" NAME="invoice" VALUE="<%= @cart.id %>">
@@ -24,6 +24,7 @@
 			<INPUT TYPE="hidden" NAME="phone" VALUE="<%= @cart.billing_address.phone %>">
 
 			<INPUT TYPE="hidden" NAME="shipping_1" VALUE="<%= @cart.shipping_total %>">
+			<INPUT TYPE="hidden" NAME="tax_cart" VALUE="<%= @cart.sales_tax %>">
 		<% count = 1 -%>
 		<% if false and @cart.promotion %>
 			<INPUT TYPE="hidden" NAME="item_name_1" VALUE="Discounted Purchase"> 

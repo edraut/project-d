@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_nav_area
   before_filter :set_nav_tab
+  before_filter :handle_cart
   filter_parameter_logging :credit_card_number, :credit_card_month, :credit_card_year, :credit_card_cvv
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
@@ -114,5 +115,13 @@ class ApplicationController < ActionController::Base
   end
   def set_nav_tab
     @nav_tab = controller_name
+  end
+  def handle_cart
+    if session[:cart_id].to_i > 0
+      cart = Order.find(:first, :conditions => {:id => session[:cart_id].to_i})
+      if cart and (cart.pending? or cart.fulfilled?)
+        session[:cart_id] = nil
+      end
+    end
   end
 end

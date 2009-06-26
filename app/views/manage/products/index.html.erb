@@ -31,6 +31,9 @@
 			<%= link_to 'featured', manage_products_url + "?sortable=featured", :class => @sortable == 'featured' ? 'category-selected' : '' %>
 		</div>
 		<div class="span-4 text-center large bold margin-bottom">
+			<%= link_to 'specials', manage_products_url + "?sortable=specials", :class => @sortable == 'specials' ? 'category-selected' : '' %>
+		</div>
+		<div class="span-4 text-center large bold margin-bottom">
 			<%= link_to 'clearance', manage_products_url + "?sortable=clearance", :class => @sortable == 'clearance' ? 'category-selected' : '' %>
 		</div>
 		<div class="span-4 text-center large bold margin-bottom">

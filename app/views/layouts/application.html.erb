@@ -47,7 +47,7 @@
 							<form action="/products">Search <%= select_tag 'category_id', options_for_select([['All Categories',nil]] + Category.top_level.map{|cat| [cat.name,cat.id]},@search_category ? @search_category.id : nil) %> <input type="text" name="search_terms" value="<%=h @search_terms %>" class="span-5"/> <input type="submit" value="Go"/></form>
 						</div>
 						<div class="span-19 last header-spacer">
-							<div class="span-19 last header-spacer-2">&nbsp;</div><div class="span-13 prepend-6 last"><div class="tagline-spacer-2">GET ALL YOUR MX-ATV-STREET PARTS AND ACCESSORIES HERE</div></div>
+							<div class="span-19 last header-spacer-2">&nbsp;</div><div class="span-13 prepend-6 last"><div class="tagline-spacer-2 yellow">GET ALL YOUR MX-ATV-STREET PARTS AND ACCESSORIES HERE</div></div>
 						</div>
 						<div class="span-19 last"><div class="tagline-spacer">WE'RE MAD ABOUT GREAT SERVICE!</div></div>
 					</div>
