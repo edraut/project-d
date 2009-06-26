@@ -134,7 +134,7 @@ class CartsController < ApplicationController
           # Handle all of the other completed payment types
           else
             logger.info("PAYPAL_IPN: Delivering order notifications")
-            Notifier.deliver_order_confirmation(@cart)
+            Notifier.deliver_order_confirmation(order)
             
           end
         else
