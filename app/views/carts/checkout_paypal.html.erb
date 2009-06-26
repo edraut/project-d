@@ -9,7 +9,7 @@
 			<INPUT TYPE="hidden" NAME="return" VALUE="https://madracingmx.com/orders/<%= @cart.id %>">
 			<INPUT TYPE="hidden" NAME="cbt" VALUE="Return to MAD Racing MX">
 			<INPUT TYPE="hidden" NAME="cancel_return" VALUE="<%= cart_url %>">
-			<INPUT TYPE="hidden" NAME="notify_url" VALUE="<%= url_for(:controller => 'carts', :action => 'paypal_ipn') %>">
+			<INPUT TYPE="hidden" NAME="notify_url" VALUE="https://madracingmx.com/paypal_ipn">
 			<INPUT TYPE="hidden" NAME="invoice" VALUE="<%= @cart.id %>">
 
 			<INPUT TYPE="hidden" NAME="address_override" VALUE="1">
