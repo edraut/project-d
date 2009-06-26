@@ -6,4 +6,4 @@ test
 *.DS_Store
 public/system/**/*
 public/system
-
+public/sitemap.xml

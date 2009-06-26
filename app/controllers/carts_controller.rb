@@ -60,7 +60,7 @@ class CartsController < ApplicationController
           :address1 => @cart.billing_address.address_1,
           :city => @cart.billing_address.city,
           :state => @cart.billing_address.state,
-          :country => @cart.billing_address.country.iso,
+          :country => 'US',
           :zip => @cart.billing_address.zipcode
         }
       }

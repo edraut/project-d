@@ -10,6 +10,9 @@
 	</div>
 </div>
 <%= render :partial => 'carts/summary', :object => @order %>
+<div id="email" class="span-14_75 last margin-top">
+	<%= link_to @order.email, "mailto:#{@order.email}" %>
+</div>
 <div class="span-14_75 last margin-top">
 	<div id="billing_address" class="span-7 extra-margin-right">
 		<h2>Billing Address</h2>

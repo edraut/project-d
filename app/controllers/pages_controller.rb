@@ -21,7 +21,7 @@ class PagesController < ApplicationController
     end
     @page = Page.find_by_name(page_name)
     @posts = @page.posts.published.paginate(:page => params[:page], :per_page => 4) if page_name == 'News'
-    
+    @page_title = page_name
     render :template => 'pages/' + params[:name] and return
   end
 
@@ -31,6 +31,7 @@ class PagesController < ApplicationController
     @specials = Product.specials.published.find(:all, :limit => 4)
     @page = Page.find_by_name('Home')
     @post = @page.posts.first
+    @page_title = 'Home'
   end
   
   protected

@@ -1,6 +1,6 @@
 	<% post = show %>
 	<div class="span-14 text-center"><h1 class="large orange bold"><%= post.title %></h1></div><br/>
-	<%= image_tag(post.image.url(:full_width)) if post.image.exists? %><br/>
+	<%= image_tag(post.image.url(:original)) if post.image.exists? %><br/>
 	<%= RedCloth.new(post.body).to_html if post.body %><br/>
 
 	<%= link_to 'edit', edit_manage_post_url(post) + "?post[postable_type]=#{@postable.class.name}&post[postable_id]=#{@postable.id}"%>
