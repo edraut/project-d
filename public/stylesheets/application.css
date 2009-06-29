@@ -212,7 +212,7 @@ a.tiny {
 .category-bar {
 	padding: 10px 9px 10px 10px;
 	width: 140px;
-	height: 1280px;
+	height: 1680px;
 	border-left: 1px solid #FFFFFF;
 	background: url('../images/category_bar.jpg');
 	background-color: #CACACA;
@@ -238,6 +238,10 @@ a.tiny {
 div.visa-centered {
 	width: 116px;
 	margin-right: 12px;
+}
+div.paypal-centered {
+	width: 60px;
+	margin-left: 40px;
 }
 div.ssl-left {
 	width: 34px;
