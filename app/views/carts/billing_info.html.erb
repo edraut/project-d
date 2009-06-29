@@ -43,14 +43,21 @@
 <%= render :partial => 'summary', :object => @cart %>
 &nbsp;<br/>
 <div id="place_order" class="span-14_75 last margin-top border-top" <% unless @cart.ready_to_charge? %> style="display: none;" <% end %>>
-	<h2>Credit Card</h2>
-	<div class="span-14_75">
+	<div class="span14_75 last">
+		<div class="span-7">
+			<h2>Standard Checkout</h2>
+		</div>
+		<div class="span-7 text-right">
+			or <%= link_to 'Checkout with ', checkout_paypal_url %><%= link_to image_tag('PayPal_mark_37x23.gif'), checkout_paypal_url %>
+		</div>
+	</div>
+	<div class="span-14_75 last">
 		<div class="span-4 field-label">Credit Card Number</div>
 		<div class="span-2 field-label">Exp. Month</div>
 		<div class="span-2 field-label">Exp. Year</div>
 		<div class="span-2 field-label">CVV Code</div>
 	</div>
-	<div class="span-14_75 margin-top">
+	<div class="span-14_75 last margin-top">
 		<% form_tag '/cart?event=process_card', :method => :put do %>
 			<div class="span-4">
 				<%= text_field_tag 'credit_card_number', nil, :class => 'span-4' %>
