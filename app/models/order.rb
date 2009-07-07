@@ -3,7 +3,8 @@ class Order < ActiveRecord::Base
   SHIPPING_RATES = {
     'Ground' =>         [Money.new(795),  Money.new(995),  Money.new(1495), Money.new(1795), Money.new(1995), Money.new(2495)],
     '2nd Day' =>        [Money.new(1795),  Money.new(1995),  Money.new(2495), Money.new(2795), Money.new(2995), Money.new(3495)],
-    'Overnight' =>      [Money.new(2795),  Money.new(2995),  Money.new(3495), Money.new(3795), Money.new(3995), Money.new(4495)]
+    'Overnight' =>      [Money.new(2795),  Money.new(2995),  Money.new(3495), Money.new(3795), Money.new(3995), Money.new(4495)],
+    'International' =>  [Money.new(3000),  Money.new(5400),  Money.new(7500), Money.new(10000), Money.new(12500)]
   }.freeze
   SHIPPING_RANGES = [
     [Money.new(0),Money.new(9999)],
@@ -150,7 +151,20 @@ class Order < ActiveRecord::Base
   
   def calculate_shipping
     this_range_index = SHIPPING_RANGES.index SHIPPING_RANGES.find{|range| range.first <= self.subtotal and self.subtotal <= range.last}
-    this_rate = SHIPPING_RATES[self.shipping_method][this_range_index]
+    if this_range_index == 5
+      this_rate = self.shipping_over
+    else
+      this_rate = SHIPPING_RATES[self.shipping_method][this_range_index]
+    end
+  end
+  
+  def shipping_over
+    case self.shipping_method
+    when 'International'
+      Money.new(12500) + Money.new((((self.subtotal - Money.new(49999)).to_s.to_f / 100).truncate + 1) * 2500)
+    else
+      SHIPPING_RATES[self.shipping_method][5]
+    end
   end
   
   def calculate_subtotal
