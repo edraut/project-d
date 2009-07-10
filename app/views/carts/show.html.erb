@@ -56,14 +56,5 @@
 	</div>
 <% end %>
 <div class="span-14_75 last margin-top border-top">
-	<b>SHIPPING PRICES to the Continental U.S.</b><br/>
-	0-$99.99=7.95 <br/>
-	$100-$199.99=$9.95 <br/>
-	$200.01-$299.00=$14.95 <br/>
-	$300.00-$399.00=$17.95 <br/>
-	$400.00-$499.00=$19.95 <br/>
-	$500.00 UP=$24.95 <br/>
-	For 2 day air add $10.00 <br/>
-	For overnight add $20.00 <br/>
-	Some orders that include tires, oversized items, chemicals or any products that are prohibited from air shipping will be shipped <b>ground</b> only to the lower 48.
+	<%= render :partial => 'shipping_price_list' %>
 </div>
