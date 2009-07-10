@@ -14,14 +14,20 @@ function reloadTotals(){
 		data: {get_totals: 'true'},
 		dataType: 'json',
 		success: function(data,textStatus) {
-			$('#shipping_total').html(data.shipping_total);
+			if($('#shipping_total').length > 0){
+				$('#shipping_total').html(data.shipping_total);
+			}
 			$('#subtotal').html(data.subtotal);
-			$('#total').html(data.total);
-			$('#sales_tax').html(data.sales_tax);
-			if(data.sales_tax != '$0.00'){
-				$('#sales_tax_container').show();
-			} else {
-				$('#sales_tax_container').hide();
+			if($('#total').length > 0) {
+				$('#total').html(data.total);
+			}
+			if($('#sales_tax_container').length > 0){
+				$('#sales_tax').html(data.sales_tax);
+				if(data.sales_tax != '$0.00'){
+					$('#sales_tax_container').show();
+				} else {
+					$('#sales_tax_container').hide();
+				}
 			}
 		}
 	})
