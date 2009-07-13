@@ -186,8 +186,8 @@ class Order < ActiveRecord::Base
   end
   
   def add_addresses
-    self.billing_address = BillingAddress.create(:order_id => self.id)
-    self.shipping_address = ShippingAddress.create(:order_id => self.id)
+    self.billing_address = BillingAddress.create(:order_id => self.id,:country_id => 465)
+    self.shipping_address = ShippingAddress.create(:order_id => self.id,:country_id => 465)
   end
   
   CARD_MONTHS = ['01','02','03','04','05','06','07','08','09','10','11','12'].freeze
