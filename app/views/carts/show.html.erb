@@ -12,39 +12,66 @@
 <% if @cart.order_items.any? %>
 	<div class="span-14_75">
 		<div class="span-8">&nbsp;</div>
-		<div class="span-2_75 text-right">sub-total:</div>
+		<div class="span-2_75 text-right field-label">sub-total:</div>
 		<div id="subtotal" class="span-2"><%= @cart.subtotal.format %></div>
 	</div>
 <% end %>
 <div class="span-14_75 margin-top">
 <% form_for :cart, @cart, :url => cart_url(:id => @cart.id, :_method => :put) do |f| %>
-	<div class="span-8">
-		<div class="span-1_5 text-right">
-			Shipping Method 
+	<div class="span-14_75">
+		<div class="span-14_75 last">
+			<div class="span-3 field-label">
+				Shipping Country
+			</div>
+			<div class="span-3 field-label" data-binding="state_field">
+				State
+			</div>
+			<div class="span-3 field-label">
+				Shipping Method
+			</div>
 		</div>
-		<div class="span-3">
-			<%= @cart.first_error_on :ship_method %>
-			<%= f.select :shipping_method, Order::SHIPPING_METHODS.map{|sm| [sm,sm]}, :class => 'span-3' %>
+		<div class="span-14_75 last">
+			<div class="span-3">
+				<%= select_tag 'shipping_country', options_for_select([['US','465'],['Canada','286']],@cart.shipping_address.country_id.to_s), :class => 'span-3', :id => 'shipping_country_select' %>
+			</div>
+			<div class="span-3" data-binding="state_field">
+				<%= select_tag :shipping_state, options_for_select(Address::STATES,@cart.shipping_address.state), :class => 'span-3' %>
+			</div>
+			<div class="span-3" id="shipping_method_field">
+				<%= @cart.first_error_on :ship_method %>
+				<%= f.select :shipping_method, Order::SHIPPING_METHODS.map{|sm| [sm,sm]}, :class => 'span-3', :id => 'shipping_method_select' %>
+			</div>
+			<div class="span-3" id="shipping_method_field_international" style="display: none;">
+				International
+			</div>
 		</div>
-		<div class="span-3_5 last">
-			<%= f.submit "calculate shipping", :style => 'width: 126px;' %>
+		<div class="span-14_75 last margin-top">
+			<div class="span-5">&nbsp;</div>
+			<div class="span-3">
+				<%= f.submit "recalculate shipping", :style => 'width: 126px;' %>
+			</div>
+			<% if @cart.shipping_method.blank? %>
+				<div class="span-4 ">
+					&nbsp;
+				</div>
+			<% else %>
+				<div class="span-2_75 text-right field-label">
+					Shipping Total:
+				</div>
+				<div id="shipping_total" class="span-2"><%= @cart.shipping_total.format %></div>
+			<% end %>
 		</div>
 	</div>
-		<% if @cart.shipping_method.blank? %>
-		<div class="span-4 ">
-			&nbsp;
-		</div>
-		<% else %>
-		<div class="span-2_75 text-right">
-			Shipping Total:
-		</div>
-		<div id="shipping_total" class="span-2"><%= @cart.shipping_total.format %></div>
-		<% end %>
 <% end %>
+</div>
+<div id="sales_tax_container" class="span-14_75" <% unless @cart.taxable? %>style="display: none; z-index: -2;"<% end %>>
+	<div class="span-8">&nbsp;</div>
+	<div class="span-2_75 text-right field-label">ME sales tax:</div>
+	<div id="sales_tax" class="span-2"><%= @cart.sales_tax.format if @cart.taxable? %></div>
 </div>
 <div class="span-14_75 last margin-top">
 	<div class="span-8">&nbsp;</div>
-	<div class="span-2_75 text-right">Order Total:</div>
+	<div class="span-2_75 text-right field-label">Order Total:</div>
 	<div id="total" class="span-2"><%= @cart.total.format %></div>
 	<div class="span-2 last text-right">
 		<%= link_to 'empty cart', cart_url, :method => :delete, :confirm => 'Are you sure you want to empty this cart?' %>
@@ -58,3 +85,23 @@
 <div class="span-14_75 last margin-top border-top">
 	<%= render :partial => 'shipping_price_list' %>
 </div>
+<% javascript_tag do %>
+	function handleShippingFields(country_id){
+		if(country_id == '465'){
+			$('#shipping_method_field_international').hide();
+			$('#shipping_method_field').show();
+			$('[data-binding="state_field"]').show();
+		} else {
+			$('#shipping_method_field').hide();
+			$('#shipping_method_select').val('International');
+			$('#shipping_method_field_international').show();
+			$('[data-binding="state_field"]').hide();
+		}
+	};
+	$(document).ready(function(){
+		$('#shipping_country_select').change(function(e){
+			handleShippingFields($(e.target).val());
+		});
+		handleShippingFields('<%= @cart.shipping_address.country_id.to_s %>');
+	});
+<% end %>

@@ -12,23 +12,21 @@
 <div class="span-14_75 last">
 	<div id="billing_address" class="span-7 extra-margin-right">
 		<h2>Billing Address</h2>
-		<% billing_address = BillingAddress.create_or_find_by_order_id(@cart.id) %>
-		<div id="address_<%= billing_address.id %>" class="span-7 last border-bottom margin-bottom">
+		<div id="address_<%= @cart.billing_address.id %>" class="span-7 last border-bottom margin-bottom">
 			<% if @cart.billing_address.status == 'live' %>
 				<%= render :partial => 'addresses/show', :object => @cart.billing_address %>
 			<% else %>
-				<%= render :partial => 'addresses/edit', :object => billing_address %>
+				<%= render :partial => 'addresses/edit', :object => @cart.billing_address %>
 			<% end %>
 		</div>
 	</div>
 	<div id="shipping_address" class="span-7">
 		<h2>Shipping Address</h2>
-		<% shipping_address = ShippingAddress.create_or_find_by_order_id(@cart.id) %>
-		<div id="address_<%= shipping_address.id %>" class="span-7 last border-bottom margin-bottom">
+		<div id="address_<%= @cart.shipping_address.id %>" class="span-7 last border-bottom margin-bottom">
 			<% if @cart.shipping_address.status == 'live' %>
 				<%= render :partial => 'addresses/show', :object => @cart.shipping_address %>
 			<% else %>
-				<%= render :partial => 'addresses/edit', :object => shipping_address %>
+				<%= render :partial => 'addresses/edit', :object => @cart.shipping_address %>
 			<% end %>
 		</div>
 	</div>

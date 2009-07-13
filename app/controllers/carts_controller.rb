@@ -60,7 +60,7 @@ class CartsController < ApplicationController
           :address1 => @cart.billing_address.address_1,
           :city => @cart.billing_address.city,
           :state => @cart.billing_address.state,
-          :country => 'US',
+          :country => @cart.billing_address.country.iso,
           :zip => @cart.billing_address.zipcode
         }
       }
@@ -81,6 +81,16 @@ class CartsController < ApplicationController
         render :partial => 'show_email' and return
       else
         render :partial => 'edit_email', :status => 409 and return
+      end
+    elsif params.has_key? :shipping_country
+      case params[:shipping_country]
+      when '465' # USA
+        @cart.shipping_address.update_attributes(:country_id => params[:shipping_country], :state => params[:shipping_state])
+        @cart.update_attributes(params[:cart])
+      else
+        @cart.shipping_address.update_attributes(:country_id => params[:shipping_country])
+        @cart.shipping_method = 'International'
+        @cart.save || success = false
       end
     else
       @cart.update_attributes(params[:cart]) || success = false

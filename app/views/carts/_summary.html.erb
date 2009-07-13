@@ -42,21 +42,21 @@
 </div>
 <div class="span-14_75">
 	<div class="span-8">&nbsp;</div>
-	<div class="span-3 text-right">sub-total:</div>
+	<div class="span-3 text-right field-label">sub-total:</div>
 	<div id="subtotal" class="span-2"><%= order.subtotal.format %></div>
 </div>
 <div class="span-14_75">
 	<div class="span-8">&nbsp;</div>
-	<div class="span-3 text-right">shipping:</div>
+	<div class="span-3 text-right field-label">shipping:</div>
 	<div id="shipping_total" class="span-2"><%= order.shipping_total.format %></div>
 </div>
 <div id="sales_tax_container" class="span-14_75" <% unless order.taxable? %>style="display: none; z-index: -2;"<% end %>>
 	<div class="span-8">&nbsp;</div>
-	<div class="span-3 text-right">ME sales tax:</div>
+	<div class="span-3 text-right field-label">ME sales tax:</div>
 	<div id="sales_tax" class="span-2"><%= order.sales_tax.format if order.taxable? %></div>
 </div>
 <div class="span-14_75">
 	<div class="span-8">&nbsp;</div>
-	<div class="span-3 text-right">order total:</div>
+	<div class="span-3 text-right field-label">order total:</div>
 	<div id="total" class="span-2"><%= order.total.format %></div>
 </div>

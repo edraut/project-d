@@ -3,8 +3,7 @@ class Address < ActiveRecord::Base
   belongs_to :user
   belongs_to :order
   belongs_to :country
-  after_save :update_order_sales_tax
-  
+  after_save :update_order_totals
   named_scope :id_only, :conditions => {:status => 'id_only'}
   named_scope :live, :conditions => {:status => 'live'}
   
@@ -31,8 +30,11 @@ class Address < ActiveRecord::Base
     self.order.nil? or self.status != 'live' or ['cart','card_rejected'].include? self.order.state
   end
   
-  def update_order_sales_tax
+  def update_order_totals
     if self.order
+      self.order.update_subtotal
+      self.order.update_shipping
+      self.order.update_sales_tax
       self.order.save
     end
   end

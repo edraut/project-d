@@ -21,6 +21,7 @@ class Order < ActiveRecord::Base
   has_one :billing_address, :dependent => :destroy
   has_one :shipping_address, :dependent => :destroy
   has_many :addresses, :dependent => :destroy
+  after_create :add_addresses
   before_save :update_subtotal
   before_save :update_shipping
   before_save :update_sales_tax
@@ -122,6 +123,15 @@ class Order < ActiveRecord::Base
   end
   
   def update_shipping
+    if self.shipping_address
+      if self.shipping_address.country_id != 465 #USA
+        self.shipping_method = 'International'
+      else
+        if self.shipping_method == 'International'
+          self.shipping_method = 'Ground'
+        end
+      end
+    end
     if !self.shipping_method.blank? and self.order_items.any?
       self.shipping_total = self.calculate_shipping
     else
@@ -173,6 +183,11 @@ class Order < ActiveRecord::Base
   
   def calculate_sales_tax
     self.subtotal * 0.05
+  end
+  
+  def add_addresses
+    self.billing_address = BillingAddress.create(:order_id => self.id)
+    self.shipping_address = ShippingAddress.create(:order_id => self.id)
   end
   
   CARD_MONTHS = ['01','02','03','04','05','06','07','08','09','10','11','12'].freeze
