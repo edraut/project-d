@@ -113,7 +113,7 @@
 				sub category: <%= this_index + 1 %>
 			</div>
 			<div class="span-3 last">
-				<%= category.name %><br/>
+				<%= link_to category.name, manage_products_url + "?category_id=#{category.id}"%><br/>
 			</div>
 			<% end %>
 			<div class="span-3 text-right">
