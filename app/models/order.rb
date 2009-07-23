@@ -122,6 +122,10 @@ class Order < ActiveRecord::Base
     self.shipping_address and self.shipping_address.state == 'ME'
   end
   
+  def ground_only?
+    Product.find_by_sql(["select products.id from products inner join product_options on product_options.product_id = products.id inner join order_items on order_items.product_option_id = product_options.id inner join orders on orders.id = order_items.order_id where orders.id = ? and products.ground_price > 0", self.id]).any?
+  end
+  
   def update_shipping
     if self.shipping_address
       if self.shipping_address.country_id != 465 #USA
@@ -166,6 +170,7 @@ class Order < ActiveRecord::Base
     else
       this_rate = SHIPPING_RATES[self.shipping_method][this_range_index]
     end
+    this_rate += Money.new(Product.find_by_sql(["select sum(products.ground_price * order_items.quantity) as shipping_total from products inner join product_options on product_options.product_id = products.id inner join order_items on order_items.product_option_id = product_options.id inner join orders on orders.id = order_items.order_id where orders.id = ?", self.id]).first.shipping_total.to_i)
   end
   
   def shipping_over
