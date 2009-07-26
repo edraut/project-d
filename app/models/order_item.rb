@@ -6,6 +6,7 @@ class OrderItem < ActiveRecord::Base
   composed_of :price, :class_name => 'Money', :mapping => [%w(price cents)]
 
   after_save :refresh_order_totals
+  after_destroy :refresh_order_totals
   
   def total
     self.price * self.quantity
