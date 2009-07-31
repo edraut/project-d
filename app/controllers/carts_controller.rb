@@ -64,7 +64,7 @@ class CartsController < ApplicationController
           :zip => @cart.billing_address.zipcode
         }
       }
-      response = gateway.purchase(@cart.total, credit_card, options)
+      response = gateway.authorize(@cart.total, credit_card, options)
       if response.success?
         @cart.accept_card
         Notifier.deliver_order_confirmation(@cart)
