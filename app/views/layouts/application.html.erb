@@ -5,7 +5,9 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
+	<% if controller_name == 'products' and action_name == 'show' and !@product.description.blank? %>
+		<META NAME="Description" CONTENT="<%= strip_tags(@product.description) %>">
+	<% end %>
 	<title>Mad Racing MX <%= @page_title %></title>
 	<link rel="stylesheet" href="/stylesheets/blueprint/screen.css" type="text/css" media="screen, projection" />
   <link rel="stylesheet" href="/stylesheets/blueprint/print.css" type="text/css" media="print" /> 
