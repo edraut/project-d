@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :coupons
+
   map.resources :orders
 
   map.resources :posts
@@ -32,6 +34,9 @@ ActionController::Routing::Routes.draw do |map|
   map.signup '/signup', :controller => 'users', :action => 'new'
   map.checkout_paypal '/checkout_paypal', :controller => 'carts', :action => 'checkout_paypal'
   map.paypal_ipn '/paypal_ipn', :controller => 'carts', :action => 'paypal_ipn'
+  map.edit_order_coupon '/edit_order_coupon/', :controller => 'carts', :action => 'edit_coupon_code'
+  map.show_order_coupon '/show_order_coupon/', :controller => 'orders', :action => 'show_coupon_code'
+  map.update_order_coupon '/update_order_coupon/', :controller => 'carts', :action => 'update_coupon_code'
   map.resources :users
 
   map.resource :session
@@ -85,6 +90,7 @@ ActionController::Routing::Routes.draw do |map|
     manage.resources :product_option_vehicle_models
     manage.resources :orders
     manage.resources :posts
+    manage.resources :coupons
     manage.textile_manual '/products/textile_manual', :controller => 'products', :action => 'show', :page => 'textile_manual'
   end
   

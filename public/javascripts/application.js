@@ -21,6 +21,9 @@ function reloadTotals(){
 			if($('#total').length > 0) {
 				$('#total').html(data.total);
 			}
+			if($('#discount').length > 0){
+				$('#discount').html(data.discount)
+			}
 			if($('#sales_tax_container').length > 0){
 				$('#sales_tax').html(data.sales_tax);
 				if(data.sales_tax != '$0.00'){

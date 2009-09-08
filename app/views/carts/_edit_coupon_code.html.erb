@@ -1,0 +1,13 @@
+<% order = edit_coupon_code %>
+<% form_for :cart, order, :url => update_order_coupon_url(:id => order.id),
+	:html => {
+		:ajax_binding => 'ajax_form',
+		:ajax_success_element => "coupon_code_container",
+		:ajax_method => 'PUT'
+	} do |f| %>
+	<div class="span-3">coupon_code:</div>
+	<div class="span-3"><%= order.first_error_on :coupon_id %>
+	<%= text_field_tag :coupon_code, order.coupon ? order.coupon.coupon_code : '', :class => 'span-3' %></div>
+	<div class="span-4_75"><%= f.submit :add %> <% if order.coupon %> <%= link_to 'cancel', show_order_coupon_url(:id => order.id), :ajax_binding => 'ajax_link', :ajax_method => 'GET', :ajax_success_element => 'coupon_code_container' %> <% end %></div>
+	<div id="discount" class="span-2">&nbsp;</div>
+<% end %>
