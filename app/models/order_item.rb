@@ -7,7 +7,7 @@ class OrderItem < ActiveRecord::Base
 
   after_save :refresh_order_totals
   after_destroy :refresh_order_totals
-  
+
   def total
     self.price * self.quantity
   end

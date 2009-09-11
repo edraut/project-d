@@ -26,9 +26,9 @@
 			<INPUT TYPE="hidden" NAME="shipping_1" VALUE="<%= @cart.shipping_total %>">
 			<INPUT TYPE="hidden" NAME="tax_cart" VALUE="<%= @cart.sales_tax %>">
 		<% count = 1 -%>
-		<% if false and @cart.promotion %>
+		<% if @cart.coupon and @cart.coupon.useable? %>
 			<INPUT TYPE="hidden" NAME="item_name_1" VALUE="Discounted Purchase"> 
-			<INPUT TYPE="hidden" NAME="amount_1" VALUE="<%= @cart.subtotal_display %>">
+			<INPUT TYPE="hidden" NAME="amount_1" VALUE="<%= @cart.subtotal %>">
 			<INPUT TYPE="hidden" NAME="quantity_1" VALUE="1">
 		<% else %>
   		<% for item in @cart.order_items -%>

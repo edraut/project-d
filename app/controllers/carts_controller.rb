@@ -1,11 +1,11 @@
 class CartsController < ApplicationController
-  before_filter :get_cart, :only => [:show,:edit,:update,:destroy,:checkout_paypal]
+  before_filter :get_cart, :only => [:show,:edit,:update,:destroy,:checkout_paypal,:edit_coupon_code,:update_coupon_code]
 
   # GET /carts/1
   # GET /carts/1.xml
   def show
     if params[:get_totals]
-      totals_data = {:shipping_total => @cart.shipping_total.format, :total => @cart.total.format, :subtotal => @cart.subtotal.format, :sales_tax => @cart.taxable? ? @cart.sales_tax.format : '$0.00'}
+      totals_data = {:shipping_total => @cart.shipping_total.format, :total => @cart.total.format, :subtotal => @cart.pre_discount_subtotal.format, :sales_tax => @cart.taxable? ? @cart.sales_tax.format : '$0.00', :discount => @cart.discount_money.format}
       render :json => totals_data and return
     end
     if params[:show_email]
@@ -169,6 +169,21 @@ class CartsController < ApplicationController
 
     render :nothing => true
     
+  end
+  
+  def edit_coupon_code
+    render :partial => 'edit_coupon_code', :object => @cart
+  end
+  
+  def update_coupon_code
+    if coupon = Coupon.find_by_coupon_code(params[:coupon_code])
+      @cart.coupon = coupon
+      @cart.save
+      render :partial => 'orders/show_coupon_code', :object => @cart
+    else
+      @cart.errors.add(:coupon_id, "We couldn't find that coupon.")
+      render :partial => 'carts/edit_coupon_code', :object => @cart
+    end
   end
   
   # DELETE /carts/1

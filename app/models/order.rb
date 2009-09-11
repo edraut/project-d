@@ -16,6 +16,7 @@ class Order < ActiveRecord::Base
   ].freeze
   include FormatsErrors
   belongs_to :user
+  belongs_to :coupon
   has_many :order_items, :dependent => :destroy
   has_many :product_options, :through => :order_items
   has_one :billing_address, :dependent => :destroy
@@ -183,7 +184,31 @@ class Order < ActiveRecord::Base
   end
   
   def calculate_subtotal
-    self.order_items.sum("price * quantity")
+    self.order_items.sum("price * quantity").to_i - self.discount
+  end
+  
+  def pre_discount_subtotal
+    Money.new(self.order_items.sum("price * quantity").to_i)
+  end
+  
+  def discount
+    if self.coupon
+      if self.coupon.percent_off > 0
+        return (self.coupon.percent_off / 100.0) * self.order_items.sum("price * quantity").to_i
+      elsif self.coupon.flat_amount > Money.new(0)
+        if self.coupon.flat_amount <= self.pre_discount_subtotal
+          return self.coupon.flat_amount.cents.to_i
+        else
+          return 0
+        end
+      end
+    else
+      return 0
+    end
+  end
+  
+  def discount_money
+    Money.new(self.discount)
   end
   
   def calculate_sales_tax
@@ -193,6 +218,10 @@ class Order < ActiveRecord::Base
   def add_addresses
     self.billing_address = BillingAddress.create(:order_id => self.id,:country_id => 465)
     self.shipping_address = ShippingAddress.create(:order_id => self.id,:country_id => 465)
+  end
+  
+  def validate
+    self.errors.add(:coupon_id,"We couldn't validate that coupon code.") if self.coupon and !self.coupon.useable?
   end
   
   CARD_MONTHS = ['01','02','03','04','05','06','07','08','09','10','11','12'].freeze
