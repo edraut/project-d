@@ -4,6 +4,9 @@ class Manage::OrdersController < Manage::ApplicationController
   def index
     if params[:search_terms]
       @orders = Order.paginate_by_sql(["select distinct(orders.*) from orders inner join addresses on addresses.order_id = orders.id where orders.id = :search_term or lower(addresses.last_name) like lower(:search_term_fuzzy)",{:search_term => params[:search_terms].to_i, :search_term_fuzzy => "%#{params[:search_terms]}%"}], :per_page => 25, :page => params[:page])
+    elsif params[:coupon_id]
+      @coupon = Coupon.find(params[:coupon_id].to_i)
+      @orders = @coupon.orders
     else
       @orders = Order.send(params[:state]).paginate(:per_page => 25, :page => params[:page])
     end

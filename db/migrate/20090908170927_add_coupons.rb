@@ -8,7 +8,7 @@ class AddCoupons < ActiveRecord::Migration
       t.string    :coupon_code
       t.timestamps
     end
-    add_column :orders, :coupon_id, :string
+    add_column :orders, :coupon_id, :integer
   end
 
   def self.down
