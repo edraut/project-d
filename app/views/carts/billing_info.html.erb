@@ -61,7 +61,7 @@
 				<%= text_field_tag 'credit_card_number', nil, :class => 'span-4' %>
 			</div>
 			<div class="span-2">
-				<%= select_tag 'credit_card_month', options_for_select(Order::CARD_MONTHS.map{|m| [m,m]}) %>
+				<%= select_tag 'credit_card_month', options_for_select(Order::CARD_MONTHS.map{|m| [sprintf("%.2i",m),m]}) %>
 			</div>
 			<div class="span-2">
 				<%= select_tag 'credit_card_year', options_for_select(Order::CARD_YEARS.map{|y| [y,y]}) %>

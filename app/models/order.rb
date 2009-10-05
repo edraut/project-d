@@ -224,7 +224,7 @@ class Order < ActiveRecord::Base
     self.errors.add(:coupon_id,"We couldn't validate that coupon code.") if self.coupon and !self.coupon.useable?
   end
   
-  CARD_MONTHS = ['01','02','03','04','05','06','07','08','09','10','11','12'].freeze
+  CARD_MONTHS = ['1','2','3','4','5','6','7','8','9','10','11','12'].freeze
   CARD_YEARS = Array.new(8) {|i| (i + Date.today.year).to_s}
   SHIPPING_METHODS = ['Ground','2nd Day','Overnight'].freeze
 end
