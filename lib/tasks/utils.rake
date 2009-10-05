@@ -23,7 +23,8 @@ namespace :utils do
           if (category.products.published.any? or (category.children.any? and category.children.detect{|child| child.products.published.any?}))
             xml.url do
               xml.loc products_url + "?category_id=#{category.id}"
-              xml.lastmod Time.local(Time.now.year,Time.now.month,Time.now.day - 5).xmlschema
+              lastmodtime = Time.now - 5.days
+              xml.lastmod lastmodtime.xmlschema
               xml.changefreq "weekly"
               xml.priority 0.5
             end

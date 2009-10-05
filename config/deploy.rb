@@ -57,6 +57,7 @@ namespace :config_files do
   task :symlink do
     symlink_database_yml
     symlink_mailer_config
+    symlink_sitemap
     # symlink_pictures
   end
 
@@ -70,6 +71,11 @@ namespace :config_files do
   desc "Make symlink for database.yml" 
   task :symlink_database_yml do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml" 
+  end
+
+  desc "Make symlink for sitemap.xml" 
+  task :symlink_sitemap do
+    run "ln -nfs #{shared_path}/public/sitemap.xml #{release_path}/public/sitemap.xml" 
   end
 
   task :mailer_config do
