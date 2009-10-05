@@ -5,7 +5,10 @@
 	</div>
 	<div class="span-10">
 		<% unless @order.shipped? %>
-			<%= link_to 'mark as shipped', manage_order_url(@order) + '?event=fulfill', :method => :put, :confirm => 'Are you sure you want to mark this order as shipped?' %>
+			<%= link_to 'mark as shipped', manage_order_url(@order) + '?event=fulfill', :method => :put, :confirm => 'Are you sure you want to mark this order as shipped?' %><br/>
+			<% unless @order.cancelled? %>
+				<%= link_to 'cancel', manage_order_url(@order) + '?event=cancel', :method => :put, :confirm => 'Are you sure you want to CANCEL this order? This means you will NOT ship the order.' %>
+			<% end %>
 		<% end %>
 	</div>
 </div>
