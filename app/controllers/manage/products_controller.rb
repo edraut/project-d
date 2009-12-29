@@ -16,6 +16,7 @@ class Manage::ProductsController < Manage::ApplicationController
   # GET /manage_products/1.xml
   def show
     if params[:id].to_i == 0
+      @product_template = params[:id]
       render :template => 'manage/products/' + params[:id] and return
     else
       @product_section = 'overview'

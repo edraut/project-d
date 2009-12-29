@@ -5,7 +5,7 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<% if controller_name == 'products' and action_name == 'show' and !@product.description.blank? %>
+	<% if controller_name == 'products' and action_name == 'show' and !@product_template and !@product.description.blank? %>
 		<META NAME="Description" CONTENT="<%= strip_tags(textilize(@product.description)).gsub(/^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$/ix, '').gsub(/"/, '') %>">
 	<% end %>
 	<title>Mad Racing MX <%= @page_title %></title>
