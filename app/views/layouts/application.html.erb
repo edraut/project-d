@@ -41,7 +41,7 @@
 			<div class="middle-frame"><div class="middle-frame-inner">
 				<div class="header">
 					<div class="span-19 header-content">
-						<div class="span-8 prepend-10 append-1 text-right last"><span class="blue"><a href="mailto:contact@madracingmx.com">EMAIL US</a></span> &nbsp;<span class="orange">||</span>&nbsp; <span class="yellow">ORDER NOW!</span> <span class="orange">207.602.1566</span>
+						<div class="span-8 prepend-10 append-1 text-right last"><span class="blue"><a href="mailto:contact@madracingmx.com">EMAIL US</a></span> &nbsp;<span class="orange">||</span>&nbsp; <span class="yellow">ORDER NOW!</span> <span class="orange"></span>
 						</div>
 						<div class="span-16 prepend-2 append-1 text-right last">
 							<form action="/products">Search <%= select_tag 'category_id', options_for_select([['All Categories',nil]] + Category.top_level.map{|cat| [cat.name,cat.id]},@search_category ? @search_category.id : nil) %> <input type="text" name="search_terms" value="<%=h @search_terms %>" class="span-5"/> <input type="submit" value="Go"/></form>
